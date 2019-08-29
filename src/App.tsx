@@ -25,6 +25,3 @@ export const App: React.FC = () => (
 )
 
 export default hot(App)
-
-// this should break ci
-const testCI = 0
