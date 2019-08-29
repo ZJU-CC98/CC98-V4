@@ -10,19 +10,8 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint-fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
-    "stylelint": "stylelint \"src/**/*.scss\" --syntax scss"
-  },
-  "lint-staged": {
-    "**/*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ],
-    "**/*.{scss}": [
-      "stylelint --fix",
-      "prettier --write",
-      "git add"
-    ]
+    "stylelint": "stylelint \"src/**/*.scss\" --syntax scss",
+    "check-all": "yarn run type-check && yarn run lint && yarn run stylelint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
