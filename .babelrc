@@ -1,0 +1,33 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "esmodules": false
+        }
+      }
+    ],
+    "@babel/react",
+    "@babel/typescript"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-syntax-dynamic-import",
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    [
+      "transform-imports",
+      {
+        "lodash": {
+          "transform": "lodash/${member}"
+        }
+      }
+    ]
+  ]
+}

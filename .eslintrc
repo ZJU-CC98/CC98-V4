@@ -1,0 +1,34 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "useJSXTextNode": true
+  },
+  "plugins": ["@typescript-eslint", "eslint-plugin-react-hooks", "eslint-plugin-react"],
+  "extends": ["airbnb", "prettier", "prettier/@typescript-eslint", "prettier/react"],
+  "rules": {
+    "no-unused-vars": "off",
+    "no-param-reassign": "off",
+    "no-case-declarations": "off",
+    "no-useless-return": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": "off",
+    "import/no-unresolved": "off",
+    "no-use-before-define": ["error", { "functions": false }],
+    "react/prop-types": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
