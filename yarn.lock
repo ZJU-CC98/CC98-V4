@@ -2635,6 +2635,11 @@ css-select@^1.1.0:
     domutils "1.5.1"
     nth-check "~1.0.1"
 
+css-vars-ponyfill@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.npm.taobao.org/css-vars-ponyfill/download/css-vars-ponyfill-2.1.1.tgz#61bc0335ad9edcf52b1a2a00065ff541e55b3059"
+  integrity sha1-YbwDNa2e3PUrGioABl/1QeVbMFk=
+
 css-what@2.1:
   version "2.1.3"
   resolved "https://registry.npm.taobao.org/css-what/download/css-what-2.1.3.tgz?cache=0&sync_timestamp=1564773794818&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcss-what%2Fdownload%2Fcss-what-2.1.3.tgz#a6d7604573365fe74686c3f311c56513d88285f2"
@@ -3136,6 +3141,11 @@ es-to-primitive@^1.2.0:
     is-callable "^1.1.4"
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
+
+es6-promise@^4.2.8:
+  version "4.2.8"
+  resolved "https://registry.npm.taobao.org/es6-promise/download/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
+  integrity sha1-TrIVlMlyvEBVPSduUQU5FD21Pgo=
 
 escape-html@~1.0.3:
   version "1.0.3"
