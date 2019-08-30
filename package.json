@@ -14,6 +14,7 @@
     "check-all": "yarn run type-check && yarn run lint && yarn run stylelint"
   },
   "dependencies": {
+    "@babel/runtime-corejs3": "^7.5.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
@@ -25,7 +26,6 @@
     "css-vars-ponyfill": "^2.1.1",
     "dayjs": "^1.8.16",
     "dplayer": "^1.25.0",
-    "es6-promise": "^4.2.8",
     "history": "^4.9.0",
     "hls.js": "^0.12.4",
     "immer": "^3.2.0",

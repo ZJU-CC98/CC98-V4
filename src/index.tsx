@@ -1,5 +1,3 @@
-import 'es6-promise/auto'
-
 import React from 'react'
 import ReactDom from 'react-dom'
 
