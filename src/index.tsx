@@ -5,6 +5,7 @@ import './stylesheets/main.scss'
 import App from 'src/App'
 import 'src/config/theme'
 
+Promise.resolve()
 const root = document.getElementById('app')
 
 // DO NOT ADD ANY COMPONENT HERE
