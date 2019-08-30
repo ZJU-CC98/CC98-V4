@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDom from 'react-dom'
 
 import './stylesheets/main.scss'
-import App from './App'
+import App from 'src/App'
+import 'src/config/theme'
 
 const root = document.getElementById('app')
 

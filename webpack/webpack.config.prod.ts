@@ -9,6 +9,10 @@ import commonConfig from './webpack.config.common'
 const config = merge({}, commonConfig, {
   mode: 'production',
 
+  output: {
+    filename: '[name]-[chunkhash:8].js',
+  },
+
   optimization: {
     minimizer: [new TerserPlugin()],
   },

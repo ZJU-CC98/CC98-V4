@@ -18,6 +18,7 @@ const config = merge(
       historyApiFallback: true,
       port: 9804,
       contentBase,
+      host: '0.0.0.0',
     },
   } as any
 )
