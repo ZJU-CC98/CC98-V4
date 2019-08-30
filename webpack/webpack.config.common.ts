@@ -6,7 +6,7 @@ import { outputPath, srcPath } from './constants'
 import getCssLoaders from './getCssLoaders'
 
 const config: webpack.Configuration = {
-  entry: ['react-hot-loader/patch', './src/index.tsx'],
+  entry: ['./src/polyfill.ts', 'react-hot-loader/patch', './src/index.tsx'],
 
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.scss'],

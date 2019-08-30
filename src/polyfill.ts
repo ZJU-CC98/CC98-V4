@@ -1,4 +1,5 @@
 // will be replaced by @babel/preset-env
 import 'core-js/stable'
 
-export const test = new Map()
+import 'core-js/features/set'
+import 'core-js/features/map'
