@@ -6,4 +6,8 @@ declare module '*.scss' {
   export default classnames
 }
 
-declare module '*.jpg'
+declare module '*.jpg' {
+  const url: string
+
+  export default url
+}
