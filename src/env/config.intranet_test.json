@@ -1,0 +1,4 @@
+{
+  "oauthAPIUrl": "https://openid.cc98.org/connect/token",
+  "APIUrl": "https://api-v2.cc98.org"
+}

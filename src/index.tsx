@@ -6,6 +6,7 @@ import './stylesheets/main.scss'
 import App from 'src/App'
 import { initIndexedDb } from 'src/utils/indexedDb'
 import cacheConfigs from 'src/config/cache'
+import envConfig from 'src/config/env'
 
 // need top-level await
 initIndexedDb(cacheConfigs).finally(() => {
@@ -16,3 +17,6 @@ initIndexedDb(cacheConfigs).finally(() => {
   // add component to App.tsx instead
   ReactDom.render(<App />, root)
 })
+
+// TODO: remove
+console.log(envConfig)
