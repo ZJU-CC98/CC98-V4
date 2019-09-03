@@ -1,3 +1,33 @@
+$global-header-height: 48px;
+$global-footer-height: 66px;
+$main-content-width: 1140px;
+
 .basic-layout-root {
   width: 100%;
+  display: grid;
+  grid-template:
+    'head head head'
+    '. main .'
+    'footer footer footer';
+  grid-template-columns: 1fr $main-content-width 1fr;
+  grid-template-rows: $global-header-height 1fr $global-footer-height;
+}
+
+.header {
+  grid-area: head;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  grid-area: main;
+  min-height: calc(100vh - #{$global-footer-height + $global-header-height});
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
