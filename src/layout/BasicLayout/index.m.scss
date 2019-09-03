@@ -1,3 +1,29 @@
 .basic-layout-root {
   width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+    'head head head'
+    '. main .'
+    'footer footer footer';
+  grid-template-columns: 1fr 1140px 1fr;
+  grid-template-rows: 48px 1fr 66px;
+}
+
+.header {
+  grid-area: head;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
