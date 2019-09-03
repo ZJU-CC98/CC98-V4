@@ -55,6 +55,10 @@ const config: webpack.Configuration = {
     }),
 
     new ProgressBarPlugin(),
+
+    new webpack.DefinePlugin({
+      'process.env.CC98_ENV': JSON.stringify(process.env.CC98_ENV),
+    }),
   ],
 
   stats: {
