@@ -17,7 +17,8 @@
     "react/jsx-filename-extension": "off",
     "import/no-unresolved": "off",
     "no-use-before-define": ["error", { "functions": false }],
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "import/export": "off"
   },
   "settings": {
     "import/resolver": {
