@@ -27,15 +27,13 @@
   align-self: flex-end;
   margin-right: 80px;
   display: grid;
-  grid-template: 'name-label name-input' 'password-label password-input';
-  grid-template-rows: 40px 40px;
-  grid-template-columns: 1fr 320px;
+  grid-template: 'name-label name-input' 40px 'password-label password-input' 40px / 20px 320px;
   grid-gap: 30px 25px;
 
   label {
-    justify-self: right;
     font-size: 12px;
-    align-self: center;
+    text-align: right;
+    line-height: 40px;
   }
 }
 
