@@ -2,6 +2,7 @@
 @import 'var';
 
 .root {
+  margin-top: 30px;
   background-color: white;
   border: solid 1px $border-color;
   display: flex;
@@ -24,31 +25,28 @@
 }
 
 .form {
-  align-self: flex-end;
-  margin-right: 80px;
   display: grid;
-  grid-template: 'name-label name-input' 40px 'password-label password-input' 40px / 20px 320px;
+  grid-template-columns: 1fr 320px;
+  grid-template-rows: 40px;
   grid-gap: 30px 25px;
 
-  label {
-    font-size: 12px;
-    text-align: right;
-    line-height: 40px;
+  .label {
+    grid-column: 1;
+    font-size: $font-size-sm;
+    justify-self: right;
+    align-self: center;
   }
-}
 
-.name-label {
-  grid-area: name-label;
-}
+  .content {
+    height: 40px;
+    grid-column: 2;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
 
-.name-input {
-  grid-area: name-input;
-}
-
-.password-label {
-  grid-area: password-label;
-}
-
-.password-input {
-  grid-area: password-input;
+  .form-info {
+    height: initial;
+    text-align: center;
+    color: red;
+  }
 }

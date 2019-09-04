@@ -15,9 +15,10 @@ const themeList: IThemeInfo[] = [
     homeHeaderImageURL: 'todo',
     palette: {
       primary: '#5198d8',
-      'text-color': 'black',
+      'text-color-primary': 'white', // 当背景色是 primary 时的文字颜色
       'global-background-color': '#e6e7ec',
       'main-background-color': 'white',
+      'text-color': 'black',
     },
   },
   {

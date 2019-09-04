@@ -21,7 +21,7 @@ export default function getCssLoaders(isModule: boolean) {
         plugins: [
           autoprefixer({
             remove: false,
-            grid: 'no-autoplace',
+            grid: 'autoplace',
           }),
         ],
       },

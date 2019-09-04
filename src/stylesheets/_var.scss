@@ -1,4 +1,11 @@
-$primary: #{'rgb(--primary)'};
+// color
+$primary: #{'rgb(var(--primary))'};
 $border-color: #ccc;
 
+// length
 $main-content-width: 1140px;
+
+// font
+$base-font-size: 16px;
+$font-size-sm: $base-font-size - 4px;
+$font-size-lg: $base-font-size + 4px;
