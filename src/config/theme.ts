@@ -1,31 +1,50 @@
-import { DeepReadonly } from 'src/utils/types'
 import THEME from 'src/constants/theme'
+import { hex2rgb } from 'src/utils/css'
 
 interface IThemeInfo {
+  theme: THEME
   homeHeaderImageURL: string
   palette: Record<string, string>
 }
 
 export const defaultTheme = THEME.LIGHT
 
-export const themeMap: DeepReadonly<
+const themeList: IThemeInfo[] = [
   {
-    [key in THEME]: IThemeInfo
-  }
-> = {
-  [THEME.LIGHT]: {
+    theme: THEME.LIGHT,
     homeHeaderImageURL: 'todo',
     palette: {
-      primary: 'white',
+      primary: '#5198d8',
       'text-color': 'black',
-      'some-other-var': 'red',
+      'global-background-color': '#e6e7ec',
+      'main-background-color': 'white',
     },
   },
-  [THEME.DARK]: {
+  {
+    theme: THEME.DARK,
     homeHeaderImageURL: 'todo',
     palette: {
-      primary: 'black',
+      primary: '#000000',
       'text-color': 'white',
     },
   },
+]
+
+export const themeMap = makeThemeMap(themeList)
+
+function makeThemeMap(themes: IThemeInfo[]) {
+  return themes.reduce(
+    (res, curr) => {
+      res[curr.theme] = {
+        homeHeaderImageURL: curr.homeHeaderImageURL,
+        palette: {
+          ...curr.palette,
+          primary: hex2rgb(curr.palette.primary),
+        },
+      }
+
+      return res
+    },
+    {} as { [key in THEME]: Omit<IThemeInfo, 'theme'> }
+  )
 }

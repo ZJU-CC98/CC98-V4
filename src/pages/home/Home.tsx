@@ -19,6 +19,9 @@ const Home: React.FC = () => {
         <Link to="/example">go to example page</Link>
       </p>
       <p>
+        <Link to="/signin">go to signin</Link>
+      </p>
+      <p>
         <ThemeController />
       </p>
       <p className={s.themeInfo}>current theme: {theme}</p>

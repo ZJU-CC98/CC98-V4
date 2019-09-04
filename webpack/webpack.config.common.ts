@@ -33,7 +33,7 @@ const config: webpack.Configuration = {
         use: getCssLoaders(true),
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: getCssLoaders(false),
         exclude: /\.m\.scss$/,
       },

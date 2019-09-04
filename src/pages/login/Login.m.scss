@@ -1,0 +1,56 @@
+@import 'mixin';
+@import 'var';
+
+.root {
+  background-color: white;
+  border: solid 1px $border-color;
+  display: flex;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.snow {
+  margin: 30px;
+}
+
+.form {
+  align-self: flex-end;
+  margin-right: 80px;
+  display: grid;
+  grid-template: 'name-label name-input' 'password-label password-input';
+  grid-template-rows: 40px 40px;
+  grid-template-columns: 1fr 320px;
+  grid-gap: 30px 25px;
+
+  label {
+    justify-self: right;
+    font-size: 12px;
+    align-self: center;
+  }
+}
+
+.name-label {
+  grid-area: name-label;
+}
+
+.name-input {
+  grid-area: name-input;
+}
+
+.password-label {
+  grid-area: password-label;
+}
+
+.password-input {
+  grid-area: password-input;
+}

@@ -1,9 +1,11 @@
+@import 'var';
+
 $global-header-height: 48px;
 $global-footer-height: 66px;
-$main-content-width: 1140px;
+$main-content-margin: 20px;
+$global-header-background: rgba(var(--primary), 0.8);
 
 .basic-layout-root {
-  width: 100%;
   display: grid;
   grid-template:
     'head head head'
@@ -18,11 +20,16 @@ $main-content-width: 1140px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: $global-header-background;
 }
 
 .main {
   grid-area: main;
-  min-height: calc(100vh - #{$global-footer-height + $global-header-height});
+  position: relative;
+  min-height: calc(
+    100vh - #{$global-footer-height + $global-header-height + 2 * $main-content-margin}
+  );
+  margin: $main-content-margin 0;
 }
 
 .footer {

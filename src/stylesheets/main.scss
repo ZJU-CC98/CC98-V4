@@ -1,1 +1,9 @@
 @import 'normalize';
+@import 'var';
+@import 'override';
+
+#app {
+  background-color: var(--global-background-color);
+  min-width: $main-content-width;
+  color: var(--text-color);
+}
