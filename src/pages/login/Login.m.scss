@@ -27,7 +27,7 @@
 .form {
   display: grid;
   grid-template-columns: 1fr 320px;
-  grid-template-rows: 40px;
+  grid-template-rows: 40px 40px 40px 40px;
   grid-gap: 30px 25px;
 
   .label {

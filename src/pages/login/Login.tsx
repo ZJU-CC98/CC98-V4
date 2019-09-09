@@ -1,24 +1,90 @@
 import React from 'react'
 import cn from 'classnames'
+import { RouteComponentProps } from 'react-router'
+import { Dispatch } from 'redux'
+import { useDispatch } from 'react-redux'
+import { RouterAction } from 'connected-react-router'
 
 import snow from 'src/assets/login/login_snow.png'
 import welcome from 'src/assets/login/login_welcome.png'
 
-import s from './Login.m.scss'
-import Button from '../../components/Button'
+import { getMe } from 'src/service/user'
+import Button from 'src/components/Button'
+import { login } from 'src/service/oauth'
+import { removeLocalStorage, setLocalStorage } from 'src/utils/storage'
+import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
 
-const Login: React.FC = () => {
+import s from './Login.m.scss'
+
+const REFRESH_TOKEN_EXPIRED_TIME = 2592000
+const CODE_WRONG_PASSWORD = 400
+const USER_LOCKED_STATES = [1, 2]
+
+const Login: React.FC<RouteComponentProps> = ({ history }) => {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [formInfo, setFormInfo] = React.useState('')
+  const dispatch = useDispatch() as Dispatch<GlobalActions | RouterAction>
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault()
-    console.log(username, password)
     if (!username) {
       setFormInfo('请输入用户名')
       return
     }
+
+    if (!password) {
+      setFormInfo('请输入密码')
+      return
+    }
+
+    login(username, password)
+      // eslint-disable-next-line camelcase
+      .then(({ refresh_token, access_token, expires_in, token_type }) => {
+        // eslint-disable-next-line camelcase
+        const newToken = `${token_type} ${access_token}`
+        // eslint-disable-next-line camelcase
+        setLocalStorage('accessToken', newToken, expires_in)
+        setLocalStorage('refreshToken', refresh_token, REFRESH_TOKEN_EXPIRED_TIME)
+
+        return true
+      })
+      .catch(error => {
+        if (error.isAxiosError && error.response.status === CODE_WRONG_PASSWORD) {
+          setFormInfo('登录失败 密码错误')
+          return
+        }
+
+        setFormInfo(`登录失败 未知错误 ${error.message}`)
+      })
+      .then(isSuccess => {
+        if (isSuccess) {
+          return getMe()
+        }
+      })
+      .then(currentUser => {
+        if (currentUser && USER_LOCKED_STATES.includes(currentUser.lockState)) {
+          setFormInfo('登录失败 用户已锁定')
+          removeLocalStorage('accessToken')
+          removeLocalStorage('refreshToken')
+          removeLocalStorage('userInfo')
+          return
+        }
+
+        setFormInfo('登录成功 正在返回')
+        // TODO: user theme
+        dispatch({
+          type: GLOBAL_ACTION_TYPES.LOGIN_AND_SET_CURRENT_USER,
+          payload: currentUser!,
+        })
+        setTimeout(() => {
+          if (history.length === 1) {
+            history.push('/')
+          } else {
+            history.go(-1)
+          }
+        }, 100)
+      })
   }
 
   return (
