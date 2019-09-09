@@ -25,21 +25,25 @@
 }
 
 .form {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  grid-template-rows: 40px 40px 40px 40px;
-  grid-gap: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  & > * {
+    margin-bottom: 30px;
+  }
 
   .label {
-    grid-column: 1;
     font-size: $font-size-sm;
+    margin-right: 25px;
     justify-self: right;
     align-self: center;
   }
 
   .content {
     height: 40px;
-    grid-column: 2;
+    width: 320px;
+    box-sizing: border-box;
     border-radius: 5px;
     padding: 0 10px;
   }

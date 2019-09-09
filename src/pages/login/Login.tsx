@@ -95,24 +95,28 @@ const Login: React.FC<RouteComponentProps> = ({ history }) => {
       <div className={s.right}>
         <img className={s.welcome} src={welcome} />
         <form className={s.form} onSubmit={handleSubmit} autoComplete="on">
-          <label className={s.label}>用户名</label>
-          <input
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-            className={s.content}
-            name="username"
-            type="text"
-            autoComplete="on"
-          />
-          <label className={s.label}>密码</label>
-          <input
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            className={s.content}
-            name="password"
-            type="password"
-            autoComplete="on"
-          />
+          <div className={s.formRow}>
+            <label className={s.label}>用户名</label>
+            <input
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+              className={s.content}
+              name="username"
+              type="text"
+              autoComplete="on"
+            />
+          </div>
+          <div className={s.formRow}>
+            <label className={s.label}>密码</label>
+            <input
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              className={s.content}
+              name="password"
+              type="password"
+              autoComplete="on"
+            />
+          </div>
           {formInfo !== '' && <p className={cn(s.content, s.formInfo)}>{formInfo}</p>}
           <Button className={s.content} type="submit" primary>
             登录帐号
