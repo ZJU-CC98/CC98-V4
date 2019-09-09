@@ -13,7 +13,7 @@ const ThemeController: React.FC = () => {
         <button
           style={{
             color: themeMap[theme].palette['text-color'],
-            backgroundColor: themeMap[theme].palette.primary,
+            backgroundColor: `rgb(${themeMap[theme].palette.primary})`,
           }}
           type="button"
           key={theme}

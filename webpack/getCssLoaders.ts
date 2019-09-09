@@ -1,5 +1,5 @@
 import autoprefixer from 'autoprefixer'
-import { isDev } from './constants'
+import { isDev, publicStylesheetPath } from './constants'
 
 export default function getCssLoaders(isModule: boolean) {
   return [
@@ -21,11 +21,16 @@ export default function getCssLoaders(isModule: boolean) {
         plugins: [
           autoprefixer({
             remove: false,
-            grid: 'no-autoplace',
+            grid: 'autoplace',
           }),
         ],
       },
     },
-    'sass-loader',
+    {
+      loader: 'sass-loader',
+      options: {
+        includePaths: [publicStylesheetPath],
+      },
+    },
   ]
 }

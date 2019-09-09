@@ -1,0 +1,56 @@
+@import 'mixin';
+@import 'var';
+
+.root {
+  margin-top: 30px;
+  background-color: white;
+  border: solid 1px $border-color;
+  display: flex;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.snow {
+  margin: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  & > * {
+    margin-bottom: 30px;
+  }
+
+  .label {
+    font-size: $font-size-sm;
+    margin-right: 25px;
+    justify-self: right;
+    align-self: center;
+  }
+
+  .content {
+    height: 40px;
+    width: 320px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+
+  .form-info {
+    height: initial;
+    text-align: center;
+    color: red;
+  }
+}
