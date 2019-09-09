@@ -18,7 +18,11 @@
     "import/no-unresolved": "off",
     "no-use-before-define": ["error", { "functions": false }],
     "react/prop-types": "off",
-    "import/export": "off"
+    "import/export": "off",
+    "consistent-return": "off",
+    "jsx-a11y/alt-text": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/jsx-props-no-spreading": "off"
   },
   "settings": {
     "import/resolver": {

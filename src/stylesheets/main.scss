@@ -1,1 +1,22 @@
 @import 'normalize';
+@import 'var';
+@import 'override';
+
+#app {
+  background-color: var(--global-background-color);
+  min-width: $main-content-width;
+  color: var(--text-color);
+  font-size: $base-font-size;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='number'],
+textarea {
+  -webkit-appearance: none;
+  border: solid 1px $border-color;
+}
+
+p {
+  margin: 0;
+}
