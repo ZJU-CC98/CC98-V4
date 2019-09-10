@@ -55,10 +55,6 @@ export function getLocalStorage<T = any>(key: string): T | undefined {
 }
 
 export function removeLocalStorage(key: string) {
-  if (key === 'all') {
-    localStorage.removeItem(key)
-  } else {
-    localStorage.clear()
-  }
-  return
+  localStorage.removeItem(key)
+  localStorage.removeItem(`${key}_expirationTime`)
 }

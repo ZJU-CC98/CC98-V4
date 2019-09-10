@@ -44,6 +44,14 @@ const reducer = (state = initState, action: GlobalActions) =>
         draft.currentUser = action.payload
 
         return
+      case GLOBAL_ACTION_TYPES.LOGOUT:
+        draft.isLogin = false
+        draft.currentUser = null
+        localStorage.removeItem('accessToken')
+        localStorage.removeItem('refreshToken')
+        localStorage.removeItem('userInfo')
+
+        return
       default:
         return
     }

@@ -38,7 +38,7 @@ const config: webpack.Configuration = {
         exclude: /\.m\.scss$/,
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|ico)$/,
         loader: 'url-loader',
         options: {
           fallback: 'file-loader',

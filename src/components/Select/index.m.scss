@@ -1,0 +1,63 @@
+@import 'var';
+
+$select-default-height: 32px;
+$active-background: rgba(var(--primary), 0.8);
+$arrow-color: black;
+
+.container {
+  color: var(--text-color);
+  background-color: var(--main-background-color);
+  cursor: pointer;
+  height: $select-default-height;
+  line-height: $select-default-height;
+  border: 1px solid $border-color;
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+}
+
+.container-arrow {
+  padding-right: 6px;
+
+  &::after {
+    content: '';
+    width: 0;
+    height: 0;
+    margin-left: 10px;
+    border-top: 5px solid $arrow-color;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    position: relative;
+    top: -1px;
+  }
+}
+
+.item {
+  cursor: pointer;
+  padding: 0 11px;
+  transition: background-color 0.2s ease-out;
+  height: 32px;
+  background-color: var(--main-background-color);
+  line-height: 32px;
+
+  &:hover {
+    background-color: $active-background;
+  }
+}
+
+.current {
+  background-color: $active-background;
+}
+
+.popover {
+  color: var(--text-color);
+  border-radius: 0;
+  padding: 0;
+  text-align: initial;
+
+  :global {
+    .tippy-backdrop {
+      background-color: var(--main-background-color);
+    }
+  }
+}
