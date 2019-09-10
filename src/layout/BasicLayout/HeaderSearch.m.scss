@@ -1,0 +1,42 @@
+@import 'var';
+
+.root {
+  display: flex;
+  align-items: center;
+  background-color: var(--main-background-color);
+  height: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0 8px;
+}
+
+.select {
+  font-size: 12px;
+  padding: 0;
+  border: none;
+  height: 24px;
+  margin-right: 8px;
+  color: $primary;
+
+  &::after {
+    margin-left: 0;
+    border-top-color: $primary;
+  }
+}
+
+.item {
+  padding: 0 4px;
+  font-size: 12px;
+}
+
+.input {
+  border: none;
+  flex: 1;
+  color: $primary;
+  font-size: 12px;
+  outline: none;
+}
+
+.icon {
+  color: $primary;
+}

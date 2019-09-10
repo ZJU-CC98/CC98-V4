@@ -1,13 +1,15 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faBell } from '@fortawesome/free-regular-svg-icons'
 import Tippy from '@tippy.js/react'
 import { RootStore } from 'src/store'
+import { GLOBAL_ACTION_TYPES } from 'src/store/global-actions'
 
 import icon from 'src/assets/98LOGO.ico'
 
+import HeaderSearch from './HeaderSearch'
 import s from './GlobalHeader.m.scss'
 
 function selector(store: RootStore) {
@@ -19,11 +21,20 @@ function selector(store: RootStore) {
 
 const GlobalHeader: React.FC = () => {
   const { isLogin, user } = useSelector(selector)
+  const dispatch = useDispatch()
+
+  function logout() {
+    dispatch({
+      type: GLOBAL_ACTION_TYPES.LOGOUT,
+    })
+  }
 
   return (
     <div className={s.root}>
       <img className={s.logo} src={icon} />
-      <h1 className={s.title}>CC98论坛</h1>
+      <h1 className={s.title}>
+        <Link to="/">CC98论坛</Link>
+      </h1>
       <div className={s.divider} />
       <div className={s.text}>
         <Link to="/boardList">版面列表</Link>
@@ -34,13 +45,35 @@ const GlobalHeader: React.FC = () => {
       <div className={s.text}>
         <Link to="/focus">关注</Link>
       </div>
-      <div className={s.search} />
+      <div className={s.search}>
+        <HeaderSearch />
+      </div>
       {isLogin ? (
         <>
-          <Icon icon={faBell} />
           <Tippy
             className={s.popover}
+            duration={100}
+            interactive
+            placement="top"
+            offset="0, 2"
+            animation="perspective"
+            content={
+              <div className={s.menu}>
+                <Link className={s.menuItem} to="/message">
+                  我的私信
+                </Link>
+              </div>
+            }
+          >
+            <div className={s.message}>
+              <Icon icon={faBell} />
+            </div>
+          </Tippy>
+          <Tippy
+            className={s.popover}
+            duration={100}
             offset="24, -2"
+            animation="perspective"
             content={
               <div className={s.menu}>
                 <Link to="/usercenter" className={s.menuItem}>
@@ -54,7 +87,9 @@ const GlobalHeader: React.FC = () => {
                 <Link to="/signin" className={s.menuItem}>
                   签到
                 </Link>
-                <p className={s.menuItem}>注销</p>
+                <p onClick={logout} className={s.menuItem}>
+                  注销
+                </p>
               </div>
             }
             placement="top"
