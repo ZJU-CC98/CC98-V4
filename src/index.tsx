@@ -9,7 +9,6 @@ import './stylesheets/main.scss'
 import App from 'src/App'
 import { initIndexedDb } from 'src/utils/indexedDb'
 import cacheConfigs from 'src/config/cache'
-import notice from 'src/utils/notice'
 
 // need top-level await
 initIndexedDb(cacheConfigs).finally(() => {
@@ -19,9 +18,4 @@ initIndexedDb(cacheConfigs).finally(() => {
   // or it will cause react-hot-loader stop work
   // add component to App.tsx instead
   ReactDom.render(<App />, root)
-})
-
-// TODO: remove
-notice({
-  content: 'test',
 })
