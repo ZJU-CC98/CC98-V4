@@ -1,30 +1,46 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import ThemeController from 'src/pages/home/components/ThemeController'
-import { RootStore } from 'src/store'
-import { useSelector } from 'react-redux'
+import { getIndexConfig } from 'src/service/config'
+import { IConfig } from '@cc98/api'
 
+import HomeRight from './components/HomeRight'
 import s from './Home.m.scss'
 
-function selector(store: RootStore) {
-  return { theme: store.global.theme }
+const emptyData: IConfig = {
+  academics: [],
+  announcement: '',
+  emotion: [],
+  fleaMarket: [],
+  fullTimeJob: [],
+  hotTopic: [],
+  lastUpdateTime: '',
+  lastUserName: '',
+  onlineUserCount: 0,
+  partTimeJob: [],
+  postCount: 0,
+  recommendationFunction: [],
+  recommendationReading: [],
+  schoolEvent: [],
+  schoolNews: [],
+  study: [],
+  todayCount: 0,
+  topicCount: 0,
+  userCount: 0,
 }
 
 const Home: React.FC = () => {
-  const { theme } = useSelector(selector)
+  const [data, setData] = React.useState(emptyData)
+
+  React.useEffect(() => {
+    getIndexConfig().then(setData)
+  }, [])
 
   return (
-    <div>
-      <p>
-        <Link to="/example">go to example page</Link>
-      </p>
-      <p>
-        <Link to="/signin">go to signin</Link>
-      </p>
-      <p>
-        <ThemeController />
-      </p>
-      <p className={s.themeInfo}>current theme: {theme}</p>
+    <div className={s.root}>
+      <div className={s.top} />
+      <div className={s.content} />
+      <div className={s.right}>
+        <HomeRight data={data} />
+      </div>
     </div>
   )
 }
