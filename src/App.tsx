@@ -18,6 +18,7 @@ export const App: React.FC = () => (
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/signin" component={Login} />
+          <Route path="/logon" component={Login} />
           <Route path="/example" component={ExamplePageRoot} />
           <Route path="*" component={() => <div>Not Fount</div>} />
         </Switch>

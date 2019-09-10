@@ -1,0 +1,87 @@
+@import 'var';
+@import './index.m';
+
+$menu-hover-background: rgb(251, 97, 101);
+
+.root {
+  width: $main-content-width;
+  display: flex;
+  align-items: center;
+  color: var(--text-color-primary);
+  margin-right: 16px;
+
+  a {
+    color: var(--text-color-primary);
+  }
+}
+
+.logo {
+  width: 34px;
+  height: 24px;
+  margin-right: 16px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.divider {
+  font-size: 20px;
+  height: 1em;
+  margin: 0 16px;
+  border-left: 2px solid var(--text-color-primary);
+}
+
+.text {
+  & + & {
+    margin-left: 16px;
+  }
+}
+
+.search {
+  flex: 1;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  width: 96px;
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $menu-hover-background;
+  }
+}
+
+.popover {
+  border-radius: 0;
+  padding: 0;
+
+  :global {
+    .tippy-backdrop {
+      background-color: $global-header-background;
+    }
+  }
+
+  a {
+    color: var(--text-color-primary);
+  }
+}
