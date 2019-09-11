@@ -3,14 +3,12 @@ import thunk from 'redux-thunk'
 import { connectRouter, RouterAction, routerMiddleware } from 'connected-react-router'
 import { createBrowserHistory } from 'history'
 
-import examplePageReducer from 'src/pages/example/example-page-reducer'
 import { GlobalActions } from 'src/store/global-actions'
 import global from './global-reducer'
 
 export const history = createBrowserHistory()
 
 const reducers = combineReducers({
-  examplePageReducer,
   router: connectRouter(history),
   global,
 })

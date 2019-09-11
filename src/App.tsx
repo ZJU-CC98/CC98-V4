@@ -8,8 +8,8 @@ import store, { history } from 'src/store'
 import BasicLayout from 'src/layout/BasicLayout'
 
 import Home from 'src/pages/home/Home'
-import ExamplePageRoot from 'src/pages/example/ExamplePageRoot'
 import Login from 'src/pages/login/Login'
+import BoardList from 'src/pages/boardList/BoardList'
 
 export const App: React.FC = () => (
   <Provider store={store}>
@@ -17,9 +17,9 @@ export const App: React.FC = () => (
       <BasicLayout>
         <Switch>
           <Route path="/" component={Home} exact />
+          <Route path="/boardList" component={BoardList} />
           <Route path="/signin" component={Login} />
           <Route path="/logon" component={Login} />
-          <Route path="/example" component={ExamplePageRoot} />
           <Route path="*" component={() => <div>Not Fount</div>} />
         </Switch>
       </BasicLayout>
