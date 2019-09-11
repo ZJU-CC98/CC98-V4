@@ -1,0 +1,14 @@
+@import 'var';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 20px;
+  background-color: $main-background-color;
+  border: 1px solid $primary;
+  border-top-width: 8px;
+}
+
+.second {
+  border-color: $second;
+}

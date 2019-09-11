@@ -6,7 +6,7 @@ import React from 'react'
 import { IConfig } from '@cc98/api'
 import { Link } from 'react-router-dom'
 
-import ItemTitle from './ItemTitle'
+import ItemTitle from './components/ItemTitle'
 import s from './HomeRight.m.scss'
 
 const statistics = [
