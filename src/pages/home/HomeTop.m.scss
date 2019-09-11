@@ -1,0 +1,31 @@
+@import 'var';
+
+.recommend {
+  display: grid;
+  grid-template:
+    'img title' 30px
+    'img main' 30px /
+    auto 1fr;
+  grid-gap: 0 20px;
+  min-height: 75px;
+}
+
+.img {
+  grid-area: img;
+  width: 60px;
+  height: 60px;
+  background-color: $second;
+  border-radius: 50%;
+}
+
+.title {
+  grid-area: title;
+  margin-top: 2px;
+}
+
+.content {
+  grid-area: main;
+  margin-top: 2px;
+  font-size: 12px;
+  color: $second;
+}

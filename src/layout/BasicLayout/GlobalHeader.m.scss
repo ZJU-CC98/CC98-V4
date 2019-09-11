@@ -1,8 +1,18 @@
 @import 'var';
 @import './index.m';
 
+$global-header-background: rgba(var(--primary), 0.8);
 $menu-hover-background: rgb(251, 97, 101);
 $message-icon-background: #6b7178;
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  background-color: $global-header-background;
+  display: flex;
+  justify-content: center;
+}
 
 .root {
   width: $main-content-width;

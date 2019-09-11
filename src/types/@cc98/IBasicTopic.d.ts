@@ -24,5 +24,9 @@ declare module '@cc98/api' {
      * 帖子类型
      */
     type: number
+    /**
+     * 标题
+     */
+    title: string
   }
 }

@@ -19,9 +19,9 @@ declare module '@cc98/api' {
     /**
      * 十大
      */
-    hotTopic: IBasicTopic[]
+    hotTopic: IHotTopic[]
     lastUpdateTime: string
-    lastUpdateUser: string
+    lastUserName: string
     /**
      * 在线用户数
      */
@@ -37,7 +37,7 @@ declare module '@cc98/api' {
     /**
      * 推荐功能
      */
-    recommendationFunction: any[]
+    recommendationFunction: IRecommendationFunction[]
     /**
      * 推荐阅读
      */
@@ -49,7 +49,7 @@ declare module '@cc98/api' {
     /**
      * 校园新闻
      */
-    schoolNews: IBasicTopic[]
+    schoolNews: IRecommendationFunction[]
     /**
      * 学习天地
      */
@@ -66,5 +66,6 @@ declare module '@cc98/api' {
      * 总用户
      */
     userCount: number
+    fullTimeJob: any[]
   }
 }

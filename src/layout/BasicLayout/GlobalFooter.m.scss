@@ -1,0 +1,25 @@
+@import 'var';
+
+$footer-text-color: #505050;
+
+.p {
+  font-size: 12px;
+  margin-bottom: 24px;
+  color: $footer-text-color;
+  display: inline-flex;
+  align-items: center;
+
+  a {
+    color: $footer-text-color;
+  }
+}
+
+.divider {
+  margin: 0 8px;
+  font-weight: 100;
+}
+
+.label {
+  color: black;
+  margin-right: 16px;
+}

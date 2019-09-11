@@ -14,11 +14,13 @@ export interface IGlobalState {
 }
 
 const initIsLogin = !!getLocalStorage('refreshToken')
+const initUser: IUser | null = getLocalStorage('userInfo') || null
+const initTheme = (initUser && initUser.theme) || defaultTheme
 
 const initState: IGlobalState = {
-  theme: defaultTheme,
+  theme: initTheme,
   isLogin: initIsLogin,
-  currentUser: initIsLogin ? (getLocalStorage('userInfo') as IUser) : null,
+  currentUser: initIsLogin ? initUser : null,
 }
 
 cssVars({
