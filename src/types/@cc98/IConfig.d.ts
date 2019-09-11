@@ -19,7 +19,7 @@ declare module '@cc98/api' {
     /**
      * 十大
      */
-    hotTopic: IBasicTopic[]
+    hotTopic: IHotTopic[]
     lastUpdateTime: string
     lastUserName: string
     /**

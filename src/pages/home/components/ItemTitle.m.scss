@@ -4,9 +4,15 @@
   display: flex;
   align-items: center;
   width: 100%;
+  box-sizing: border-box;
   font-size: 20px;
   padding-left: 12px;
+  margin-top: 12px;
   color: $primary;
+
+  * {
+    color: $primary;
+  }
 }
 
 .title {
@@ -18,4 +24,8 @@
 
 .second {
   color: $second;
+
+  * {
+    color: $second;
+  }
 }

@@ -4,6 +4,7 @@ import { IConfig } from '@cc98/api'
 
 import HomeRight from './HomeRight'
 import HomeTop from './HomeTop'
+import HomeContent from './HomeContent'
 import s from './Home.m.scss'
 
 const emptyData: IConfig = {
@@ -49,7 +50,9 @@ const Home: React.FC = () => {
       <div className={s.top}>
         <HomeTop data={data} />
       </div>
-      <div className={s.content} />
+      <div className={s.content}>
+        <HomeContent data={data} />
+      </div>
       <div className={s.right}>
         <HomeRight data={data} />
       </div>

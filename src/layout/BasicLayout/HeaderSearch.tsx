@@ -93,6 +93,8 @@ function getSearchTypesByPath(path: string, boardId?: string) {
 function getBoardIdFromPath(path: string) {
   switch (true) {
     case path.startsWith('/topic'):
+    // TODO: topic 的版内搜索有点问题
+    // eslint-disable-next-line no-fallthrough
     case path.startsWith('/board'):
       return path.split('/')[2] || ''
     default:
