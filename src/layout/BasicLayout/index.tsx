@@ -16,12 +16,13 @@ function selector(store: RootStore) {
 
 const BasicLayout: React.FC<RouteComponentProps> = ({ children, location: { pathname } }) => {
   const { theme } = useSelector(selector)
+  const isHome = pathname === '/'
 
   return (
     <div className={s.basicLayoutRoot}>
       <div className={s.header}>
-        <GlobalHeader />
-        {pathname === '/' && (
+        <GlobalHeader isHome={isHome} />
+        {isHome && (
           <div
             className={s.headerImage}
             style={{

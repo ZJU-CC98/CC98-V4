@@ -1,0 +1,90 @@
+@import 'var';
+
+$content-margin: 18px;
+
+.root {
+  margin-bottom: 32px;
+  border: 1px solid $border-color;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  background-color: $primary;
+  color: $text-color-primary;
+  padding: 0 32px 0 18px;
+  cursor: pointer;
+
+  &-content {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+
+    a {
+      color: $text-color-primary;
+
+      & + a {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 18px;
+  }
+
+  .action {
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid $text-color-primary;
+    border-radius: 10.8px; // font-size * line-height
+    padding: 0 6px;
+    line-height: 1.8;
+  }
+}
+
+.content {
+  background-color: $main-background-color;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.board {
+  width: $main-content-width / 4 - 2 * $content-margin - 2;
+  margin: $content-margin;
+  display: grid;
+  grid-template:
+    'img title' 48px
+    'img count' 48px /
+    96px 1fr;
+  grid-gap: 0 8px;
+}
+
+.simple {
+  width: $main-content-width / 4 - 2 * $content-margin - 2;
+  margin: $content-margin;
+  font-size: 14px;
+}
+
+.img {
+  grid-area: img;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: $primary;
+}
+
+.content-title {
+  grid-area: title;
+  font-size: 19.2px;
+  margin: 0;
+  margin-top: 12px;
+}
+
+.count {
+  grid-area: count;
+  font-size: 12px;
+  line-height: 1.5;
+}
