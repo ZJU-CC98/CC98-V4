@@ -2,9 +2,10 @@ import React from 'react'
 import { RouteComponentProps, withRouter } from 'react-router'
 import { useSelector } from 'react-redux'
 import { RootStore } from 'src/store'
-import { themeMap } from 'src/config/theme'
+import { defaultTheme, themeMap } from 'src/config/theme'
 
-import GlobalHeader from 'src/layout/BasicLayout/GlobalHeader'
+import GlobalHeader from './GlobalHeader'
+import GlobalFooter from './GlobalFooter'
 import s from './index.m.scss'
 
 function selector(store: RootStore) {
@@ -23,12 +24,18 @@ const BasicLayout: React.FC<RouteComponentProps> = ({ children, location: { path
         {pathname === '/' && (
           <div
             className={s.headerImage}
-            style={{ backgroundImage: `url(${themeMap[theme].homeHeaderImageURL}` }}
+            style={{
+              backgroundImage: `url(${
+                (themeMap[theme] || themeMap[defaultTheme]).homeHeaderImageURL
+              }`,
+            }}
           />
         )}
       </div>
       <div className={s.main}>{children}</div>
-      <div className={s.footer}>Global Footer</div>
+      <div className={s.footer}>
+        <GlobalFooter />
+      </div>
     </div>
   )
 }

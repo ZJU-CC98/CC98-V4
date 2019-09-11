@@ -1,7 +1,7 @@
 @import 'var';
 
 $global-header-height: 48px;
-$global-footer-height: 66px;
+$global-footer-height: 140px;
 $main-content-margin: 20px;
 $main-content-height-offset: $global-footer-height + $global-header-height + 2 *
   $main-content-margin;
@@ -42,5 +42,10 @@ $main-content-height-offset: $global-footer-height + $global-header-height + 2 *
 }
 
 .footer {
+  padding-top: 16px;
   grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
