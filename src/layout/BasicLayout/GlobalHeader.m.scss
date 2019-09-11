@@ -14,6 +14,10 @@ $message-icon-background: #6b7178;
   justify-content: center;
 }
 
+.not-home {
+  background-color: $primary;
+}
+
 .root {
   width: $main-content-width;
   display: flex;

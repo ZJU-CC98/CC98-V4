@@ -1,11 +1,13 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import cn from 'classnames'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faBell } from '@fortawesome/free-regular-svg-icons'
 import Tippy from '@tippy.js/react'
 import { RootStore } from 'src/store'
 import { GLOBAL_ACTION_TYPES } from 'src/store/global-actions'
+import { getMe } from 'src/service/user'
 
 import icon from 'src/assets/98LOGO.ico'
 
@@ -15,11 +17,11 @@ import s from './GlobalHeader.m.scss'
 function selector(store: RootStore) {
   return {
     isLogin: store.global.isLogin,
-    user: store.global.currentUser,
+    user: store.global.currentUser || ({} as any),
   }
 }
 
-const GlobalHeader: React.FC = () => {
+const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
   const { isLogin, user } = useSelector(selector)
   const dispatch = useDispatch()
 
@@ -29,8 +31,21 @@ const GlobalHeader: React.FC = () => {
     })
   }
 
+  React.useEffect(() => {
+    getMe().then(payload => {
+      dispatch({
+        type: GLOBAL_ACTION_TYPES.SET_CURRENT_USER,
+        payload,
+      })
+    })
+  }, [])
+
   return (
-    <div className={s.wrapper}>
+    <div
+      className={cn(s.wrapper, {
+        [s.notHome]: !isHome,
+      })}
+    >
       <div className={s.root}>
         <img className={s.logo} src={icon} />
         <h1 className={s.title}>
