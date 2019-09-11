@@ -1,6 +1,9 @@
 // color
 $primary: #{'rgb(var(--primary))'};
+$second: var(--second);
 $border-color: #ccc;
+$text-color-primary: var(--text-color-primary);
+$main-background-color: var(--main-background-color);
 
 // length
 $main-content-width: 1140px;

@@ -1,0 +1,32 @@
+@import 'var';
+
+.root {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  width: 360px;
+}
+
+.p {
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  line-height: 2.3;
+}
+
+.extra-title {
+  font-size: 16px;
+
+  & + & {
+    margin-left: 8px;
+  }
+}
+
+.hot-board {
+  color: $primary;
+  margin-right: 6px;
+}

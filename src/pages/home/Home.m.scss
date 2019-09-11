@@ -1,4 +1,23 @@
-.theme-info {
-  color: var(--text-color);
-  background-color: var(--primary);
+@import 'var';
+
+.root {
+  width: $main-content-width;
+  display: grid;
+  grid-template:
+    'top     right' auto
+    'content right' auto /
+    1fr 300px;
+  grid-gap: 0 20px;
+}
+
+.top {
+  grid-area: top;
+}
+
+.right {
+  grid-area: right;
+}
+
+.content {
+  grid-area: content;
 }

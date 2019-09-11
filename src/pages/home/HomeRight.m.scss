@@ -1,0 +1,57 @@
+@import 'var';
+
+.recommends {
+  background-color: $primary;
+  padding: 16px 20px;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    height: 64px;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    a {
+      color: $text-color-primary;
+    }
+  }
+}
+
+.news {
+  background-color: $second;
+  padding: 24px 20px;
+
+  p {
+    font-size: 12px;
+    line-height: 2.4;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $text-color-primary;
+  }
+
+  a {
+    color: $text-color-primary;
+  }
+}
+
+.statistic {
+  background-color: $second;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    color: $text-color-primary;
+    font-size: 12px;
+    line-height: 1.5;
+    display: inline-flex;
+    justify-content: space-between;
+  }
+}

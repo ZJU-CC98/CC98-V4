@@ -1,16 +1,43 @@
 import React from 'react'
+import { RouteComponentProps, withRouter } from 'react-router'
+import { useSelector } from 'react-redux'
+import { RootStore } from 'src/store'
+import { defaultTheme, themeMap } from 'src/config/theme'
 
-import GlobalHeader from 'src/layout/BasicLayout/GlobalHeader'
+import GlobalHeader from './GlobalHeader'
+import GlobalFooter from './GlobalFooter'
 import s from './index.m.scss'
 
-const BasicLayout: React.FC = ({ children }) => (
-  <div className={s.basicLayoutRoot}>
-    <div className={s.header}>
-      <GlobalHeader />
-    </div>
-    <div className={s.main}>{children}</div>
-    <div className={s.footer}>Global Footer</div>
-  </div>
-)
+function selector(store: RootStore) {
+  return {
+    theme: store.global.theme,
+  }
+}
 
-export default BasicLayout
+const BasicLayout: React.FC<RouteComponentProps> = ({ children, location: { pathname } }) => {
+  const { theme } = useSelector(selector)
+
+  return (
+    <div className={s.basicLayoutRoot}>
+      <div className={s.header}>
+        <GlobalHeader />
+        {pathname === '/' && (
+          <div
+            className={s.headerImage}
+            style={{
+              backgroundImage: `url(${
+                (themeMap[theme] || themeMap[defaultTheme]).homeHeaderImageURL
+              }`,
+            }}
+          />
+        )}
+      </div>
+      <div className={s.main}>{children}</div>
+      <div className={s.footer}>
+        <GlobalFooter />
+      </div>
+    </div>
+  )
+}
+
+export default withRouter(BasicLayout)

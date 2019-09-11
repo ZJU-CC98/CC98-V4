@@ -1,16 +1,15 @@
 @import 'var';
 
 $global-header-height: 48px;
-$global-footer-height: 66px;
+$global-footer-height: 140px;
 $main-content-margin: 20px;
-$global-header-background: rgba(var(--primary), 0.8);
 $main-content-height-offset: $global-footer-height + $global-header-height + 2 *
   $main-content-margin;
 
 .basic-layout-root {
   display: grid;
   grid-template:
-    'head    head      head' $global-header-height
+    'head    head      head' auto
     '.       main         .' auto
     'footer  footer  footer' #{$global-footer-height} /
     1fr $main-content-width 1fr;
@@ -19,9 +18,20 @@ $main-content-height-offset: $global-footer-height + $global-header-height + 2 *
 .header {
   grid-area: head;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: $global-header-background;
+}
+
+.header-image {
+  min-width: $main-content-width;
+  width: 100%;
+  height: 192px;
+  margin-top: -$global-header-height;
+  background-size: auto 192px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 1;
 }
 
 .main {
@@ -32,8 +42,10 @@ $main-content-height-offset: $global-footer-height + $global-header-height + 2 *
 }
 
 .footer {
+  padding-top: 16px;
   grid-area: footer;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }

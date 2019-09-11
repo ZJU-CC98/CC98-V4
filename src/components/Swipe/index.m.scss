@@ -1,0 +1,38 @@
+@import 'var';
+
+$active-color: #fb6165;
+
+.root {
+  position: relative;
+}
+
+.dots {
+  position: absolute;
+  display: flex;
+  bottom: 3px;
+}
+
+.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.right {
+  right: 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid $border-color;
+
+  & + & {
+    margin-left: 8px;
+  }
+}
+
+.current {
+  background-color: $active-color;
+  border-color: $active-color;
+}

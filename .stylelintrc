@@ -5,6 +5,7 @@
     "rule-empty-line-before": ["always", {
       "ignore": ["after-comment", "first-nested"]
     }],
-    "at-rule-no-unknown": null
+    "at-rule-no-unknown": null,
+    "no-descending-specificity": null
   }
 }

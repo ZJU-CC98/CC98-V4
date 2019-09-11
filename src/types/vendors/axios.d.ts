@@ -9,5 +9,6 @@ declare module 'axios' {
 
   interface AxiosInstance {
     (config: AxiosRequestConfig): Promise<any>
+    (url: string): Promise<any>
   }
 }
