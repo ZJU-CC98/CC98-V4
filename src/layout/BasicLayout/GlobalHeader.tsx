@@ -32,12 +32,14 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
   }
 
   React.useEffect(() => {
-    getMe().then(payload => {
-      dispatch({
-        type: GLOBAL_ACTION_TYPES.SET_CURRENT_USER,
-        payload,
+    if (isLogin) {
+      getMe().then(payload => {
+        dispatch({
+          type: GLOBAL_ACTION_TYPES.SET_CURRENT_USER,
+          payload,
+        })
       })
-    })
+    }
   }, [])
 
   return (

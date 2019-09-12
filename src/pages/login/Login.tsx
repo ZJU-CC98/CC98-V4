@@ -13,6 +13,7 @@ import Button from 'src/components/Button'
 import { login } from 'src/service/oauth'
 import { removeLocalStorage, setLocalStorage } from 'src/utils/storage'
 import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
+import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
 import s from './Login.m.scss'
 
@@ -25,6 +26,8 @@ const Login: React.FC<RouteComponentProps> = ({ history }) => {
   const [password, setPassword] = React.useState('')
   const [formInfo, setFormInfo] = React.useState('')
   const dispatch = useDispatch() as Dispatch<GlobalActions | RouterAction>
+
+  useBreadcrumb([])
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault()

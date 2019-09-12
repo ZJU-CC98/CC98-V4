@@ -19,7 +19,7 @@ const HomeTop: React.FC<IHomeTopProps> = ({ data: { announcement, recommendation
     <HomeContainer color="second">
       <Swipe dotPosition="right">
         {recommendationReading.map(item => (
-          <div className={s.recommend}>
+          <div key={item.id} className={s.recommend}>
             <img className={s.img} src={item.imageUrl} />
             <p className={s.title}>{item.title}</p>
             <p className={s.content}>{item.content}</p>

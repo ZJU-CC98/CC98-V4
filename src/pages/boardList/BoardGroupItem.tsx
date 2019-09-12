@@ -19,6 +19,7 @@ const renderMasters = (masters: string[] = []) =>
       <span>主管：</span>
       {masters.map(name => (
         <Link
+          key={name}
           to={{
             pathname: '/search',
             search: stringify({

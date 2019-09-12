@@ -4,6 +4,7 @@ import { IUser } from '@cc98/api'
 import { defaultTheme, themeMap } from 'src/config/theme'
 import THEME from 'src/constants/theme'
 import { getLocalStorage } from 'src/utils/storage'
+import { BreadcrumbItem } from 'src/components/Breadcrumb'
 import { GLOBAL_ACTION_TYPES, GlobalActions } from './global-actions'
 
 export interface IGlobalState {
@@ -11,6 +12,8 @@ export interface IGlobalState {
 
   isLogin: boolean
   currentUser: IUser | null
+
+  breadcrumb: BreadcrumbItem[]
 }
 
 const initIsLogin = !!getLocalStorage('refreshToken')
@@ -21,6 +24,7 @@ const initState: IGlobalState = {
   theme: initTheme,
   isLogin: initIsLogin,
   currentUser: initIsLogin ? initUser : null,
+  breadcrumb: [],
 }
 
 cssVars({
@@ -52,6 +56,14 @@ const reducer = (state = initState, action: GlobalActions) =>
         localStorage.removeItem('accessToken')
         localStorage.removeItem('refreshToken')
         localStorage.removeItem('userInfo')
+
+        return
+      case GLOBAL_ACTION_TYPES.SET_CURRENT_USER:
+        draft.currentUser = action.payload
+
+        return
+      case GLOBAL_ACTION_TYPES.SET_BREADCRUMB:
+        draft.breadcrumb = action.payload
 
         return
       default:

@@ -1,4 +1,7 @@
 declare module '@cc98/api' {
+  import PRIVILEGE from 'src/constants/Privilege'
+  import LOCK_STATE from 'src/constants/LockState'
+
   export interface IUser {
     /**
      * 用户名
@@ -57,7 +60,7 @@ declare module '@cc98/api' {
     /**
      * 全站权限等级
      */
-    privilege: string
+    privilege: PRIVILEGE
     /**
      * 注册时间
      */
@@ -73,7 +76,7 @@ declare module '@cc98/api' {
     /**
      * 用户锁定状态：0正常  1锁定  2屏蔽  3全站TP
      */
-    lockState: 0 | 1 | 2 | 3
+    lockState: LOCK_STATE
     /**
      * 风评
      */
@@ -126,5 +129,9 @@ declare module '@cc98/api' {
      * 获得的赞
      */
     receivedLikeCount: number
+    /**
+     * 是否认证
+     */
+    isVerified: boolean
   }
 }

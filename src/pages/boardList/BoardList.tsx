@@ -2,6 +2,7 @@ import React from 'react'
 import { IBoardGroup } from '@cc98/api'
 import { getAllBoard } from 'src/service/board'
 
+import useBreadcrumb from 'src/hooks/useBreadcrumb'
 import BoardGroupList from './BoardGroupItem'
 
 const simpleBoardIds = [2, 29, 35, 37, 33, 604]
@@ -13,6 +14,8 @@ const BoardList: React.FC = () => {
   React.useEffect(() => {
     getAllBoard().then(setData)
   }, [])
+
+  useBreadcrumb([])
 
   return (
     <>

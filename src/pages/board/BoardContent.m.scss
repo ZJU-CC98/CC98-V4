@@ -1,0 +1,19 @@
+@import 'var';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.main {
+  border: 1px solid $primary;
+  width: 100%;
+}
+
+.title {
+  background-color: $primary;
+  color: $text-color-primary;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,86 @@
+@import 'var';
+
+$tag-label-background: gray;
+$tag-border-radius: 4px;
+
+.root {
+  background-color: $main-background-color;
+  padding: 12px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: $primary;
+}
+
+.board-name {
+  margin-left: 16px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.divider {
+  color: $border-color;
+  margin: 0 8px 0 16px;
+}
+
+.board-info {
+  font-size: 14px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.board-master {
+  font-size: 12px;
+
+  & + & {
+    margin-left: 8px;
+  }
+}
+
+.board-status {
+  font-size: 12px;
+  line-height: 1.8;
+  margin-right: 8px;
+  color: $text-color-primary;
+
+  p + p {
+    margin-top: 8px;
+  }
+
+  span {
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+  }
+
+  &-label {
+    border-top-left-radius: $tag-border-radius;
+    border-bottom-left-radius: $tag-border-radius;
+    background-color: $tag-label-background;
+  }
+
+  &-content {
+    border-top-right-radius: $tag-border-radius;
+    border-bottom-right-radius: $tag-border-radius;
+    background-color: $primary;
+  }
+}
+
+.board-button {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.big-paper {
+  margin: 24px 16px 0;
+  border-top: 1px solid $border-color;
+  padding-top: 24px;
+}
