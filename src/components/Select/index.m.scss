@@ -1,12 +1,13 @@
 @import 'var';
 
 $select-default-height: 32px;
-$active-background: rgba(var(--primary), 0.8);
+$active-background: #e6f7ff;
 $arrow-color: black;
 
 .container {
   color: var(--text-color);
   background-color: var(--main-background-color);
+  border-radius: 5px;
   cursor: pointer;
   height: $select-default-height;
   line-height: $select-default-height;
@@ -60,4 +61,9 @@ $arrow-color: black;
       background-color: var(--main-background-color);
     }
   }
+}
+
+.popover-container {
+  max-height: 200px;
+  overflow-y: scroll;
 }

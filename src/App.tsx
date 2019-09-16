@@ -10,6 +10,7 @@ import BasicLayout from 'src/layout/BasicLayout'
 import Home from 'src/pages/home/Home'
 import Login from 'src/pages/login/Login'
 import BoardList from 'src/pages/boardList/BoardList'
+import Board from 'src/pages/board/Board'
 
 export const App: React.FC = () => (
   <Provider store={store}>
@@ -18,6 +19,7 @@ export const App: React.FC = () => (
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/boardList" component={BoardList} />
+          <Route path="/board/:id/:page?" component={Board} />
           <Route path="/signin" component={Login} />
           <Route path="/logon" component={Login} />
           <Route path="*" component={() => <div>Not Fount</div>} />

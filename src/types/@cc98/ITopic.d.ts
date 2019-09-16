@@ -80,12 +80,16 @@ declare module '@cc98/api' {
      */
     dislikeCount: number
 
-    highlightInfo: any
-
     tag1: number
 
     tag2: number
 
     isInternalOnly: boolean
+
+    highlightInfo?: {
+      color: string
+      isBold: boolean
+      isItalic: boolean
+    }
   }
 }

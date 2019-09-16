@@ -1,29 +1,32 @@
 import { uniqBy } from 'lodash'
 import ICacheConfigItem, { IdType } from 'src/types/ICacheConfigItem'
+import { cacheVersion } from 'src/config/cache'
 
 export const shouldUseIndexedDb = !!window.indexedDB
 
 // don't export db, make it private
 let db: IDBDatabase | undefined
 
-const version = 1
 const dbName = 'cc98-v4'
 
 export function initIndexedDb(cacheConfigs: ICacheConfigItem[]) {
   return new Promise(resolve => {
     if (shouldUseIndexedDb && cacheConfigs.length > 0) {
-      const req = indexedDB.open(dbName, version)
+      const req = indexedDB.open(dbName, cacheVersion)
 
       req.onupgradeneeded = () => {
         uniqBy(cacheConfigs, 'namespace')
           .filter(({ namespace }) => !req.result.objectStoreNames.contains(namespace))
-          .forEach(({ namespace, indexNames }) => {
+          .forEach(({ namespace, indexNames, idKey = 'id' }) => {
+            const keyPath = `content.${idKey}`
             // 初始化
-            const store = req.result.createObjectStore(namespace)
+            const store = req.result.createObjectStore(namespace, {
+              keyPath,
+            })
 
             if (indexNames) {
               indexNames.forEach(indexName =>
-                store.createIndex(indexName, indexName, { unique: true })
+                store.createIndex(indexName, `content.${indexName}`, { unique: true })
               )
             }
           })
@@ -40,12 +43,7 @@ export function initIndexedDb(cacheConfigs: ICacheConfigItem[]) {
   })
 }
 
-export function query(
-  namespace: string,
-  id: IdType,
-  expirationTime: number,
-  useIndex?: string
-): Promise<any> {
+export function query(namespace: string, id: IdType, useIndex?: string): Promise<any> {
   if (!db) {
     return Promise.reject(new Error('no db found'))
   }
@@ -55,7 +53,7 @@ export function query(
     const store = t.objectStore(namespace)
     const req = useIndex ? store.index(useIndex).get(id) : store.get(id)
     req.onsuccess = () => {
-      if (req.result && req.result.addTime + expirationTime > Date.now()) {
+      if (req.result && req.result.expirationTime > Date.now()) {
         resolve(req.result.content)
       } else if (req.result) {
         reject(new Error('expired'))
@@ -68,16 +66,11 @@ export function query(
   })
 }
 
-export function queryAll(
-  namespace: string,
-  ids: IdType[],
-  expirationTime: number,
-  useIndex?: string
-): Promise<any[]> {
-  return Promise.all(ids.map(id => query(namespace, id, expirationTime, useIndex).catch(() => id)))
+export function queryAll(namespace: string, ids: IdType[], useIndex?: string): Promise<any[]> {
+  return Promise.all(ids.map(id => query(namespace, id, useIndex).catch(() => id)))
 }
 
-export function addItem(namespace: string, content: any) {
+export function addItem(namespace: string, content: any, expirationTime: number) {
   if (!db) {
     return Promise.reject(new Error('db not fount'))
   }
@@ -86,7 +79,7 @@ export function addItem(namespace: string, content: any) {
   const store = t.objectStore(namespace)
   const req = store.put({
     content,
-    addTime: Date.now(),
+    expirationTime: Date.now() + expirationTime,
   })
   return new Promise((resolve, reject) => {
     req.onsuccess = e => resolve(e)

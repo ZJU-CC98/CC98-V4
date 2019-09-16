@@ -49,6 +49,8 @@ const HeaderSearch: React.FC<RouteComponentProps> = ({ location, history }) => {
   return (
     <div className={s.root}>
       <Select
+        placement="top-start"
+        showOffset={false}
         value={type}
         onChange={setType as (value: string) => void}
         data={types.map(item => ({

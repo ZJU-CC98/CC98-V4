@@ -2,10 +2,10 @@ import axios from 'axios'
 import { IUser } from '@cc98/api'
 import { getLocalStorage, setLocalStorage } from 'src/utils/storage'
 
-export async function getMe() {
+export async function getMe(ignoreCache = false) {
   const storageUser = getLocalStorage('userInfo')
 
-  if (storageUser) {
+  if (storageUser && !ignoreCache) {
     return storageUser
   }
 

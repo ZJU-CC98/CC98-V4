@@ -6,6 +6,7 @@ Notification.newInstance({}, n => {
   notification = n
 })
 
-const { notice } = notification!
+// eslint-disable-next-line
+export const notice = notification!.notice
 
 export default notice
