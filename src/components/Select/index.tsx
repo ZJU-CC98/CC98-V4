@@ -5,10 +5,10 @@ import Tippy, { TippyProps } from '@tippy.js/react'
 import useClickOutside from 'src/hooks/useClickOutside'
 import s from './index.m.scss'
 
-interface ISelectProps {
-  value: string
-  onChange: (value: string) => void
-  data: { value: string; label: string }[] | string[]
+interface ISelectProps<T extends string | number> {
+  value: T
+  onChange: (value: T) => void
+  data: { value: T; label: string }[] | string[]
   className?: string
   popoverClassName?: string
   itemClassName?: string
@@ -16,9 +16,10 @@ interface ISelectProps {
   width?: number
   popWidth?: number
   placement?: TippyProps['placement']
+  showOffset?: boolean
 }
 
-const Select: React.FC<ISelectProps> = ({
+function Select<T extends string | number>({
   value,
   onChange,
   data,
@@ -28,8 +29,9 @@ const Select: React.FC<ISelectProps> = ({
   showArrow = true,
   width = 160,
   popWidth = width,
-  placement = 'top-start',
-}) => {
+  placement = 'bottom-start',
+  showOffset = true,
+}: ISelectProps<T>) {
   const innerData =
     data.length && typeof data[0] === 'string'
       ? (data as string[]).map(label => ({ label, value: label }))
@@ -51,12 +53,16 @@ const Select: React.FC<ISelectProps> = ({
       visible={visible}
       onHide={() => setVisible(false)}
       interactive
-      offset="0, -10"
+      offset={showOffset ? '0 0' : '0, -10'}
       placement={placement}
       animation="perspective"
       hideOnClick={false}
       content={
-        <div ref={pop} style={{ width: popWidth }} className={cn(popoverClassName)}>
+        <div
+          ref={pop}
+          style={{ width: popWidth }}
+          className={cn(s.popoverContainer, popoverClassName)}
+        >
           {innerData.map(item => (
             <div
               className={cn(
@@ -68,7 +74,7 @@ const Select: React.FC<ISelectProps> = ({
               )}
               key={item.value}
               onClick={() => {
-                onChange(item.value)
+                onChange(item.value as T)
                 setVisible(false)
               }}
             >

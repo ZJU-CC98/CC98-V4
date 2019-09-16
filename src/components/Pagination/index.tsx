@@ -8,7 +8,7 @@ import Button from 'src/components/Button'
 import s from './index.m.scss'
 
 interface IPaginationProps {
-  current: number
+  current?: number
   // 页数
   total: number
   onChange: (targetPage: number) => void
@@ -27,8 +27,35 @@ const renderButton = (page: number, onChange: (page: number) => void, current: n
   </Button>
 )
 
-const Pagination: React.FC<IPaginationProps> = ({ current, total, onChange }) => {
-  const { start, end, middle = [] } = getShowPage(current, total)
+const Pagination: React.FC<IPaginationProps> = ({
+  current = 1,
+  total,
+  onChange,
+  type = 'normal',
+}) => {
+  const { start, end, middle = [] } = getShowPage(current, total, type)
+
+  if (type === 'mini') {
+    return (
+      <p className={s.mini}>
+        {start.map(page => (
+          <span key={page} onClick={() => onChange(page)}>
+            {page}
+          </span>
+        ))}
+        {!!end.length && (
+          <>
+            <span className={s.miniDivider}>...</span>
+            {end.map(page => (
+              <span key={page} onClick={() => onChange(page)}>
+                {page}
+              </span>
+            ))}
+          </>
+        )}
+      </p>
+    )
+  }
 
   return (
     <div className={s.root}>
@@ -61,7 +88,21 @@ const Pagination: React.FC<IPaginationProps> = ({ current, total, onChange }) =>
 
 export default Pagination
 
-function getShowPage(current: number, total: number) {
+function getShowPage(current: number, total: number, type: 'normal' | 'mini') {
+  if (type === 'mini') {
+    if (total < 8) {
+      return {
+        start: range(1, total + 1),
+        end: [],
+      }
+    }
+
+    return {
+      start: range(1, 5),
+      end: range(total - 2, total + 1),
+    }
+  }
+
   if (total < 10) {
     return {
       start: range(1, total + 1),

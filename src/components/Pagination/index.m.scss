@@ -1,5 +1,7 @@
 @import 'var';
 
+$mini-text-color: #79b8ca;
+
 .root {
   display: flex;
   align-items: center;
@@ -26,4 +28,19 @@
   line-height: 1.5;
   height: 32px;
   margin: 0 8px;
+}
+
+.mini {
+  font-size: 14px;
+
+  & > span {
+    margin: 3px;
+    color: $mini-text-color;
+    cursor: pointer;
+  }
+
+  .mini-divider {
+    cursor: initial;
+    color: $text-color;
+  }
 }

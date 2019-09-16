@@ -5,11 +5,21 @@ import { push } from 'connected-react-router'
 import { IBoard, ITagGroup, ITopic } from '@cc98/api'
 import Pagination from 'src/components/Pagination'
 import TopicItem from 'src/pages/board/TopicItem'
-import { getBoardTagData, getBoardTopicList, getBoardTopTopicList } from 'src/service/board'
+import {
+  getBoardBestTopicList,
+  getBoardSaveTopicList,
+  getBoardTagData,
+  getBoardTopicByTag,
+  getBoardTopicList,
+} from 'src/service/board'
+import Select from 'src/components/Select'
 
+import TopTopicList from './TopTopicList'
 import s from './BoardContent.m.scss'
 
 const PAGE_SIZE = 20
+const TAG_ALL = -1
+const TAG_ALL_DESC = '全部'
 
 interface IBoardContentMatch {
   page?: string
@@ -20,11 +30,23 @@ interface IBoardContentProps extends RouteComponentProps<IBoardContentMatch> {
   boardId: string
 }
 
+enum CONTENT_TYPE {
+  ALL = 'ALL',
+  BEST = 'BEST',
+  SAVE = 'SAVE',
+}
+
 const BoardContent: React.FC<IBoardContentProps> = ({ boardInfo, boardId, match }) => {
   const dispatch = useDispatch()
   const [data, setData] = React.useState<ITopic[]>([])
   const [total, setTotal] = React.useState(1)
   const [tagData, setTagData] = React.useState<ITagGroup[]>([])
+  const [tag1, setTag1] = React.useState(TAG_ALL)
+  const [tag2, setTag2] = React.useState(TAG_ALL)
+  const [contentType, setContentType] = React.useState(CONTENT_TYPE.ALL)
+
+  const tagData1 = (tagData[0] && tagData[0].tags) || []
+  const tagData2 = (tagData[1] && tagData[1].tags) || []
 
   const currentPage = parseInt(match.params.page || '1', 10)
 
@@ -41,10 +63,43 @@ const BoardContent: React.FC<IBoardContentProps> = ({ boardInfo, boardId, match 
   }, [boardInfo, boardId])
 
   React.useEffect(() => {
-    if (currentPage === 1) {
-      Promise.all([getBoardTopTopicList(boardId), getBoardTopicList(boardId, PAGE_SIZE, 0)]).then(
-        ([hot, normal]) => {
-          setData([...hot, ...normal])
+    setTag1(TAG_ALL)
+    setTag2(TAG_ALL)
+    setContentType(CONTENT_TYPE.ALL)
+  }, [boardId])
+
+  React.useEffect(() => {
+    if (tag1 !== TAG_ALL || tag2 !== TAG_ALL) {
+      getBoardTopicByTag(
+        boardId,
+        PAGE_SIZE,
+        (currentPage - 1) * PAGE_SIZE,
+        tag1 === TAG_ALL ? undefined : tag1,
+        tag2 === TAG_ALL ? undefined : tag2
+      ).then(({ count, topics }) => {
+        setData(topics)
+        setTotal(Math.ceil(count / PAGE_SIZE))
+      })
+
+      return
+    }
+
+    if (contentType === CONTENT_TYPE.SAVE) {
+      getBoardSaveTopicList(boardId, PAGE_SIZE, (currentPage - 1) * PAGE_SIZE).then(
+        ({ count, topics }) => {
+          setTotal(Math.ceil(count / PAGE_SIZE))
+          setData(topics)
+        }
+      )
+
+      return
+    }
+
+    if (contentType === CONTENT_TYPE.BEST) {
+      getBoardBestTopicList(boardId, PAGE_SIZE, (currentPage - 1) * PAGE_SIZE).then(
+        ({ count, topics }) => {
+          setTotal(Math.ceil(count / PAGE_SIZE))
+          setData(topics)
         }
       )
 
@@ -52,7 +107,7 @@ const BoardContent: React.FC<IBoardContentProps> = ({ boardInfo, boardId, match 
     }
 
     getBoardTopicList(boardId, PAGE_SIZE, (currentPage - 1) * PAGE_SIZE).then(setData)
-  }, [boardId, currentPage])
+  }, [boardId, currentPage, tag1, tag2, contentType])
 
   return (
     <div className={s.root}>
@@ -63,13 +118,44 @@ const BoardContent: React.FC<IBoardContentProps> = ({ boardInfo, boardId, match 
       />
       <div className={s.main}>
         <div className={s.title}>
-          <p>全部</p>
-          <p>精华</p>
-          <p>保存</p>
-          {tagData.length}
+          <p onClick={() => setContentType(CONTENT_TYPE.ALL)} className={s.action}>
+            全部
+          </p>
+          <p onClick={() => setContentType(CONTENT_TYPE.BEST)} className={s.action}>
+            精华
+          </p>
+          <p onClick={() => setContentType(CONTENT_TYPE.SAVE)} className={s.action}>
+            保存
+          </p>
+          {tagData[0] && (
+            <Select
+              className={s.action}
+              value={tag1}
+              onChange={setTag1}
+              data={mapTagData(tagData[0])}
+              width={120}
+            />
+          )}
+          {tagData[1] && (
+            <Select
+              className={s.action}
+              value={tag2}
+              onChange={setTag2}
+              data={mapTagData(tagData[1])}
+              width={120}
+            />
+          )}
+          <p style={{ flex: 1 }} />
+          <p className={s.author}>作者</p>
+          <p className={s.visit}>点击</p>
+          <p className={s.reply}>回复</p>
+          <p className={s.lastReply}>最后回复</p>
         </div>
+        {currentPage === 1 && (
+          <TopTopicList tagData1={tagData1} tagData2={tagData2} boardId={boardId} />
+        )}
         {data.map(item => (
-          <TopicItem data={item} key={item.id} />
+          <TopicItem tagData1={tagData1} tagData2={tagData2} data={item} key={item.id} />
         ))}
       </div>
       <Pagination
@@ -82,3 +168,10 @@ const BoardContent: React.FC<IBoardContentProps> = ({ boardInfo, boardId, match 
 }
 
 export default withRouter(BoardContent)
+
+function mapTagData(tagData: ITagGroup) {
+  return [{ id: TAG_ALL, name: TAG_ALL_DESC }, ...tagData.tags].map(({ id, name }) => ({
+    label: name,
+    value: id,
+  }))
+}
