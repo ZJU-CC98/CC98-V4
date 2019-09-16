@@ -45,7 +45,7 @@ axios.interceptors.request.use(baseConfig => {
         setLocalStorage('accessToken', newToken, expires_in)
 
         baseConfig.headers = baseConfig.headers || {}
-        baseConfig.headers.Authorization = accessToken
+        baseConfig.headers.Authorization = newToken
         return baseConfig
       })
     }

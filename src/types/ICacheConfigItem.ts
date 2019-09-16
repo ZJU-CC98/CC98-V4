@@ -16,12 +16,24 @@ export default interface ICacheConfigItem {
   // 默认 id
   idKey?: string
 
+  /**
+   * /user/:id         只返回一个结果  single
+   * /user?id=1&id=2   返回数组       multiply
+   */
+  type: 'single' | 'multiply'
+
   // 从axios#config中获取到当前请求的query key
   // 一般来说是资源的id
   // 有时候也会是name，例如/user/name/:name接口
   getRequestQueryKey?: (config: AxiosRequestConfig) => IdType[]
 
-  getDataFromResult: (result: AxiosResponse) => any[]
+  /**
+   * 默认  ({ data }) => data
+   * @param result
+   */
+  getDataFromResult?: (result: AxiosResponse) => any
+
+  getDataFormIndexedDb?: (data: any) => any
 
   // 为缓存中不存在的id生成请求
   // 默认直接使用当次请求的config

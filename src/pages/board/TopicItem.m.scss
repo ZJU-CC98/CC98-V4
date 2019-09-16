@@ -1,0 +1,78 @@
+$even-item-color: #ebf5f8;
+$odd-item-color: white;
+$item-hover-color: #eaeaea;
+
+.root {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  height: 48px;
+
+  &:nth-child(even) {
+    background-color: $even-item-color;
+  }
+
+  &:nth-child(odd) {
+    background-color: $odd-item-color;
+  }
+
+  &:hover {
+    background-color: $item-hover-color;
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  margin: 16px;
+}
+
+.title {
+  display: inline-flex;
+  font-size: 16px;
+  align-items: center;
+  max-width: 600px;
+  width: 610px;
+
+  a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.last-reply {
+  max-width: 200px;
+  width: 200px;
+  margin-right: 12px;
+  text-align: right;
+}
+
+.count {
+  width: 58px;
+  height: 20px;
+  border-radius: 2px;
+  margin: 0 10px;
+  border-style: solid;
+  border-width: 1px;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+}
+
+.reply-count {
+  border: 1px solid #87e8de;
+  background-color: #e6fffb;
+  color: #13c2c2;
+}
+
+.hit-count {
+  color: #1890ff;
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+}
+
+.user {
+  width: 120px;
+  max-width: 120px;
+}

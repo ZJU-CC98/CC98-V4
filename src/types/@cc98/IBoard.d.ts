@@ -56,6 +56,10 @@ declare module '@cc98/api' {
      * 是否能投票
      */
     canVote: boolean
+    /**
+     * 大字报
+     */
+    bigPaper?: string
   }
 
   export type IBasicBoard = Pick<

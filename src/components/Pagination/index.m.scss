@@ -1,0 +1,46 @@
+@import 'var';
+
+$mini-text-color: #79b8ca;
+
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  height: 32px;
+  min-width: 32px;
+  padding: 0 6px;
+  cursor: pointer;
+  font-size: 14px;
+
+  & + & {
+    margin-left: 8px;
+  }
+}
+
+.current {
+  border-color: $primary;
+  color: $primary;
+}
+
+.divider {
+  line-height: 1.5;
+  height: 32px;
+  margin: 0 8px;
+}
+
+.mini {
+  font-size: 14px;
+
+  & > span {
+    margin: 3px;
+    color: $mini-text-color;
+    cursor: pointer;
+  }
+
+  .mini-divider {
+    cursor: initial;
+    color: $text-color;
+  }
+}

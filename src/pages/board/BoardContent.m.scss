@@ -1,0 +1,50 @@
+@import 'var';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.main {
+  border: 1px solid $primary;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.title {
+  background-color: $primary;
+  color: $text-color-primary;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding-left: 16px;
+  font-size: 14px;
+}
+
+.action {
+  cursor: pointer;
+
+  & + & {
+    margin-left: 16px;
+  }
+}
+
+.last-reply {
+  width: 200px;
+  text-align: center;
+}
+
+.reply {
+  width: 80px;
+  text-align: center;
+}
+
+.visit {
+  width: 80px;
+  text-align: center;
+}
+
+.author {
+  width: 120px;
+}

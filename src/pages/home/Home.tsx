@@ -1,6 +1,7 @@
 import React from 'react'
 import { getIndexConfig } from 'src/service/config'
 import { IConfig } from '@cc98/api'
+import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
 import HomeRight from './HomeRight'
 import HomeTop from './HomeTop'
@@ -44,6 +45,8 @@ const Home: React.FC = () => {
   React.useEffect(() => {
     getIndexConfig().then(setData)
   }, [])
+
+  useBreadcrumb([])
 
   return (
     <div className={s.root}>
