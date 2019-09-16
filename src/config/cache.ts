@@ -6,7 +6,7 @@ import ICacheConfigItem from 'src/types/ICacheConfigItem'
  * 更改缓存结构时给 version 加一
  * 否则新添加的缓存不会生效
  */
-export const cacheVersion = 1
+export const cacheVersion = 2
 
 const boardGroupIds = [763, 3, 5, 6, 43, 24, 27, 2, 35, 37, 29, 604, 33]
 
