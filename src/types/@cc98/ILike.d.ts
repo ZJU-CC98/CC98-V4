@@ -1,9 +1,7 @@
 declare module '@cc98/api' {
-  type NONE = 0
-  type LIKE = 1
-  type DISLIKE = 2
+  import LIKE_STATE from 'src/constants/LikeState'
 
-  export type ILikeState = NONE | LIKE | DISLIKE
+  export type ILikeState = LIKE_STATE
 
   export interface ILike {
     /**

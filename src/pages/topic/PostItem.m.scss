@@ -1,0 +1,100 @@
+@import 'var';
+
+$content-top-background: #d4e5f5;
+$content-top-color: #666;
+
+.root {
+  margin: 16px 0;
+  display: flex;
+  border: 2px solid $primary;
+  width: $main-content-width;
+  min-width: $main-content-width;
+  max-width: $main-content-width;
+  position: relative;
+}
+
+.floor {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  background-color: $primary;
+  color: $text-color-primary;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user {
+  background-color: $primary;
+  color: $text-color-primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+  min-height: 240px;
+
+  p + p {
+    margin: 12px;
+  }
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 30px;
+}
+
+.user-name {
+  font-size: 18px;
+
+  span + span {
+    margin-left: 12px;
+  }
+}
+
+.user-action {
+  display: inline-flex;
+  padding: 2px 6px;
+  margin: 0 8px;
+  font-size: 14px;
+  border-radius: 1em;
+  border: 1px solid $text-color-primary;
+}
+
+.content-root {
+  flex: 1;
+  background-color: $main-background-color;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8px;
+}
+
+.content-top {
+  background-color: $content-top-background;
+  color: $content-top-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  padding: 0 6px;
+  font-size: 14px;
+}
+
+.content-top-info {
+  margin: 2px;
+}
+
+.content {
+  padding: 16px;
+  flex: 1;
+}
+
+.qmd {
+  border-top: 1px solid $primary;
+  margin: 0 32px 0 16px;
+  padding: 16px;
+}

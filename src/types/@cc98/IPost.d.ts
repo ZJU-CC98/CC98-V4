@@ -46,6 +46,10 @@ declare module '@cc98/api' {
      */
     isLZ: boolean
     /**
+     * 是否是登录用户本人
+     */
+    isMe?: boolean
+    /**
      * 最后更新作者
      */
     lastUpdateAuthor: any
@@ -97,5 +101,9 @@ declare module '@cc98/api' {
      * 用户名
      */
     userName: string
+    /**
+     * 追踪时才会有
+     */
+    count?: number
   }
 }

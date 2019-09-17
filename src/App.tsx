@@ -11,6 +11,7 @@ import Home from 'src/pages/home/Home'
 import Login from 'src/pages/login/Login'
 import BoardList from 'src/pages/boardList/BoardList'
 import Board from 'src/pages/board/Board'
+import Topic from 'src/pages/topic/Topic'
 
 export const App: React.FC = () => (
   <Provider store={store}>
@@ -22,12 +23,8 @@ export const App: React.FC = () => (
           <Route path="/board/:id/:page?" component={Board} />
           <Route path="/signin" component={Login} />
           <Route path="/logon" component={Login} />
-          <Route // TODO remove
-            path="/error"
-            component={() => {
-              throw new Error('test')
-            }}
-          />
+          <Route path="/topic/:topicId/postId/:postId/page:?" component={Topic} />
+          <Route path="/topic/:topicId/:page?" component={Topic} />
           <Route path="*" component={() => <div>Not Fount</div>} />
         </Switch>
       </BasicLayout>
