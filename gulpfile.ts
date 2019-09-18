@@ -28,8 +28,8 @@ async function getProdWebpackConfig() {
 }
 
 async function checkGitChanges() {
-  if (process.env.HEAD) {
-    log('[checkGitChanges]', 'process.env.HEAD detected, abort git checking')
+  if (process.env.COMMIT_REF) {
+    log('[checkGitChanges]', 'process.env.COMMIT_REF detected, abort git checking')
 
     return
   }
@@ -48,7 +48,7 @@ async function setEnv(env: ENV, cc98Env: CC98_ENV) {
   process.env.NODE_ENV = env
   process.env.CC98_ENV = cc98Env
   process.env.GIT_HEAD =
-    process.env.HEAD ||
+    process.env.COMMIT_REF ||
     childProcess
       .execSync('git rev-parse HEAD')
       .toString()
