@@ -59,6 +59,7 @@ const config: webpack.Configuration = {
 
     new webpack.DefinePlugin({
       'process.env.CC98_ENV': JSON.stringify(process.env.CC98_ENV),
+      'process.env.GIT_HEAD': JSON.stringify(process.env.GIT_HEAD),
     }),
   ],
 

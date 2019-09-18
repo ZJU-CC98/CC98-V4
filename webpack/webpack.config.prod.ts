@@ -1,6 +1,5 @@
 import merge from 'webpack-merge'
 import TerserPlugin from 'terser-webpack-plugin'
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 // @ts-ignore
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 // @ts-ignore
@@ -20,9 +19,6 @@ const config = merge({}, commonConfig, {
   },
 
   plugins: [
-    new CleanWebpackPlugin({
-      verbose: true,
-    }),
     new CopyWebpackPlugin([
       {
         from: 'public',
