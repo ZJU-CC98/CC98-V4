@@ -35,6 +35,7 @@ const config = merge({}, commonConfig, {
     new webpack.SourceMapDevToolPlugin({
       test: [/\.[tj]sx?$/],
       filename: '[name]-[chunkhash:8].js.map',
+      append: false,
     }),
   ],
 })
