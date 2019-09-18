@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
 import { outputPath, srcPath } from './constants'
 import getCssLoaders from './getCssLoaders'
+import babelConfig from './babel.config'
 
 const config: webpack.Configuration = {
   entry: ['./src/sentry.ts', './src/polyfill.ts', 'react-hot-loader/patch', './src/index.tsx'],
@@ -28,6 +29,7 @@ const config: webpack.Configuration = {
         test: /\.tsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
+        options: babelConfig,
       },
       {
         test: /\.m\.scss$/,

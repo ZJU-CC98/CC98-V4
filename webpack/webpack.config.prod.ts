@@ -1,21 +1,27 @@
+import webpack from 'webpack'
 import merge from 'webpack-merge'
 import TerserPlugin from 'terser-webpack-plugin'
 // @ts-ignore
 import CopyWebpackPlugin from 'copy-webpack-plugin'
-// @ts-ignore
-import SentryWebpackPlugin from '@sentry/webpack-plugin'
 
 import commonConfig from './webpack.config.common'
 
 const config = merge({}, commonConfig, {
   mode: 'production',
 
+  devtool: false,
+
   output: {
     filename: '[name]-[chunkhash:8].js',
+    sourceMapFilename: '[name]-[chunkhash:8].js.map',
   },
 
   optimization: {
-    minimizer: [new TerserPlugin()],
+    minimizer: [
+      new TerserPlugin({
+        sourceMap: true,
+      }),
+    ],
   },
 
   plugins: [
@@ -25,9 +31,10 @@ const config = merge({}, commonConfig, {
         to: '.',
       },
     ]),
-    new SentryWebpackPlugin({
-      include: 'src',
-      ignore: ['node_modules', 'webpack'],
+
+    new webpack.SourceMapDevToolPlugin({
+      test: [/\.[tj]sx?$/],
+      filename: '[name]-[chunkhash:8].js.map',
     }),
   ],
 })

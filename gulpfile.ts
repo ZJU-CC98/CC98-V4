@@ -5,8 +5,12 @@ import WebpackDevServer from 'webpack-dev-server'
 import log from 'fancy-log'
 import del from 'del'
 import PluginError from 'plugin-error'
+//@ts-ignore
+import SentryCli from '@sentry/cli'
 
 import { outputPath } from './webpack/constants'
+
+const sentryCLi = new SentryCli()
 
 enum ENV {
   DEVELOPMENT = 'DEVELOPMENT',
@@ -62,20 +66,23 @@ async function setEnv(env: ENV, cc98Env: CC98_ENV) {
 
 async function build(done: () => void) {
   const config = await getProdWebpackConfig()
-  webpack(config, (err, stats) => {
-    if (err) {
-      throw new PluginError('webpack:build', err)
-    }
+  const compiler = webpack(config)
+  return new Promise((resolve, reject) => {
+    compiler.run((err, stats) => {
+      if (err) {
+        reject(new PluginError('webpack:build', err))
+      }
 
-    log(
-      '[webpack:build-dev]',
-      stats.toString({
-        colors: true,
-      })
-    )
+      log(
+        '[webpack:build-dev]',
+        stats.toString({
+          colors: true,
+        })
+      )
 
-    done()
-  })
+      resolve()
+    })
+  }).then(done)
 }
 
 async function dev() {
@@ -100,8 +107,20 @@ async function clear() {
   await del([outputPath])
 }
 
+async function uploadSourceMap() {
+  console.log(sentryCLi)
+  // await sentryCLi.releases.new(process.env.GIT_HEAD)
+  await sentryCLi.releases.uploadSourceMaps(process.env.GIT_HEAD, {
+    include: [outputPath],
+  })
+}
+
+async function clearSourceMap() {
+  await del([`${outputPath}/*.map`])
+}
+
 function getProdTasks(cc98Env: CC98_ENV) {
-  return gulp.series(checkGitChanges, clear, setInternalEnv, build)
+  return gulp.series(checkGitChanges, clear, setInternalEnv, build, uploadSourceMap, clearSourceMap)
 
   async function setInternalEnv() {
     await setEnv(ENV.PRODUCTION, cc98Env)
