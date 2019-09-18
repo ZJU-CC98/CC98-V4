@@ -3,6 +3,8 @@ import TerserPlugin from 'terser-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 // @ts-ignore
 import CopyWebpackPlugin from 'copy-webpack-plugin'
+// @ts-ignore
+import SentryWebpackPlugin from '@sentry/webpack-plugin'
 
 import commonConfig from './webpack.config.common'
 
@@ -27,6 +29,10 @@ const config = merge({}, commonConfig, {
         to: '.',
       },
     ]),
+    new SentryWebpackPlugin({
+      include: 'src',
+      ignore: ['node_modules', 'webpack'],
+    }),
   ],
 })
 
