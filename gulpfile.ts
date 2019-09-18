@@ -28,6 +28,12 @@ async function getProdWebpackConfig() {
 }
 
 async function checkGitChanges() {
+  if (process.env.HEAD) {
+    log('[checkGitChanges]', 'process.env.HEAD detected, abort git checking')
+
+    return
+  }
+
   try {
     childProcess.execSync('git diff-index --quiet HEAD --')
   } catch (e) {
@@ -41,10 +47,17 @@ async function checkGitChanges() {
 async function setEnv(env: ENV, cc98Env: CC98_ENV) {
   process.env.NODE_ENV = env
   process.env.CC98_ENV = cc98Env
-  process.env.GIT_HEAD = childProcess
-    .execSync('git rev-parse HEAD')
-    .toString()
-    .trim()
+  process.env.GIT_HEAD =
+    process.env.HEAD ||
+    childProcess
+      .execSync('git rev-parse HEAD')
+      .toString()
+      .trim()
+
+  log(
+    '[setEnv]',
+    `using env NODE_ENV=${process.env.NODE_ENV} CC98_ENV=${process.env.CC98_ENV} GIT_HEAD=${process.env.GIT_HEAD}`
+  )
 }
 
 async function build(done: () => void) {
@@ -52,7 +65,6 @@ async function build(done: () => void) {
   webpack(config, (err, stats) => {
     if (err) {
       throw new PluginError('webpack:build', err)
-      return
     }
 
     log(
@@ -78,7 +90,6 @@ async function dev() {
   server.listen(option.port!, option.host!, err => {
     if (err) {
       throw new PluginError('webpack:dev', err)
-      return
     }
 
     log('[webpack:dev-server]', `dev server listening on port ${option.port}`)
