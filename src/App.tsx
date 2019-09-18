@@ -22,6 +22,12 @@ export const App: React.FC = () => (
           <Route path="/board/:id/:page?" component={Board} />
           <Route path="/signin" component={Login} />
           <Route path="/logon" component={Login} />
+          <Route // TODO remove
+            path="/error"
+            component={() => {
+              throw new Error('test')
+            }}
+          />
           <Route path="*" component={() => <div>Not Fount</div>} />
         </Switch>
       </BasicLayout>
