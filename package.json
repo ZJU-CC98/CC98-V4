@@ -1,8 +1,8 @@
 {
   "name": "CC98-V4",
   "version": "1.0.0",
-  "repository": "git@github.com:AsukaSong/CC98-v4.git",
-  "author": "AsukaSong <yansongdong@gmail.com>",
+  "repository": "git@github.com:ZJU-CC98/CC98-V4.git",
+  "author": "CC98 DEVELOP TEAM",
   "license": "Apache-2.0",
   "scripts": {
     "set-tsnode": "cross-env TS_NODE_PROJECT=\"tsconfig.node.json\"",

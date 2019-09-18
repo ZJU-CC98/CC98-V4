@@ -69,10 +69,10 @@ const BoardHeader: React.FC<IBoardHeaderProps> = ({ data }) => {
       <div className={s.title}>
         <img
           className={s.image}
-          src={`/images/board/_${data.name}.png`}
+          src={`/static/images/board/_${data.name}.png`}
           onError={e => {
             e.preventDefault()
-            ;(e.target as HTMLImageElement).src = `/images/board/_CC98.png`
+            ;(e.target as HTMLImageElement).src = `/static/images/board/_CC98.png`
           }}
         />
         <h2 className={s.boardName}>{data.name}</h2>

@@ -20,7 +20,7 @@ const config: webpack.Configuration = {
 
   output: {
     path: outputPath,
-    publicPath: '/',
+    // publicPath,
   },
 
   module: {
@@ -46,7 +46,7 @@ const config: webpack.Configuration = {
         options: {
           fallback: 'file-loader',
           limit: 4096,
-          outputPath: 'images/',
+          outputPath: 'static/images/',
         },
       },
     ],

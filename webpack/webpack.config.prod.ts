@@ -12,8 +12,8 @@ const config = merge({}, commonConfig, {
   devtool: false,
 
   output: {
-    filename: '[name]-[chunkhash:8].js',
-    sourceMapFilename: '[name]-[chunkhash:8].js.map',
+    filename: 'static/scripts/[name]-[chunkhash:8].js',
+    sourceMapFilename: 'static/scripts/[name]-[chunkhash:8].js.map',
   },
 
   optimization: {
@@ -34,8 +34,7 @@ const config = merge({}, commonConfig, {
 
     new webpack.SourceMapDevToolPlugin({
       test: [/\.[tj]sx?$/],
-      filename: '[name]-[chunkhash:8].js.map',
-      append: false,
+      filename: 'static/scripts/[name]-[chunkhash:8].js.map',
     }),
   ],
 })

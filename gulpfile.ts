@@ -7,8 +7,9 @@ import del from 'del'
 import PluginError from 'plugin-error'
 //@ts-ignore
 import SentryCli from '@sentry/cli'
+import path from 'path'
 
-import { outputPath } from './webpack/constants'
+import { outputPath, publicPath } from './webpack/constants'
 
 const sentryCLi = new SentryCli()
 
@@ -111,12 +112,12 @@ async function uploadSourceMap() {
   console.log(sentryCLi)
   // await sentryCLi.releases.new(process.env.GIT_HEAD)
   await sentryCLi.releases.uploadSourceMaps(process.env.GIT_HEAD, {
-    include: [outputPath],
+    include: [path.join(outputPath, publicPath, 'scripts')],
   })
 }
 
 async function clearSourceMap() {
-  await del([`${outputPath}/*.map`])
+  await del([`${path.join(outputPath, publicPath, 'scripts')}/*.map`])
 }
 
 function getProdTasks(cc98Env: CC98_ENV) {
