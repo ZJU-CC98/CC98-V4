@@ -11,6 +11,7 @@ import path from 'path'
 
 import { outputPath, publicPath } from './webpack/constants'
 
+const absolutePublicPath = path.join(outputPath, publicPath)
 const sentryCLi = new SentryCli()
 
 enum ENV {
@@ -109,19 +110,25 @@ async function clear() {
 }
 
 async function uploadSourceMap() {
-  console.log(sentryCLi)
   // await sentryCLi.releases.new(process.env.GIT_HEAD)
   await sentryCLi.releases.uploadSourceMaps(process.env.GIT_HEAD, {
-    include: [path.join(outputPath, publicPath, 'scripts')],
+    include: [path.join(absolutePublicPath, 'scripts')],
   })
 }
 
-async function clearSourceMap() {
-  await del([`${path.join(outputPath, publicPath, 'scripts')}/*.map`])
+async function clearAfterBuild() {
+  await del([`${path.join(absolutePublicPath, 'scripts')}/*.map`, `${outputPath}/README.md`])
 }
 
 function getProdTasks(cc98Env: CC98_ENV) {
-  return gulp.series(checkGitChanges, clear, setInternalEnv, build, uploadSourceMap, clearSourceMap)
+  return gulp.series(
+    checkGitChanges,
+    clear,
+    setInternalEnv,
+    build,
+    uploadSourceMap,
+    clearAfterBuild
+  )
 
   async function setInternalEnv() {
     await setEnv(ENV.PRODUCTION, cc98Env)
