@@ -112,7 +112,7 @@ async function clear() {
 async function uploadSourceMap() {
   // await sentryCLi.releases.new(process.env.GIT_HEAD)
   await sentryCLi.releases.uploadSourceMaps(process.env.GIT_HEAD, {
-    include: [path.join(absolutePublicPath, 'scripts')],
+    include: [outputPath],
   })
 }
 
