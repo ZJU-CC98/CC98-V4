@@ -29,7 +29,9 @@ export default function getCssLoaders(isModule: boolean) {
     {
       loader: 'sass-loader',
       options: {
-        includePaths: [publicStylesheetPath],
+        sassOptions: {
+          includePaths: [publicStylesheetPath],
+        },
       },
     },
   ]
