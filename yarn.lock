@@ -7979,10 +7979,10 @@ react-dom@^16.9.0:
     prop-types "^15.6.2"
     scheduler "^0.15.0"
 
-react-hot-loader@^4.12.12:
-  version "4.12.12"
-  resolved "https://registry.npm.taobao.org/react-hot-loader/download/react-hot-loader-4.12.12.tgz#8b33f59efef8a34f64e01f0d9393230d4b4bc6d4"
-  integrity sha1-izP1nv74o09k4B8Nk5MjDUtLxtQ=
+react-hot-loader@^4.12.13:
+  version "4.12.13"
+  resolved "https://registry.npm.taobao.org/react-hot-loader/download/react-hot-loader-4.12.13.tgz#78dcb55f49f88ce3d4316c7c86a8c01fdd196cd2"
+  integrity sha1-eNy1X0n4jOPUMWx8hqjAH90ZbNI=
   dependencies:
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
