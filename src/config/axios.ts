@@ -17,8 +17,10 @@ axios.interceptors.response.use(
     return res.data
   },
   error => {
+    console.error(error)
+
     notice({
-      content: error.message,
+      content: error.response && error.response.data ? error.response.data : error.message,
     })
 
     throw error
@@ -49,8 +51,6 @@ axios.interceptors.request.use(baseConfig => {
         return baseConfig
       })
     }
-
-    throw new Error('用户未登录')
   }
 
   return baseConfig

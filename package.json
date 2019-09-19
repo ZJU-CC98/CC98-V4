@@ -15,7 +15,7 @@
     "dev:local": "yarn set-tsnode gulp dev:local",
     "build:local": "yarn set-tsnode gulp build:local",
     "analyze": "cross-env NODE_ENV=production CC98_ENV=intranet TS_NODE_PROJECT=\"tsconfig.node.json\" webpack --config webpack/webpack.config.analyze.ts",
-    "test": "cross-env NODE_ENV=production CC98_ENV=intranet TS_NODE_PROJECT=\"tsconfig.node.json\" webpack --config webpack/webpack.config.prod.ts",
+    "build:ci": "yarn set-tsnode gulp build:ci",
     "type-check": "tsc --noEmit",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint-fix": "eslint \"src/**/*.{ts,tsx}\" --fix",

@@ -29,12 +29,13 @@ export default function makeCustomAxiosAdapter(cacheConfigs: ICacheConfigItem[])
           useIndexName,
           getDataFromResult = ({ data }: AxiosResponse) => data,
           getFallbackConfig,
-          idKey = 'id',
+          idKey: rawIdKey = 'id',
           type,
           getDataFormIndexedDb = (data: any) => data,
         } = cacheConfigs[index]
 
         const isSingle = type === 'single'
+        const idKey = useIndexName || rawIdKey
 
         const queryKey = getRequestQueryKey({
           ...config,

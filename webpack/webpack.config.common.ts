@@ -7,7 +7,7 @@ import getCssLoaders from './getCssLoaders'
 import babelConfig from './babel.config'
 
 const config: webpack.Configuration = {
-  entry: ['./src/sentry.ts', './src/polyfill.ts', 'react-hot-loader/patch', './src/index.tsx'],
+  entry: ['./src/polyfill.ts', './src/sentry.ts', 'react-hot-loader/patch', './src/index.tsx'],
 
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.scss'],

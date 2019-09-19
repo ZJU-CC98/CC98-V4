@@ -111,9 +111,16 @@ async function clear() {
 
 async function uploadSourceMap() {
   // await sentryCLi.releases.new(process.env.GIT_HEAD)
+  log('[uploadSourceMap]', `version: ${process.env.GIT_HEAD}`)
+  log('[uploadSourceMap]', 'uploading source map')
   await sentryCLi.releases.uploadSourceMaps(process.env.GIT_HEAD, {
     include: [outputPath],
   })
+  log('[uploadSourceMap]', 'uploading source map done')
+  log('[uploadSourceMap]', 'setting commits')
+  await sentryCLi.execute(['releases', 'set-commits', '--auto', process.env.NODE_ENV])
+  log('[uploadSourceMap]', 'setting commits done')
+  // await sentryCLi.releases.finalize(process.env.GIT_HEAD)
 }
 
 async function clearAfterBuild() {
@@ -126,7 +133,7 @@ function getProdTasks(cc98Env: CC98_ENV) {
     clear,
     setInternalEnv,
     build,
-    uploadSourceMap,
+    // uploadSourceMap,
     clearAfterBuild
   )
 
@@ -150,3 +157,15 @@ Object.values(CC98_ENV).forEach((cc98Env: CC98_ENV) => {
 
 gulp.task('dev', getDevTasks(CC98_ENV.INTRANET))
 gulp.task('build', getProdTasks(CC98_ENV.INTRANET))
+
+gulp.task(
+  'build:ci',
+  gulp.series(
+    checkGitChanges,
+    clear,
+    () => setEnv(ENV.PRODUCTION, CC98_ENV.PUBLIC),
+    build,
+    uploadSourceMap,
+    clearAfterBuild
+  )
+)
