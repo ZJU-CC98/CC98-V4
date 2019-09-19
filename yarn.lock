@@ -8453,10 +8453,10 @@ trough@^1.0.0:
   dependencies:
     glob "^7.1.2"
 
-ts-node@^8.3.0:
-  version "8.3.0"
-  resolved "https://registry.npm.taobao.org/ts-node/download/ts-node-8.3.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fts-node%2Fdownload%2Fts-node-8.3.0.tgz#e4059618411371924a1fb5f3b125915f324efb57"
-  integrity sha1-5AWWGEETcZJKH7XzsSWRXzJO+1c=
+ts-node@^8.4.1:
+  version "8.4.1"
+  resolved "https://registry.npm.taobao.org/ts-node/download/ts-node-8.4.1.tgz#270b0dba16e8723c9fa4f9b4775d3810fd994b4f"
+  integrity sha1-JwsNuhbocjyfpPm0d104EP2ZS08=
   dependencies:
     arg "^4.1.0"
     diff "^4.0.1"
