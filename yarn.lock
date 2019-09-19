@@ -757,17 +757,17 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@fortawesome/fontawesome-common-types@^0.2.22":
-  version "0.2.22"
-  resolved "https://registry.npm.taobao.org/@fortawesome/fontawesome-common-types/download/@fortawesome/fontawesome-common-types-0.2.22.tgz#3f1328d232a0fd5de8484d833c8519426f39f016"
-  integrity sha1-PxMo0jKg/V3oSE2DPIUZQm858BY=
+"@fortawesome/fontawesome-common-types@^0.2.22", "@fortawesome/fontawesome-common-types@^0.2.24":
+  version "0.2.24"
+  resolved "https://registry.npm.taobao.org/@fortawesome/fontawesome-common-types/download/@fortawesome/fontawesome-common-types-0.2.24.tgz#e7be36e18b2af0d56cd2211b05b7b17a0fbfa6b7"
+  integrity sha1-57424Ysq8NVs0iEbBbexeg+/prc=
 
-"@fortawesome/fontawesome-svg-core@^1.2.22":
-  version "1.2.22"
-  resolved "https://registry.npm.taobao.org/@fortawesome/fontawesome-svg-core/download/@fortawesome/fontawesome-svg-core-1.2.22.tgz#9a6117c96c8b823c7d531000568ac75c3c02e123"
-  integrity sha1-mmEXyWyLgjx9UxAAVorHXDwC4SM=
+"@fortawesome/fontawesome-svg-core@^1.2.24":
+  version "1.2.24"
+  resolved "https://registry.npm.taobao.org/@fortawesome/fontawesome-svg-core/download/@fortawesome/fontawesome-svg-core-1.2.24.tgz#327fe1fbf1fb1fb440c2b0156398b305c713349b"
+  integrity sha1-Mn/h+/H7H7RAwrAVY5izBccTNJs=
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.22"
+    "@fortawesome/fontawesome-common-types" "^0.2.24"
 
 "@fortawesome/free-regular-svg-icons@^5.10.2":
   version "5.10.2"
