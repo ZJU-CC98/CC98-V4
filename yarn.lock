@@ -3674,10 +3674,10 @@ eslint-config-airbnb@^18.0.1:
     object.assign "^4.1.0"
     object.entries "^1.1.0"
 
-eslint-config-prettier@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.npm.taobao.org/eslint-config-prettier/download/eslint-config-prettier-6.1.0.tgz#e6f678ba367fbd1273998d5510f76f004e9dce7b"
-  integrity sha1-5vZ4ujZ/vRJzmY1VEPdvAE6dzns=
+eslint-config-prettier@^6.3.0:
+  version "6.3.0"
+  resolved "https://registry.npm.taobao.org/eslint-config-prettier/download/eslint-config-prettier-6.3.0.tgz#e73b48e59dc49d950843f3eb96d519e2248286a3"
+  integrity sha1-5ztI5Z3EnZUIQ/PrltUZ4iSChqM=
   dependencies:
     get-stdin "^6.0.0"
 
