@@ -8,6 +8,6 @@ install:
 
 script:
   - yarn run check-all
-  - yarn test
+  - yarn run build:ci
 
 cache: yarn

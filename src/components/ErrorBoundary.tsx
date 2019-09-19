@@ -39,6 +39,7 @@ export default class ErrorBoundary extends React.Component<{}, IErrorBoundarySta
       const style: React.CSSProperties = {
         cursor: 'pointer',
         color: '#0000ee',
+        margin: 6,
       }
 
       return (
@@ -59,9 +60,7 @@ export default class ErrorBoundary extends React.Component<{}, IErrorBoundarySta
             </a>
             .
           </p>
-          <button type="button" onClick={() => Sentry.showReportDialog({ eventId })}>
-            Report feedback
-          </button>
+          <p>errorId: {eventId}</p>
         </div>
       )
     }
