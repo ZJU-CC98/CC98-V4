@@ -61,7 +61,7 @@
     "@types/history": "^4.7.3",
     "@types/html-webpack-plugin": "^3.2.1",
     "@types/lodash": "^4.14.138",
-    "@types/node": "^12.7.2",
+    "@types/node": "^12.7.5",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/react-hot-loader": "^4.1.0",
