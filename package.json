@@ -36,7 +36,7 @@
     "classnames": "^2.2.6",
     "connected-react-router": "^6.5.2",
     "core-js": "^3.2.1",
-    "css-vars-ponyfill": "^2.1.1",
+    "css-vars-ponyfill": "^2.1.2",
     "dayjs": "^1.8.16",
     "dplayer": "^1.25.0",
     "event-emitter": "^0.3.5",
