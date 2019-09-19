@@ -37,7 +37,7 @@ const cacheConfigs: ICacheConfigItem[] = [
   },
   {
     // 为 /user?id=1&id=2 创建缓存
-    urlPath: '/user',
+    urlPath: /^\/user\?id=/,
     namespace: 'user',
     expirationTime: 3600 * 1000,
     indexNames: ['name'],
@@ -51,6 +51,25 @@ const cacheConfigs: ICacheConfigItem[] = [
 
     getFallbackConfig: missId => ({
       url: `/user?id=${missId.join('&id=')}`, // 只请求缓存未命中的 id
+    }),
+  },
+  {
+    // 为 /user/name?name=1&name=2 创建缓存
+    urlPath: /^\/user\/name\?name=/,
+    namespace: 'user',
+    expirationTime: 3600 * 1000,
+    indexNames: ['name'],
+    useIndexName: 'name',
+    type: 'multiply',
+
+    getRequestQueryKey: ({ url }) => {
+      const { name } = parseUrl(url!).query
+
+      return Array.isArray(name) ? name : [name!]
+    },
+
+    getFallbackConfig: missId => ({
+      url: `/user/name?name=${missId.join('&name=')}`, // 只请求缓存未命中的 id
     }),
   },
   {
