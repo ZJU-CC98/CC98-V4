@@ -22,6 +22,11 @@
     "stylelint": "stylelint \"src/**/*.scss\" --syntax scss",
     "check-all": "yarn run type-check && yarn run lint && yarn run stylelint"
   },
+  "browserslist": [
+    "> 1%",
+    "not dead",
+    "IE 11"
+  ],
   "dependencies": {
     "@babel/runtime": "^7.5.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.24",
@@ -125,5 +130,22 @@
     "webpack-bundle-analyzer": "^3.5.0",
     "webpack-dev-server": "^3.8.1",
     "webpack-merge": "^4.2.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run type-check && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{scss}": [
+      "stylelint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }

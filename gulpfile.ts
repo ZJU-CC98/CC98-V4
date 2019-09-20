@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import gulp from 'gulp'
 import childProcess from 'child_process'
 import webpack from 'webpack'
@@ -5,7 +6,7 @@ import WebpackDevServer from 'webpack-dev-server'
 import log from 'fancy-log'
 import del from 'del'
 import PluginError from 'plugin-error'
-//@ts-ignore
+// @ts-ignore
 import SentryCli from '@sentry/cli'
 import path from 'path'
 
