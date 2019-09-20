@@ -1267,10 +1267,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/webpack-bundle-analyzer@^2.13.2":
-  version "2.13.2"
-  resolved "https://registry.npm.taobao.org/@types/webpack-bundle-analyzer/download/@types/webpack-bundle-analyzer-2.13.2.tgz#d5183ae083b29b8cd0dc7352eaf008ed220c13d9"
-  integrity sha1-1Rg64IOym4zQ3HNS6vAI7SIME9k=
+"@types/webpack-bundle-analyzer@^2.13.3":
+  version "2.13.3"
+  resolved "https://registry.npm.taobao.org/@types/webpack-bundle-analyzer/download/@types/webpack-bundle-analyzer-2.13.3.tgz#820c8f734e171f081cbf02d889b9cda687cc89dd"
+  integrity sha1-ggyPc04XHwgcvwLYibnNpofMid0=
   dependencies:
     "@types/webpack" "*"
 
