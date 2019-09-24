@@ -9266,10 +9266,10 @@ style-search@^0.1.0:
   resolved "https://registry.npm.taobao.org/style-search/download/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
   integrity sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
 
-stylelint-config-prettier@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.npm.taobao.org/stylelint-config-prettier/download/stylelint-config-prettier-5.2.0.tgz#b73d56a380662abd434ed745ca84db15e1a5aac6"
-  integrity sha1-tz1Wo4BmKr1DTtdFyoTbFeGlqsY=
+stylelint-config-prettier@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.npm.taobao.org/stylelint-config-prettier/download/stylelint-config-prettier-6.0.0.tgz#600aa218d8e34cf44a025903b0f60c079fd83366"
+  integrity sha1-YAqiGNjjTPRKAlkDsPYMB5/YM2Y=
 
 stylelint-config-recommended@^3.0.0:
   version "3.0.0"
