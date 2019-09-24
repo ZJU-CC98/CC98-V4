@@ -65,3 +65,13 @@ export const getTopicTrackPostList = (
     },
   })
 }
+
+export const getNewTopics = (from: number, size: number) => {
+  return axios({
+    url: '/topic/new',
+    params: {
+      from,
+      size,
+    },
+  }) as Promise<ITopic[]>
+}

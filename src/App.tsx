@@ -13,6 +13,7 @@ import Login from 'src/pages/login/Login'
 import BoardList from 'src/pages/boardList/BoardList'
 import Board from 'src/pages/board/Board'
 import Topic from 'src/pages/topic/Topic'
+import NewTopics from 'src/pages/newTopics/NewTopics'
 
 const ErrorBoundary = process.env.NODE_ENV === 'production' ? ProdErrorBoundary : React.Fragment
 
@@ -29,6 +30,7 @@ export const App: React.FC = () => (
             <Route path="/logon" component={Login} />
             <Route path="/topic/:topicId/postId/:postId/page:?" component={Topic} />
             <Route path="/topic/:topicId/:page?" component={Topic} />
+            <Route path="/newTopics" component={NewTopics} />
             <Route
               path="/error"
               component={() => {

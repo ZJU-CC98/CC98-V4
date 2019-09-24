@@ -1,6 +1,6 @@
 import React from 'react'
 import { RouteComponentProps } from 'react-router'
-import { IBoard, IPost, ITopic, IUser } from '@cc98/api'
+import { IBoard, IPost, ITopic } from '@cc98/api'
 import { push } from 'connected-react-router'
 import { useDispatch } from 'react-redux'
 import produce from 'immer'
@@ -15,17 +15,12 @@ import useBreadcrumb from 'src/hooks/useBreadcrumb'
 import Pagination from 'src/components/Pagination'
 import { getUsersByNames } from 'src/service/user'
 import { getPostLikeState } from 'src/service/post'
+import IUserMap from 'src/types/IUserMap'
 
 import TopicHeader from './TopicHeader'
 import PostItem from './PostItem'
 
 import s from './Topic.m.scss'
-
-export interface IUserMap {
-  // 因为 awards 信息里没有 userName 只有 userId
-  // 所以用 userName 作为索引
-  [userName: string]: IUser | undefined
-}
 
 interface ITopicRouteMatch {
   topicId: string

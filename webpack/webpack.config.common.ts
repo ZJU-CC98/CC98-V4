@@ -21,7 +21,7 @@ const config: webpack.Configuration = {
 
   output: {
     path: outputPath,
-    // publicPath,
+    publicPath: '/',
   },
 
   module: {
