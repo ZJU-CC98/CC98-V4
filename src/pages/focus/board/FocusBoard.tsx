@@ -31,7 +31,7 @@ const FocusBoard: React.FC = () => {
       : (from: number) => getBoardTopicList(currentBoardId, PAGE_SIZE, from)
 
   const [props, { setData }] = useInfTopicModel(service)
-  const { data, boardMap } = props
+  const { boardMap } = props
 
   React.useEffect(() => {
     setData([])
@@ -64,7 +64,7 @@ const FocusBoard: React.FC = () => {
         ))}
         <p className={s.info}>提示：单击版面标签可切换下方展示内容，双击可直接进入版面</p>
       </div>
-      <InfinityTopicList {...props} isLoaded={data.length >= 100} showNoMore />
+      <InfinityTopicList {...props} showNoMore />
     </>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { RouteComponentProps, withRouter } from 'react-router-dom'
+import { RouteComponentProps, useLocation, withRouter } from 'react-router-dom'
 import { parse, stringify } from 'query-string'
 import Select from 'src/components/Select'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
@@ -8,17 +8,26 @@ import SEARCH_TYPE, { getSearchTypeDesc } from 'src/constants/SearchType'
 
 import s from './HeaderSearch.m.scss'
 
-interface ISearchQuery {
+export interface ISearchQuery {
   boardId?: string
   keyword?: string
   type?: SEARCH_TYPE
 }
 
-const HeaderSearch: React.FC<RouteComponentProps> = ({ location, history }) => {
+const HeaderSearch: React.FC<RouteComponentProps> = ({ history }) => {
+  const location = useLocation()
   const qs = parse(location.search) as ISearchQuery
   const types = getSearchTypesByPath(location.pathname, qs.boardId)
   const [type, setType] = React.useState(qs.type || types[0])
   const [keyword, setKeyword] = React.useState(qs.keyword || '')
+
+  React.useEffect(() => {
+    setType(qs.type || types[0])
+  }, [location.pathname, location.search])
+
+  React.useEffect(() => {
+    setKeyword(qs.keyword || '')
+  }, [qs.keyword])
 
   function goToSearch() {
     if (!keyword) {
@@ -83,6 +92,8 @@ function getSearchTypesByPath(path: string, boardId?: string) {
   const base = [SEARCH_TYPE.ALL_TOPICS, SEARCH_TYPE.USER, SEARCH_TYPE.BOARD]
 
   switch (true) {
+    case path.startsWith('/board-list'):
+      return [SEARCH_TYPE.BOARD, SEARCH_TYPE.ALL_TOPICS, SEARCH_TYPE.USER]
     case path.startsWith('/topic'):
     case path.startsWith('/board'):
     case path.startsWith('/search') && !!boardId:

@@ -21,11 +21,16 @@ const userFallback = {
   portraitUrl: anonymousPortraitUrl,
 }
 
-export function useInfTopicModel(service: (from: number) => Promise<ITopic[]>) {
+export function useInfTopicModel(
+  service: (from: number) => Promise<ITopic[]>,
+  checkIsLoaded: (res: ITopic[], data: ITopic[]) => boolean = (res, data) =>
+    !res.length || data.length >= 100
+) {
   const [data, setData] = React.useState<ITopic[]>([])
   const [userMap, getMoreUsers] = useUserMap()
 
   const [isLoading, setIsLoading] = React.useState(false)
+  const [isLoaded, setIsLoaded] = React.useState(false)
 
   const { loadingColor } = useSelector(selector)
 
@@ -34,6 +39,11 @@ export function useInfTopicModel(service: (from: number) => Promise<ITopic[]>) {
       .then((res: ITopic[]) => {
         setData(concat(data, res))
         setIsLoading(false)
+
+        if (checkIsLoaded(res, data)) {
+          setIsLoaded(true)
+        }
+
         return res
       })
       .then(
@@ -54,7 +64,8 @@ export function useInfTopicModel(service: (from: number) => Promise<ITopic[]>) {
       tagMap: useTagMap(),
       onLoadMore,
       loadingColor,
+      isLoaded,
     },
-    { setData },
+    { setData, setIsLoaded },
   ] as const
 }

@@ -8,9 +8,8 @@ const service = (from: number) => getFolloweeTopics(from, PAGE_SIZE)
 
 const FocusUser: React.FC = () => {
   const [props] = useInfTopicModel(service)
-  const { data } = props
 
-  return <InfinityTopicList {...props} isLoaded={data.length >= 100} showNoMore />
+  return <InfinityTopicList {...props} showNoMore />
 }
 
 export default FocusUser

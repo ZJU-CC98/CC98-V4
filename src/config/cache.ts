@@ -80,7 +80,7 @@ const cacheConfigs: ICacheConfigItem[] = [
     getRequestQueryKey: () => boardGroupIds,
   },
   {
-    urlPath: /\/board\/\d+$/,
+    urlPath: /^\/board\/\d+$/,
     namespace: 'board-info',
     expirationTime: 3600 * 1000 * 4,
     type: 'single',

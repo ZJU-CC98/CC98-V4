@@ -15,10 +15,9 @@ const breadcrumb = [
 const HotWeekly: React.FC = () => {
   useBreadcrumb(breadcrumb)
 
-  const [props] = useInfTopicModel(getHotWeekly)
-  const { data } = props
+  const [props] = useInfTopicModel(getHotWeekly, () => true)
 
-  return <InfinityTopicList {...props} isLoaded={!!data.length} />
+  return <InfinityTopicList {...props} />
 }
 
 export default HotWeekly

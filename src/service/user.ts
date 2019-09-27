@@ -30,3 +30,7 @@ export const getUsersByNames = (name: string[]) => {
     needAuth: true,
   }) as Promise<IUser[]>
 }
+
+export const getUserByName = (name: string) => {
+  return axios(`/user/name/${name}`) as Promise<IUser>
+}

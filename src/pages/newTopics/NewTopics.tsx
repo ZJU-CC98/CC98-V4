@@ -19,9 +19,8 @@ const NewTopics: React.FC = () => {
   useBreadcrumb(breadcrumb)
 
   const [props] = useInfTopicModel(service)
-  const { data } = props
 
-  return <InfinityTopicList {...props} isLoaded={data.length >= 100} showNoMore />
+  return <InfinityTopicList {...props} showNoMore />
 }
 
 export default NewTopics

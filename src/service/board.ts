@@ -9,6 +9,15 @@ export function getBoardInfo(boardId: string | number) {
   return axios({ needAuth: true, url: `/board/${boardId}` }) as Promise<IBoard>
 }
 
+export function searchBoard(keyword: string) {
+  return axios({
+    url: '/board/search',
+    params: {
+      keyword,
+    },
+  }) as Promise<IBoard[]>
+}
+
 export function getBoardTopTopicList(boardid: string | number) {
   return axios({ url: '/topic/toptopics', params: { boardid }, needAuth: true }) as Promise<
     ITopic[]
@@ -92,6 +101,18 @@ export function unFollowBoard(boardId: number) {
   return axios({
     url: `/me/custom-board/${boardId}`,
     method: 'DELETE',
+    needAuth: true,
+  })
+}
+
+export const searchBoardTopics = (boardId: string, keyword: string, from: number, size: number) => {
+  return axios({
+    url: `/topic/search/board/${boardId}`,
+    params: {
+      keyword,
+      from,
+      size,
+    },
     needAuth: true,
   })
 }

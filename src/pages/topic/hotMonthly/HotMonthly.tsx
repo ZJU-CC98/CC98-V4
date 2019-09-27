@@ -15,10 +15,9 @@ const breadcrumb = [
 const HotMonthly: React.FC = () => {
   useBreadcrumb(breadcrumb)
 
-  const [props] = useInfTopicModel(getHotMonthly)
-  const { data } = props
+  const [props] = useInfTopicModel(getHotMonthly, () => true)
 
-  return <InfinityTopicList {...props} isLoaded={!!data.length} />
+  return <InfinityTopicList {...props} />
 }
 
 export default HotMonthly

@@ -18,6 +18,7 @@ import HotWeekly from 'src/pages/topic/hotWeekly/HotWeekly'
 import HotMonthly from 'src/pages/topic/hotMonthly/HotMonthly'
 import HotHistory from 'src/pages/topic/hotHistory/HotHistory'
 import Focus from 'src/pages/focus/Focus'
+import Search from 'src/pages/search/Search'
 
 const ErrorBoundary = process.env.NODE_ENV === 'production' ? ProdErrorBoundary : React.Fragment
 
@@ -34,6 +35,7 @@ export const App: React.FC = () => (
             <Route path="/logon" component={Login} />
             <Route path="/new-topics" component={NewTopics} />
             <Route path="/focus" component={Focus} />
+            <Route path="/search" component={Search} />
             <Route path="/topic/hot-weekly" component={HotWeekly} />
             <Route path="/topic/hot-monthly" component={HotMonthly} />
             <Route path="/topic/hot-history" component={HotHistory} />

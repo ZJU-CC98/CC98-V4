@@ -15,10 +15,9 @@ const breadcrumb = [
 const HotHistory: React.FC = () => {
   useBreadcrumb(breadcrumb)
 
-  const [props] = useInfTopicModel(getHotHistory)
-  const { data } = props
+  const [props] = useInfTopicModel(getHotHistory, () => true)
 
-  return <InfinityTopicList {...props} isLoaded={!!data.length} />
+  return <InfinityTopicList {...props} />
 }
 
 export default HotHistory

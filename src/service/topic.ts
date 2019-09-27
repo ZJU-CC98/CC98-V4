@@ -108,3 +108,15 @@ export const getCustomBoardTopics = (from: number, size: number) => {
     needAuth: true,
   })
 }
+
+export const searchTopics = (from: number, size: number, keyword: string) => {
+  return axios({
+    url: '/topic/search',
+    params: {
+      keyword,
+      from,
+      size,
+    },
+    needAuth: true,
+  })
+}

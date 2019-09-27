@@ -30,7 +30,9 @@ interface IInfinityTopicListProps {
   onLoadMore?: () => void
   isLoaded?: boolean
   isLoading?: boolean
+
   showNoMore?: boolean
+  noMoreText?: string
 
   userMap: IUserMap
   userFallback: BasicUser
@@ -128,6 +130,7 @@ const InfinityTopicList: React.FC<IInfinityTopicListProps> = ({
   isLoaded = true,
   isLoading = false,
   showNoMore = false,
+  noMoreText = '无法加载更多了，小水怡情，可不要沉迷哦~',
   userMap,
   userFallback,
   boardMap,
@@ -153,9 +156,7 @@ const InfinityTopicList: React.FC<IInfinityTopicListProps> = ({
         </div>
       )}
       {!isLoaded && <Waypoint topOffset={-320} onEnter={onLoadMore} />}
-      {isLoaded && !isLoading && showNoMore && (
-        <p className={s.noMore}>无法加载更多了，小水怡情，可不要沉迷哦~</p>
-      )}
+      {isLoaded && !isLoading && showNoMore && <p className={s.noMore}>{noMoreText}</p>}
     </>
   )
 }

@@ -34,4 +34,8 @@
   background-color: transparent;
   color: $primary;
   border: 1px solid $primary;
+
+  &:hover {
+    @extend .primary;
+  }
 }
