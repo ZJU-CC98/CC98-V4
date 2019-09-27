@@ -1076,10 +1076,10 @@
   resolved "https://registry.npm.taobao.org/@types/json-schema/download/@types/json-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
   integrity sha1-vf1p1h5GTcyBslFZwnDXWnPBpjY=
 
-"@types/lodash@^4.14.139":
-  version "4.14.139"
-  resolved "https://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.139.tgz#b7b8a00d014a7debb29dc2dae4f91d3d3c6d5ab3"
-  integrity sha1-t7igDQFKfeuyncLa5PkdPTxtWrM=
+"@types/lodash@^4.14.140":
+  version "4.14.140"
+  resolved "https://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.140.tgz#8d2bd55e6a22221cd662bbb85969eb00ec283da6"
+  integrity sha1-jSvVXmoiIhzWYru4WWnrAOwoPaY=
 
 "@types/mime@*":
   version "2.0.1"
