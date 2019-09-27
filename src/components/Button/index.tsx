@@ -10,14 +10,22 @@ type HTMLButtonProps = React.DetailedHTMLProps<
 
 export interface IButtonProps extends HTMLButtonProps {
   primary?: boolean
+  border?: boolean
 }
 
-const Button: React.FC<IButtonProps> = ({ className, disabled, primary = false, ...rest }) => {
+const Button: React.FC<IButtonProps> = ({
+  className,
+  disabled,
+  primary = false,
+  border = false,
+  ...rest
+}) => {
   return (
     <button
       type="button"
       className={cn(className, s.base, {
         [s.primary]: primary,
+        [s.border]: border,
       })}
       disabled={disabled}
       {...rest}

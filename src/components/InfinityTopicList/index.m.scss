@@ -1,0 +1,95 @@
+@import 'var';
+
+.root {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  border: 1px solid $primary;
+  background-color: $main-background-color;
+  color: $text-color;
+
+  & + & {
+    margin-top: 12px;
+  }
+}
+
+.user {
+  display: flex;
+  min-width: 180px;
+  height: 100%;
+  align-items: center;
+  background-color: $primary;
+  color: $text-color-primary;
+
+  a {
+    color: $text-color-primary;
+  }
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.content {
+  flex: 1;
+  padding-left: 20px;
+  align-self: start;
+}
+
+.title {
+  font-size: 20px;
+  max-width: 800px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  margin: 16px 0;
+}
+
+.info {
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+
+  & > span {
+    line-height: 14px;
+    display: inline-flex;
+    align-items: center;
+
+    & + span {
+      margin-left: 20px;
+    }
+  }
+
+  .icon {
+    font-size: 14px;
+    margin-right: 2px;
+  }
+}
+
+.board {
+  max-width: 70px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 15px;
+  border-left: 1px solid #000;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.no-more {
+  color: $text-color;
+  margin-top: 20px;
+  text-align: center;
+}

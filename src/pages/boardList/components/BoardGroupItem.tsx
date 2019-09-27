@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { stringify } from 'query-string'
 import SEARCH_TYPE from 'src/constants/SearchType'
 
-import s from './BoardGroupItem.m.scss'
+import s from 'src/pages/boardList/components/BoardGroupItem.m.scss'
 
 interface IBoardGroupItemProps {
   data: IBoardGroup

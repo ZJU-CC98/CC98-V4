@@ -2,10 +2,10 @@ import React from 'react'
 import { IConfig } from '@cc98/api'
 import Swipe from 'src/components/Swipe'
 
-import ItemTitle from './components/ItemTitle'
-import HomeContainer from './components/HomeContainer'
+import ItemTitle from 'src/pages/home/components/ItemTitle'
+import HomeContainer from 'src/pages/home/components/HomeContainer'
 
-import s from './HomeTop.m.scss'
+import s from 'src/pages/home/components/HomeTop.m.scss'
 
 interface IHomeTopProps {
   data: IConfig

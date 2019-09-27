@@ -5,6 +5,8 @@ declare module 'axios' {
     ignoreCache?: boolean
 
     needAuth?: boolean
+
+    silent?: boolean
   }
 
   interface AxiosInstance {

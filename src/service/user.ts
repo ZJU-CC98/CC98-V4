@@ -20,16 +20,17 @@ export async function getMe(ignoreCache = false) {
   return me
 }
 
-export const getUsersByIds = (userIds: number[]) => {
-  return axios({
-    url: `/user?${stringify({ id: userIds })}`,
-    needAuth: true,
-  }) as Promise<IUser[]>
-}
-
 export const getUsersByNames = (name: string[]) => {
+  if (name.length === 0) {
+    return Promise.resolve([])
+  }
+
   return axios({
     url: `/user/name?${stringify({ name })}`,
     needAuth: true,
   }) as Promise<IUser[]>
+}
+
+export const getUserByName = (name: string) => {
+  return axios(`/user/name/${name}`) as Promise<IUser>
 }

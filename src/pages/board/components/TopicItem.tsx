@@ -20,7 +20,7 @@ import topRed from 'src/assets/board/icon/top-red.png'
 import topOrange from 'src/assets/board/icon/top-orange.png'
 import normal from 'src/assets/board/icon/normal.png'
 
-import s from './TopicItem.m.scss'
+import s from 'src/pages/board/components/TopicItem.m.scss'
 
 interface ITopicItemProps {
   data: ITopic

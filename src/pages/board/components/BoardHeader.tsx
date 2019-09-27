@@ -11,7 +11,7 @@ import { refreshUserInfo } from 'src/store/global-async-actions'
 import notice from 'src/utils/notice'
 import { checkIsBoardMaster } from 'src/utils/permission'
 
-import s from './BoardHeader.m.scss'
+import s from 'src/pages/board/components/BoardHeader.m.scss'
 
 interface IBoardHeaderProps {
   data: IBoard
