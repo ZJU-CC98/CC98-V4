@@ -14,6 +14,10 @@ import BoardList from 'src/pages/boardList/BoardList'
 import Board from 'src/pages/board/Board'
 import Topic from 'src/pages/topic/Topic'
 import NewTopics from 'src/pages/newTopics/NewTopics'
+import HotWeekly from 'src/pages/topic/hotWeekly/HotWeekly'
+import HotMonthly from 'src/pages/topic/hotMonthly/HotMonthly'
+import HotHistory from 'src/pages/topic/hotHistory/HotHistory'
+import Focus from 'src/pages/focus/Focus'
 
 const ErrorBoundary = process.env.NODE_ENV === 'production' ? ProdErrorBoundary : React.Fragment
 
@@ -24,13 +28,17 @@ export const App: React.FC = () => (
         <BasicLayout>
           <Switch>
             <Route path="/" component={Home} exact />
-            <Route path="/boardList" component={BoardList} />
+            <Route path="/board-list" component={BoardList} />
             <Route path="/board/:id/:page?" component={Board} />
-            <Route path="/signin" component={Login} />
+            <Route path="/sign-in" component={Login} />
             <Route path="/logon" component={Login} />
+            <Route path="/new-topics" component={NewTopics} />
+            <Route path="/focus" component={Focus} />
+            <Route path="/topic/hot-weekly" component={HotWeekly} />
+            <Route path="/topic/hot-monthly" component={HotMonthly} />
+            <Route path="/topic/hot-history" component={HotHistory} />
             <Route path="/topic/:topicId/postId/:postId/page:?" component={Topic} />
             <Route path="/topic/:topicId/:page?" component={Topic} />
-            <Route path="/newTopics" component={NewTopics} />
             <Route
               path="/error"
               component={() => {

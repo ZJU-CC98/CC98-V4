@@ -13,3 +13,9 @@ export function hex2rgb(hex: string) {
 
   return `${r},${g},${b}`
 }
+
+export function rgb2hex(rgb: string) {
+  const [r, g, b] = rgb.split(',').map(item => parseInt(item, 10))
+  // eslint-disable-next-line no-bitwise
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`
+}

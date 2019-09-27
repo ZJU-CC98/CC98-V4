@@ -17,8 +17,8 @@ import { getUsersByNames } from 'src/service/user'
 import { getPostLikeState } from 'src/service/post'
 import IUserMap from 'src/types/IUserMap'
 
-import TopicHeader from './TopicHeader'
-import PostItem from './PostItem'
+import TopicHeader from 'src/pages/topic/components/TopicHeader'
+import PostItem from 'src/pages/topic/components/PostItem'
 
 import s from './Topic.m.scss'
 
@@ -38,7 +38,7 @@ const baseBreadcrumb = [
   },
   {
     name: '版面列表',
-    url: '/boardList',
+    url: '/board-list',
   },
 ]
 

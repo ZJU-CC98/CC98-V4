@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Waypoint } from 'react-waypoint'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faClock, faEye } from '@fortawesome/free-regular-svg-icons'
+import { HashLoader } from 'react-spinners'
 
 import IUserMap from 'src/types/IUserMap'
 import { stringify } from 'query-string'
@@ -29,12 +30,15 @@ interface IInfinityTopicListProps {
   onLoadMore?: () => void
   isLoaded?: boolean
   isLoading?: boolean
+  showNoMore?: boolean
 
   userMap: IUserMap
   userFallback: BasicUser
 
   boardMap: BoardMap
   tagMap: TagMap
+
+  loadingColor?: string
 }
 
 const renderTags = ({ tag1, tag2 }: ITopic, tagMap: TagMap) => {
@@ -123,10 +127,12 @@ const InfinityTopicList: React.FC<IInfinityTopicListProps> = ({
   onLoadMore,
   isLoaded = true,
   isLoading = false,
+  showNoMore = false,
   userMap,
   userFallback,
   boardMap,
   tagMap,
+  loadingColor,
 }) => {
   return (
     <>
@@ -141,8 +147,15 @@ const InfinityTopicList: React.FC<IInfinityTopicListProps> = ({
           tagMap
         )
       )}
-      {isLoading && <div />}
-      {!isLoaded && <Waypoint onEnter={onLoadMore} />}
+      {isLoading && (
+        <div className={s.loading}>
+          <HashLoader color={loadingColor} />
+        </div>
+      )}
+      {!isLoaded && <Waypoint topOffset={-320} onEnter={onLoadMore} />}
+      {isLoaded && !isLoading && showNoMore && (
+        <p className={s.noMore}>无法加载更多了，小水怡情，可不要沉迷哦~</p>
+      )}
     </>
   )
 }

@@ -80,3 +80,16 @@
   padding: 0 15px;
   border-left: 1px solid #000;
 }
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.no-more {
+  color: $text-color;
+  margin-top: 20px;
+  text-align: center;
+}

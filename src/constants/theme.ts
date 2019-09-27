@@ -1,6 +1,7 @@
 export enum THEME {
   DEFAULT = 0,
-  WINTER,
+  WINTER = 1,
+  SUMMER = 4,
   DARK,
 }
 
@@ -12,6 +13,8 @@ export function getThemeName(theme: THEME) {
       return '暗色主题'
     case THEME.WINTER:
       return '冬季'
+    case THEME.SUMMER:
+      return '夏季'
     case THEME.DEFAULT:
       return '默认主题'
     default:

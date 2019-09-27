@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { push } from 'connected-react-router'
 import { IBoard, ITagGroup, ITopic } from '@cc98/api'
 import Pagination from 'src/components/Pagination'
-import TopicItem from 'src/pages/board/TopicItem'
+import TopicItem from 'src/pages/board/components/TopicItem'
 import {
   getBoardBestTopicList,
   getBoardSaveTopicList,
@@ -14,8 +14,8 @@ import {
 } from 'src/service/board'
 import Select from 'src/components/Select'
 
-import TopTopicList from './TopTopicList'
-import s from './BoardContent.m.scss'
+import TopTopicList from 'src/pages/board/components/TopTopicList'
+import s from 'src/pages/board/components/BoardContent.m.scss'
 
 const PAGE_SIZE = 20
 const TAG_ALL = -1

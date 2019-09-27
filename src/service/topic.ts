@@ -75,3 +75,36 @@ export const getNewTopics = (from: number, size: number) => {
     },
   }) as Promise<ITopic[]>
 }
+
+export const getHotWeekly = () => {
+  return axios('/topic/hot-weekly') as Promise<ITopic[]>
+}
+
+export const getHotMonthly = () => {
+  return axios('/topic/hot-monthly') as Promise<ITopic[]>
+}
+
+export const getHotHistory = () => {
+  return axios('/topic/hot-history') as Promise<ITopic[]>
+}
+
+export const getFolloweeTopics = (from: number, size: number) => {
+  return axios({
+    url: '/me/followee/topic',
+    params: {
+      from,
+      size,
+    },
+  })
+}
+
+export const getCustomBoardTopics = (from: number, size: number) => {
+  return axios({
+    url: '/me/custom-board/topic',
+    params: {
+      from,
+      size,
+    },
+    needAuth: true,
+  })
+}
