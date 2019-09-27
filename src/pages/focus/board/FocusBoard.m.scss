@@ -1,0 +1,18 @@
+$info-color: darkgray;
+
+.title {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.info {
+  color: $info-color;
+  font-size: 13px;
+}
+
+.button {
+  margin-right: 16px;
+  padding: 6px 12px;
+  cursor: pointer;
+}

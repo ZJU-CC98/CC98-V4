@@ -1,7 +1,7 @@
 import React from 'react'
 import { ITag, ITopic } from '@cc98/api'
 import { getBoardTopTopicList } from 'src/service/board'
-import TopicItem from 'src/pages/board/TopicItem'
+import TopicItem from 'src/pages/board/components/TopicItem'
 
 interface ITopTopicListProps {
   boardId: string

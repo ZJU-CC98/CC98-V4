@@ -5,9 +5,9 @@ import { replace } from 'connected-react-router'
 import { IBoard } from '@cc98/api'
 import { getBoardInfo } from 'src/service/board'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
-import BoardHeader from 'src/pages/board/BoardHeader'
-import BoardTopButtons from 'src/pages/board/BoardTopButtons'
-import BoardContent from 'src/pages/board/BoardContent'
+import BoardHeader from 'src/pages/board/components/BoardHeader'
+import BoardTopButtons from 'src/pages/board/components/BoardTopButtons'
+import BoardContent from 'src/pages/board/components/BoardContent'
 
 interface IBoardUrlMatch {
   id?: string
@@ -20,7 +20,7 @@ const baseBreadcrumb = [
   },
   {
     name: '版面列表',
-    url: '/boardList',
+    url: '/board-list',
   },
 ]
 

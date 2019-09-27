@@ -6,10 +6,11 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons'
 import { checkCanEditPost, checkCanManagePost } from 'src/utils/permission'
 import anonymous from 'src/assets/user/anonymous.gif'
-import { IUserMap } from 'src/pages/topic/Topic'
-import PostOperation from './components/PostOperation'
+import IUserMap from 'src/types/IUserMap'
 
-import s from './PostItem.m.scss'
+import PostOperation from 'src/pages/topic/components/PostOperation'
+
+import s from 'src/pages/topic/components/PostItem.m.scss'
 
 interface IPostItemProps {
   user?: IUser

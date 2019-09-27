@@ -29,3 +29,13 @@
   color: var(--text-color-primary);
   border-color: transparent;
 }
+
+.border {
+  background-color: transparent;
+  color: $primary;
+  border: 1px solid $primary;
+
+  &:hover {
+    @extend .primary;
+  }
+}

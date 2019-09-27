@@ -55,10 +55,10 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
         </h1>
         <div className={s.divider} />
         <div className={s.text}>
-          <Link to="/boardList">版面列表</Link>
+          <Link to="/board-list">版面列表</Link>
         </div>
         <div className={s.text}>
-          <Link to="/newTopics">新帖</Link>
+          <Link to="/new-topics">新帖</Link>
         </div>
         <div className={s.text}>
           <Link to="/focus">关注</Link>
@@ -102,7 +102,7 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
                       全站管理
                     </Link>
                   )}
-                  <Link to="/signin" className={s.menuItem}>
+                  <Link to="/sign-in" className={s.menuItem}>
                     签到
                   </Link>
                   <p onClick={logout} className={s.menuItem}>

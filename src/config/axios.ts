@@ -17,6 +17,12 @@ axios.interceptors.response.use(
     return res.data
   },
   error => {
+    if ((error && error.hasNotified) || (error.config && error.config.silent)) {
+      throw error
+    }
+
+    error.hasNotified = true
+
     console.error(error)
 
     notice({

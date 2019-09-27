@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Button from 'src/components/Button'
 
-import s from './BoardTopButtons.m.scss'
+import s from 'src/pages/board/components/BoardTopButtons.m.scss'
 
 interface IBoardTopButtonsProps {
   data: IBoard

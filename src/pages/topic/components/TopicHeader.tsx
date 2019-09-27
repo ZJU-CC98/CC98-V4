@@ -10,7 +10,7 @@ import { getTopicIsFavorite, removeTopicFavorite, setTopicFavorite } from 'src/s
 import { EVENT, eventBus } from 'src/utils/event'
 import notice from 'src/utils/notice'
 
-import s from './TopicHeader.m.scss'
+import s from 'src/pages/topic/components/TopicHeader.m.scss'
 
 interface ITopicHeaderProps {
   topicInfo: ITopic
