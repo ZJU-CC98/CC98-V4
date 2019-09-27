@@ -71,7 +71,7 @@
     "@types/gulp": "^4.0.6",
     "@types/history": "^4.7.3",
     "@types/html-webpack-plugin": "^3.2.1",
-    "@types/lodash": "^4.14.139",
+    "@types/lodash": "^4.14.140",
     "@types/node": "^12.7.8",
     "@types/plugin-error": "^0.1.1",
     "@types/react": "^16.9.3",
