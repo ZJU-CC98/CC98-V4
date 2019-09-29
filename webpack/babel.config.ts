@@ -30,6 +30,10 @@ const plugins = [
         // eslint-disable-next-line no-template-curly-in-string
         transform: 'lodash/${member}',
       },
+      'lodash/fp': {
+        // eslint-disable-next-line no-template-curly-in-string
+        transform: 'lodash/fp/${member}',
+      },
     },
   ],
 ]

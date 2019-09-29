@@ -2,6 +2,7 @@ import React from 'react'
 import { IBoard, IPost, ITopic, IUser } from '@cc98/api'
 import { RootStore } from 'src/store'
 import { useSelector } from 'react-redux'
+import cn from 'classnames'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons'
 import { checkCanEditPost, checkCanManagePost } from 'src/utils/permission'
@@ -10,6 +11,7 @@ import IUserMap from 'src/types/IUserMap'
 
 import PostOperation from 'src/pages/topic/components/PostOperation'
 
+import hotImg from 'src/assets/topic/hot.png'
 import s from 'src/pages/topic/components/PostItem.m.scss'
 
 interface IPostItemProps {
@@ -21,6 +23,7 @@ interface IPostItemProps {
   refreshPostLikeState: () => void
   isHot?: boolean
   userMap: IUserMap
+  focus?: boolean
 }
 
 function selector(store: RootStore) {
@@ -117,15 +120,23 @@ const PostItem: React.FC<IPostItemProps> = ({
   topicInfo,
   refreshPostLikeState,
   isHot = false,
+  focus = false,
   userMap,
 }) => {
   const { currentUser, isLogin } = useSelector(selector)
+  const root = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    if (focus && root.current) {
+      root.current.scrollIntoView()
+    }
+  }, [focus])
 
   const canEdit = checkCanEditPost(post, currentUser, boardInfo)
   const canManage = checkCanManagePost(boardInfo, topicInfo, currentUser)
 
   return (
-    <div className={s.root}>
+    <div ref={root} className={s.root}>
       {renderUser(
         isLogin,
         post,
@@ -151,7 +162,13 @@ const PostItem: React.FC<IPostItemProps> = ({
         />
         {user && user.signatureCode && <div className={s.qmd}>{user.signatureCode}</div>}
       </div>
-      <div className={s.floor}>{isHot ? <img /> : post.floor}</div>
+      <div
+        className={cn(s.floor, {
+          [s.hot]: isHot,
+        })}
+      >
+        {isHot ? <img src={hotImg} /> : post.floor}
+      </div>
     </div>
   )
 }

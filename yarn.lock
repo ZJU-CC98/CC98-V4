@@ -756,6 +756,19 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@cc98/ubb-core@^1.0.0", "@cc98/ubb-core@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/@cc98/ubb-core/download/@cc98/ubb-core-1.1.0.tgz#762b4c924964bea7b4511bb28e6d503ecb3c9b2a"
+  integrity sha1-ditMkklkvqe0URuyjm1QPss8myo=
+
+"@cc98/ubb-react@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/@cc98/ubb-react/download/@cc98/ubb-react-1.0.1.tgz#c585307da3fcf8f7d8e27a259e8e22fedb453f52"
+  integrity sha1-xYUwfaP8+PfY4nolno4i/ttFP1I=
+  dependencies:
+    "@cc98/ubb-core" "^1.0.0"
+    url-parse "^1.4.3"
+
 "@emotion/cache@^10.0.17":
   version "10.0.19"
   resolved "https://registry.npm.taobao.org/@emotion/cache/download/@emotion/cache-10.0.19.tgz?cache=0&sync_timestamp=1568724805327&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40emotion%2Fcache%2Fdownload%2F%40emotion%2Fcache-10.0.19.tgz#d258d94d9c707dcadaf1558def968b86bb87ad71"
