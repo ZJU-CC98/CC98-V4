@@ -1,0 +1,90 @@
+@import 'var';
+
+.root {
+  white-space: pre-wrap;
+  width: 100%;
+}
+
+.b {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+.code {
+  ol {
+    list-style: none;
+    counter-reset: li;
+    padding: 0;
+    font-family: Consolas, Monaco, monospace;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  li {
+    counter-increment: li;
+  }
+
+  li::before {
+    content: counter(li);
+    display: inline-flex;
+    width: 50px;
+    margin: 0 10px;
+    justify-content: center;
+    background-color: #ebebeb;
+  }
+}
+
+.del {
+  text-decoration: line-through;
+}
+
+.english {
+  font-family: Arial, serif;
+}
+
+.i {
+  font-style: italic;
+}
+
+.left {
+  text-align: left;
+}
+
+.need-reply {
+  background-color: #f5faff;
+  border: 1px solid rgb(204, 204, 204);
+  padding: 10px 17px;
+  color: red;
+  margin: 6px 0;
+}
+
+.right {
+  text-align: right;
+}
+
+.table {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 14px;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  td,
+  th {
+    padding: 6px 13px;
+    border: 1px solid #c8ccd0;
+  }
+
+  th {
+    font-weight: bold;
+    white-space: nowrap;
+  }
+}
+
+.u {
+  text-decoration: underline;
+}

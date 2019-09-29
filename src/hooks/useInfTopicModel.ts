@@ -5,7 +5,6 @@ import { compose, map, filter } from 'lodash/fp'
 import { ITopic } from '@cc98/api'
 import { RootStore } from 'src/store'
 import { getPrimaryColor } from 'src/config/theme'
-import anonymousPortraitUrl from 'src/assets/user/anonymous.gif'
 import useBoardMap from 'src/hooks/useBoardMap'
 import useTagMap from 'src/hooks/useTagMap'
 import { useUserMap } from 'src/hooks/useUserMap'
@@ -18,7 +17,7 @@ function selector(state: RootStore) {
 
 const userFallback = {
   name: '匿名用户',
-  portraitUrl: anonymousPortraitUrl,
+  portraitUrl: '/static/images/心灵头像.gif',
 }
 
 export function useInfTopicModel(

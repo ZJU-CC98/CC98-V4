@@ -6,7 +6,6 @@ import cn from 'classnames'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons'
 import { checkCanEditPost, checkCanManagePost } from 'src/utils/permission'
-import anonymous from 'src/assets/user/anonymous.gif'
 import IUserMap from 'src/types/IUserMap'
 
 import PostOperation from 'src/pages/topic/components/PostOperation'
@@ -143,7 +142,7 @@ const PostItem: React.FC<IPostItemProps> = ({
         post.isAnonymous
           ? {
               name: `匿名${post.userName}`,
-              portraitUrl: anonymous,
+              portraitUrl: '/static/images/心灵头像.gif',
               gender: 0,
               isFollowing: false,
               id: 0,

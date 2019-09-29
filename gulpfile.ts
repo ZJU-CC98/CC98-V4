@@ -130,7 +130,7 @@ async function clearAfterBuild() {
 
 function getProdTasks(cc98Env: CC98_ENV) {
   return gulp.series(
-    checkGitChanges,
+    // checkGitChanges,
     clear,
     setInternalEnv,
     build,

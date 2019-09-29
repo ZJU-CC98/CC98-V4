@@ -756,18 +756,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@cc98/ubb-core@^1.0.0", "@cc98/ubb-core@^1.1.0":
+"@cc98/ubb-core@^1.1.0":
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/@cc98/ubb-core/download/@cc98/ubb-core-1.1.0.tgz#762b4c924964bea7b4511bb28e6d503ecb3c9b2a"
   integrity sha1-ditMkklkvqe0URuyjm1QPss8myo=
-
-"@cc98/ubb-react@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npm.taobao.org/@cc98/ubb-react/download/@cc98/ubb-react-1.0.1.tgz#c585307da3fcf8f7d8e27a259e8e22fedb453f52"
-  integrity sha1-xYUwfaP8+PfY4nolno4i/ttFP1I=
-  dependencies:
-    "@cc98/ubb-core" "^1.0.0"
-    url-parse "^1.4.3"
 
 "@emotion/cache@^10.0.17":
   version "10.0.19"
@@ -1119,6 +1111,11 @@
   resolved "https://registry.npm.taobao.org/@types/history/download/@types/history-4.7.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fhistory%2Fdownload%2F%40types%2Fhistory-4.7.3.tgz#856c99cdc1551d22c22b18b5402719affec9839a"
   integrity sha1-hWyZzcFVHSLCKxi1QCcZr/7Jg5o=
 
+"@types/hls.js@^0.12.5":
+  version "0.12.5"
+  resolved "https://registry.npm.taobao.org/@types/hls.js/download/@types/hls.js-0.12.5.tgz#0292cbab23fe91bb579e7bf0ac90190d67052ac7"
+  integrity sha1-ApLLqyP+kbtXnnvwrJAZDWcFKsc=
+
 "@types/hoist-non-react-statics@^3.3.0":
   version "3.3.1"
   resolved "https://registry.npm.taobao.org/@types/hoist-non-react-statics/download/@types/hoist-non-react-statics-3.3.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fhoist-non-react-statics%2Fdownload%2F%40types%2Fhoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
@@ -1310,6 +1307,11 @@
   version "2.0.3"
   resolved "https://registry.npm.taobao.org/@types/unist/download/@types/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha1-nAiGeYdvN061mD8VDUeHqm+zLX4=
+
+"@types/url-parse@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.npm.taobao.org/@types/url-parse/download/@types/url-parse-1.4.3.tgz#fba49d90f834951cb000a674efee3d6f20968329"
+  integrity sha1-+6SdkPg0lRywAKZ07+49byCWgyk=
 
 "@types/vfile-message@*":
   version "1.0.1"
@@ -10060,7 +10062,7 @@ url-loader@^2.1.0:
     mime "^2.4.4"
     schema-utils "^2.0.0"
 
-url-parse@^1.4.3:
+url-parse@^1.4.3, url-parse@^1.4.7:
   version "1.4.7"
   resolved "https://registry.npm.taobao.org/url-parse/download/url-parse-1.4.7.tgz#a8a83535e8c00a316e403a5db4ac1b9b853ae278"
   integrity sha1-qKg1NejACjFuQDpdtKwbm4U64ng=
