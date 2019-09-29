@@ -1,0 +1,17 @@
+$active-color: #fb6165;
+$inactive-color: #6b7178;
+
+.nav {
+  display: inline-flex;
+  font-size: 20px;
+  height: 40px;
+  align-items: center;
+  margin-right: 20px;
+  color: $inactive-color;
+
+  &:hover,
+  &-active {
+    color: $active-color;
+    border-bottom: 2px solid $active-color;
+  }
+}

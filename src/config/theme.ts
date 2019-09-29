@@ -1,5 +1,5 @@
 import THEME from 'src/constants/theme'
-import { hex2rgb } from 'src/utils/css'
+import { hex2rgb, rgb2hex } from 'src/utils/css'
 
 import summer from 'src/assets/home/summer.jpg'
 
@@ -9,11 +9,11 @@ interface IThemeInfo {
   palette: Record<string, string>
 }
 
-export const defaultTheme = THEME.WINTER
+export const defaultTheme = THEME.SUMMER
 
 const themeList: IThemeInfo[] = [
   {
-    theme: THEME.WINTER,
+    theme: THEME.SUMMER,
     homeHeaderImageURL: summer,
     palette: {
       primary: '#5198d8',
@@ -35,6 +35,10 @@ const themeList: IThemeInfo[] = [
 ]
 
 export const themeMap = makeThemeMap(themeList)
+
+export function getPrimaryColor(theme: THEME) {
+  return rgb2hex(themeMap[theme].palette.primary)
+}
 
 function makeThemeMap(themes: IThemeInfo[]) {
   return themes.reduce(

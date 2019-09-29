@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 // @ts-ignore
@@ -20,7 +21,7 @@ const config: webpack.Configuration = {
 
   output: {
     path: outputPath,
-    // publicPath,
+    publicPath: '/',
   },
 
   module: {

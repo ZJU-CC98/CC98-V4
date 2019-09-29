@@ -3,9 +3,9 @@ import { getIndexConfig } from 'src/service/config'
 import { IConfig } from '@cc98/api'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
-import HomeRight from './HomeRight'
-import HomeTop from './HomeTop'
-import HomeContent from './HomeContent'
+import HomeRight from './components/HomeRight'
+import HomeTop from './components/HomeTop'
+import HomeContent from './components/HomeContent'
 import s from './Home.m.scss'
 
 const emptyData: IConfig = {
