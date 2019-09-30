@@ -2,7 +2,7 @@ import { IGeneralTagHandler, TagNode } from '@cc98/ubb-core'
 
 import React from 'react'
 import { IContext } from 'src/ubb/types'
-import { THEME_MODE } from 'src/constants/theme'
+import { THEME_MODE } from 'src/constants/Theme'
 
 const handler: IGeneralTagHandler<React.ReactNode> = {
   isRecursive: false,

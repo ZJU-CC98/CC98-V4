@@ -2,6 +2,7 @@ import axios from 'axios'
 import { IUser } from '@cc98/api'
 import { getLocalStorage, setLocalStorage } from 'src/utils/storage'
 import { stringify } from 'query-string'
+import THEME from 'src/constants/Theme'
 
 export async function getMe(ignoreCache = false) {
   const storageUser = getLocalStorage('userInfo')
@@ -33,4 +34,15 @@ export const getUsersByNames = (name: string[]) => {
 
 export const getUserByName = (name: string) => {
   return axios(`/user/name/${name}`) as Promise<IUser>
+}
+
+export async function setMyTheme(theme: THEME) {
+  await axios({
+    url: '/me/theme',
+    method: 'PUT',
+    params: {
+      id: theme,
+    },
+    needAuth: true,
+  })
 }

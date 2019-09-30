@@ -1,9 +1,11 @@
 import React from 'react'
 import { RouteComponentProps } from 'react-router'
 import { IBoard, IPost, ITopic } from '@cc98/api'
+import axios, { CancelTokenSource } from 'axios'
 import { push } from 'connected-react-router'
 import { useDispatch } from 'react-redux'
 import produce from 'immer'
+import Spin from 'src/components/Spin'
 import {
   getTopicInfo,
   getTopicPostList,
@@ -48,6 +50,8 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
   const [posts, setPosts] = React.useState<IPost[]>([])
   const [hotPosts, setHotPosts] = React.useState<IPost[]>([])
   const [userMap, setUserMap] = React.useState<IUserMap>({})
+  const [isTopicLoading, setIsTopicLoading] = React.useState(false)
+  const source = React.useRef(axios.CancelToken.source())
   const dispatch = useDispatch()
 
   const focusFloor = parseInt(location.hash.slice(1), 10)
@@ -68,8 +72,17 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
 
   // 获取内容
   React.useEffect(() => {
-    Promise.all(getPosts(topicId, currentPage, isTracking, setPosts, setHotPosts, postId))
+    setIsTopicLoading(true)
+    setPosts([])
+    setHotPosts([])
+    source.current.cancel()
+    source.current = axios.CancelToken.source()
+    Promise.all(
+      getPosts(topicId, currentPage, isTracking, setPosts, setHotPosts, source.current, postId)
+    )
+
       .then(([postData, hotPostData = []]) => {
+        setIsTopicLoading(false)
         if (
           (!postData.length || postData[0].isAnonymous) &&
           (!hotPostData.length || hotPostData[0].isAnonymous)
@@ -147,6 +160,7 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
     <div className={s.root}>
       <Pagination total={totalPage} onChange={handlePage} current={currentPage} />
       {topicInfo && <TopicHeader topicInfo={topicInfo} boardInfo={boardInfo} />}
+      {isTopicLoading && <Spin />}
       {posts.slice(0, 1).map(item => (
         <PostItem
           post={item}
@@ -213,13 +227,14 @@ function getPosts(
   isTracking: boolean,
   setPosts: (posts: IPost[]) => void,
   setHotPosts: (posts: IPost[]) => void,
+  source: CancelTokenSource,
   postId?: string
 ): [Promise<IPost[]>, Promise<IPost[]> | undefined] {
   const from = (currentPage - 1) * PAGE_SIZE
 
   if (isTracking) {
     return [
-      getTopicTrackPostList(topicId, postId!, from, PAGE_SIZE).then(data => {
+      getTopicTrackPostList(topicId, postId!, from, PAGE_SIZE, source.token).then(data => {
         setPosts(data)
         setHotPosts([])
         return data
@@ -230,11 +245,11 @@ function getPosts(
 
   if (currentPage === 1) {
     return [
-      getTopicPostList(topicId, from, PAGE_SIZE).then(data => {
+      getTopicPostList(topicId, from, PAGE_SIZE, source.token).then(data => {
         setPosts(data)
         return data
       }),
-      getTopicTopPostList(topicId).then(data => {
+      getTopicTopPostList(topicId, source.token).then(data => {
         setHotPosts(data)
         return data
       }),
@@ -242,7 +257,7 @@ function getPosts(
   }
 
   return [
-    getTopicPostList(topicId, from, PAGE_SIZE).then(data => {
+    getTopicPostList(topicId, from, PAGE_SIZE, source.token).then(data => {
       setPosts(data)
       setHotPosts([])
       return data

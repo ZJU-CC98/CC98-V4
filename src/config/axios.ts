@@ -21,6 +21,10 @@ axios.interceptors.response.use(
       throw error
     }
 
+    if (error instanceof axios.Cancel) {
+      throw error
+    }
+
     error.hasNotified = true
 
     console.error(error)

@@ -14,6 +14,8 @@ import {
 import { BreadcrumbItem } from 'src/components/Breadcrumb'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
+import { Redirect, Route, Switch } from 'react-router'
+import UserTheme from './theme/UserTheme'
 import UserCenterNav, { INavItem } from './components/UserCenterNav'
 import s from './User.m.scss'
 
@@ -80,6 +82,12 @@ const UserCenter: React.FC = () => {
   return (
     <div className={s.root}>
       <UserCenterNav basePath="/user-center" navs={navs} />
+      <div className={s.content}>
+        <Switch>
+          <Route path="/user-center/theme" component={UserTheme} />
+          <Redirect to="/user-center/theme" />
+        </Switch>
+      </div>
     </div>
   )
 }
