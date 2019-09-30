@@ -67,10 +67,10 @@ async function setEnv(env: ENV, cc98Env: CC98_ENV) {
   )
 }
 
-async function build(done: () => void) {
+async function build() {
   const config = await getProdWebpackConfig()
   const compiler = webpack(config)
-  return new Promise((resolve, reject) => {
+  await new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
       if (err) {
         reject(new PluginError('webpack:build', err))
@@ -85,7 +85,7 @@ async function build(done: () => void) {
 
       resolve()
     })
-  }).then(done)
+  })
 }
 
 async function dev() {
