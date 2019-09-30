@@ -27,7 +27,7 @@ const themeList: IThemeInfo[] = [
     },
   },
   {
-    theme: THEME.DARK,
+    theme: THEME.MID_AUTUMN,
     mode: THEME_MODE.DARK,
     homeHeaderImageURL: 'todo',
     palette: {
@@ -48,7 +48,6 @@ function makeThemeMap(themes: IThemeInfo[]) {
     (res, curr) => {
       res[curr.theme] = {
         ...curr,
-        homeHeaderImageURL: curr.homeHeaderImageURL,
         palette: {
           ...curr.palette,
           primary: hex2rgb(curr.palette.primary),
@@ -58,7 +57,6 @@ function makeThemeMap(themes: IThemeInfo[]) {
       if (curr.theme === defaultTheme) {
         res[THEME.DEFAULT] = {
           ...curr,
-          homeHeaderImageURL: curr.homeHeaderImageURL,
           palette: {
             ...curr.palette,
             primary: hex2rgb(curr.palette.primary),

@@ -36,7 +36,7 @@
     "@fortawesome/react-fontawesome": "^0.1.5",
     "@hot-loader/react-dom": "^16.9.0",
     "@sentry/browser": "^5.6.3",
-    "@tippy.js/react": "^3.0.0",
+    "@tippy.js/react": "^2.2.3",
     "aplayer": "^1.10.1",
     "axios": "^0.18.1",
     "classnames": "^2.2.6",

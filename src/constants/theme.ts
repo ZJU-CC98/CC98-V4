@@ -1,8 +1,14 @@
 enum THEME {
   DEFAULT = 0,
-  WINTER = 1,
-  SUMMER = 4,
-  DARK,
+  BLUE,
+  GREEN,
+  MORE_GREEN,
+  SUMMER,
+  AUTUMN_ORANGE,
+  AUTUMN_RED,
+  SINGLE_DAY,
+  MID_AUTUMN,
+  MID_AUTUMN_LIGHT,
 }
 
 export default THEME
@@ -14,9 +20,9 @@ export enum THEME_MODE {
 
 export function getThemeName(theme: THEME) {
   switch (theme) {
-    case THEME.DARK:
+    case THEME.MID_AUTUMN:
       return '暗色主题'
-    case THEME.WINTER:
+    case THEME.BLUE:
       return '冬季'
     case THEME.SUMMER:
       return '夏季'

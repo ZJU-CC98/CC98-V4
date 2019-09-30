@@ -1,0 +1,29 @@
+@import 'var';
+
+$active-color: red;
+
+.root {
+  background-color: $main-background-color;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  width: 180px;
+}
+
+.item {
+  font-size: 14px;
+  line-height: 4;
+  padding-left: 10px;
+
+  .name {
+    margin-left: 16px;
+  }
+
+  & + & {
+    border-top: 1px dashed $border-color;
+  }
+}
+
+.item-active {
+  color: $active-color;
+}
