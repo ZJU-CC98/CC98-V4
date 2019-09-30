@@ -8119,36 +8119,20 @@ react-redux@^7.1.1:
     prop-types "^15.7.2"
     react-is "^16.9.0"
 
-react-router-dom@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.npm.taobao.org/react-router-dom/download/react-router-dom-5.1.0.tgz?cache=0&sync_timestamp=1569344072167&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-router-dom%2Fdownload%2Freact-router-dom-5.1.0.tgz#48ad018d71fb7835212587e4c90bd2e3d2417e31"
-  integrity sha1-SK0BjXH7eDUhJYfkyQvS49JBfjE=
+react-router-dom@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.npm.taobao.org/react-router-dom/download/react-router-dom-5.1.1.tgz#53caa089c291f64c1d597a52827b978b54d7c25d"
+  integrity sha1-U8qgicKR9kwdWXpSgnuXi1TXwl0=
   dependencies:
     "@babel/runtime" "^7.1.2"
     history "^4.9.0"
     loose-envify "^1.3.1"
     prop-types "^15.6.2"
-    react-router "5.1.0"
+    react-router "5.1.1"
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-router@5.1.0:
-  version "5.1.0"
-  resolved "https://registry.npm.taobao.org/react-router/download/react-router-5.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-router%2Fdownload%2Freact-router-5.1.0.tgz#739d0f3a57476363374e20d6e33e97f5ce2e00a3"
-  integrity sha1-c50POldHY2M3TiDW4z6X9c4uAKM=
-  dependencies:
-    "@babel/runtime" "^7.1.2"
-    history "^4.9.0"
-    hoist-non-react-statics "^3.1.0"
-    loose-envify "^1.3.1"
-    mini-create-react-context "^0.3.0"
-    path-to-regexp "^1.7.0"
-    prop-types "^15.6.2"
-    react-is "^16.6.0"
-    tiny-invariant "^1.0.2"
-    tiny-warning "^1.0.0"
-
-react-router@^5.1.1:
+react-router@5.1.1, react-router@^5.1.1:
   version "5.1.1"
   resolved "https://registry.npm.taobao.org/react-router/download/react-router-5.1.1.tgz#9d65f54795f938c0c5b69eaeef58728134ce7c7c"
   integrity sha1-nWX1R5X5OMDFtp6u71hygTTOfHw=
