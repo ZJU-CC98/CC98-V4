@@ -5,6 +5,7 @@ import { stringify } from 'query-string'
 import SEARCH_TYPE from 'src/constants/SearchType'
 
 import s from 'src/pages/boardList/components/BoardGroupItem.m.scss'
+import { IMAGE_BASE_PATH } from 'src/constants/path'
 
 interface IBoardGroupItemProps {
   data: IBoardGroup
@@ -36,7 +37,7 @@ const renderMasters = (masters: string[] = []) =>
 
 const renderItem = (board: IBasicBoard) => (
   <div className={s.board} key={board.id}>
-    <img className={s.img} src={`/static/images/board/_${board.name}.png`} />
+    <img className={s.img} src={`${IMAGE_BASE_PATH}/board/_${board.name}.png`} />
     <h3 className={s.contentTitle}>
       <Link to={`/board/${board.id}`}>{board.name}</Link>
     </h3>

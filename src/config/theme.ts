@@ -1,10 +1,11 @@
-import THEME from 'src/constants/theme'
+import THEME, { THEME_MODE } from 'src/constants/theme'
 import { hex2rgb, rgb2hex } from 'src/utils/css'
 
 import summer from 'src/assets/home/summer.jpg'
 
 interface IThemeInfo {
   theme: THEME
+  mode: THEME_MODE
   homeHeaderImageURL: string
   palette: Record<string, string>
 }
@@ -15,6 +16,7 @@ const themeList: IThemeInfo[] = [
   {
     theme: THEME.SUMMER,
     homeHeaderImageURL: summer,
+    mode: THEME_MODE.LIGHT,
     palette: {
       primary: '#5198d8',
       second: '#6b7178',
@@ -26,6 +28,7 @@ const themeList: IThemeInfo[] = [
   },
   {
     theme: THEME.DARK,
+    mode: THEME_MODE.DARK,
     homeHeaderImageURL: 'todo',
     palette: {
       primary: '#000000',
@@ -44,6 +47,7 @@ function makeThemeMap(themes: IThemeInfo[]) {
   return themes.reduce(
     (res, curr) => {
       res[curr.theme] = {
+        ...curr,
         homeHeaderImageURL: curr.homeHeaderImageURL,
         palette: {
           ...curr.palette,
@@ -53,6 +57,7 @@ function makeThemeMap(themes: IThemeInfo[]) {
 
       if (curr.theme === defaultTheme) {
         res[THEME.DEFAULT] = {
+          ...curr,
           homeHeaderImageURL: curr.homeHeaderImageURL,
           palette: {
             ...curr.palette,
