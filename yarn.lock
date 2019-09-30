@@ -981,13 +981,13 @@
     "@sentry/types" "5.6.1"
     tslib "^1.9.3"
 
-"@tippy.js/react@^2.2.3":
-  version "2.2.3"
-  resolved "https://registry.npm.taobao.org/@tippy.js/react/download/@tippy.js/react-2.2.3.tgz#2ffb0af6693055be7db4b329b2d3cc7f2356f68e"
-  integrity sha1-L/sK9mkwVb59tLMpstPMfyNW9o4=
+"@tippy.js/react@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/@tippy.js/react/download/@tippy.js/react-3.0.0.tgz#bacc4af0ff4446b693a60cddd074ae59fa2d4df6"
+  integrity sha1-usxK8P9ERraTpgzd0HSuWfotTfY=
   dependencies:
     prop-types "^15.6.2"
-    tippy.js "^4.3.4"
+    tippy.js "^5.0.0"
 
 "@types/anymatch@*":
   version "1.3.1"
@@ -7602,7 +7602,7 @@ plugin-error@^1.0.1:
     arr-union "^3.1.0"
     extend-shallow "^3.0.2"
 
-popper.js@^1.14.7:
+popper.js@^1.15.0:
   version "1.15.0"
   resolved "https://registry.npm.taobao.org/popper.js/download/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
   integrity sha1-VWC5m7rXZH6fqkdca4BWYh9aT/I=
@@ -9659,12 +9659,12 @@ tiny-warning@^1.0.0, tiny-warning@^1.0.2:
   resolved "https://registry.npm.taobao.org/tiny-warning/download/tiny-warning-1.0.3.tgz?cache=0&sync_timestamp=1562634862962&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftiny-warning%2Fdownload%2Ftiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
   integrity sha1-lKMNtFPfTGQ9D9VmBg1gqHXYR1Q=
 
-tippy.js@^4.3.4:
-  version "4.3.5"
-  resolved "https://registry.npm.taobao.org/tippy.js/download/tippy.js-4.3.5.tgz#882bff8d92f09bb0546d2826d5668c0560006f54"
-  integrity sha1-iCv/jZLwm7BUbSgm1WaMBWAAb1Q=
+tippy.js@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npm.taobao.org/tippy.js/download/tippy.js-5.0.0.tgz#770a02e58bebc27a71f4977de0e4e984af0ca2a5"
+  integrity sha1-dwoC5Yvrwnpx9Jd94OTphK8MoqU=
   dependencies:
-    popper.js "^1.14.7"
+    popper.js "^1.15.0"
 
 tmp@^0.0.33:
   version "0.0.33"
