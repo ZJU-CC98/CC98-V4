@@ -1,4 +1,6 @@
+import React from 'react'
 import { TagNode } from '@cc98/ubb-core/dist'
+import { THEME_MODE } from 'src/constants/theme'
 
 export interface IUbbConfig {
   /**
@@ -45,5 +47,9 @@ export interface IContext {
   /**
    * 嵌套引用列表
    */
-  quotes?: React.ReactNode[]
+  quotes: React.ReactNode[][]
+
+  imageBasePath: string
+
+  themeMode: THEME_MODE
 }

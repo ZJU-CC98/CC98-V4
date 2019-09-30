@@ -12,6 +12,8 @@ import notice from 'src/utils/notice'
 import { checkIsBoardMaster } from 'src/utils/permission'
 
 import s from 'src/pages/board/components/BoardHeader.m.scss'
+import { IMAGE_BASE_PATH } from 'src/constants/path'
+import UbbContainer from 'src/ubb'
 
 interface IBoardHeaderProps {
   data: IBoard
@@ -69,10 +71,10 @@ const BoardHeader: React.FC<IBoardHeaderProps> = ({ data }) => {
       <div className={s.title}>
         <img
           className={s.image}
-          src={`/static/images/board/_${data.name}.png`}
+          src={`${IMAGE_BASE_PATH}/board/_${data.name}.png`}
           onError={e => {
             e.preventDefault()
-            ;(e.target as HTMLImageElement).src = `/static/images/board/_CC98.png`
+            ;(e.target as HTMLImageElement).src = `${IMAGE_BASE_PATH}/board/_CC98.png`
           }}
         />
         <h2 className={s.boardName}>{data.name}</h2>
@@ -98,7 +100,11 @@ const BoardHeader: React.FC<IBoardHeaderProps> = ({ data }) => {
         )}
         {isMaster && <Button className={s.boardButton}>编 辑</Button>}
       </div>
-      {data.bigPaper && <div className={s.bigPaper}>{data.bigPaper}</div>}
+      {data.bigPaper && (
+        <div className={s.bigPaper}>
+          <UbbContainer text={data.bigPaper} />
+        </div>
+      )}
     </div>
   )
 }

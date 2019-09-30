@@ -12,6 +12,8 @@ import PostOperation from 'src/pages/topic/components/PostOperation'
 
 import hotImg from 'src/assets/topic/hot.png'
 import s from 'src/pages/topic/components/PostItem.m.scss'
+import { IMAGE_BASE_PATH } from 'src/constants/path'
+import UbbContainer from 'src/ubb'
 
 interface IPostItemProps {
   user?: IUser
@@ -88,22 +90,27 @@ const renderTopBar = (user?: IUser) => (
 
 const renderContent = (post: IPost, userMap: IUserMap) => (
   <div className={s.content}>
-    <div>{post.content}</div>
+    <div>
+      <UbbContainer text={post.content} config={{ allowLightBox: true }} />
+    </div>
     {!!post.awards.length && (
-      <div>
+      <div className={s.award}>
         <p>
-          <span>用户</span>
-          <span>操作</span>
-          <span>理由</span>
+          <span className={s.awardUserTitle}>用户</span>
+          <span className={s.awardContentTitle}>操作</span>
+          <span className={s.awardReasonTitle}>理由</span>
         </p>
         {post.awards.map(item => (
-          <p>
+          <p key={item.id}>
             <span>
-              <img src={userMap[item.operatorName] && userMap[item.operatorName]!.portraitUrl} />
-              <span>{item.operatorName}</span>
+              <img
+                className={s.awardAvatar}
+                src={userMap[item.operatorName] && userMap[item.operatorName]!.portraitUrl}
+              />
+              <span className={s.awardUser}>{item.operatorName}</span>
             </span>
-            <span>{item.content}</span>
-            <span>{item.reason}</span>
+            <span className={s.awardContent}>{item.content}</span>
+            <span className={s.awardReason}>{item.reason}</span>
           </p>
         ))}
       </div>
@@ -142,7 +149,7 @@ const PostItem: React.FC<IPostItemProps> = ({
         post.isAnonymous
           ? {
               name: `匿名${post.userName}`,
-              portraitUrl: '/static/images/心灵头像.gif',
+              portraitUrl: `${IMAGE_BASE_PATH}/心灵头像.gif`,
               gender: 0,
               isFollowing: false,
               id: 0,

@@ -1,4 +1,5 @@
 import React from 'react'
+import { IMAGE_BASE_PATH } from 'src/constants/path'
 
 const Audio: React.FC<{ src: string; title?: string }> = ({ src, title }) => {
   const root = React.useRef<HTMLDivElement>(null)
@@ -8,7 +9,7 @@ const Audio: React.FC<{ src: string; title?: string }> = ({ src, title }) => {
     let player: any
 
     // @ts-ignore
-    import('aplayer/dist/Aplayer.min.js')
+    import('aplayer/dist/APlayer.min.js')
       .then(() => {
         // @ts-ignore
         return import('aplayer')
@@ -22,7 +23,7 @@ const Audio: React.FC<{ src: string; title?: string }> = ({ src, title }) => {
             url: encodeURI(src),
             title: title || encodeURI(src),
             author: '',
-            pic: '/static/images/audio_cover.png',
+            pic: `${IMAGE_BASE_PATH}/audio_cover.png`,
           },
         })
       })

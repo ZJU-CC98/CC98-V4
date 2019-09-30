@@ -1,6 +1,9 @@
 import React from 'react'
 import { IUbbConfig } from 'src/ubb/types'
 import ubbReact from 'src/ubb/ubbReact'
+import { RootStore } from 'src/store'
+import { themeMap } from 'src/config/theme'
+import { useSelector } from 'react-redux'
 
 const defaultConfig: Required<IUbbConfig> = {
   allowAutoPlay: true,
@@ -18,10 +21,18 @@ interface IUbbProps {
   config?: IUbbConfig
 }
 
+function selector(state: RootStore) {
+  return {
+    themeMode: themeMap[state.global.theme].mode,
+  }
+}
+
 const UbbContainer: React.FC<IUbbProps> = ({ text, config = {} }) => {
   const innerConfig = { ...defaultConfig, ...config }
 
-  return <>{ubbReact(text, innerConfig)}</>
+  const { themeMode } = useSelector(selector)
+
+  return <>{ubbReact(text, innerConfig, themeMode)}</>
 }
 
 export default UbbContainer

@@ -2,6 +2,7 @@ import { ITagHandler } from '@cc98/ubb-core'
 import URL from 'url-parse'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import s from 'src/ubb/style.m.scss'
 
 // Avoid XSS:
 // https://medium.com/javascript-security/avoiding-xss-in-react-is-still-hard-d2b5c7ad9412
@@ -30,7 +31,12 @@ const handler: ITagHandler<React.ReactNode> = {
     const isOuter = !!URL(dangerousURL.trim(), {}).protocol
 
     return (
-      <Link to={safeURL} rel="noreferrer noopener" target={isOuter ? '_blank' : undefined}>
+      <Link
+        className={s.url}
+        to={safeURL}
+        rel="noreferrer noopener"
+        target={isOuter ? '_blank' : undefined}
+      >
         {children}
       </Link>
     )

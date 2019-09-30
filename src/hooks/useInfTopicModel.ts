@@ -8,6 +8,7 @@ import { getPrimaryColor } from 'src/config/theme'
 import useBoardMap from 'src/hooks/useBoardMap'
 import useTagMap from 'src/hooks/useTagMap'
 import { useUserMap } from 'src/hooks/useUserMap'
+import { IMAGE_BASE_PATH } from 'src/constants/path'
 
 function selector(state: RootStore) {
   return {
@@ -17,7 +18,7 @@ function selector(state: RootStore) {
 
 const userFallback = {
   name: '匿名用户',
-  portraitUrl: '/static/images/心灵头像.gif',
+  portraitUrl: `${IMAGE_BASE_PATH}/心灵头像.gif`,
 }
 
 export function useInfTopicModel(

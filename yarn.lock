@@ -1218,6 +1218,13 @@
     "@types/node" "*"
     "@types/react" "*"
 
+"@types/react-lazyload@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.npm.taobao.org/@types/react-lazyload/download/@types/react-lazyload-2.5.0.tgz#7d8dd04c9a711fc0f1ea3419786acdcc01fb11dc"
+  integrity sha1-fY3QTJpxH8Dx6jQZeGrNzAH7Edw=
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-redux@^7.1.3":
   version "7.1.3"
   resolved "https://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-7.1.3.tgz#7efc1e36267e9bf8b24ec89ac30a27a65c94cd25"
@@ -5403,6 +5410,11 @@ ip-regex@^2.1.0:
   resolved "https://registry.npm.taobao.org/ip-regex/download/ip-regex-2.1.0.tgz#fa78bf5d2e6913c911ce9f819ee5146bb6d844e9"
   integrity sha1-+ni/XS5pE8kRzp+BnuUUa7bYROk=
 
+ip-regex@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.npm.taobao.org/ip-regex/download/ip-regex-4.1.0.tgz#5ad62f685a14edb421abebc2fff8db94df67b455"
+  integrity sha1-WtYvaFoU7bQhq+vC//jblN9ntFU=
+
 ip@^1.1.0, ip@^1.1.5:
   version "1.1.5"
   resolved "https://registry.npm.taobao.org/ip/download/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
@@ -8117,6 +8129,11 @@ react-is@^16.6.0, react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1, react-is
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.9.0.tgz?cache=0&sync_timestamp=1568742277284&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-is%2Fdownload%2Freact-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
   integrity sha1-IcqVYTmarQ/xp3AcAWg+jKmB7cs=
 
+react-lazyload@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.npm.taobao.org/react-lazyload/download/react-lazyload-2.6.2.tgz#6a1660de6e8653632797539189d19d64e924482c"
+  integrity sha1-ahZg3m6GU2Mnl1ORidGdZOkkSCw=
+
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npm.taobao.org/react-lifecycles-compat/download/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
@@ -9671,6 +9688,11 @@ tippy.js@^4.3.4:
   dependencies:
     popper.js "^1.14.7"
 
+tlds@^1.203.0:
+  version "1.203.1"
+  resolved "https://registry.npm.taobao.org/tlds/download/tlds-1.203.1.tgz#4dc9b02f53de3315bc98b80665e13de3edfc1dfc"
+  integrity sha1-TcmwL1PeMxW8mLgGZeE94+38Hfw=
+
 tmp@^0.0.33:
   version "0.0.33"
   resolved "https://registry.npm.taobao.org/tmp/download/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
@@ -10074,6 +10096,14 @@ url-pattern@^1.0.3:
   version "1.0.3"
   resolved "https://registry.npm.taobao.org/url-pattern/download/url-pattern-1.0.3.tgz#0409292471b24f23c50d65a47931793d2b5acfc1"
   integrity sha1-BAkpJHGyTyPFDWWkeTF5PStaz8E=
+
+url-regex@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npm.taobao.org/url-regex/download/url-regex-5.0.0.tgz#8f5456ab83d898d18b2f91753a702649b873273a"
+  integrity sha1-j1RWq4PYmNGLL5F1OnAmSbhzJzo=
+  dependencies:
+    ip-regex "^4.1.0"
+    tlds "^1.203.0"
 
 url-toolkit@^2.1.6:
   version "2.1.6"

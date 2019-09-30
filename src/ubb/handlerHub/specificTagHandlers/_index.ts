@@ -13,11 +13,13 @@ import del from './del'
 import english from './english'
 import font from './font'
 import i from './i'
-// import img from './img'
+import img from './img'
 import left from './left'
 import mp3 from './mp3'
 import noubb from './noubb'
 import pm from './pm'
+import quote from './quote'
+import quotex from './quotex'
 import right from './right'
 import sandbox from './sanbox'
 import size from './size'
@@ -43,12 +45,14 @@ const specificTagHandlers: IHandlerHub<React.ReactNode>['specificTagHandlers'] =
   english,
   font,
   i,
-  // img,
+  img,
   left,
   mp3,
   // needreply,
   noubb,
   pm,
+  quote,
+  quotex,
   right,
   sandbox,
   size,
