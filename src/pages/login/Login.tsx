@@ -15,6 +15,7 @@ import { removeLocalStorage, setLocalStorage } from 'src/utils/storage'
 import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
+import LightBox from 'src/components/Image/LightBox'
 import s from './Login.m.scss'
 
 const REFRESH_TOKEN_EXPIRED_TIME = 2592000
@@ -96,7 +97,7 @@ const Login: React.FC<RouteComponentProps> = ({ history }) => {
         <img className={s.snow} src={snow} />
       </div>
       <div className={s.right}>
-        <img className={s.welcome} src={welcome} />
+        <LightBox className={s.welcome} src={welcome} />
         <form className={s.form} onSubmit={handleSubmit} autoComplete="on">
           <div className={s.formRow}>
             <label className={s.label}>用户名</label>

@@ -6,6 +6,7 @@ import ItemTitle from 'src/pages/home/components/ItemTitle'
 import HomeContainer from 'src/pages/home/components/HomeContainer'
 
 import s from 'src/pages/home/components/HomeTop.m.scss'
+import UbbContainer from 'src/ubb'
 
 interface IHomeTopProps {
   data: IConfig
@@ -14,7 +15,9 @@ interface IHomeTopProps {
 const HomeTop: React.FC<IHomeTopProps> = ({ data: { announcement, recommendationReading } }) => (
   <>
     <ItemTitle title="全站公告" />
-    <HomeContainer>{announcement}</HomeContainer>
+    <HomeContainer>
+      <UbbContainer text={announcement} />
+    </HomeContainer>
     <ItemTitle title="推荐阅读" color="second" />
     <HomeContainer color="second">
       <Swipe dotPosition="right">

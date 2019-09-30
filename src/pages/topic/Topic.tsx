@@ -42,7 +42,7 @@ const baseBreadcrumb = [
   },
 ]
 
-const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match }) => {
+const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, location }) => {
   const [topicInfo, setTopicInfo] = React.useState<ITopic>()
   const [boardInfo, setBoardInfo] = React.useState<IBoard>()
   const [posts, setPosts] = React.useState<IPost[]>([])
@@ -50,6 +50,7 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match }) => {
   const [userMap, setUserMap] = React.useState<IUserMap>({})
   const dispatch = useDispatch()
 
+  const focusFloor = parseInt(location.hash.slice(1), 10)
   const { topicId, postId } = match.params
   const isTracking = !!postId
   const currentPage = parseInt(match.params.page || '1', 10)
@@ -109,7 +110,9 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match }) => {
 
   const handlePage = (page: number) => {
     dispatch(
-      push(isTracking ? `/topic/${topicId}/postid/${postId}/${page}` : `/topic/${topicId}/${page}`)
+      push(
+        isTracking ? `/topic/${topicId}/postid/${postId}/${page}#1` : `/topic/${topicId}/${page}#1`
+      )
     )
   }
 
@@ -144,6 +147,19 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match }) => {
     <div className={s.root}>
       <Pagination total={totalPage} onChange={handlePage} current={currentPage} />
       {topicInfo && <TopicHeader topicInfo={topicInfo} boardInfo={boardInfo} />}
+      {posts.slice(0, 1).map(item => (
+        <PostItem
+          post={item}
+          isTracking={isTracking}
+          topicInfo={topicInfo}
+          user={userMap[item.userName]}
+          boardInfo={boardInfo}
+          refreshPostLikeState={() => refreshPostLikeState(item.id)}
+          key={item.id}
+          focus={focusFloor === 1}
+          userMap={userMap}
+        />
+      ))}
       {hotPosts.map(item => (
         <PostItem
           post={item}
@@ -154,9 +170,10 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match }) => {
           refreshPostLikeState={() => refreshPostLikeState(item.id)}
           key={item.id}
           userMap={userMap}
+          isHot
         />
       ))}
-      {posts.map(item => (
+      {posts.slice(1).map((item, index) => (
         <PostItem
           post={item}
           isTracking={isTracking}
@@ -165,6 +182,7 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match }) => {
           boardInfo={boardInfo}
           refreshPostLikeState={() => refreshPostLikeState(item.id)}
           key={item.id}
+          focus={focusFloor === index + 2}
           userMap={userMap}
         />
       ))}
@@ -203,6 +221,7 @@ function getPosts(
     return [
       getTopicTrackPostList(topicId, postId!, from, PAGE_SIZE).then(data => {
         setPosts(data)
+        setHotPosts([])
         return data
       }),
       undefined,
@@ -225,6 +244,7 @@ function getPosts(
   return [
     getTopicPostList(topicId, from, PAGE_SIZE).then(data => {
       setPosts(data)
+      setHotPosts([])
       return data
     }),
     undefined,

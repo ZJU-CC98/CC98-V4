@@ -3,6 +3,7 @@
 $content-top-background: #d4e5f5;
 $content-top-color: #666;
 $content-width: $main-content-width - 4px;
+$award-border-color: #eaeaea;
 
 .root {
   margin: 16px 0;
@@ -90,12 +91,60 @@ $content-width: $main-content-width - 4px;
 }
 
 .content {
-  padding: 16px;
+  padding: 16px 24px 16px 16px;
   flex: 1;
+  line-height: 1.5;
 }
 
 .qmd {
   border-top: 1px solid $primary;
   margin: 0 32px 0 16px;
   padding: 16px;
+}
+
+.hot {
+  background-color: red;
+}
+
+.award {
+  margin: 32px 32px 0;
+  font-size: 13px;
+  width: 560px;
+
+  p {
+    line-height: 2;
+  }
+
+  p + p {
+    border-top: $award-border-color dashed 2px;
+  }
+
+  .award-avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 10px 0 20px;
+  }
+
+  .award-user-title {
+    margin-left: 50px;
+  }
+
+  .award-user-title,
+  .award-user {
+    width: 80px;
+    display: inline-flex;
+  }
+
+  .award-content-title,
+  .award-content {
+    margin-left: 20px;
+    display: inline-flex;
+    width: 128px;
+  }
+
+  .award-reason-title,
+  .award-reason {
+    margin-left: 40px;
+  }
 }

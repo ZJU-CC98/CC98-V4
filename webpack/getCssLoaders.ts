@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import autoprefixer from 'autoprefixer'
 import { isDev, publicStylesheetPath } from './constants'
 

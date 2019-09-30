@@ -61,11 +61,13 @@ const TopicItem: React.FC<ITopicItemProps> = ({ data, tagData1, tagData2 }) => {
         >
           {title}
         </Link>
-        <Pagination
-          total={total}
-          onChange={page => dispatch(push(`/topic/${id}/${page}`))}
-          type="mini"
-        />
+        {total > 1 && (
+          <Pagination
+            total={total}
+            onChange={page => dispatch(push(`/topic/${id}/${page}`))}
+            type="mini"
+          />
+        )}
       </div>
       {userName ? (
         <Link

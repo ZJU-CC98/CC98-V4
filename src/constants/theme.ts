@@ -1,4 +1,4 @@
-export enum THEME {
+enum THEME {
   DEFAULT = 0,
   WINTER = 1,
   SUMMER = 4,
@@ -6,6 +6,11 @@ export enum THEME {
 }
 
 export default THEME
+
+export enum THEME_MODE {
+  DARK = 'DARK',
+  LIGHT = 'LIGHT',
+}
 
 export function getThemeName(theme: THEME) {
   switch (theme) {

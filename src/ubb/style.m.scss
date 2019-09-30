@@ -1,0 +1,146 @@
+@import 'var';
+
+$url-color: #0b5394;
+$url-visited-color: #741b47;
+$quote-wrapper-background: #f5faff;
+
+.root {
+  white-space: pre-wrap;
+  width: 100%;
+  font-family: $font-family;
+}
+
+/* specificTagHandlers */
+
+.b {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+.code {
+  ol {
+    list-style: none;
+    counter-reset: li;
+    padding: 0;
+    font-family: Consolas, Monaco, monospace;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  li {
+    counter-increment: li;
+  }
+
+  li::before {
+    content: counter(li);
+    display: inline-flex;
+    width: 50px;
+    margin: 0 10px;
+    justify-content: center;
+    background-color: #ebebeb;
+  }
+}
+
+.del {
+  text-decoration: line-through;
+}
+
+.english {
+  font-family: Arial, serif;
+}
+
+.i {
+  font-style: italic;
+}
+
+.img {
+  max-width: 100%;
+}
+
+.left {
+  text-align: left;
+}
+
+.quote {
+  background-color: $quote-wrapper-background;
+  border: 1px solid $border-color;
+  padding: 0 17px;
+  max-height: 800px;
+  overflow-y: auto;
+}
+
+.quote-item {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 0;
+  overflow-y: hidden;
+
+  & + & {
+    border-top: 1px solid $border-color;
+  }
+}
+
+.quote-expand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.table {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 14px;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  td,
+  th {
+    padding: 6px 13px;
+    border: 1px solid #c8ccd0;
+  }
+
+  th {
+    font-weight: bold;
+    white-space: nowrap;
+  }
+}
+
+.u {
+  text-decoration: underline;
+}
+
+.url {
+  &:link {
+    color: $url-color;
+  }
+
+  &:visited {
+    color: $url-visited-color;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: red;
+  }
+}
+
+/* generalTagHandlers */
+
+.need-reply {
+  background-color: #f5faff;
+  border: 1px solid rgb(204, 204, 204);
+  padding: 10px 17px;
+  color: red;
+  margin: 6px 0;
+}

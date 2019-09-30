@@ -7,6 +7,7 @@
   min-width: $main-content-width;
   color: var(--text-color);
   font-size: $base-font-size;
+  font-family: $font-family;
 }
 
 input[type='text'],
@@ -24,4 +25,9 @@ p {
 a {
   color: var(--text-color);
   text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
 }
