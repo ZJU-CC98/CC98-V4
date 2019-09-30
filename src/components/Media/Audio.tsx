@@ -9,14 +9,14 @@ const Audio: React.FC<{ src: string; title?: string }> = ({ src, title }) => {
     let player: any
 
     // @ts-ignore
-    import('aplayer/dist/APlayer.min.js')
+    import('aplayer/dist/APlayer.min.css')
       .then(() => {
         // @ts-ignore
         return import('aplayer')
       })
-      .then(Aplayer => {
+      .then(({ default: Aplayer }) => {
         player = new Aplayer({
-          element: root,
+          element: root.current,
           autoplay: false,
           preload: 'metadata',
           music: {

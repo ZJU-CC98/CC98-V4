@@ -28,9 +28,9 @@ const Video: React.FC<{ src: string; title?: string }> = ({ src }) => {
     let player: any
 
     loadPlayer(isHLS)
-      .then(DPlayer => {
+      .then(({ default: DPlayer }) => {
         player = new DPlayer({
-          element: root,
+          element: root.current,
           autoplay: false,
           preload: 'metadata',
           video: {

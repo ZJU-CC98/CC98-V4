@@ -29,6 +29,7 @@ import th from './th'
 import topic from './topic'
 import tr from './tr'
 import u from './u'
+import upload from './upload'
 import url from './url'
 import video from './video'
 
@@ -62,6 +63,7 @@ const specificTagHandlers: IHandlerHub<React.ReactNode>['specificTagHandlers'] =
   topic,
   tr,
   u,
+  upload,
   url,
   video,
 }
