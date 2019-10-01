@@ -86,7 +86,7 @@
     "@types/lodash": "^4.14.141",
     "@types/node": "^12.7.8",
     "@types/plugin-error": "^0.1.1",
-    "@types/react": "^16.9.3",
+    "@types/react": "^16.9.4",
     "@types/react-dom": "^16.9.1",
     "@types/react-hot-loader": "^4.1.0",
     "@types/react-lazyload": "^2.5.0",
