@@ -1177,10 +1177,10 @@
   resolved "https://registry.npm.taobao.org/@types/minimatch/download/@types/minimatch-3.0.3.tgz?cache=0&sync_timestamp=1567533751003&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fminimatch%2Fdownload%2F%40types%2Fminimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha1-PcoOPzOyAPx9ETnAzZbBJoyt/Z0=
 
-"@types/node@*", "@types/node@^12.7.8":
-  version "12.7.8"
-  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.7.8.tgz?cache=0&sync_timestamp=1569481053118&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-12.7.8.tgz#cb1bf6800238898bc2ff6ffa5702c3cadd350708"
-  integrity sha1-yxv2gAI4iYvC/2/6VwLDyt01Bwg=
+"@types/node@*", "@types/node@^12.7.9":
+  version "12.7.9"
+  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.7.9.tgz#da0210f91096aa67138cf5afd04c4d629f8a406a"
+  integrity sha1-2gIQ+RCWqmcTjPWv0ExNYp+KQGo=
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
