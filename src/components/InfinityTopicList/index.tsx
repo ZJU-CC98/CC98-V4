@@ -1,5 +1,5 @@
 import React from 'react'
-import { ITopic, IUser } from '@cc98/api'
+import { IBoard, ITopic, IUser } from '@cc98/api'
 import { Link } from 'react-router-dom'
 import { Waypoint } from 'react-waypoint'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
@@ -14,7 +14,7 @@ import s from './index.m.scss'
 
 type BoardMap = Record<
   number, // boardId
-  string // boardName
+  IBoard // board
 >
 type TagMap = Record<
   number, // tagId
@@ -142,7 +142,7 @@ const InfinityTopicList: React.FC<IInfinityTopicListProps> = ({
           userMap[item.userName] || userFallback,
           {
             boardId: item.boardId,
-            boardName: boardMap[item.boardId],
+            boardName: (boardMap[item.boardId] || {}).name,
           },
           tagMap
         )

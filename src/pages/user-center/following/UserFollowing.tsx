@@ -31,6 +31,7 @@ const UserFollowing: React.FC<RouteComponentProps<IUserFollowingRouteMatch>> = (
 
   return (
     <UserCenterContentList
+      emptyText="没有关注"
       currentPage={parseInt(page, 10)}
       pageSize={PAGE_SIZE}
       onPageChange={nextPage => {

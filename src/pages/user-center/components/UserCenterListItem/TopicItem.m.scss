@@ -1,0 +1,20 @@
+@import 'var';
+
+.root {
+  padding-bottom: 30px;
+  font-size: 14px;
+
+  & + & {
+    padding-top: 30px;
+    border-top: 1px dashed $border-color;
+  }
+}
+
+.info {
+  margin-bottom: 30px;
+}
+
+.board {
+  color: $primary;
+  margin-right: 32px;
+}

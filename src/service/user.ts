@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { IUser } from '@cc98/api'
+import { ITopic, IUser } from '@cc98/api'
 import { getLocalStorage, setLocalStorage } from 'src/utils/storage'
 import { stringify } from 'query-string'
 import THEME from 'src/constants/Theme'
@@ -110,4 +110,26 @@ export const getMyFollowee = (from: number, size: number) => {
     },
     needAuth: true,
   }) as Promise<number[]>
+}
+
+export const getMyFavoriteTopics = (from: number, size: number) => {
+  return axios({
+    url: '/topic/me/favorite',
+    params: {
+      from,
+      size,
+    },
+    needAuth: true,
+  }) as Promise<ITopic[]>
+}
+
+export const getMyRecentTopics = (from: number, size: number) => {
+  return axios({
+    url: '/me/recent-topic',
+    params: {
+      from,
+      size,
+    },
+    needAuth: true,
+  }) as Promise<ITopic[]>
 }

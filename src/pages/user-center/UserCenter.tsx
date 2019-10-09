@@ -1,5 +1,6 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router'
+import { useDispatch } from 'react-redux'
 import {
   faCog,
   faCreditCard,
@@ -13,11 +14,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 import { BreadcrumbItem } from 'src/components/Breadcrumb'
+import { refreshUserInfo } from 'src/store/global-async-actions'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
 import UserCenterNav, { INavItem } from './components/UserCenterNav'
 import { USER_CENTER_BASE_PATH } from './constants'
 
+import UserTopic from './topic/UserTopic'
+import UserFavorite from './favorite/UserFavorite'
+import UserCustomBoard from './custom-board/UserCustomBoard'
 import UserFollowing from './following/UserFollowing'
 import UserFan from './fan/UserFan'
 import TransferWealth from './transfer-wealth/TransferWealth'
@@ -54,20 +59,20 @@ const navs: INavItem[] = [
   {
     name: '我的主题',
     icon: faPenSquare,
-    path: '/post',
-    Component: Empty,
+    path: '/topic',
+    Component: UserTopic,
   },
   {
     name: '我的收藏',
     icon: faStar,
     path: '/favorite',
-    Component: Empty,
+    Component: UserFavorite,
   },
   {
     name: '关注版面',
     icon: faRss,
     path: '/custom-board',
-    Component: Empty,
+    Component: UserCustomBoard,
   },
   {
     name: '关注用户',
@@ -99,6 +104,12 @@ const navs: INavItem[] = [
 
 const UserCenter: React.FC = () => {
   useBreadcrumb(breadcrumb)
+
+  const dispatch = useDispatch()
+
+  React.useEffect(() => {
+    dispatch(refreshUserInfo())
+  }, [])
 
   return (
     <div className={s.root}>

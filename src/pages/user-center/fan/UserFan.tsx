@@ -28,6 +28,7 @@ const UserFan: React.FC<RouteComponentProps<IUserFanRouteMatch>> = ({ match, his
 
   return (
     <UserCenterContentList
+      emptyText="没有粉丝"
       currentPage={parseInt(page, 10)}
       pageSize={PAGE_SIZE}
       onPageChange={nextPage => {
