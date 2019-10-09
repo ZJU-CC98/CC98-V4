@@ -932,13 +932,13 @@
     "@sentry/utils" "5.6.1"
     tslib "^1.9.3"
 
-"@sentry/cli@^1.47.2":
-  version "1.47.2"
-  resolved "https://registry.npm.taobao.org/@sentry/cli/download/@sentry/cli-1.47.2.tgz#75a23d2816300b333d4e34163c85feeef93bc062"
-  integrity sha1-daI9KBYwCzM9TjQWPIX+7vk7wGI=
+"@sentry/cli@^1.48.0":
+  version "1.48.0"
+  resolved "https://registry.npm.taobao.org/@sentry/cli/download/@sentry/cli-1.48.0.tgz#cccf2badd3fab9aeaafeaf6ef21bc74e2f6b6790"
+  integrity sha1-zM8rrdP6ua6q/q9u8hvHTi9rZ5A=
   dependencies:
     fs-copy-file-sync "^1.1.1"
-    https-proxy-agent "^2.2.1"
+    https-proxy-agent "^3.0.0"
     mkdirp "^0.5.1"
     node-fetch "^2.1.2"
     progress "2.0.0"
@@ -5182,10 +5182,10 @@ https-browserify@^1.0.0:
   resolved "https://registry.npm.taobao.org/https-browserify/download/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
 
-https-proxy-agent@^2.2.1:
-  version "2.2.2"
-  resolved "https://registry.npm.taobao.org/https-proxy-agent/download/https-proxy-agent-2.2.2.tgz#271ea8e90f836ac9f119daccd39c19ff7dfb0793"
-  integrity sha1-Jx6o6Q+DasnxGdrM05wZ/337B5M=
+https-proxy-agent@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/https-proxy-agent/download/https-proxy-agent-3.0.0.tgz#0106efa5d63d6d6f3ab87c999fa4877a3fd1ff97"
+  integrity sha1-AQbvpdY9bW86uHyZn6SHej/R/5c=
   dependencies:
     agent-base "^4.3.0"
     debug "^3.1.0"
