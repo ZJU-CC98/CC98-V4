@@ -1,0 +1,62 @@
+@import 'var';
+
+$post-count-color: rgb(53, 167, 255);
+$fan-count-color: rgb(255, 54, 54);
+$following-background: #e6e6e6;
+$following-color: #a0a0a0;
+
+.item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
+  font-size: 14px;
+
+  & + & {
+    border-top: 1px dashed $border-color;
+    padding-top: 30px;
+  }
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.name {
+  margin: 0 20px;
+  min-width: 112px;
+}
+
+.info {
+  flex: 1;
+}
+
+.post-count {
+  color: $post-count-color;
+  margin: 0 14px;
+  min-width: 32px;
+}
+
+.fan-count {
+  color: $fan-count-color;
+  margin: 0 14px;
+  min-width: 32px;
+}
+
+.button {
+  cursor: pointer;
+  height: 26px;
+  font-size: 12px;
+  padding: 0;
+  width: 70px;
+
+  & + & {
+    margin-left: 32px;
+  }
+}
+
+.follow {
+  color: $following-color;
+  background-color: $following-background;
+}

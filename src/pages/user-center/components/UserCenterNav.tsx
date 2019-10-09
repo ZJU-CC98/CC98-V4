@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import { NavLink } from 'react-router-dom'
+import { NavLink, RouteComponentProps } from 'react-router-dom'
 
 import s from './UserCenterNav.m.scss'
 
@@ -10,6 +10,8 @@ export interface INavItem {
   icon: IconProp
   path: string
   exact?: boolean
+  pathSuffix?: string
+  Component: React.ComponentType<RouteComponentProps>
 }
 
 const UserCenterNav: React.FC<{

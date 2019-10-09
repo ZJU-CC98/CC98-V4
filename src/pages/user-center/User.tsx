@@ -21,11 +21,13 @@ const navs: INavItem[] = [
     icon: faHome,
     path: '/',
     exact: true,
+    Component: () => null,
   },
   {
     name: '管理',
     icon: faCog,
     path: '/manage',
+    Component: () => null,
   },
 ]
 

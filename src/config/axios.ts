@@ -27,6 +27,7 @@ axios.interceptors.response.use(
 
     error.hasNotified = true
 
+    // eslint-disable-next-line no-console
     console.error(error)
 
     notice({

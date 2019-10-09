@@ -21,6 +21,18 @@ export async function getMe(ignoreCache = false) {
   return me
 }
 
+export const getUsersByIds = (id: number[], ignoreCache?: boolean) => {
+  if (id.length === 0) {
+    return Promise.resolve([])
+  }
+
+  return axios({
+    url: `/user?${stringify({ id })}`,
+    needAuth: true,
+    ignoreCache,
+  }) as Promise<IUser[]>
+}
+
 export const getUsersByNames = (name: string[]) => {
   if (name.length === 0) {
     return Promise.resolve([])
@@ -45,4 +57,57 @@ export async function setMyTheme(theme: THEME) {
     },
     needAuth: true,
   })
+}
+
+export const transferWealth = (userNames: string[], wealth: number, reason: string) => {
+  return axios({
+    url: '/me/transfer-wealth',
+    method: 'PUT',
+    data: {
+      userNames,
+      wealth,
+      reason,
+    },
+    needAuth: true,
+  }) as Promise<string[]>
+}
+
+// 获取我的粉丝
+export const getMyFollower = (from: number, size: number) => {
+  return axios({
+    url: '/me/follower',
+    params: {
+      from,
+      size,
+    },
+    needAuth: true,
+  }) as Promise<number[]>
+}
+
+export const followUser = (userId: number | string) => {
+  return axios({
+    url: `/me/followee/${userId}`,
+    method: 'PUT',
+    needAuth: true,
+  }) as Promise<void>
+}
+
+export const unFollowUser = (userId: number | string) => {
+  return axios({
+    url: `/me/followee/${userId}`,
+    method: 'DELETE',
+    needAuth: true,
+  }) as Promise<void>
+}
+
+// 获取我的关注
+export const getMyFollowee = (from: number, size: number) => {
+  return axios({
+    url: '/me/followee',
+    params: {
+      from,
+      size,
+    },
+    needAuth: true,
+  }) as Promise<number[]>
 }

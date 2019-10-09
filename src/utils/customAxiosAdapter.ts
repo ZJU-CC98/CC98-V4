@@ -10,7 +10,7 @@ import adapter from 'axios/lib/adapters/xhr'
 import { addItem, query, queryAll } from 'src/utils/indexedDb'
 
 export default function makeCustomAxiosAdapter(cacheConfigs: ICacheConfigItem[]): AxiosAdapter {
-  return function(config: AxiosRequestConfig): Promise<any> {
+  return function customAdapter(config: AxiosRequestConfig): Promise<any> {
     for (let index = 0; index < cacheConfigs.length; index += 1) {
       if (
         testUrl(
