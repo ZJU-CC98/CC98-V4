@@ -89,7 +89,7 @@ declare module '@cc98/api' {
     /**
      * 当前显示的头衔 ID
      */
-    displayTitleId: number
+    displayTitleId: number | null
     /**
      * 粉丝数
      */

@@ -3,9 +3,11 @@ import { faCog, faHome } from '@fortawesome/free-solid-svg-icons'
 import { BreadcrumbItem } from 'src/components/Breadcrumb'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
-import { RouteComponentProps } from 'react-router'
+import { Redirect, Route, RouteComponentProps, Switch } from 'react-router'
 import s from './User.m.scss'
 import UserCenterNav, { INavItem } from './components/UserCenterNav'
+
+import UserHome from './home/UserHome'
 
 const breadcrumb: BreadcrumbItem[] = [
   {
@@ -21,7 +23,7 @@ const navs: INavItem[] = [
     icon: faHome,
     path: '/',
     exact: true,
-    Component: () => null,
+    Component: UserHome,
   },
   {
     name: '管理',
@@ -38,11 +40,26 @@ interface IRouteMatch {
 const User: React.FC<RouteComponentProps<IRouteMatch>> = ({ match }) => {
   useBreadcrumb(breadcrumb)
 
+  // TODO: no id
   const { id } = match.params
+  const basePath = `/user/${id}`
 
   return (
     <div className={s.root}>
-      <UserCenterNav basePath={`/user/${id}`} navs={navs} />
+      <UserCenterNav basePath={basePath} navs={navs} />
+      <div className={s.content}>
+        <Switch>
+          {navs.map(({ Component, path, exact, pathSuffix = '' }) => (
+            <Route
+              key={path}
+              path={`/user/:id${path}${pathSuffix}`}
+              exact={exact}
+              component={Component}
+            />
+          ))}
+          <Redirect to={basePath} />
+        </Switch>
+      </div>
     </div>
   )
 }

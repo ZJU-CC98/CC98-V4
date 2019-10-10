@@ -84,7 +84,10 @@ export default function makeCustomAxiosAdapter(cacheConfigs: ICacheConfigItem[])
               })
             })
         return req.then(result => {
-          const newKeys = getRequestQueryKey(result.config)
+          const newKeys = getRequestQueryKey({
+            ...config,
+            url: (config.url || '').slice((config.baseURL || '').length),
+          })
           const isFromRemote = typeof result.data === 'string'
           if (isFromRemote) {
             result.data = JSON.parse(result.data)

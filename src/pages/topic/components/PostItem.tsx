@@ -14,6 +14,7 @@ import hotImg from 'src/assets/topic/hot.png'
 import s from 'src/pages/topic/components/PostItem.m.scss'
 import { IMAGE_BASE_PATH } from 'src/constants/path'
 import UbbContainer from 'src/ubb'
+import UserAvatar from 'src/components/UserAvatar'
 
 interface IPostItemProps {
   user?: IUser
@@ -40,6 +41,7 @@ const renderUser = (
   user?: {
     name: string
     portraitUrl: string
+    displayTitleId: number | null
     gender: number
     isFollowing: boolean
     id: number
@@ -48,7 +50,9 @@ const renderUser = (
   <div className={s.user}>
     {user && (
       <>
-        <img className={s.avatar} src={user.portraitUrl} />
+        <div className={s.avatar}>
+          <UserAvatar user={user} size={100} />
+        </div>
         <p className={s.userName}>
           <span>{user.name}</span>
           {!post.isAnonymous && (
@@ -153,6 +157,7 @@ const PostItem: React.FC<IPostItemProps> = ({
               gender: 0,
               isFollowing: false,
               id: 0,
+              displayTitleId: null,
             }
           : user
       )}

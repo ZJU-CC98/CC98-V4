@@ -21,6 +21,14 @@ export async function getMe(ignoreCache = false) {
   return me
 }
 
+export const getUserById = (id: string | number, ignoreCache?: boolean) => {
+  return axios({
+    url: `/user/${id}`,
+    needAuth: true,
+    ignoreCache,
+  }) as Promise<IUser>
+}
+
 export const getUsersByIds = (id: number[], ignoreCache?: boolean) => {
   if (id.length === 0) {
     return Promise.resolve([])

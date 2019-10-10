@@ -20,6 +20,7 @@ import useBreadcrumb from 'src/hooks/useBreadcrumb'
 import UserCenterNav, { INavItem } from './components/UserCenterNav'
 import { USER_CENTER_BASE_PATH } from './constants'
 
+import MyHome from './home/MyHome'
 import UserTopic from './topic/UserTopic'
 import UserFavorite from './favorite/UserFavorite'
 import UserCustomBoard from './custom-board/UserCustomBoard'
@@ -48,7 +49,7 @@ const navs: INavItem[] = [
     icon: faHome,
     path: '/',
     exact: true,
-    Component: Empty,
+    Component: MyHome,
   },
   {
     name: '修改资料',
