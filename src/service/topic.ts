@@ -1,5 +1,7 @@
 import axios, { CancelToken } from 'axios'
-import { IPost, ITopic } from '@cc98/api'
+import { IPost, ITopic, IVoteInfo } from '@cc98/api'
+import EDITOR_MODE from 'src/constants/EditorMode'
+import TOPIC_TYPE from 'src/constants/TopicType'
 
 export const getTopicInfo = (topicId: string) => {
   return axios({
@@ -128,4 +130,43 @@ export const searchTopics = (from: number, size: number, keyword: string) => {
     },
     needAuth: true,
   })
+}
+
+export interface IPostParams {
+  /**
+   * 标题
+   */
+  title: string
+  /**
+   * 回帖内容
+   */
+  content: string
+  /**
+   * 回帖格式
+   */
+  contentType: EDITOR_MODE
+}
+
+export interface ITopicParams extends IPostParams {
+  /**
+   * 帖子类型
+   */
+  type: TOPIC_TYPE
+  /**
+   * 收到回复是否通知发帖人
+   */
+  notifyPoster: boolean
+  isVote?: boolean
+  tag1?: number
+  tag2?: number
+  voteInfo?: IVoteInfo
+}
+
+export const postTopic = (boardId: string, topic: ITopicParams) => {
+  return axios({
+    url: `/board/${boardId}/topic`,
+    method: 'POST',
+    data: topic,
+    needAuth: true,
+  }) as Promise<void>
 }
