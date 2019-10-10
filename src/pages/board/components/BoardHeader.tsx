@@ -12,8 +12,8 @@ import notice from 'src/utils/notice'
 import { checkIsBoardMaster } from 'src/utils/permission'
 
 import s from 'src/pages/board/components/BoardHeader.m.scss'
-import { IMAGE_BASE_PATH } from 'src/constants/path'
 import UbbContainer from 'src/ubb'
+import BoardImg from 'src/components/BoardImg'
 
 interface IBoardHeaderProps {
   data: IBoard
@@ -69,14 +69,7 @@ const BoardHeader: React.FC<IBoardHeaderProps> = ({ data }) => {
   return (
     <div className={s.root}>
       <div className={s.title}>
-        <img
-          className={s.image}
-          src={`${IMAGE_BASE_PATH}/board/_${data.name}.png`}
-          onError={e => {
-            e.preventDefault()
-            ;(e.target as HTMLImageElement).src = `${IMAGE_BASE_PATH}/board/_CC98.png`
-          }}
-        />
+        <BoardImg board={data} size={64} />
         <h2 className={s.boardName}>{data.name}</h2>
         <span className={s.divider}>|</span>
         <div className={s.boardInfo}>

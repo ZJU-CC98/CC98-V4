@@ -1,0 +1,16 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.content {
+  width: 100%;
+  min-height: 600px;
+}
+
+.empty {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}

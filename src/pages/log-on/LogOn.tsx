@@ -16,13 +16,13 @@ import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
 import LightBox from 'src/components/Image/LightBox'
-import s from './Login.m.scss'
+import s from 'src/pages/log-on/LogOn.m.scss'
 
 const REFRESH_TOKEN_EXPIRED_TIME = 2592000
 const CODE_WRONG_PASSWORD = 400
 const USER_LOCKED_STATES = [1, 2]
 
-const Login: React.FC<RouteComponentProps> = ({ history }) => {
+const LogOn: React.FC<RouteComponentProps> = ({ history }) => {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [formInfo, setFormInfo] = React.useState('')
@@ -131,4 +131,4 @@ const Login: React.FC<RouteComponentProps> = ({ history }) => {
   )
 }
 
-export default Login
+export default LogOn

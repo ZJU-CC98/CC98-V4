@@ -1,6 +1,7 @@
 declare module '@cc98/api' {
   import PRIVILEGE from 'src/constants/Privilege'
   import LOCK_STATE from 'src/constants/LockState'
+  import THEME from 'src/constants/Theme'
 
   export interface IUser {
     /**
@@ -88,7 +89,7 @@ declare module '@cc98/api' {
     /**
      * 当前显示的头衔 ID
      */
-    displayTitleId: number
+    displayTitleId: number | null
     /**
      * 粉丝数
      */
@@ -112,7 +113,7 @@ declare module '@cc98/api' {
     /**
      * 用户选择的主题
      */
-    theme: number
+    theme: THEME
     /**
      * 等级（已经废弃）
      */

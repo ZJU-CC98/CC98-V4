@@ -9,16 +9,18 @@ import BasicLayout from 'src/layout/BasicLayout'
 import ProdErrorBoundary from 'src/components/ErrorBoundary'
 
 import Home from 'src/pages/home/Home'
-import Login from 'src/pages/login/Login'
-import BoardList from 'src/pages/boardList/BoardList'
+import LogOn from 'src/pages/log-on/LogOn'
+import BoardList from 'src/pages/board-list/BoardList'
 import Board from 'src/pages/board/Board'
 import Topic from 'src/pages/topic/Topic'
-import NewTopics from 'src/pages/newTopics/NewTopics'
+import NewTopics from 'src/pages/new-topics/NewTopics'
 import HotWeekly from 'src/pages/topic/hotWeekly/HotWeekly'
 import HotMonthly from 'src/pages/topic/hotMonthly/HotMonthly'
 import HotHistory from 'src/pages/topic/hotHistory/HotHistory'
 import Focus from 'src/pages/focus/Focus'
 import Search from 'src/pages/search/Search'
+import UserCenter from 'src/pages/user-center/UserCenter'
+import User from 'src/pages/user-center/User'
 
 const ErrorBoundary = process.env.NODE_ENV === 'production' ? ProdErrorBoundary : React.Fragment
 
@@ -31,11 +33,13 @@ export const App: React.FC = () => (
             <Route path="/" component={Home} exact />
             <Route path="/board-list" component={BoardList} />
             <Route path="/board/:id/:page?" component={Board} />
-            <Route path="/sign-in" component={Login} />
-            <Route path="/logon" component={Login} />
+            <Route path="/sign-in" component={LogOn} />
+            <Route path="/logon" component={LogOn} />
             <Route path="/new-topics" component={NewTopics} />
             <Route path="/focus" component={Focus} />
             <Route path="/search" component={Search} />
+            <Route path="/user-center" component={UserCenter} />
+            <Route path="/user/:id" component={User} />
             <Route path="/topic/hot-weekly" component={HotWeekly} />
             <Route path="/topic/hot-monthly" component={HotMonthly} />
             <Route path="/topic/hot-history" component={HotHistory} />

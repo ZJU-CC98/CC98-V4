@@ -1,5 +1,5 @@
 import { IUser } from '@cc98/api'
-import THEME from 'src/constants/theme'
+import THEME from 'src/constants/Theme'
 import { BreadcrumbItem } from 'src/components/Breadcrumb'
 
 export enum GLOBAL_ACTION_TYPES {

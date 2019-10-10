@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { CancelToken } from 'axios'
 import { IPost, ITopic } from '@cc98/api'
 
 export const getTopicInfo = (topicId: string) => {
@@ -31,7 +31,12 @@ export const removeTopicFavorite = (topicId: string | number) => {
   }) as Promise<void>
 }
 
-export const getTopicPostList = (topicId: string | number, from: number, size: number) => {
+export const getTopicPostList = (
+  topicId: string | number,
+  from: number,
+  size: number,
+  cancelToken?: CancelToken
+) => {
   return axios({
     url: `/Topic/${topicId}/post`,
     params: {
@@ -39,13 +44,15 @@ export const getTopicPostList = (topicId: string | number, from: number, size: n
       size,
     },
     needAuth: true,
+    cancelToken,
   }) as Promise<IPost[]>
 }
 
-export const getTopicTopPostList = (topicId: string | number) => {
+export const getTopicTopPostList = (topicId: string | number, cancelToken?: CancelToken) => {
   return axios({
     url: `/Topic/${topicId}/hot-post`,
     needAuth: true,
+    cancelToken,
   }) as Promise<IPost[]>
 }
 
@@ -53,7 +60,8 @@ export const getTopicTrackPostList = (
   topicid: string | number,
   postid: string | number,
   from: number,
-  size: number
+  size: number,
+  cancelToken?: CancelToken
 ) => {
   return axios({
     url: `/post/topic/specific-user`,
@@ -63,6 +71,7 @@ export const getTopicTrackPostList = (
       from,
       size,
     },
+    cancelToken,
   })
 }
 
