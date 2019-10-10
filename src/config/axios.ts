@@ -21,8 +21,13 @@ axios.interceptors.response.use(
       throw error
     }
 
+    if (error instanceof axios.Cancel) {
+      throw error
+    }
+
     error.hasNotified = true
 
+    // eslint-disable-next-line no-console
     console.error(error)
 
     notice({

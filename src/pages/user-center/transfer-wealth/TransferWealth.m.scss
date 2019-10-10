@@ -1,0 +1,15 @@
+.row {
+  display: flex;
+  margin: 16px 0;
+  align-items: center;
+
+  p {
+    margin: 0 16px;
+    width: 80px;
+  }
+
+  input {
+    padding: 8px;
+    width: 480px;
+  }
+}

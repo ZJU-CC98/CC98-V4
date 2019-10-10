@@ -83,8 +83,10 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
                 </div>
               }
             >
-              <div className={s.message}>
-                <Icon icon={faBell} />
+              <div>
+                <div className={s.message}>
+                  <Icon icon={faBell} />
+                </div>
               </div>
             </Tippy>
             <Tippy
@@ -94,11 +96,11 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
               animation="perspective"
               content={
                 <div className={s.menu}>
-                  <Link to="/usercenter" className={s.menuItem}>
+                  <Link to="/user-center" className={s.menuItem}>
                     个人中心
                   </Link>
                   {user!.privilege === '管理员' && (
-                    <Link to="/sitemanage" className={s.menuItem}>
+                    <Link to="/site-manage" className={s.menuItem}>
                       全站管理
                     </Link>
                   )}
@@ -122,7 +124,7 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
         ) : (
           <>
             <div className={s.text}>
-              <Link to="/logOn">登录</Link>
+              <Link to="/log-on">登录</Link>
             </div>
             <div className={s.text}>
               <a href="https://account.cc98.org/">注册</a>

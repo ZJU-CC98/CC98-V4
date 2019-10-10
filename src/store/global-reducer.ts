@@ -2,7 +2,7 @@ import produce from 'immer'
 import cssVars from 'css-vars-ponyfill'
 import { IUser } from '@cc98/api'
 import { defaultTheme, themeMap } from 'src/config/theme'
-import THEME from 'src/constants/theme'
+import THEME from 'src/constants/Theme'
 import { getLocalStorage } from 'src/utils/storage'
 import { BreadcrumbItem } from 'src/components/Breadcrumb'
 import { GLOBAL_ACTION_TYPES, GlobalActions } from './global-actions'
@@ -28,7 +28,7 @@ const initState: IGlobalState = {
 }
 
 cssVars({
-  variables: themeMap[defaultTheme].palette,
+  variables: themeMap[initTheme].palette,
 })
 
 const reducer = (state = initState, action: GlobalActions) =>

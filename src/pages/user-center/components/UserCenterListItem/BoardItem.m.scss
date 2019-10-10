@@ -1,0 +1,25 @@
+@import 'var';
+
+.root {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
+
+  & + & {
+    border-top: 1px dashed $border-color;
+    padding-top: 30px;
+  }
+}
+
+.info {
+  margin-left: 48px;
+  flex: 1;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}

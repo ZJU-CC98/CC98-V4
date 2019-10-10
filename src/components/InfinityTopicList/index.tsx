@@ -1,11 +1,11 @@
 import React from 'react'
-import { ITopic, IUser } from '@cc98/api'
+import { IBoard, ITopic, IUser } from '@cc98/api'
 import { Link } from 'react-router-dom'
 import { Waypoint } from 'react-waypoint'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faClock, faEye } from '@fortawesome/free-regular-svg-icons'
-import { HashLoader } from 'react-spinners'
 
+import Spin from 'src/components/Spin'
 import IUserMap from 'src/types/IUserMap'
 import { stringify } from 'query-string'
 import SEARCH_TYPE from 'src/constants/SearchType'
@@ -14,7 +14,7 @@ import s from './index.m.scss'
 
 type BoardMap = Record<
   number, // boardId
-  string // boardName
+  IBoard // board
 >
 type TagMap = Record<
   number, // tagId
@@ -39,8 +39,6 @@ interface IInfinityTopicListProps {
 
   boardMap: BoardMap
   tagMap: TagMap
-
-  loadingColor?: string
 }
 
 const renderTags = ({ tag1, tag2 }: ITopic, tagMap: TagMap) => {
@@ -135,7 +133,6 @@ const InfinityTopicList: React.FC<IInfinityTopicListProps> = ({
   userFallback,
   boardMap,
   tagMap,
-  loadingColor,
 }) => {
   return (
     <>
@@ -145,16 +142,12 @@ const InfinityTopicList: React.FC<IInfinityTopicListProps> = ({
           userMap[item.userName] || userFallback,
           {
             boardId: item.boardId,
-            boardName: boardMap[item.boardId],
+            boardName: (boardMap[item.boardId] || {}).name,
           },
           tagMap
         )
       )}
-      {isLoading && (
-        <div className={s.loading}>
-          <HashLoader color={loadingColor} />
-        </div>
-      )}
+      {isLoading && <Spin />}
       {!isLoaded && <Waypoint topOffset={-320} onEnter={onLoadMore} />}
       {isLoaded && !isLoading && showNoMore && <p className={s.noMore}>{noMoreText}</p>}
     </>

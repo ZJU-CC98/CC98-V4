@@ -1,6 +1,6 @@
 import React from 'react'
 import { TagNode } from '@cc98/ubb-core/dist'
-import { THEME_MODE } from 'src/constants/theme'
+import { THEME_MODE } from 'src/constants/Theme'
 
 export interface IUbbConfig {
   /**

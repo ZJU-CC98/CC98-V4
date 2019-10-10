@@ -3,9 +3,9 @@ import { IBasicBoard, IBoardGroup } from '@cc98/api'
 import { Link } from 'react-router-dom'
 import { stringify } from 'query-string'
 import SEARCH_TYPE from 'src/constants/SearchType'
+import BoardImg from 'src/components/BoardImg'
 
-import s from 'src/pages/boardList/components/BoardGroupItem.m.scss'
-import { IMAGE_BASE_PATH } from 'src/constants/path'
+import s from 'src/pages/board-list/components/BoardGroupItem.m.scss'
 
 interface IBoardGroupItemProps {
   data: IBoardGroup
@@ -37,7 +37,7 @@ const renderMasters = (masters: string[] = []) =>
 
 const renderItem = (board: IBasicBoard) => (
   <div className={s.board} key={board.id}>
-    <img className={s.img} src={`${IMAGE_BASE_PATH}/board/_${board.name}.png`} />
+    <BoardImg board={board} className={s.img} size={96} />
     <h3 className={s.contentTitle}>
       <Link to={`/board/${board.id}`}>{board.name}</Link>
     </h3>
