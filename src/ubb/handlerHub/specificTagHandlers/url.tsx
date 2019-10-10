@@ -14,6 +14,7 @@ export function isSafe(dangerousURL: string) {
   if (url.protocol === 'http:') return true
   if (url.protocol === 'https:') return true
 
+  // eslint-disable-next-line no-console
   console.error(`unsafe url: ${dangerousURL}`)
 
   return false

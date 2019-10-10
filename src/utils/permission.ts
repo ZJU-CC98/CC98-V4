@@ -46,3 +46,7 @@ export function checkCanManagePost(
 
   return boardInfo.id === YI_LU_ZOU_LAI_BOARD_ID && topicInfo.userId === currentUser.id
 }
+
+export function checkCanManageUser(currentUser?: IUser | null) {
+  return currentUser && currentUser.privilege === PRIVILEGE.ADMIN
+}

@@ -1,0 +1,14 @@
+@import 'var';
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.content {
+  background-color: $main-background-color;
+  padding: 32px;
+  width: 840px;
+  min-height: 618px;
+}

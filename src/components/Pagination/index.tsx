@@ -60,7 +60,11 @@ const Pagination: React.FC<IPaginationProps> = ({
   return (
     <div className={s.root}>
       {total > 1 && (
-        <Button className={s.button} disabled={current === 1}>
+        <Button
+          className={s.button} // 换行
+          onClick={() => onChange(current - 1)}
+          disabled={current === 1}
+        >
           <Icon icon={faChevronLeft} />
         </Button>
       )}
@@ -78,7 +82,11 @@ const Pagination: React.FC<IPaginationProps> = ({
         </>
       )}
       {total > 1 && (
-        <Button className={s.button} disabled={current === total}>
+        <Button
+          className={s.button}
+          onClick={() => onChange(current + 1)}
+          disabled={current === total}
+        >
           <Icon icon={faChevronRight} />
         </Button>
       )}
