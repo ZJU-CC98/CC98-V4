@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { ILike } from '@cc98/api'
+import { ILike, IPost } from '@cc98/api'
+import { IPostParams } from 'src/service/topic'
 
 export const getPostLikeState = (postId: number) => {
   return axios({
@@ -23,5 +24,21 @@ export const atUsersInPost = (
     silent: true,
     method: 'POST',
     data: userNames,
+  }) as Promise<void>
+}
+
+export const getPost = (postId: string) => {
+  return axios({
+    url: `/post/${postId}/original`,
+    needAuth: true,
+  }) as Promise<IPost>
+}
+
+export const editPost = (postId: string, post: IPostParams) => {
+  return axios({
+    url: `/post/${postId}`,
+    method: 'PUT',
+    needAuth: true,
+    data: post,
   }) as Promise<void>
 }

@@ -22,6 +22,7 @@ import Search from 'src/pages/search/Search'
 import UserCenter from 'src/pages/user-center/UserCenter'
 import User from 'src/pages/user-center/User'
 import SendTopic from 'src/pages/editor/send-topic/SendTopic'
+import EditPost from 'src/pages/editor/edit-post/EditPost'
 
 const ErrorBoundary = process.env.NODE_ENV === 'production' ? ProdErrorBoundary : React.Fragment
 
@@ -46,7 +47,8 @@ export const App: React.FC = () => (
             <Route path="/topic/hot-history" component={HotHistory} />
             <Route path="/topic/:topicId/postId/:postId/page:?" component={Topic} />
             <Route path="/topic/:topicId/:page?" component={Topic} />
-            <Route path="/editor/send-topic" component={SendTopic} />
+            <Route path="/editor/send-topic/:boardId" component={SendTopic} />
+            <Route path="/editor/edit-post/:postId" component={EditPost} />
             <Route
               path="/error"
               component={() => {

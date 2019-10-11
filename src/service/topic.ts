@@ -3,7 +3,7 @@ import { IPost, ITopic, IVoteInfo } from '@cc98/api'
 import EDITOR_MODE from 'src/constants/EditorMode'
 import TOPIC_TYPE from 'src/constants/TopicType'
 
-export const getTopicInfo = (topicId: string) => {
+export const getTopicInfo = (topicId: string | number) => {
   return axios({
     url: `/topic/${topicId}`,
     needAuth: true,

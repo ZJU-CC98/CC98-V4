@@ -9,6 +9,8 @@ import s from './index.m.scss'
 interface IEditorProps {
   value: string
   onChange: (value: string) => void
+  initValue?: string
+  initMode?: EDITOR_MODE
   mode: EDITOR_MODE
   onModeChange: (mode: EDITOR_MODE) => void
 }
@@ -17,9 +19,18 @@ interface IEditorProps {
  * ubb + markdown 编辑器
  * 带切换
  */
-const Editor: React.FC<IEditorProps> = ({ value, onChange, mode, onModeChange }) => {
-  const [ubbValue, setUbbValue] = React.useState('')
-  const [markdownValue, setMarkdownValue] = React.useState('')
+const Editor: React.FC<IEditorProps> = ({
+  value,
+  onChange,
+  mode,
+  onModeChange,
+  initValue = '',
+  initMode = EDITOR_MODE.UBB,
+}) => {
+  const [ubbValue, setUbbValue] = React.useState(initMode === EDITOR_MODE.UBB ? initValue : '')
+  const [markdownValue, setMarkdownValue] = React.useState(
+    initMode === EDITOR_MODE.MARKDOWN ? initValue : ''
+  )
 
   React.useEffect(() => {
     if (mode === EDITOR_MODE.MARKDOWN) {
