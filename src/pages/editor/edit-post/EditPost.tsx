@@ -6,6 +6,7 @@ import useBreadcrumb from 'src/hooks/useBreadcrumb'
 import { editPost, getPost } from 'src/service/post'
 import { getTotalPage } from 'src/pages/topic/utils'
 import Editor from 'src/components/Editor'
+import TopicEditor from 'src/pages/editor/components/TopicEditor'
 import EDITOR_MODE from 'src/constants/EditorMode'
 import Button from 'src/components/Button'
 import { getTopicInfo } from 'src/service/topic'
@@ -51,7 +52,28 @@ const EditPost: React.FC<RouteComponentProps<ISendTopicRouteMatch>> = ({ match, 
     }
   }, [post])
 
-  if (!post) return null
+  if (!post || (post.floor === 1 && !topic)) return null
+
+  if (post.floor === 1 && topic) {
+    return (
+      <div className={s.root}>
+        <TopicEditor
+          buttonText="编辑"
+          initTopic={{
+            type: topic.type,
+            notifyPoster: topic.notifyPoster,
+            title: topic.title,
+            content: post.content,
+            contentType: post.contentType,
+            tag1: topic.tag1,
+            tag2: topic.tag2,
+          }}
+          boardId={topic.boardId}
+          onEdit={console.log}
+        />
+      </div>
+    )
+  }
 
   const handleEdit = () => {
     setLoading(true)

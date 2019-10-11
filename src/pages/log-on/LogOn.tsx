@@ -17,6 +17,7 @@ import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
 import LightBox from 'src/components/Image/LightBox'
 import s from 'src/pages/log-on/LogOn.m.scss'
+import { clearAll } from 'src/utils/indexedDb'
 
 const REFRESH_TOKEN_EXPIRED_TIME = 2592000
 const CODE_WRONG_PASSWORD = 400
@@ -76,6 +77,9 @@ const LogOn: React.FC<RouteComponentProps> = ({ history }) => {
         }
 
         setFormInfo('登录成功 正在返回')
+
+        clearAll()
+
         // TODO: user theme
         dispatch({
           type: GLOBAL_ACTION_TYPES.LOGIN_AND_SET_CURRENT_USER,

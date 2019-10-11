@@ -8,6 +8,7 @@ import Tippy from '@tippy.js/react'
 import { RootStore } from 'src/store'
 import { GLOBAL_ACTION_TYPES } from 'src/store/global-actions'
 import { getMe } from 'src/service/user'
+import { clearAll } from 'src/utils/indexedDb'
 
 import icon from 'src/assets/98LOGO.ico'
 
@@ -26,6 +27,7 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
   const dispatch = useDispatch()
 
   function logout() {
+    clearAll()
     dispatch({
       type: GLOBAL_ACTION_TYPES.LOGOUT,
     })

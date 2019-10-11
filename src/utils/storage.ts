@@ -6,6 +6,8 @@
  * @param value
  * @param expireIn 0 表示永不过期
  */
+import { clearAll } from 'src/utils/indexedDb'
+
 export function setLocalStorage<T>(key: string, value: T, expireIn = 0) {
   let v: string
   if (typeof value === 'object') {
@@ -38,6 +40,11 @@ export function getLocalStorage<T = any>(key: string): T | undefined {
 
     if (now > time) {
       localStorage.removeItem(key)
+
+      if (key === 'refreshToken') {
+        clearAll()
+      }
+
       return
     }
   }

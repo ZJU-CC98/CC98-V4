@@ -10,7 +10,7 @@ interface ISendTopicRouteMatch {
   boardId: string
 }
 
-const SendTopic: React.FC<RouteComponentProps<ISendTopicRouteMatch>> = ({ location }) => {
+const SendTopic: React.FC<RouteComponentProps<ISendTopicRouteMatch>> = ({ location, match }) => {
   const initTopic: ITopicParams = {
     title: '',
     content: '',
@@ -19,13 +19,16 @@ const SendTopic: React.FC<RouteComponentProps<ISendTopicRouteMatch>> = ({ locati
     notifyPoster: true,
   }
 
+  const { boardId } = match.params
   const { isVote } = parse(location.search) as { isVote?: '1' }
 
   if (isVote) {
     initTopic.isVote = true
   }
 
-  return <TopicEditor initTopic={initTopic} onEdit={console.log} />
+  return (
+    <TopicEditor boardId={boardId} buttonText="发帖" initTopic={initTopic} onEdit={console.log} />
+  )
 }
 
 export default SendTopic

@@ -91,5 +91,7 @@ declare module '@cc98/api' {
       isBold: boolean
       isItalic: boolean
     }
+
+    notifyPoster: boolean
   }
 }
