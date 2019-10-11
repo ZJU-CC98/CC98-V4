@@ -7,3 +7,21 @@ export const getPostLikeState = (postId: number) => {
     needAuth: true,
   }) as Promise<ILike>
 }
+
+export const atUsersInPost = (
+  topicId: string | number,
+  postId: string | number,
+  userNames: string[]
+) => {
+  return axios({
+    url: '/notification/at',
+    params: {
+      topicid: topicId,
+      postid: postId,
+    },
+    needAuth: true,
+    silent: true,
+    method: 'POST',
+    data: userNames,
+  }) as Promise<void>
+}

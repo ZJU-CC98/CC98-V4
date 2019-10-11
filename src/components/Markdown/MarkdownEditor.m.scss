@@ -1,3 +1,11 @@
 .root {
   font-size: 14px;
+
+  :global {
+    .DraftEditor-root,
+    .DraftEditor-editorContainer,
+    .public-DraftEditor-content {
+      height: 100%;
+    }
+  }
 }

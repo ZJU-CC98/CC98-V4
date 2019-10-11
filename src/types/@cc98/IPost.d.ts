@@ -1,4 +1,6 @@
 declare module '@cc98/api' {
+  import EDITOR_MODE from 'src/constants/EditorMode'
+
   export interface IPost {
     allowedViewers: any
 
@@ -16,7 +18,7 @@ declare module '@cc98/api' {
      * UBB 0
      * markdown 1
      */
-    contentType: 0 | 1
+    contentType: EDITOR_MODE
     /**
      * 楼层数
      */

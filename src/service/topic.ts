@@ -145,6 +145,9 @@ export interface IPostParams {
    * 回帖格式
    */
   contentType: EDITOR_MODE
+
+  // 所引用的 postId
+  parentId?: number
 }
 
 export interface ITopicParams extends IPostParams {
@@ -169,4 +172,14 @@ export const postTopic = (boardId: string, topic: ITopicParams) => {
     data: topic,
     needAuth: true,
   }) as Promise<void>
+}
+
+export const replyTopic = (topicId: string, post: IPostParams) => {
+  return axios({
+    url: `/topic/${topicId}/post`,
+    method: 'POST',
+    needAuth: true,
+    data: post,
+    silent: true,
+  }) as Promise<string>
 }

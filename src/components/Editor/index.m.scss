@@ -1,6 +1,16 @@
 @import 'var';
 
 .root {
-  background-color: $main-background-color;
+  width: 100%;
   font-size: 16px;
+}
+
+.editor-wrapper {
+  background-color: $main-background-color;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 0;
 }

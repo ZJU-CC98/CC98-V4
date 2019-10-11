@@ -55,7 +55,7 @@ const Editor: React.FC<IEditorProps> = ({ value, onChange, mode, onModeChange })
 
   return (
     <div className={s.root}>
-      <div>
+      <div className={s.buttonWrapper}>
         <Button
           primary
           border
@@ -66,7 +66,7 @@ const Editor: React.FC<IEditorProps> = ({ value, onChange, mode, onModeChange })
           {mode === EDITOR_MODE.MARKDOWN ? '切换到UBB编辑器' : '切换到Markdown编辑器'}
         </Button>
       </div>
-      {editor}
+      <div className={s.editorWrapper}>{editor}</div>
     </div>
   )
 }
