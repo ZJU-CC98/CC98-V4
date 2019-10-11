@@ -5986,10 +5986,10 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.npm.taobao.org/kind-of/download/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   integrity sha1-ARRrNqYhjmTljzqNZt5df8b20FE=
 
-known-css-properties@^0.15.0:
-  version "0.15.0"
-  resolved "https://registry.npm.taobao.org/known-css-properties/download/known-css-properties-0.15.0.tgz#5aa14a98b5a1652448aad44a1c67e867e4e7d88c"
-  integrity sha1-WqFKmLWhZSRIqtRKHGfoZ+Tn2Iw=
+known-css-properties@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.npm.taobao.org/known-css-properties/download/known-css-properties-0.16.0.tgz#3f0597214db11a460df77cd44bcb39e263b9da6c"
+  integrity sha1-PwWXIU2xGkYN93zUS8s54mO52mw=
 
 last-run@^1.1.0:
   version "1.1.1"
@@ -9480,10 +9480,10 @@ stylelint-config-standard@^19.0.0:
   dependencies:
     stylelint-config-recommended "^3.0.0"
 
-stylelint@^11.0.0:
-  version "11.0.0"
-  resolved "https://registry.npm.taobao.org/stylelint/download/stylelint-11.0.0.tgz#1458d1e126d4f2fb9f41076197f852aa1fcae91d"
-  integrity sha1-FFjR4SbU8vufQQdhl/hSqh/K6R0=
+stylelint@^11.1.1:
+  version "11.1.1"
+  resolved "https://registry.npm.taobao.org/stylelint/download/stylelint-11.1.1.tgz#6dbbb348036576ac6b033ddfedba72a877c1d6bb"
+  integrity sha1-bbuzSANldqxrAz3f7bpyqHfB1rs=
   dependencies:
     autoprefixer "^9.5.1"
     balanced-match "^1.0.0"
@@ -9500,7 +9500,7 @@ stylelint@^11.0.0:
     ignore "^5.0.6"
     import-lazy "^4.0.0"
     imurmurhash "^0.1.4"
-    known-css-properties "^0.15.0"
+    known-css-properties "^0.16.0"
     leven "^3.1.0"
     lodash "^4.17.14"
     log-symbols "^3.0.0"
