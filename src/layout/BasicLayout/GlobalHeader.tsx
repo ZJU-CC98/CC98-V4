@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import cn from 'classnames'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faBell } from '@fortawesome/free-regular-svg-icons'
@@ -25,6 +25,7 @@ function selector(store: RootStore) {
 const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
   const { isLogin, user } = useSelector(selector)
   const dispatch = useDispatch()
+  const { pathname } = useLocation()
 
   function logout() {
     clearAll()
@@ -126,7 +127,9 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
         ) : (
           <>
             <div className={s.text}>
-              <Link to="/log-on">登录</Link>
+              <Link replace={pathname === '/error/not-log-on'} to="/log-on">
+                登录
+              </Link>
             </div>
             <div className={s.text}>
               <a href="https://account.cc98.org/">注册</a>

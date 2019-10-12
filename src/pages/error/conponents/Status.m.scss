@@ -1,0 +1,37 @@
+@import 'var';
+
+.root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img {
+  width: 768px;
+  margin-top: -80px;
+}
+
+.title {
+  font-size: 24px;
+  margin-top: -120px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $text-color;
+}
+
+.desc {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+
+  a {
+    text-decoration: underline;
+    margin-top: 40px;
+  }
+}
