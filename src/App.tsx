@@ -21,6 +21,8 @@ import Focus from 'src/pages/focus/Focus'
 import Search from 'src/pages/search/Search'
 import UserCenter from 'src/pages/user-center/UserCenter'
 import User from 'src/pages/user-center/User'
+import SendTopic from 'src/pages/editor/send-topic/SendTopic'
+import EditPost from 'src/pages/editor/edit-post/EditPost'
 
 const ErrorBoundary = process.env.NODE_ENV === 'production' ? ProdErrorBoundary : React.Fragment
 
@@ -31,26 +33,30 @@ export const App: React.FC = () => (
         <BasicLayout>
           <Switch>
             <Route path="/" component={Home} exact />
+
+            <Route path="/log-on" component={LogOn} />
+            <Route path="/sign-in" component={LogOn} />
+
             <Route path="/board-list" component={BoardList} />
             <Route path="/board/:id/:page?" component={Board} />
-            <Route path="/sign-in" component={LogOn} />
-            <Route path="/logon" component={LogOn} />
-            <Route path="/new-topics" component={NewTopics} />
+
             <Route path="/focus" component={Focus} />
+
             <Route path="/search" component={Search} />
-            <Route path="/user-center" component={UserCenter} />
-            <Route path="/user/:id" component={User} />
+            <Route path="/new-topics" component={NewTopics} />
             <Route path="/topic/hot-weekly" component={HotWeekly} />
             <Route path="/topic/hot-monthly" component={HotMonthly} />
             <Route path="/topic/hot-history" component={HotHistory} />
-            <Route path="/topic/:topicId/postId/:postId/page:?" component={Topic} />
+
+            <Route path="/user-center" component={UserCenter} />
+            <Route path="/user/:id" component={User} />
+
+            <Route path="/topic/:topicId/postId/:postId/:page?" component={Topic} />
             <Route path="/topic/:topicId/:page?" component={Topic} />
-            <Route
-              path="/error"
-              component={() => {
-                throw new Error('test')
-              }}
-            />
+
+            <Route path="/editor/send-topic/:boardId" component={SendTopic} />
+            <Route path="/editor/edit-post/:postId" component={EditPost} />
+
             <Route path="*" component={() => <div>Not Fount</div>} />
           </Switch>
         </BasicLayout>

@@ -15,6 +15,8 @@ import s from 'src/pages/topic/components/PostItem.m.scss'
 import { IMAGE_BASE_PATH } from 'src/constants/path'
 import UbbContainer from 'src/ubb'
 import UserAvatar from 'src/components/UserAvatar'
+import EDITOR_MODE from 'src/constants/EditorMode'
+import MarkdownContainer from 'src/components/Markdown/MarkdownContainer'
 
 interface IPostItemProps {
   user?: IUser
@@ -95,7 +97,11 @@ const renderTopBar = (user?: IUser) => (
 const renderContent = (post: IPost, userMap: IUserMap) => (
   <div className={s.content}>
     <div>
-      <UbbContainer text={post.content} config={{ allowLightBox: true }} />
+      {post.contentType === EDITOR_MODE.UBB ? (
+        <UbbContainer text={post.content} config={{ allowLightBox: true }} />
+      ) : (
+        <MarkdownContainer text={post.content} />
+      )}
     </div>
     {!!post.awards.length && (
       <div className={s.award}>
@@ -178,7 +184,7 @@ const PostItem: React.FC<IPostItemProps> = ({
           [s.hot]: isHot,
         })}
       >
-        {isHot ? <img src={hotImg} /> : post.floor}
+        {isHot ? <img src={hotImg} /> : post.floor || 10}
       </div>
     </div>
   )

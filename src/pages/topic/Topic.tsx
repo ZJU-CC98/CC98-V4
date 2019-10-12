@@ -1,17 +1,12 @@
 import React from 'react'
 import { RouteComponentProps } from 'react-router'
 import { IBoard, IPost, ITopic } from '@cc98/api'
-import axios, { CancelTokenSource } from 'axios'
+import axios from 'axios'
 import { push } from 'connected-react-router'
 import { useDispatch } from 'react-redux'
 import produce from 'immer'
 import Spin from 'src/components/Spin'
-import {
-  getTopicInfo,
-  getTopicPostList,
-  getTopicTopPostList,
-  getTopicTrackPostList,
-} from 'src/service/topic'
+import { getTopicInfo } from 'src/service/topic'
 import { getBoardInfo } from 'src/service/board'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 import Pagination from 'src/components/Pagination'
@@ -21,6 +16,8 @@ import IUserMap from 'src/types/IUserMap'
 
 import TopicHeader from 'src/pages/topic/components/TopicHeader'
 import PostItem from 'src/pages/topic/components/PostItem'
+import TopicReplier from 'src/pages/topic/components/TopicReplier'
+import { getPosts, getTotalPage } from 'src/pages/topic/utils'
 
 import s from './Topic.m.scss'
 
@@ -30,8 +27,6 @@ interface ITopicRouteMatch {
   // 有 postId 说明是追踪模式
   postId?: string
 }
-
-const PAGE_SIZE = 10
 
 const baseBreadcrumb = [
   {
@@ -44,7 +39,8 @@ const baseBreadcrumb = [
   },
 ]
 
-const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, location }) => {
+const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, location, history }) => {
+  const [refreshKey, setRefreshKey] = React.useState(0)
   const [topicInfo, setTopicInfo] = React.useState<ITopic>()
   const [boardInfo, setBoardInfo] = React.useState<IBoard>()
   const [posts, setPosts] = React.useState<IPost[]>([])
@@ -68,7 +64,7 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
         return getBoardInfo(topic.boardId)
       })
       .then(setBoardInfo)
-  }, [topicId])
+  }, [topicId, refreshKey])
 
   // 获取内容
   React.useEffect(() => {
@@ -113,7 +109,7 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
           )
         )
       )
-  }, [topicId, isTracking, postId, currentPage])
+  }, [topicId, isTracking, postId, currentPage, refreshKey])
 
   useBreadcrumb([
     ...baseBreadcrumb,
@@ -153,6 +149,24 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
             })
         })
       )
+    })
+  }
+
+  const goToLastPost = () => {
+    if (!topicInfo) return
+
+    const page = getTotalPage(false, 1, topicInfo)
+    const floor = ((topicInfo.replyCount + 1) % 10) + 1
+
+    const path = `/topic/${topicId}/${page}`
+
+    if (location.pathname === path) {
+      setRefreshKey(refreshKey + 1)
+    }
+
+    history.push({
+      pathname: path,
+      hash: `${floor}`,
     })
   }
 
@@ -201,67 +215,9 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
         />
       ))}
       <Pagination total={totalPage} onChange={handlePage} current={currentPage} />
+      <TopicReplier topicId={topicId} onSuccess={goToLastPost} />
     </div>
   )
 }
 
 export default Topic
-
-function getTotalPage(isTracking: boolean, currentPage: number, topicInfo?: ITopic, post?: IPost) {
-  switch (true) {
-    case isTracking && !!post && !!post.count:
-      return Math.ceil(post!.count! / PAGE_SIZE)
-    case !isTracking && !!topicInfo:
-      return Math.ceil((topicInfo!.replyCount + 1) / PAGE_SIZE)
-    default:
-      return currentPage
-  }
-}
-
-// 之所以写的这么丑
-// 是为了并行获取普通帖子内容和热帖后
-// 同时获取用户信息
-function getPosts(
-  topicId: string,
-  currentPage: number,
-  isTracking: boolean,
-  setPosts: (posts: IPost[]) => void,
-  setHotPosts: (posts: IPost[]) => void,
-  source: CancelTokenSource,
-  postId?: string
-): [Promise<IPost[]>, Promise<IPost[]> | undefined] {
-  const from = (currentPage - 1) * PAGE_SIZE
-
-  if (isTracking) {
-    return [
-      getTopicTrackPostList(topicId, postId!, from, PAGE_SIZE, source.token).then(data => {
-        setPosts(data)
-        setHotPosts([])
-        return data
-      }),
-      undefined,
-    ]
-  }
-
-  if (currentPage === 1) {
-    return [
-      getTopicPostList(topicId, from, PAGE_SIZE, source.token).then(data => {
-        setPosts(data)
-        return data
-      }),
-      getTopicTopPostList(topicId, source.token).then(data => {
-        setHotPosts(data)
-        return data
-      }),
-    ]
-  }
-
-  return [
-    getTopicPostList(topicId, from, PAGE_SIZE, source.token).then(data => {
-      setPosts(data)
-      setHotPosts([])
-      return data
-    }),
-    undefined,
-  ]
-}

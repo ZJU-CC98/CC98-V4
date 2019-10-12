@@ -8,10 +8,9 @@ import './stylesheets/main.scss'
 
 import App from 'src/App'
 import { initIndexedDb } from 'src/utils/indexedDb'
-import cacheConfigs from 'src/config/cache'
 
 // need top-level await
-initIndexedDb(cacheConfigs).finally(() => {
+initIndexedDb().finally(() => {
   const root = document.getElementById('app')
 
   // DO NOT ADD ANY COMPONENT HERE

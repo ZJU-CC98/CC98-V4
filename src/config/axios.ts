@@ -12,31 +12,30 @@ axios.defaults.validateStatus = status => {
   return status >= 200 && status < 400
 }
 
-axios.interceptors.response.use(
-  res => {
-    return res.data
-  },
-  error => {
-    if ((error && error.hasNotified) || (error.config && error.config.silent)) {
-      throw error
-    }
-
-    if (error instanceof axios.Cancel) {
-      throw error
-    }
-
-    error.hasNotified = true
-
-    // eslint-disable-next-line no-console
-    console.error(error)
-
-    notice({
-      content: error.response && error.response.data ? error.response.data : error.message,
-    })
-
+export function defaultAxiosErrorHandler(error: any) {
+  if ((error && error.hasNotified) || (error.config && error.config.silent)) {
     throw error
   }
-)
+
+  if (error instanceof axios.Cancel) {
+    throw error
+  }
+
+  error.hasNotified = true
+
+  // eslint-disable-next-line no-console
+  console.error(error)
+
+  notice({
+    content: error.response && error.response.data ? error.response.data : error.message,
+  })
+
+  throw error
+}
+
+axios.interceptors.response.use(res => {
+  return res.data
+}, defaultAxiosErrorHandler)
 
 axios.interceptors.request.use(baseConfig => {
   if (baseConfig.needAuth) {

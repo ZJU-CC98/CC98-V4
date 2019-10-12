@@ -1,9 +1,11 @@
 import React from 'react'
 import { IPost } from '@cc98/api'
+import { useHistory } from 'react-router'
 import dayjs from 'dayjs'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-regular-svg-icons'
 import LIKE_STATE from 'src/constants/LikeState'
+import { EVENT, eventBus } from 'src/utils/event'
 
 import s from './PostOperation.m.scss'
 
@@ -22,6 +24,16 @@ const PostOperation: React.FC<IPostOperationProps> = ({
   // refreshPostLikeState,
   isTracking,
 }) => {
+  const history = useHistory()
+
+  const handleQuote: React.MouseEventHandler = () => {
+    eventBus.emit(EVENT.QUOTE_FLOOR, post)
+  }
+
+  const handleEdit = () => {
+    history.push(`/editor/edit-post/${post.id}`)
+  }
+
   return (
     <div className={s.root}>
       <p>
@@ -57,9 +69,15 @@ const PostOperation: React.FC<IPostOperationProps> = ({
           <span>{post.dislikeCount}</span>
         </span>
         <span className={s.action}>评分</span>
-        <span className={s.action}>引用</span>
+        <span className={s.action} onClick={handleQuote}>
+          引用
+        </span>
         <span className={s.action}>{isTracking ? '返回' : '追踪'}</span>
-        {canEdit && <span className={s.action}>编辑</span>}
+        {canEdit && (
+          <span onClick={handleEdit} className={s.action}>
+            编辑
+          </span>
+        )}
         {canManage && <span className={s.action}>管理</span>}
       </p>
     </div>
