@@ -1,11 +1,12 @@
 import { hot } from 'react-hot-loader/root'
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 
 import store, { history } from 'src/store'
 import BasicLayout from 'src/layout/BasicLayout'
+import Route from 'src/components/CustomRoute'
 import ProdErrorBoundary from 'src/components/ErrorBoundary'
 
 import Home from 'src/pages/home/Home'
@@ -23,6 +24,7 @@ import UserCenter from 'src/pages/user-center/UserCenter'
 import User from 'src/pages/user-center/User'
 import SendTopic from 'src/pages/editor/send-topic/SendTopic'
 import EditPost from 'src/pages/editor/edit-post/EditPost'
+import NotLogOn from 'src/pages/error/NotLogOn'
 
 const ErrorBoundary = process.env.NODE_ENV === 'production' ? ProdErrorBoundary : React.Fragment
 
@@ -35,27 +37,29 @@ export const App: React.FC = () => (
             <Route path="/" component={Home} exact />
 
             <Route path="/log-on" component={LogOn} />
-            <Route path="/sign-in" component={LogOn} />
+            <Route path="/sign-in" component={LogOn} needLogOn />
 
             <Route path="/board-list" component={BoardList} />
             <Route path="/board/:id/:page?" component={Board} />
 
-            <Route path="/focus" component={Focus} />
+            <Route path="/focus" component={Focus} needLogOn />
 
-            <Route path="/search" component={Search} />
-            <Route path="/new-topics" component={NewTopics} />
-            <Route path="/topic/hot-weekly" component={HotWeekly} />
-            <Route path="/topic/hot-monthly" component={HotMonthly} />
-            <Route path="/topic/hot-history" component={HotHistory} />
+            <Route path="/search" component={Search} needLogOn />
+            <Route path="/new-topics" component={NewTopics} needLogOn />
+            <Route path="/topic/hot-weekly" component={HotWeekly} needLogOn />
+            <Route path="/topic/hot-monthly" component={HotMonthly} needLogOn />
+            <Route path="/topic/hot-history" component={HotHistory} needLogOn />
 
-            <Route path="/user-center" component={UserCenter} />
+            <Route path="/user-center" component={UserCenter} needLogOn />
             <Route path="/user/:id" component={User} />
 
             <Route path="/topic/:topicId/postId/:postId/:page?" component={Topic} />
             <Route path="/topic/:topicId/:page?" component={Topic} />
 
-            <Route path="/editor/send-topic/:boardId" component={SendTopic} />
-            <Route path="/editor/edit-post/:postId" component={EditPost} />
+            <Route path="/editor/send-topic/:boardId" component={SendTopic} needLogOn />
+            <Route path="/editor/edit-post/:postId" component={EditPost} needLogOn />
+
+            <Route path="/error/not-log-on" component={NotLogOn} />
 
             <Route path="*" component={() => <div>Not Fount</div>} />
           </Switch>
