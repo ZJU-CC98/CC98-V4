@@ -64,7 +64,7 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
         return getBoardInfo(topic.boardId)
       })
       .then(setBoardInfo)
-  }, [topicId])
+  }, [topicId, refreshKey])
 
   // 获取内容
   React.useEffect(() => {

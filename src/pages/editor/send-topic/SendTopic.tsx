@@ -42,7 +42,7 @@ const SendTopic: React.FC<RouteComponentProps<ISendTopicRouteMatch>> = ({
       name: (boardMap[parseInt(boardId, 10)] || {}).name || '',
       url: `/board/${boardId}`,
     },
-    '编辑帖子',
+    '发表主题',
   ])
 
   const handleSend = (topic: ITopicParams) => {

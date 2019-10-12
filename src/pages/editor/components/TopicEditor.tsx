@@ -36,6 +36,8 @@ const renderTagSelect = (
 
   return (
     <Select
+      className={s.select}
+      width={100}
       value={`${value}`}
       onChange={v => setValue(parseInt(v, 10))}
       data={item.tags.map(({ id, name }) => ({ label: name, value: `${id}` }))}
@@ -113,28 +115,29 @@ const TopicEditor: React.FC<ITopicEditorProps> = ({ initTopic, boardId, buttonTe
 
   return (
     <div className={s.root}>
-      <p>
-        <span>主题标题</span>
+      <div className={s.row}>
+        <span className={s.label}>主题标题</span>
         {renderTagSelect(boardTags[0], tag1, setTag1)}
         {renderTagSelect(boardTags[1], tag2, setTag2)}
-        <input value={title} onChange={e => setTitle(e.target.value)} />
-      </p>
-      <p>
-        <span>发帖类型</span>
+        <input className={s.title} value={title} onChange={e => setTitle(e.target.value)} />
+      </div>
+      <div className={s.row}>
+        <span className={s.label}>发帖类型</span>
         {types.map(type => (
-          <span key={type} onClick={() => setType(type)}>
+          <span className={s.radio} key={type} onClick={() => setType(type)}>
             <input readOnly type="radio" checked={type === currentType} />
             <span>{getTopicTypeDesc(type)}</span>
           </span>
         ))}
-      </p>
-      <p>
-        <span>高级选项</span>
-        <span onClick={() => setNotifyPoster(!notifyPoster)}>
+        <span className={s.typeInfo}>（活动帖和学术帖请选择正确的发帖类型）</span>
+      </div>
+      <div className={s.row}>
+        <span className={s.label}>高级选项</span>
+        <span className={s.radio} onClick={() => setNotifyPoster(!notifyPoster)}>
           <input readOnly type="checkbox" checked={notifyPoster} />
           <span>接收消息提醒</span>
         </span>
-      </p>
+      </div>
       <Editor
         initValue={initTopic.content}
         initMode={initTopic.contentType}

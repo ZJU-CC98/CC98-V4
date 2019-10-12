@@ -12,9 +12,9 @@ export function getTotalPage(
 ) {
   switch (true) {
     case isTracking && !!post && !!post.count:
-      return Math.ceil(post!.count! / PAGE_SIZE)
+      return Math.floor(post!.count! / PAGE_SIZE) + 1
     case !isTracking && !!topicInfo:
-      return Math.ceil((topicInfo!.replyCount + 1) / PAGE_SIZE)
+      return Math.floor((topicInfo!.replyCount + 1) / PAGE_SIZE) + 1
     default:
       return currentPage
   }

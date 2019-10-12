@@ -4,7 +4,6 @@ import { IPost, ITopic } from '@cc98/api'
 import useBoardMap from 'src/hooks/useBoardMap'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 import { editPost, getPost } from 'src/service/post'
-import { getTotalPage } from 'src/pages/topic/utils'
 import TopicEditor from 'src/pages/editor/components/TopicEditor'
 import { getTopicInfo, IPostParams, ITopicParams } from 'src/service/topic'
 import PostEditor from 'src/pages/editor/components/PostEditor'
@@ -28,6 +27,12 @@ const EditPost: React.FC<RouteComponentProps<ISendTopicRouteMatch>> = ({ match, 
       name: post ? (boardMap[post.boardId] || {}).name || '' : '',
       url: post ? `/board/${post.boardId}` : '/',
     },
+    {
+      name: topic ? topic.title : ' ',
+      url: post
+        ? `/topic/${post.topicId}/${Math.floor((post.floor - 1) / 10) + 1}#${post.floor % 10 || 10}`
+        : '/',
+    },
     '编辑帖子',
   ])
 
@@ -47,7 +52,9 @@ const EditPost: React.FC<RouteComponentProps<ISendTopicRouteMatch>> = ({ match, 
 
   const handleEdit = (postParams: IPostParams | ITopicParams) => {
     return editPost(postId, postParams).then(() => {
-      history.push(`/topic/${post.topicId}/${getTotalPage(false, 1, topic)}#${post.floor}`)
+      history.push(
+        `/topic/${post.topicId}/${Math.floor((post.floor - 1) / 10) + 1}#${post.floor % 10 || 10}`
+      )
     })
   }
 
