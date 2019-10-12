@@ -1,0 +1,49 @@
+@import 'var';
+
+$info-color: red;
+
+.root {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  background-color: $main-background-color;
+  height: 38px;
+  border: 1px solid $border-color;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.label {
+  width: 120px;
+  line-height: 1.4;
+  text-align: center;
+  border-right: 1px solid $border-color;
+  margin-right: 4px;
+}
+
+.select {
+  border: none;
+}
+
+.radio {
+  margin-right: 4px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.type-info {
+  color: $info-color;
+}
+
+.title {
+  border: none;
+  height: 20px;
+  flex: 1;
+  padding: 0 0 0 8px;
+  margin-left: 8px;
+  border-left: 1px solid $border-color;
+}

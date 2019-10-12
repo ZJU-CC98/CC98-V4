@@ -1,4 +1,4 @@
-import Notification from 'rc-notification'
+import Notification, { INoticeProps } from 'rc-notification'
 
 let notification: Notification.INotification
 
@@ -6,7 +6,14 @@ Notification.newInstance({}, n => {
   notification = n
 })
 
-// eslint-disable-next-line
-export const notice = notification!.notice
+export default function notice(content: string | INoticeProps) {
+  if (!notification) return
 
-export default notice
+  if (typeof content === 'string') {
+    return notification.notice({
+      content,
+    })
+  }
+
+  return notification.notice(content)
+}

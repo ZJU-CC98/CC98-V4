@@ -8,7 +8,7 @@ import { IBoard } from '@cc98/api'
 import { RootStore } from 'src/store'
 import LOCK_STATE from 'src/constants/LockState'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Button from 'src/components/Button'
 
 import s from 'src/pages/board/components/BoardTopButtons.m.scss'
@@ -29,7 +29,8 @@ function selector(store: RootStore) {
 
 const renderButtons = (
   { isLocked, isVerified, isLogin }: ReturnType<typeof selector>,
-  { canVote }: IBoard
+  { canVote, id }: IBoard,
+  history: ReturnType<typeof useHistory>
 ) => {
   if (!isLogin) {
     return (
@@ -57,11 +58,15 @@ const renderButtons = (
 
   return (
     <>
-      <Button className={s.button} primary>
+      <Button onClick={() => history.push(`/editor/send-topic/${id}`)} className={s.button} primary>
         发主题
       </Button>
       {canVote && (
-        <Button className={s.button} primary>
+        <Button
+          onClick={() => history.push(`/editor/send-topic/${id}?isVote=1`)}
+          className={s.button}
+          primary
+        >
           发投票
         </Button>
       )}
@@ -74,7 +79,7 @@ const BoardTopButtons: React.FC<IBoardTopButtonsProps> = ({ data }) => {
 
   return (
     <div className={s.root}>
-      {renderButtons(result, data)}
+      {renderButtons(result, data, useHistory())}
       <div className={s.placeholder} />
     </div>
   )

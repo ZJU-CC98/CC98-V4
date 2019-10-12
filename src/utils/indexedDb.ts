@@ -1,6 +1,6 @@
 import { uniqBy } from 'lodash'
-import ICacheConfigItem, { IdType } from 'src/types/ICacheConfigItem'
-import { cacheVersion } from 'src/config/cache'
+import { IdType } from 'src/types/ICacheConfigItem'
+import cacheConfigs, { cacheVersion } from 'src/config/cache'
 
 export const shouldUseIndexedDb = !!window.indexedDB
 
@@ -9,7 +9,7 @@ let db: IDBDatabase | undefined
 
 const dbName = 'cc98-v4'
 
-export function initIndexedDb(cacheConfigs: ICacheConfigItem[]) {
+export function initIndexedDb() {
   return new Promise(resolve => {
     if (shouldUseIndexedDb && cacheConfigs.length > 0) {
       const req = indexedDB.open(dbName, cacheVersion)
@@ -85,4 +85,16 @@ export function addItem(namespace: string, content: any, expirationTime: number)
     req.onsuccess = e => resolve(e)
     req.onerror = e => reject(e)
   }) as Promise<any>
+}
+
+export function clearAll() {
+  if (!db) {
+    return Promise.reject(new Error('db not fount'))
+  }
+
+  cacheConfigs.forEach(({ namespace }) => {
+    const t = db!.transaction(namespace, 'readwrite')
+    const store = t.objectStore(namespace)
+    store.clear()
+  })
 }
