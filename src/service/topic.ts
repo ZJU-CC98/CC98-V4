@@ -171,7 +171,7 @@ export const postTopic = (boardId: string, topic: ITopicParams) => {
     method: 'POST',
     data: topic,
     needAuth: true,
-  }) as Promise<void>
+  }) as Promise<string>
 }
 
 export const replyTopic = (topicId: string, post: IPostParams) => {

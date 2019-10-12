@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { ILike, IPost } from '@cc98/api'
-import { IPostParams } from 'src/service/topic'
+import { IPostParams, ITopicParams } from 'src/service/topic'
 
 export const getPostLikeState = (postId: number) => {
   return axios({
@@ -34,7 +34,7 @@ export const getPost = (postId: string) => {
   }) as Promise<IPost>
 }
 
-export const editPost = (postId: string, post: IPostParams) => {
+export const editPost = (postId: string, post: IPostParams | ITopicParams) => {
   return axios({
     url: `/post/${postId}`,
     method: 'PUT',

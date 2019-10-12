@@ -156,7 +156,7 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
     if (!topicInfo) return
 
     const page = getTotalPage(false, 1, topicInfo)
-    const floor = (topicInfo.replyCount + 1) % 10
+    const floor = ((topicInfo.replyCount + 1) % 10) + 1
 
     const path = `/topic/${topicId}/${page}`
 
