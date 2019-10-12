@@ -20,6 +20,7 @@ import HotMonthly from 'src/pages/topic/hotMonthly/HotMonthly'
 import HotHistory from 'src/pages/topic/hotHistory/HotHistory'
 import Focus from 'src/pages/focus/Focus'
 import Search from 'src/pages/search/Search'
+import Message from 'src/pages/message/Message'
 import UserCenter from 'src/pages/user-center/UserCenter'
 import User from 'src/pages/user-center/User'
 import SendTopic from 'src/pages/editor/send-topic/SendTopic'
@@ -49,6 +50,8 @@ export const App: React.FC = () => (
             <Route path="/topic/hot-weekly" component={HotWeekly} needLogOn />
             <Route path="/topic/hot-monthly" component={HotMonthly} needLogOn />
             <Route path="/topic/hot-history" component={HotHistory} needLogOn />
+
+            <Route path="/message" component={Message} needLogOn />
 
             <Route path="/user-center" component={UserCenter} needLogOn />
             <Route path="/user/:id" component={User} />

@@ -1,6 +1,6 @@
 import produce from 'immer'
 import cssVars from 'css-vars-ponyfill'
-import { IUser } from '@cc98/api'
+import { IMessageCount, IUser } from '@cc98/api'
 import { defaultTheme, themeMap } from 'src/config/theme'
 import THEME from 'src/constants/Theme'
 import { getLocalStorage } from 'src/utils/storage'
@@ -14,17 +14,26 @@ export interface IGlobalState {
   currentUser: IUser | null
 
   breadcrumb: BreadcrumbItem[]
+
+  messageCount: IMessageCount
 }
 
 const initIsLogin = !!getLocalStorage('refreshToken')
 const initUser: IUser | null = getLocalStorage('userInfo') || null
 const initTheme = (initUser && initUser.theme) || defaultTheme
+const initMessageCount: IMessageCount = {
+  systemCount: 0,
+  messageCount: 0,
+  atCount: 0,
+  replyCount: 0,
+}
 
 const initState: IGlobalState = {
   theme: initTheme,
   isLogin: initIsLogin,
   currentUser: initIsLogin ? initUser : null,
   breadcrumb: [],
+  messageCount: initMessageCount,
 }
 
 cssVars({
@@ -64,6 +73,10 @@ const reducer = (state = initState, action: GlobalActions) =>
         return
       case GLOBAL_ACTION_TYPES.SET_BREADCRUMB:
         draft.breadcrumb = action.payload
+
+        return
+      case GLOBAL_ACTION_TYPES.SET_MESSAGE_COUNT:
+        draft.messageCount = action.payload
 
         return
       default:

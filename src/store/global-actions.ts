@@ -1,4 +1,4 @@
-import { IUser } from '@cc98/api'
+import { IMessageCount, IUser } from '@cc98/api'
 import THEME from 'src/constants/Theme'
 import { BreadcrumbItem } from 'src/components/Breadcrumb'
 
@@ -8,6 +8,7 @@ export enum GLOBAL_ACTION_TYPES {
   LOGOUT = 'LOGOUT',
   SET_CURRENT_USER = 'SET_CURRENT_USER',
   SET_BREADCRUMB = 'SET_BREADCRUMB',
+  SET_MESSAGE_COUNT = 'SET_MESSAGE_COUNT',
 }
 
 export type GlobalActions =
@@ -29,4 +30,8 @@ export type GlobalActions =
   | {
       type: GLOBAL_ACTION_TYPES.SET_BREADCRUMB
       payload: BreadcrumbItem[]
+    }
+  | {
+      type: GLOBAL_ACTION_TYPES.SET_MESSAGE_COUNT
+      payload: IMessageCount
     }

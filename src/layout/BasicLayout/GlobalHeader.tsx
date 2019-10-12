@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom'
 import cn from 'classnames'
+import { sum } from 'lodash'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faBell } from '@fortawesome/free-regular-svg-icons'
 import Tippy from '@tippy.js/react'
@@ -9,6 +10,7 @@ import { RootStore } from 'src/store'
 import { GLOBAL_ACTION_TYPES } from 'src/store/global-actions'
 import { getMe } from 'src/service/user'
 import { clearAll } from 'src/utils/indexedDb'
+import { refreshMessageCount } from 'src/store/global-async-actions'
 
 import icon from 'src/assets/98LOGO.ico'
 
@@ -19,11 +21,13 @@ function selector(store: RootStore) {
   return {
     isLogin: store.global.isLogin,
     user: store.global.currentUser || ({} as any),
+    messageCount: store.global.messageCount,
   }
 }
 
 const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
-  const { isLogin, user } = useSelector(selector)
+  const { isLogin, user, messageCount } = useSelector(selector)
+  const totalMessageCount = sum(Object.values(messageCount))
   const dispatch = useDispatch()
   const { pathname } = useLocation()
 
@@ -33,6 +37,10 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
       type: GLOBAL_ACTION_TYPES.LOGOUT,
     })
   }
+
+  React.useEffect(() => {
+    dispatch(refreshMessageCount())
+  }, [])
 
   React.useEffect(() => {
     if (isLogin) {
@@ -80,15 +88,40 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
               animation="perspective"
               content={
                 <div className={s.menu}>
-                  <Link className={s.menuItem} to="/message">
+                  <Link className={cn(s.menuItem, s.messageMenuItem)} to="/message/response">
+                    回复我的
+                    {!!messageCount.replyCount && (
+                      <span className={s.messageCount}>{messageCount.replyCount}</span>
+                    )}
+                  </Link>
+                  <Link className={cn(s.menuItem, s.messageMenuItem)} to="/message/at-me">
+                    @ 我的
+                    {!!messageCount.atCount && (
+                      <span className={s.messageCount}>{messageCount.atCount}</span>
+                    )}
+                  </Link>
+                  <Link className={cn(s.menuItem, s.messageMenuItem)} to="/message/system">
+                    系统通知
+                    {!!messageCount.systemCount && (
+                      <span className={s.messageCount}>{messageCount.systemCount}</span>
+                    )}
+                  </Link>
+                  <Link className={cn(s.menuItem, s.messageMenuItem)} to="/message/message">
                     我的私信
+                    {!!messageCount.messageCount && (
+                      <span className={s.messageCount}>{messageCount.messageCount}</span>
+                    )}
                   </Link>
                 </div>
               }
             >
               <div>
-                <div className={s.message}>
-                  <Icon icon={faBell} />
+                <div
+                  className={cn(s.message, {
+                    [s.messageActive]: !!totalMessageCount,
+                  })}
+                >
+                  {totalMessageCount || <Icon icon={faBell} />}
                 </div>
               </div>
             </Tippy>

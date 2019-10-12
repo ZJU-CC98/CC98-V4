@@ -1,7 +1,7 @@
 import React from 'react'
 import { getMyFavoriteTopics } from 'src/service/user'
 import { RouteComponentProps } from 'react-router'
-import UserCenterContentList from 'src/pages/user-center/components/UserCenterContentList'
+import List from 'src/components/List'
 import { USER_CENTER_BASE_PATH } from 'src/pages/user-center/constants'
 import TopicItem from 'src/pages/user-center/components/UserCenterListItem/TopicItem'
 import useBoardMap from 'src/hooks/useBoardMap'
@@ -24,7 +24,7 @@ const UserFavorite: React.FC<RouteComponentProps<IUserFavoriteRouteMatch>> = ({
   const { page = '1' } = match.params
 
   return (
-    <UserCenterContentList
+    <List
       currentPage={parseInt(page, 10)}
       pageSize={PAGE_SIZE}
       onPageChange={nextPage => {

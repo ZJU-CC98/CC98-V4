@@ -3,6 +3,7 @@
 
 $global-header-background: rgba(var(--primary), 0.8);
 $menu-hover-background: rgb(251, 97, 101);
+$message-count-background: #fb6165;
 $message-icon-background: #6b7178;
 
 .wrapper {
@@ -70,6 +71,10 @@ $message-icon-background: #6b7178;
   background-color: $message-icon-background;
 }
 
+.message-active {
+  background-color: $message-count-background;
+}
+
 .user {
   display: flex;
   align-items: center;
@@ -98,13 +103,29 @@ $message-icon-background: #6b7178;
   }
 }
 
+.message-menu-item {
+  width: 128px;
+}
+
+.message-count {
+  background-color: $message-count-background;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8px;
+  height: 16px;
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 0 6px;
+}
+
 .popover {
   border-radius: 0;
   padding: 0;
 
   :global {
     .tippy-backdrop {
-      background-color: $global-header-background;
+      background-color: $primary;
     }
   }
 

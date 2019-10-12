@@ -17,7 +17,7 @@ import { BreadcrumbItem } from 'src/components/Breadcrumb'
 import { refreshUserInfo } from 'src/store/global-async-actions'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
-import UserCenterNav, { INavItem } from './components/UserCenterNav'
+import Nav, { INavItem } from 'src/components/Nav'
 import { USER_CENTER_BASE_PATH } from './constants'
 
 import MyHome from './home/MyHome'
@@ -114,7 +114,7 @@ const UserCenter: React.FC = () => {
 
   return (
     <div className={s.root}>
-      <UserCenterNav basePath={USER_CENTER_BASE_PATH} navs={navs} />
+      <Nav basePath={USER_CENTER_BASE_PATH} navs={navs} />
       <div className={s.content}>
         <Switch>
           {navs.map(({ Component, path, exact, pathSuffix = '' }) => (
