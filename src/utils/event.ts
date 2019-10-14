@@ -5,11 +5,13 @@ import { IPost } from '@cc98/api'
 export enum EVENT {
   EXPAND_ALL_PICTURE = 'EXPAND_ALL_PICTURE',
   QUOTE_FLOOR = 'QUOTE_FLOOR',
+  SET_MESSAGE_READ = 'SET_MESSAGE_READ',
 }
 
 interface Event {
   [EVENT.EXPAND_ALL_PICTURE]: null
   [EVENT.QUOTE_FLOOR]: IPost
+  [EVENT.SET_MESSAGE_READ]: null
 }
 
 /**
@@ -19,6 +21,7 @@ interface Event {
  * 目前用来处理
  * 1. 一键显示页面内所有图片
  * 2. 引用帖子内容
+ * 3. 一键将所有消息设为已读
  */
 class EventBus<T> extends EventEmitter {
   emit<Key extends keyof T>(key: Key, payload: T[Key], ...other: any[]) {

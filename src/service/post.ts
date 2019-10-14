@@ -1,6 +1,7 @@
 import axios from 'axios'
-import { ILike, IPost } from '@cc98/api'
+import { IBasicPost, ILike, IPost } from '@cc98/api'
 import { IPostParams, ITopicParams } from 'src/service/topic'
+import { stringify } from 'query-string'
 
 export const getPostLikeState = (postId: number) => {
   return axios({
@@ -41,4 +42,15 @@ export const editPost = (postId: string, post: IPostParams | ITopicParams) => {
     needAuth: true,
     data: post,
   }) as Promise<void>
+}
+
+export const getBasicPosts = (postIds: number[]) => {
+  if (!postIds.length) {
+    return Promise.resolve([])
+  }
+
+  return axios({
+    url: `/post/basic?${stringify({ id: postIds })}`,
+    needAuth: true,
+  }) as Promise<IBasicPost[]>
 }

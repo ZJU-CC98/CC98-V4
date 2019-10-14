@@ -1,6 +1,6 @@
 import React from 'react'
 import { RouteComponentProps } from 'react-router'
-import UserCenterContentList from 'src/pages/user-center/components/UserCenterContentList'
+import List from 'src/components/List'
 import { getMyFollowee, getUsersByIds } from 'src/service/user'
 import UserItem from 'src/pages/user-center/components/UserCenterListItem/UserItem'
 import { IUser } from '@cc98/api'
@@ -30,7 +30,7 @@ const UserFollowing: React.FC<RouteComponentProps<IUserFollowingRouteMatch>> = (
   const { page = '1' } = match.params
 
   return (
-    <UserCenterContentList
+    <List
       emptyText="没有关注"
       currentPage={parseInt(page, 10)}
       pageSize={PAGE_SIZE}

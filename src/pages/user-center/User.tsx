@@ -4,8 +4,8 @@ import { BreadcrumbItem } from 'src/components/Breadcrumb'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router'
+import Nav, { INavItem } from 'src/components/Nav'
 import s from './User.m.scss'
-import UserCenterNav, { INavItem } from './components/UserCenterNav'
 
 import UserHome from './home/UserHome'
 
@@ -46,7 +46,7 @@ const User: React.FC<RouteComponentProps<IRouteMatch>> = ({ match }) => {
 
   return (
     <div className={s.root}>
-      <UserCenterNav basePath={basePath} navs={navs} />
+      <Nav basePath={basePath} navs={navs} />
       <div className={s.content}>
         <Switch>
           {navs.map(({ Component, path, exact, pathSuffix = '' }) => (

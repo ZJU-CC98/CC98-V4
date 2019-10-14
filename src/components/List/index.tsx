@@ -3,11 +3,11 @@ import { noop } from 'lodash'
 import Pagination from 'src/components/Pagination'
 import Spin from 'src/components/Spin'
 
-import s from './UserCenterContentList.m.scss'
+import s from './index.m.scss'
 
 type BaseProps = { id: string | number }
 
-interface IUserCenterContentListProps<T extends BaseProps> {
+interface IListProps<T extends BaseProps> {
   renderItem: (item: T) => React.ReactNode
   service: (page: number, pageSize: number) => Promise<T[]>
   emptyText: string
@@ -17,7 +17,7 @@ interface IUserCenterContentListProps<T extends BaseProps> {
   onPageChange?: (page: number) => void
 }
 
-export default function UserCenterContentList<T extends BaseProps>({
+export default function List<T extends BaseProps>({
   renderItem,
   service,
   emptyText,
@@ -25,7 +25,7 @@ export default function UserCenterContentList<T extends BaseProps>({
   showPager = true,
   pageSize = 10,
   onPageChange = noop,
-}: IUserCenterContentListProps<T>) {
+}: IListProps<T>) {
   const [data, setData] = React.useState<T[]>([])
   const [isLoaded, setIsLoaded] = React.useState(false)
   const [loading, setLoading] = React.useState(true)
