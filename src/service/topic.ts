@@ -1,7 +1,8 @@
 import axios, { CancelToken } from 'axios'
-import { IPost, ITopic, IVoteInfo } from '@cc98/api'
+import { IBasicTopic, IPost, ITopic, IVoteInfo } from '@cc98/api'
 import EDITOR_MODE from 'src/constants/EditorMode'
 import TOPIC_TYPE from 'src/constants/TopicType'
+import { stringify } from 'query-string'
 
 export const getTopicInfo = (topicId: string | number) => {
   return axios({
@@ -182,4 +183,15 @@ export const replyTopic = (topicId: string, post: IPostParams) => {
     data: post,
     silent: true,
   }) as Promise<string>
+}
+
+export const getBasicTopics = (topicIds: number[]) => {
+  if (!topicIds.length) {
+    return Promise.resolve([])
+  }
+
+  return axios({
+    url: `/topic/basic?${stringify({ id: topicIds })}`,
+    needAuth: true,
+  }) as Promise<IBasicTopic[]>
 }

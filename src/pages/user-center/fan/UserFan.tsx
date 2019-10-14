@@ -1,6 +1,6 @@
 import React from 'react'
 import { RouteComponentProps } from 'react-router'
-import UserCenterContentList from 'src/pages/user-center/components/UserCenterContentList'
+import List from 'src/components/List'
 import { getMyFollower, getUsersByIds } from 'src/service/user'
 import UserItem from 'src/pages/user-center/components/UserCenterListItem/UserItem'
 import { IUser } from '@cc98/api'
@@ -27,7 +27,7 @@ const UserFan: React.FC<RouteComponentProps<IUserFanRouteMatch>> = ({ match, his
   const { page = '1' } = match.params
 
   return (
-    <UserCenterContentList
+    <List
       emptyText="没有粉丝"
       currentPage={parseInt(page, 10)}
       pageSize={PAGE_SIZE}

@@ -1,0 +1,39 @@
+@import 'var';
+
+$message-content-text-color: gray;
+
+.root {
+  font-size: 14px;
+  padding: 8px 32px;
+  background-color: $main-background-color;
+  color: $message-content-text-color;
+
+  a {
+    color: $message-content-text-color;
+  }
+
+  & + & {
+    border-top: 1px dashed $border-color;
+  }
+
+  .row {
+    margin: 12px 0;
+
+    & + .row {
+      margin-top: 22px;
+    }
+  }
+
+  .board {
+    color: $primary;
+    margin-right: 10px;
+  }
+
+  .time {
+    font-size: 12px;
+  }
+
+  .unread {
+    font-weight: bold;
+  }
+}
