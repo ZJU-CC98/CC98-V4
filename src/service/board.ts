@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { IBoard, IBoardGroup, ITagGroup, ITopic } from '@cc98/api'
+import { IBoard, IBoardEvent, IBoardGroup, ITagGroup, ITopic } from '@cc98/api'
 
 export function getAllBoard() {
   return axios('/Board/all') as Promise<IBoardGroup[]>
@@ -115,4 +115,18 @@ export const searchBoardTopics = (boardId: string, keyword: string, from: number
     },
     needAuth: true,
   })
+}
+
+export const getBoardEvents = (boardId: string, from: number, size: number) => {
+  return axios({
+    url: `/board/${boardId}/events`,
+    params: {
+      from,
+      size,
+    },
+    needAuth: true,
+  }) as Promise<{
+    boardEvents: IBoardEvent[]
+    count: number
+  }>
 }

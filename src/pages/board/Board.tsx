@@ -8,6 +8,7 @@ import useBreadcrumb from 'src/hooks/useBreadcrumb'
 import BoardHeader from 'src/pages/board/components/BoardHeader'
 import BoardTopButtons from 'src/pages/board/components/BoardTopButtons'
 import BoardContent from 'src/pages/board/components/BoardContent'
+import BoardEvent from 'src/pages/board/components/BoardEvent'
 
 interface IBoardUrlMatch {
   id?: string
@@ -49,6 +50,9 @@ const Board: React.FC<RouteComponentProps<IBoardUrlMatch>> = ({ match }) => {
       {boardInfo && <BoardHeader data={boardInfo} />}
       {boardInfo && <BoardTopButtons data={boardInfo} />}
       <BoardContent boardInfo={boardInfo} boardId={boardId} />
+      <div>
+        <BoardEvent boardId={boardId} />
+      </div>
     </div>
   )
 }

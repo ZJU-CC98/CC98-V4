@@ -8,6 +8,7 @@ type ILightBoxProps = JSX.IntrinsicElements['img'] & {
 }
 
 const lightBoxRoot = document.createElement('div')
+lightBoxRoot.className = 'light-box-root'
 document.body.append(lightBoxRoot)
 
 const LightBox: React.FC<ILightBoxProps> = ({ disabled, onClick, style = {}, ...props }) => {

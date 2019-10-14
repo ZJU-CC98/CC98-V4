@@ -1,0 +1,48 @@
+@import 'var';
+
+$desc-color: rgba(0, 0, 0, 0.45);
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+
+  & + & {
+    border-top: 1px solid $border-color;
+  }
+}
+
+.content {
+  max-width: 600px;
+  min-width: 600px;
+  width: 600px;
+  margin-right: 16px;
+}
+
+.content-title {
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 8px;
+}
+
+.target,
+.time {
+  font-size: 14px;
+  color: $desc-color;
+}
+
+.op {
+  font-size: 14px;
+  color: $desc-color;
+}
+
+.page {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  font-size: 14px;
+}
