@@ -1,9 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 import { RouteComponentProps } from 'react-router'
-import { Dispatch } from 'redux'
 import { useDispatch } from 'react-redux'
-import { RouterAction } from 'connected-react-router'
 
 import snow from 'src/assets/login/login_snow.png'
 import welcome from 'src/assets/login/login_welcome.png'
@@ -12,12 +10,13 @@ import { getMe } from 'src/service/user'
 import Button from 'src/components/Button'
 import { login } from 'src/service/oauth'
 import { removeLocalStorage, setLocalStorage } from 'src/utils/storage'
-import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
+import { GLOBAL_ACTION_TYPES } from 'src/store/global-actions'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
 import LightBox from 'src/components/Image/LightBox'
 import s from 'src/pages/log-on/LogOn.m.scss'
 import { clearAll } from 'src/utils/indexedDb'
+import { refreshMessageCount } from 'src/store/global-async-actions'
 
 const REFRESH_TOKEN_EXPIRED_TIME = 2592000
 const CODE_WRONG_PASSWORD = 400
@@ -27,7 +26,7 @@ const LogOn: React.FC<RouteComponentProps> = ({ history }) => {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [formInfo, setFormInfo] = React.useState('')
-  const dispatch = useDispatch() as Dispatch<GlobalActions | RouterAction>
+  const dispatch = useDispatch()
 
   useBreadcrumb([])
 
@@ -80,11 +79,13 @@ const LogOn: React.FC<RouteComponentProps> = ({ history }) => {
 
         clearAll()
 
-        // TODO: user theme
         dispatch({
           type: GLOBAL_ACTION_TYPES.LOGIN_AND_SET_CURRENT_USER,
           payload: currentUser!,
         })
+
+        dispatch(refreshMessageCount())
+
         setTimeout(() => {
           if (history.length === 1) {
             history.push('/')

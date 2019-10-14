@@ -3,7 +3,7 @@ import { noop } from 'lodash'
 import Pagination from 'src/components/Pagination'
 import Spin from 'src/components/Spin'
 
-import s from 'src/components/List/index.scss'
+import s from './index.m.scss'
 
 type BaseProps = { id: string | number }
 

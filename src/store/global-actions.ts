@@ -33,5 +33,5 @@ export type GlobalActions =
     }
   | {
       type: GLOBAL_ACTION_TYPES.SET_MESSAGE_COUNT
-      payload: IMessageCount
+      payload: Partial<IMessageCount>
     }

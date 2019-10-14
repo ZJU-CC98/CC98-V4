@@ -1,0 +1,21 @@
+@import 'var';
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.content {
+  padding-bottom: 16px;
+  width: 900px;
+  min-height: 618px;
+  margin-top: -42px;
+}
+
+.button {
+  font-size: 12px;
+  width: 105px;
+  height: 30px;
+  margin-bottom: 12px;
+}

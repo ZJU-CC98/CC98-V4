@@ -105,9 +105,14 @@ $message-icon-background: #6b7178;
 
 .message-menu-item {
   width: 128px;
+  position: relative;
 }
 
 .message-count {
+  position: absolute;
+  left: 90px;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: $message-count-background;
   display: inline-flex;
   justify-content: center;

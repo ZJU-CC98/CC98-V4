@@ -33,7 +33,7 @@ declare module 'query-string' {
    //=> {foo: ['1', '2', '3']}
    ```
    */
-    readonly arrayFormat?: 'bracket' | 'index.m.scss' | 'comma' | 'none'
+    readonly arrayFormat?: 'bracket' | 'index.m.scss.m.scss' | 'comma' | 'none'
 
     /**
    Supports both `Function` as a custom sorting function or `false` to disable sorting.
@@ -151,7 +151,7 @@ declare module 'query-string' {
    //=> 'foo=1&foo=2&foo=3'
    ```
    */
-    readonly arrayFormat?: 'bracket' | 'index.m.scss' | 'comma' | 'none'
+    readonly arrayFormat?: 'bracket' | 'index.m.scss.m.scss' | 'comma' | 'none'
 
     /**
    Supports both `Function` as a custom sorting function or `false` to disable sorting.

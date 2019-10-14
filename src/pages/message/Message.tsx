@@ -3,21 +3,30 @@ import Nav, { INavItem } from 'src/components/Nav'
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
+import { MESSAGE_BASE_PATH as BASE_PATH } from './constants'
+import MessageResponse from './response/MessageResponse'
+import MessageAtMe from './at-me/MessageAtMe'
+import MessageSystem from './system/MessageSystem'
+import s from './Message.m.scss'
+
 const navs: INavItem[] = [
   {
     name: '回复我的',
     path: '/response',
-    Component: () => null,
+    Component: MessageResponse,
+    pathSuffix: '/:page?',
   },
   {
     name: '@ 我的',
     path: '/at-me',
-    Component: () => null,
+    Component: MessageAtMe,
+    pathSuffix: '/:page?',
   },
   {
     name: '系统通知',
     path: '/system',
-    Component: () => null,
+    Component: MessageSystem,
+    pathSuffix: '/:page?',
   },
   {
     name: '我的私信',
@@ -39,25 +48,23 @@ const breadcrumb = [
   '我的消息',
 ]
 
-const BASE_PATH = '/message'
-
 const Message: React.FC<RouteComponentProps> = () => {
   useBreadcrumb(breadcrumb)
 
   return (
-    <div>
+    <div className={s.root}>
       <Nav basePath={BASE_PATH} navs={navs} />
-      <div>
+      <div className={s.content}>
         <Switch>
           {navs.map(({ Component, path, exact, pathSuffix = '' }) => (
             <Route
               key={path}
-              path={`/user/:id${path}${pathSuffix}`}
+              path={`${BASE_PATH}${path}${pathSuffix}`}
               exact={exact}
               component={Component}
             />
           ))}
-          <Redirect to="/message/response" />
+          <Redirect to={`${BASE_PATH}${navs[0].path}`} />
         </Switch>
       </div>
     </div>

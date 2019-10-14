@@ -62,6 +62,7 @@ const reducer = (state = initState, action: GlobalActions) =>
       case GLOBAL_ACTION_TYPES.LOGOUT:
         draft.isLogin = false
         draft.currentUser = null
+        draft.messageCount = initMessageCount
         localStorage.removeItem('accessToken')
         localStorage.removeItem('refreshToken')
         localStorage.removeItem('userInfo')
@@ -76,7 +77,7 @@ const reducer = (state = initState, action: GlobalActions) =>
 
         return
       case GLOBAL_ACTION_TYPES.SET_MESSAGE_COUNT:
-        draft.messageCount = action.payload
+        draft.messageCount = Object.assign(draft.messageCount, action.payload)
 
         return
       default:
