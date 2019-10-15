@@ -1217,10 +1217,10 @@
     "@types/node" "*"
     "@types/react" "*"
 
-"@types/react-lazyload@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.npm.taobao.org/@types/react-lazyload/download/@types/react-lazyload-2.5.0.tgz#7d8dd04c9a711fc0f1ea3419786acdcc01fb11dc"
-  integrity sha1-fY3QTJpxH8Dx6jQZeGrNzAH7Edw=
+"@types/react-lazyload@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.npm.taobao.org/@types/react-lazyload/download/@types/react-lazyload-2.6.0.tgz#41cd9cbb2c03dd810377518d4837794469a521d1"
+  integrity sha1-Qc2cuywD3YEDd1GNSDd5RGmlIdE=
   dependencies:
     "@types/react" "*"
 
