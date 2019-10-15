@@ -1398,25 +1398,16 @@
     "@types/webpack-sources" "*"
     source-map "^0.6.0"
 
-"@typescript-eslint/eslint-plugin@^2.3.3":
-  version "2.3.3"
-  resolved "https://registry.npm.taobao.org/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-2.3.3.tgz#71e06c6887650301e02105c99b4c8f67454157e3"
-  integrity sha1-ceBsaIdlAwHgIQXJm0yPZ0VBV+M=
+"@typescript-eslint/eslint-plugin@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.npm.taobao.org/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-2.4.0.tgz#aaf6b542ff75b78f4191a8bf1c519184817caa24"
+  integrity sha1-qva1Qv91t49Bkai/HFGRhIF8qiQ=
   dependencies:
-    "@typescript-eslint/experimental-utils" "2.3.3"
+    "@typescript-eslint/experimental-utils" "2.4.0"
     eslint-utils "^1.4.2"
     functional-red-black-tree "^1.0.1"
     regexpp "^2.0.1"
     tsutils "^3.17.1"
-
-"@typescript-eslint/experimental-utils@2.3.3":
-  version "2.3.3"
-  resolved "https://registry.npm.taobao.org/@typescript-eslint/experimental-utils/download/@typescript-eslint/experimental-utils-2.3.3.tgz#0685613063ff397cfa9209be2e6e81c0382a9b11"
-  integrity sha1-BoVhMGP/OXz6kgm+Lm6BwDgqmxE=
-  dependencies:
-    "@types/json-schema" "^7.0.3"
-    "@typescript-eslint/typescript-estree" "2.3.3"
-    eslint-scope "^5.0.0"
 
 "@typescript-eslint/experimental-utils@2.4.0":
   version "2.4.0"
@@ -1436,16 +1427,6 @@
     "@typescript-eslint/experimental-utils" "2.4.0"
     "@typescript-eslint/typescript-estree" "2.4.0"
     eslint-visitor-keys "^1.1.0"
-
-"@typescript-eslint/typescript-estree@2.3.3":
-  version "2.3.3"
-  resolved "https://registry.npm.taobao.org/@typescript-eslint/typescript-estree/download/@typescript-eslint/typescript-estree-2.3.3.tgz?cache=0&sync_timestamp=1570468397826&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40typescript-eslint%2Ftypescript-estree%2Fdownload%2F%40typescript-eslint%2Ftypescript-estree-2.3.3.tgz#be802220876bedfb80384cde1d46fe57ae7abf71"
-  integrity sha1-voAiIIdr7fuAOEzeHUb+V656v3E=
-  dependencies:
-    glob "^7.1.4"
-    is-glob "^4.0.1"
-    lodash.unescape "4.0.1"
-    semver "^6.3.0"
 
 "@typescript-eslint/typescript-estree@2.4.0":
   version "2.4.0"
