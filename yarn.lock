@@ -1251,10 +1251,10 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.5":
-  version "16.9.5"
-  resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.9.5.tgz#079dabd918b19b32118c25fd00a786bb6d0d5e51"
-  integrity sha1-B52r2RixmzIRjCX9AKeGu20NXlE=
+"@types/react@*", "@types/react@^16.9.6":
+  version "16.9.6"
+  resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.9.6.tgz#40722a2ef9f67b054c15b0a0b0d7f09409176134"
+  integrity sha1-QHIqLvn2ewVMFbCgsNfwlAkXYTQ=
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
