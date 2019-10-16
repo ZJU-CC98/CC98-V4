@@ -40,6 +40,7 @@ function selector(store: RootStore) {
 const Board: React.FC<RouteComponentProps<IBoardUrlMatch>> = ({ match }) => {
   const boardId = match.params.id!
   const [boardInfo, setBoardInfo] = React.useState<IBoard | null>(null)
+  const [key, setKey] = React.useState(0)
   const { user } = useSelector(selector)
   const dispatch = useDispatch()
   const breadcrumb = [...baseBreadcrumb, boardInfo ? boardInfo.name : '']
@@ -51,16 +52,20 @@ const Board: React.FC<RouteComponentProps<IBoardUrlMatch>> = ({ match }) => {
   useBreadcrumb(breadcrumb)
 
   React.useEffect(() => {
-    getBoardInfo(boardId).then(setBoardInfo)
-  }, [boardId])
+    getBoardInfo(boardId, true).then(setBoardInfo)
+  }, [boardId, key])
 
   if (!boardId) {
     return null
   }
 
+  const refreshBoardInfo = () => {
+    setKey(key + 1)
+  }
+
   return (
     <div>
-      {boardInfo && <BoardHeader data={boardInfo} />}
+      {boardInfo && <BoardHeader refreshBoardInfo={refreshBoardInfo} data={boardInfo} />}
       {boardInfo && <BoardTopButtons data={boardInfo} />}
       <BoardContent boardInfo={boardInfo} boardId={boardId} />
       <div className={s.footer}>

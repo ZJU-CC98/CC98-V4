@@ -56,7 +56,7 @@ export const App: React.FC = () => (
             <Route path="/user-center" component={UserCenter} needLogOn />
             <Route path="/user/:id" component={User} />
 
-            <Route path="/topic/:topicId/postId/:postId/:page?" component={Topic} />
+            <Route path="/topic/:topicId/track/:postId/:page?" component={Topic} />
             <Route path="/topic/:topicId/:page?" component={Topic} />
 
             <Route path="/editor/send-topic/:boardId" component={SendTopic} needLogOn />

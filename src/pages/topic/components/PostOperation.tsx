@@ -3,9 +3,10 @@ import { IPost } from '@cc98/api'
 import { useHistory } from 'react-router'
 import dayjs from 'dayjs'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
-import { faThumbsUp, faThumbsDown } from '@fortawesome/free-regular-svg-icons'
+import { faThumbsDown, faThumbsUp } from '@fortawesome/free-regular-svg-icons'
 import LIKE_STATE from 'src/constants/LikeState'
 import { EVENT, eventBus } from 'src/utils/event'
+import { setPostLikeState } from 'src/service/post'
 
 import s from './PostOperation.m.scss'
 
@@ -21,7 +22,7 @@ const PostOperation: React.FC<IPostOperationProps> = ({
   post,
   canManage,
   canEdit,
-  // refreshPostLikeState,
+  refreshPostLikeState,
   isTracking,
 }) => {
   const history = useHistory()
@@ -32,6 +33,34 @@ const PostOperation: React.FC<IPostOperationProps> = ({
 
   const handleEdit = () => {
     history.push(`/editor/edit-post/${post.id}`)
+  }
+
+  const handleTrack = () => {
+    if (!isTracking) {
+      history.push(`/topic/${post.topicId}/track/${post.id}`)
+    } else {
+      history.push(`/topic/${post.topicId}`)
+    }
+  }
+
+  const handleLike = async () => {
+    if (post.likeState === LIKE_STATE.LIKE) {
+      await setPostLikeState(post.id, LIKE_STATE.NONE)
+    } else {
+      await setPostLikeState(post.id, LIKE_STATE.LIKE)
+    }
+
+    refreshPostLikeState()
+  }
+
+  const handleDisLike = async () => {
+    if (post.likeState === LIKE_STATE.DISLIKE) {
+      await setPostLikeState(post.id, LIKE_STATE.NONE)
+    } else {
+      await setPostLikeState(post.id, LIKE_STATE.DISLIKE)
+    }
+
+    refreshPostLikeState()
   }
 
   return (
@@ -50,21 +79,23 @@ const PostOperation: React.FC<IPostOperationProps> = ({
         )}
       </p>
       <p className={s.actionRoot}>
-        <span className={s.like}>
+        <span
+          onClick={handleLike}
+          className={s.like}
+          style={{ color: post.likeState === LIKE_STATE.LIKE ? 'red' : undefined }}
+        >
           <span className={s.icon}>
-            <Icon
-              color={post.likeState === LIKE_STATE.LIKE ? 'red' : undefined}
-              icon={faThumbsUp}
-            />
+            <Icon icon={faThumbsUp} />
           </span>
           <span>{post.likeCount}</span>
         </span>
-        <span className={s.like}>
+        <span
+          onClick={handleDisLike}
+          className={s.like}
+          style={{ color: post.likeState === LIKE_STATE.DISLIKE ? 'red' : undefined }}
+        >
           <span className={s.icon}>
-            <Icon
-              color={post.likeState === LIKE_STATE.DISLIKE ? 'red' : undefined}
-              icon={faThumbsDown}
-            />
+            <Icon icon={faThumbsDown} />
           </span>
           <span>{post.dislikeCount}</span>
         </span>
@@ -72,7 +103,9 @@ const PostOperation: React.FC<IPostOperationProps> = ({
         <span className={s.action} onClick={handleQuote}>
           引用
         </span>
-        <span className={s.action}>{isTracking ? '返回' : '追踪'}</span>
+        <span className={s.action} onClick={handleTrack}>
+          {isTracking ? '返回' : '追踪'}
+        </span>
         {canEdit && (
           <span onClick={handleEdit} className={s.action}>
             编辑

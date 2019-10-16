@@ -177,7 +177,14 @@ const PostItem: React.FC<IPostItemProps> = ({
           post={post}
           isTracking={isTracking}
         />
-        {user && user.signatureCode && <div className={s.qmd}>{user.signatureCode}</div>}
+        {user && user.signatureCode && (
+          <div className={s.qmd}>
+            <UbbContainer
+              text={user.signatureCode}
+              config={{ allowExternalImage: false, allowMarkDown: false, maxImageCount: 1 }}
+            />
+          </div>
+        )}
       </div>
       <div
         className={cn(s.floor, {
