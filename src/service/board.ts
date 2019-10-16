@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { IBoard, IBoardEvent, IBoardGroup, ITagGroup, ITopic } from '@cc98/api'
+import { IBoard, IBoardEvent, IBoardGroup, IBoardStopPostUser, ITagGroup, ITopic } from '@cc98/api'
 
 export function getAllBoard() {
   return axios('/Board/all') as Promise<IBoardGroup[]>
@@ -129,4 +129,24 @@ export const getBoardEvents = (boardId: string, from: number, size: number) => {
     boardEvents: IBoardEvent[]
     count: number
   }>
+}
+
+export const getBoardStopPostUsers = (boardId: string, from: number, size: number) => {
+  return axios({
+    url: `/board/${boardId}/stop-post-user`,
+    params: {
+      from,
+      size,
+    },
+    needAuth: true,
+  }) as Promise<IBoardStopPostUser[]>
+}
+
+// 解除 tp
+export const cancelBoardStopPostUser = (boardId: string, userId: number) => {
+  return axios({
+    url: `/board/${boardId}/stop-post-user/${userId}`,
+    method: 'DETELE',
+    needAuth: true,
+  }) as Promise<void>
 }

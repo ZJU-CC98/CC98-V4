@@ -48,4 +48,13 @@
   align-items: center;
   justify-content: flex-end;
   border-top: 1px solid $border-color;
+
+  button {
+    font-size: 14px;
+    height: 32px;
+  }
+
+  button + button {
+    margin-left: 12px;
+  }
 }

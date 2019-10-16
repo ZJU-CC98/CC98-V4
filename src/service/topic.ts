@@ -195,3 +195,26 @@ export const getBasicTopics = (topicIds: number[]) => {
     needAuth: true,
   }) as Promise<IBasicTopic[]>
 }
+
+export const lockTopics = (id: number[], reason: string, value: number) => {
+  return axios({
+    url: `/topic/multi-lock?${stringify({ id })}`,
+    method: 'PUT',
+    data: {
+      reason,
+      value,
+    },
+    needAuth: true,
+  }) as Promise<void>
+}
+
+export const deleteTopics = (id: number[], reason: string) => {
+  return axios({
+    url: `/topic/multi-lock?${stringify({ id })}`,
+    method: 'PUT',
+    needAuth: true,
+    data: {
+      reason,
+    },
+  }) as Promise<void>
+}

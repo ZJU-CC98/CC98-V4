@@ -5,8 +5,8 @@ import { MESSAGE_BASE_PATH } from 'src/pages/message/constants'
 import { useDispatch } from 'react-redux'
 import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
 import { clearResponseNotification } from 'src/service/message'
-import { Dispatch } from 'redux'
 import { EVENT, eventBus } from 'src/utils/event'
+import { refreshMessageCount } from 'src/store/global-async-actions'
 
 import { PAGE_SIZE, getMessageResponse } from 'src/pages/message/utils'
 import MessageResponseItem from 'src/pages/message/components/MessageResponseItem'
@@ -24,7 +24,7 @@ const MessageResponse: React.FC<RouteComponentProps<IMessageResponseRouteMatch>>
   history,
 }) => {
   const boardMap = useBoardMap()
-  const dispatch = useDispatch<Dispatch<GlobalActions>>()
+  const dispatch = useDispatch()
   const { page = '1' } = match.params
 
   const handleClearClick = () => {
@@ -34,11 +34,21 @@ const MessageResponse: React.FC<RouteComponentProps<IMessageResponseRouteMatch>>
         payload: {
           replyCount: 0,
         },
-      })
+      } as GlobalActions)
 
       eventBus.emit(EVENT.SET_MESSAGE_READ, null)
     })
   }
+
+  React.useEffect(() => {
+    dispatch(refreshMessageCount())
+  }, [page])
+
+  React.useEffect(() => {
+    return () => {
+      dispatch(refreshMessageCount())
+    }
+  }, [])
 
   return (
     <>

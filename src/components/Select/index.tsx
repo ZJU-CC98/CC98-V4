@@ -1,14 +1,16 @@
 import React from 'react'
-import cn from 'classnames'
 import Tippy, { TippyProps } from '@tippy.js/react'
 
 import useClickOutside from 'src/hooks/useClickOutside'
+import SelectPop from './SelectPop'
+import SelectContainer from './SelectContainer'
+import { BaseValueType, ValueType } from './types'
 import s from './index.m.scss'
 
-interface ISelectProps<T extends string | number> {
-  value: T
-  onChange: (value: T) => void
-  data: { value: T; label: string }[] | string[]
+interface ISelectProps<T extends BaseValueType, V extends ValueType> {
+  value: V
+  onChange: (value: V) => void
+  data: { value: T; label: string }[] | string[] | number[]
   className?: string
   popoverClassName?: string
   itemClassName?: string
@@ -17,9 +19,10 @@ interface ISelectProps<T extends string | number> {
   popWidth?: number
   placement?: TippyProps['placement']
   showOffset?: boolean
+  tags?: boolean
 }
 
-function Select<T extends string | number>({
+function Select<T extends string | number, V extends T | T[]>({
   value,
   onChange,
   data,
@@ -31,16 +34,15 @@ function Select<T extends string | number>({
   popWidth = width,
   placement = 'bottom-start',
   showOffset = true,
-}: ISelectProps<T>) {
+  tags = false,
+}: ISelectProps<T, V>) {
   const innerData =
-    data.length && typeof data[0] === 'string'
-      ? (data as string[]).map(label => ({ label, value: label }))
+    data.length && (typeof data[0] === 'string' || typeof data[0] === 'number')
+      ? (data as (string | number)[]).map(label => ({ label: `${label}`, value: label }))
       : (data as { value: string; label: string }[])
 
-  const currentLabel = (innerData.filter(item => item.value === value)[0] || {}).label
-  const widthOffset = showArrow ? 17 : 22
-
   const [visible, setVisible] = React.useState(false)
+
   const pop = React.useRef<HTMLDivElement>(null)
   const container = React.useRef<HTMLDivElement>(null)
 
@@ -58,49 +60,30 @@ function Select<T extends string | number>({
       animation="perspective"
       hideOnClick={false}
       content={
-        <div
+        <SelectPop
           ref={pop}
-          style={{ width: popWidth }}
-          className={cn(s.popoverContainer, popoverClassName)}
-        >
-          {innerData.map(item => (
-            <div
-              className={cn(
-                s.item,
-                {
-                  [s.current]: value === item.value,
-                },
-                itemClassName
-              )}
-              key={item.value}
-              onClick={() => {
-                onChange(item.value as T)
-                setVisible(false)
-              }}
-            >
-              {item.label}
-            </div>
-          ))}
-        </div>
+          popWidth={popWidth}
+          innerData={innerData}
+          setVisible={setVisible}
+          onChange={onChange as (v: ValueType) => void}
+          value={value}
+          itemClassName={itemClassName}
+          popoverClassName={popoverClassName}
+        />
       }
     >
-      <div
+      <SelectContainer
         ref={container}
-        onClick={() => {
-          setVisible(!visible)
-        }}
-        style={{ width: width - widthOffset }}
-        className={cn(
-          s.container,
-          {
-            [s.containerArrow]: showArrow,
-            [s.active]: visible,
-          },
-          className
-        )}
-      >
-        <span style={{ flex: 1 }}>{currentLabel}</span>
-      </div>
+        tags={tags}
+        setVisible={setVisible}
+        visible={visible}
+        width={width}
+        showArrow={showArrow}
+        innerData={innerData}
+        value={value}
+        onChange={onChange as (v: ValueType) => void}
+        className={className}
+      />
     </Tippy>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { RouteComponentProps } from 'react-router'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { replace } from 'connected-react-router'
 import { IBoard } from '@cc98/api'
 import { getBoardInfo } from 'src/service/board'
@@ -8,7 +8,13 @@ import useBreadcrumb from 'src/hooks/useBreadcrumb'
 import BoardHeader from 'src/pages/board/components/BoardHeader'
 import BoardTopButtons from 'src/pages/board/components/BoardTopButtons'
 import BoardContent from 'src/pages/board/components/BoardContent'
-import BoardEvent from 'src/pages/board/components/BoardEvent'
+import BoardEvent from 'src/pages/board/components/BoardManage/BoardEvent'
+import BoardStopUser from 'src/pages/board/components/BoardManage/BoardStopUser'
+import { checkIsBoardMaster } from 'src/utils/permission'
+import { RootStore } from 'src/store'
+import BoardBatchManage from 'src/pages/board/components/BoardManage/BoardBatchManage'
+
+import s from './Board.m.scss'
 
 interface IBoardUrlMatch {
   id?: string
@@ -25,9 +31,16 @@ const baseBreadcrumb = [
   },
 ]
 
+function selector(store: RootStore) {
+  return {
+    user: store.global.currentUser,
+  }
+}
+
 const Board: React.FC<RouteComponentProps<IBoardUrlMatch>> = ({ match }) => {
   const boardId = match.params.id!
   const [boardInfo, setBoardInfo] = React.useState<IBoard | null>(null)
+  const { user } = useSelector(selector)
   const dispatch = useDispatch()
   const breadcrumb = [...baseBreadcrumb, boardInfo ? boardInfo.name : '']
 
@@ -50,8 +63,10 @@ const Board: React.FC<RouteComponentProps<IBoardUrlMatch>> = ({ match }) => {
       {boardInfo && <BoardHeader data={boardInfo} />}
       {boardInfo && <BoardTopButtons data={boardInfo} />}
       <BoardContent boardInfo={boardInfo} boardId={boardId} />
-      <div>
+      <div className={s.footer}>
         <BoardEvent boardId={boardId} />
+        <BoardStopUser boardId={boardId} boardInfo={boardInfo} />
+        {checkIsBoardMaster(boardInfo, user) && <BoardBatchManage />}
       </div>
     </div>
   )

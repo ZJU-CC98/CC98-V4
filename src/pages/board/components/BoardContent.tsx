@@ -16,6 +16,7 @@ import Select from 'src/components/Select'
 
 import TopTopicList from 'src/pages/board/components/TopTopicList'
 import s from 'src/pages/board/components/BoardContent.m.scss'
+import { EVENT, eventBus } from 'src/utils/event'
 
 const PAGE_SIZE = 20
 const TAG_ALL = -1
@@ -78,6 +79,7 @@ const BoardContent: React.FC<IBoardContentProps> = ({ boardInfo, boardId, match 
         tag2 === TAG_ALL ? undefined : tag2
       ).then(({ count, topics }) => {
         setData(topics)
+        eventBus.emit(EVENT.GET_TOPICS_SUCCESS, topics)
         setTotal(Math.ceil(count / PAGE_SIZE))
       })
 
@@ -89,6 +91,7 @@ const BoardContent: React.FC<IBoardContentProps> = ({ boardInfo, boardId, match 
         ({ count, topics }) => {
           setTotal(Math.ceil(count / PAGE_SIZE))
           setData(topics)
+          eventBus.emit(EVENT.GET_TOPICS_SUCCESS, topics)
         }
       )
 
@@ -100,13 +103,17 @@ const BoardContent: React.FC<IBoardContentProps> = ({ boardInfo, boardId, match 
         ({ count, topics }) => {
           setTotal(Math.ceil(count / PAGE_SIZE))
           setData(topics)
+          eventBus.emit(EVENT.GET_TOPICS_SUCCESS, topics)
         }
       )
 
       return
     }
 
-    getBoardTopicList(boardId, PAGE_SIZE, (currentPage - 1) * PAGE_SIZE).then(setData)
+    getBoardTopicList(boardId, PAGE_SIZE, (currentPage - 1) * PAGE_SIZE).then(topics => {
+      setData(topics)
+      eventBus.emit(EVENT.GET_TOPICS_SUCCESS, topics)
+    })
   }, [boardId, currentPage, tag1, tag2, contentType])
 
   return (
