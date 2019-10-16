@@ -22,6 +22,9 @@
 
   &[disabled] {
     cursor: not-allowed;
+    color: gray;
+    border-color: $border-color;
+    background-color: initial;
   }
 }
 

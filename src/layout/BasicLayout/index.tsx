@@ -27,14 +27,12 @@ const BasicLayout: React.FC<RouteComponentProps> = ({ children, location: { path
       </div>
       <div className={s.main}>
         {isHome && (
-          <div
-            className={s.headerImage}
-            style={{
-              backgroundImage: `url(${
-                (themeMap[theme] || themeMap[defaultTheme]).homeHeaderImageURL
-              }`,
-            }}
-          />
+          <div className={s.headerImage}>
+            <img
+              style={{ height: '100%' }}
+              src={(themeMap[theme] || themeMap[defaultTheme]).homeHeaderImageURL}
+            />
+          </div>
         )}
         {!!breadcrumb.length && <Breadcrumb className={s.breadcrumb} data={breadcrumb} />}
         {children}
