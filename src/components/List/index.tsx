@@ -15,6 +15,7 @@ interface IListProps<T extends BaseProps> {
   currentPage?: number
   pageSize?: number
   onPageChange?: (page: number) => void
+  minHeight?: number
 }
 
 export default function List<T extends BaseProps>({
@@ -25,6 +26,7 @@ export default function List<T extends BaseProps>({
   showPager = true,
   pageSize = 10,
   onPageChange = noop,
+  minHeight = 600,
 }: IListProps<T>) {
   const [data, setData] = React.useState<T[]>([])
   const [isLoaded, setIsLoaded] = React.useState(false)
@@ -48,7 +50,7 @@ export default function List<T extends BaseProps>({
 
   return (
     <div className={s.root}>
-      <div className={s.content}>
+      <div className={s.content} style={{ minHeight }}>
         {/* eslint-disable-next-line no-nested-ternary */}
         {loading ? (
           <Spin />

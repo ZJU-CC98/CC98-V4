@@ -3,10 +3,10 @@ import { RouteComponentProps } from 'react-router'
 import List from 'src/components/List'
 import { MESSAGE_BASE_PATH } from 'src/pages/message/constants'
 import { useDispatch } from 'react-redux'
-import { Dispatch } from 'redux'
 import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
 import { clearSystemNotification } from 'src/service/message'
 import { EVENT, eventBus } from 'src/utils/event'
+import { refreshMessageCount } from 'src/store/global-async-actions'
 
 import { getMessageSystem, PAGE_SIZE } from 'src/pages/message/utils'
 import MessageSystemItem from 'src/pages/message/components/MessageSystemItem'
@@ -24,7 +24,7 @@ const MessageSystem: React.FC<RouteComponentProps<IMessageSystemRouteMatch>> = (
 }) => {
   const { page = '1' } = match.params
 
-  const dispatch = useDispatch<Dispatch<GlobalActions>>()
+  const dispatch = useDispatch()
 
   const handleClearClick = () => {
     clearSystemNotification().then(() => {
@@ -33,11 +33,21 @@ const MessageSystem: React.FC<RouteComponentProps<IMessageSystemRouteMatch>> = (
         payload: {
           systemCount: 0,
         },
-      })
+      } as GlobalActions)
 
       eventBus.emit(EVENT.SET_MESSAGE_READ, null)
     })
   }
+
+  React.useEffect(() => {
+    dispatch(refreshMessageCount())
+  }, [page])
+
+  React.useEffect(() => {
+    return () => {
+      dispatch(refreshMessageCount())
+    }
+  }, [])
 
   return (
     <>

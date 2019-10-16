@@ -11,6 +11,7 @@ import { GLOBAL_ACTION_TYPES } from 'src/store/global-actions'
 import { getMe } from 'src/service/user'
 import { clearAll } from 'src/utils/indexedDb'
 import { refreshMessageCount } from 'src/store/global-async-actions'
+import { MESSAGE_BASE_PATH } from 'src/pages/message/constants'
 
 import icon from 'src/assets/98LOGO.ico'
 
@@ -39,7 +40,9 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
   }
 
   React.useEffect(() => {
-    dispatch(refreshMessageCount())
+    if (!pathname.startsWith(MESSAGE_BASE_PATH)) {
+      dispatch(refreshMessageCount())
+    }
   }, [])
 
   React.useEffect(() => {
