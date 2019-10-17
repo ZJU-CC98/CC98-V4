@@ -34,7 +34,7 @@ export function getEmojiDesc(type: EMOJI_TYPE) {
       }
     case EMOJI_TYPE.MS:
       return {
-        url: '',
+        url: '//www.majsoul.com',
         name: '雀魂Majsoul',
       }
     case EMOJI_TYPE.MJ:

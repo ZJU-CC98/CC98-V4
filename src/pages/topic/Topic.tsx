@@ -152,6 +152,10 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
     })
   }
 
+  const refresh = () => {
+    setRefreshKey(refreshKey + 1)
+  }
+
   const goToLastPost = () => {
     if (!topicInfo) return
 
@@ -161,13 +165,21 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
     const path = `/topic/${topicId}/${page}`
 
     if (location.pathname === path) {
-      setRefreshKey(refreshKey + 1)
+      refresh()
     }
 
     history.push({
       pathname: path,
       hash: `${floor}`,
     })
+  }
+
+  const basePostProps = {
+    isTracking,
+    topicInfo,
+    boardInfo,
+    userMap,
+    refresh,
   }
 
   return (
@@ -177,41 +189,32 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
       {isTopicLoading && <Spin />}
       {posts.slice(0, 1).map(item => (
         <PostItem
+          {...basePostProps}
           post={item}
-          isTracking={isTracking}
-          topicInfo={topicInfo}
           user={userMap[item.userName]}
-          boardInfo={boardInfo}
           refreshPostLikeState={() => refreshPostLikeState(item.id)}
           key={item.id}
           focus={focusFloor === 1}
-          userMap={userMap}
         />
       ))}
       {hotPosts.map(item => (
         <PostItem
+          {...basePostProps}
           post={item}
-          isTracking={isTracking}
           user={userMap[item.userName]}
-          boardInfo={boardInfo}
-          topicInfo={topicInfo}
           refreshPostLikeState={() => refreshPostLikeState(item.id)}
           key={item.id}
-          userMap={userMap}
           isHot
         />
       ))}
       {posts.slice(1).map((item, index) => (
         <PostItem
+          {...basePostProps}
           post={item}
-          isTracking={isTracking}
-          topicInfo={topicInfo}
           user={userMap[item.userName]}
-          boardInfo={boardInfo}
           refreshPostLikeState={() => refreshPostLikeState(item.id)}
           key={item.id}
           focus={focusFloor === index + 2}
-          userMap={userMap}
         />
       ))}
       <Pagination total={totalPage} onChange={handlePage} current={currentPage} />

@@ -8,6 +8,7 @@ import LIKE_STATE from 'src/constants/LikeState'
 import { EVENT, eventBus } from 'src/utils/event'
 import { setPostLikeState } from 'src/service/post'
 
+import RateModal from './RateModal'
 import s from './PostOperation.m.scss'
 
 interface IPostOperationProps {
@@ -15,6 +16,7 @@ interface IPostOperationProps {
   canEdit: boolean
   canManage: boolean
   refreshPostLikeState: () => void
+  refresh: () => void
   isTracking: boolean
 }
 
@@ -24,8 +26,10 @@ const PostOperation: React.FC<IPostOperationProps> = ({
   canEdit,
   refreshPostLikeState,
   isTracking,
+  refresh,
 }) => {
   const history = useHistory()
+  const [rateVisible, setRateVisible] = React.useState(false)
 
   const handleQuote: React.MouseEventHandler = () => {
     eventBus.emit(EVENT.QUOTE_FLOOR, post)
@@ -61,6 +65,10 @@ const PostOperation: React.FC<IPostOperationProps> = ({
     }
 
     refreshPostLikeState()
+  }
+
+  const handleRate = () => {
+    setRateVisible(true)
   }
 
   return (
@@ -99,7 +107,9 @@ const PostOperation: React.FC<IPostOperationProps> = ({
           </span>
           <span>{post.dislikeCount}</span>
         </span>
-        <span className={s.action}>评分</span>
+        <span className={s.action} onClick={handleRate}>
+          评分
+        </span>
         <span className={s.action} onClick={handleQuote}>
           引用
         </span>
@@ -113,6 +123,12 @@ const PostOperation: React.FC<IPostOperationProps> = ({
         )}
         {canManage && <span className={s.action}>管理</span>}
       </p>
+      <RateModal
+        postId={post.id}
+        refresh={refresh}
+        visible={rateVisible}
+        setVisible={setRateVisible}
+      />
     </div>
   )
 }

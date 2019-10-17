@@ -27,6 +27,7 @@ interface IPostItemProps {
   refreshPostLikeState: () => void
   isHot?: boolean
   userMap: IUserMap
+  refresh: () => void
   focus?: boolean
 }
 
@@ -135,6 +136,7 @@ const PostItem: React.FC<IPostItemProps> = ({
   boardInfo,
   topicInfo,
   refreshPostLikeState,
+  refresh,
   isHot = false,
   focus = false,
   userMap,
@@ -171,6 +173,7 @@ const PostItem: React.FC<IPostItemProps> = ({
         {renderTopBar(user)}
         {renderContent(post, userMap)}
         <PostOperation
+          refresh={refresh}
           refreshPostLikeState={refreshPostLikeState}
           canEdit={canEdit}
           canManage={canManage}

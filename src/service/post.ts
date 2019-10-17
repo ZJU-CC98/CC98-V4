@@ -67,3 +67,16 @@ export const getBasicPosts = (postIds: number[]) => {
     needAuth: true,
   }) as Promise<IBasicPost[]>
 }
+
+export const ratePost = (postId: string | number, reason: string, value: number) => {
+  return axios({
+    url: `/post/${postId}/rating`,
+    method: 'PUT',
+    data: {
+      reason,
+      value,
+    },
+    needAuth: true,
+    silent: true,
+  })
+}
