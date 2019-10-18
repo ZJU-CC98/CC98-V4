@@ -6,17 +6,19 @@ import SEARCH_TYPE from 'src/constants/SearchType'
 import { RootStore } from 'src/store'
 import { useDispatch, useSelector } from 'react-redux'
 import Button from 'src/components/Button'
-import { followBoard, unFollowBoard } from 'src/service/board'
+import { editBoardBigPaper, followBoard, unFollowBoard } from 'src/service/board'
 import { refreshUserInfo } from 'src/store/global-async-actions'
 import notice from 'src/utils/notice'
 import { checkIsBoardMaster } from 'src/utils/permission'
-
-import s from 'src/pages/board/components/BoardHeader.m.scss'
 import UbbContainer from 'src/ubb'
 import BoardImg from 'src/components/BoardImg'
+import Modal from 'src/components/Modal'
+
+import s from './BoardHeader.m.scss'
 
 interface IBoardHeaderProps {
   data: IBoard
+  refreshBoardInfo: () => void
 }
 
 function selector(store: RootStore) {
@@ -49,7 +51,9 @@ const renderBoardMasters = (masters: string[] = []) =>
     </p>
   ) : null
 
-const BoardHeader: React.FC<IBoardHeaderProps> = ({ data }) => {
+const BoardHeader: React.FC<IBoardHeaderProps> = ({ data, refreshBoardInfo }) => {
+  const [visible, setVisible] = React.useState(false)
+  const [bigPaper, setBigPaper] = React.useState(data.bigPaper || '')
   const { customBoards, isLogin, currentUser } = useSelector(selector)
   const dispatch = useDispatch()
   const isMaster = checkIsBoardMaster(data, currentUser)
@@ -65,6 +69,14 @@ const BoardHeader: React.FC<IBoardHeaderProps> = ({ data }) => {
           content: isFollow ? '取关成功' : '关注成功',
         })
       })
+
+  const handleEdit = () => {
+    editBoardBigPaper(data.id, bigPaper).then(() => {
+      notice('修改成功')
+      refreshBoardInfo()
+      setVisible(false)
+    })
+  }
 
   return (
     <div className={s.root}>
@@ -91,13 +103,36 @@ const BoardHeader: React.FC<IBoardHeaderProps> = ({ data }) => {
             {isFollow ? '取 关' : '关 注'}
           </Button>
         )}
-        {isMaster && <Button className={s.boardButton}>编 辑</Button>}
+        {isMaster && (
+          <Button onClick={() => setVisible(true)} className={s.boardButton}>
+            编 辑
+          </Button>
+        )}
       </div>
-      {data.bigPaper && (
+      {!!data.bigPaper && (
         <div className={s.bigPaper}>
           <UbbContainer text={data.bigPaper} />
         </div>
       )}
+      <Modal
+        visible={visible}
+        onClose={() => setVisible(false)}
+        title="编辑大字报"
+        footer={
+          <>
+            <Button onClick={() => setVisible(false)}>取 消</Button>
+            <Button primary onClick={handleEdit}>
+              确 定
+            </Button>
+          </>
+        }
+      >
+        <div className={s.edit}>
+          <p>支持UBB代码</p>
+          <textarea value={bigPaper} onChange={e => setBigPaper(e.target.value)} />
+          <UbbContainer text={bigPaper} />
+        </div>
+      </Modal>
     </div>
   )
 }

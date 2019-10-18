@@ -3,7 +3,7 @@ import thunk from 'redux-thunk'
 import { connectRouter, RouterAction, routerMiddleware } from 'connected-react-router'
 import { createBrowserHistory } from 'history'
 
-import { GlobalActions } from 'src/store/global-actions'
+import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
 import global from './global-reducer'
 
 export const history = createBrowserHistory()
@@ -26,5 +26,14 @@ const store = createStore<RootStore, RouterAction | GlobalActions, unknown, unkn
   reducers,
   composeEnhancers(applyMiddleware(thunk, routerMiddleware(history)))
 )
+
+history.listen(() => {
+  if (store.getState().global.error) {
+    store.dispatch({
+      type: GLOBAL_ACTION_TYPES.SET_ERROR,
+      payload: null,
+    })
+  }
+})
 
 export default store

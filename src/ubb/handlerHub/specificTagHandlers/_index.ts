@@ -15,6 +15,7 @@ import font from './font'
 import i from './i'
 import img from './img'
 import left from './left'
+import md from './md'
 import mp3 from './mp3'
 import noubb from './noubb'
 import pm from './pm'
@@ -48,6 +49,7 @@ const specificTagHandlers: IHandlerHub<React.ReactNode>['specificTagHandlers'] =
   i,
   img,
   left,
+  md,
   mp3,
   // needreply,
   noubb,

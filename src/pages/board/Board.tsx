@@ -1,7 +1,6 @@
 import React from 'react'
 import { RouteComponentProps } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
-import { replace } from 'connected-react-router'
 import { IBoard } from '@cc98/api'
 import { getBoardInfo } from 'src/service/board'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
@@ -13,11 +12,13 @@ import BoardStopUser from 'src/pages/board/components/BoardManage/BoardStopUser'
 import { checkIsBoardMaster } from 'src/utils/permission'
 import { RootStore } from 'src/store'
 import BoardBatchManage from 'src/pages/board/components/BoardManage/BoardBatchManage'
+import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
+import ERROR from 'src/constants/Error'
 
 import s from './Board.m.scss'
 
 interface IBoardUrlMatch {
-  id?: string
+  id: string
 }
 
 const baseBreadcrumb = [
@@ -38,29 +39,39 @@ function selector(store: RootStore) {
 }
 
 const Board: React.FC<RouteComponentProps<IBoardUrlMatch>> = ({ match }) => {
-  const boardId = match.params.id!
+  const boardId = match.params.id
   const [boardInfo, setBoardInfo] = React.useState<IBoard | null>(null)
+  const [key, setKey] = React.useState(0)
   const { user } = useSelector(selector)
   const dispatch = useDispatch()
   const breadcrumb = [...baseBreadcrumb, boardInfo ? boardInfo.name : '']
 
-  if (!boardId) {
-    dispatch(replace('/'))
-  }
-
   useBreadcrumb(breadcrumb)
 
   React.useEffect(() => {
-    getBoardInfo(boardId).then(setBoardInfo)
-  }, [boardId])
+    getBoardInfo(boardId, true).then(board => {
+      if (!board.canEntry) {
+        dispatch({
+          type: GLOBAL_ACTION_TYPES.SET_ERROR,
+          payload: ERROR.BOARD_NO_PERMISSION,
+        } as GlobalActions)
+        return
+      }
+      setBoardInfo(board)
+    })
+  }, [boardId, key])
 
   if (!boardId) {
     return null
   }
 
+  const refreshBoardInfo = () => {
+    setKey(key + 1)
+  }
+
   return (
     <div>
-      {boardInfo && <BoardHeader data={boardInfo} />}
+      {boardInfo && <BoardHeader refreshBoardInfo={refreshBoardInfo} data={boardInfo} />}
       {boardInfo && <BoardTopButtons data={boardInfo} />}
       <BoardContent boardInfo={boardInfo} boardId={boardId} />
       <div className={s.footer}>
