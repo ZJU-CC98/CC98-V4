@@ -1,9 +1,9 @@
 import produce from 'immer'
 import cssVars from 'css-vars-ponyfill'
-import { IMessageCount, IUser } from '@cc98/api'
+import { IMessageCount, ISignIn, IUser } from '@cc98/api'
 import { defaultTheme, themeMap } from 'src/config/theme'
 import THEME from 'src/constants/Theme'
-import { getLocalStorage } from 'src/utils/storage'
+import { getLocalStorage, removeLocalStorage } from 'src/utils/storage'
 import { BreadcrumbItem } from 'src/components/Breadcrumb'
 import ERROR from 'src/constants/Error'
 import { GLOBAL_ACTION_TYPES, GlobalActions } from './global-actions'
@@ -18,6 +18,8 @@ export interface IGlobalState {
 
   messageCount: IMessageCount
 
+  signInInfo: ISignIn | null
+
   error: ERROR | null
 }
 
@@ -30,6 +32,7 @@ const initMessageCount: IMessageCount = {
   atCount: 0,
   replyCount: 0,
 }
+const initSignIn = getLocalStorage<ISignIn>('signInInfo') || null
 
 const initState: IGlobalState = {
   theme: initTheme,
@@ -38,6 +41,7 @@ const initState: IGlobalState = {
   breadcrumb: [],
   messageCount: initMessageCount,
   error: null,
+  signInInfo: initSignIn,
 }
 
 cssVars({
@@ -67,9 +71,11 @@ const reducer = (state = initState, action: GlobalActions) =>
         draft.isLogin = false
         draft.currentUser = null
         draft.messageCount = initMessageCount
-        localStorage.removeItem('accessToken')
-        localStorage.removeItem('refreshToken')
-        localStorage.removeItem('userInfo')
+        draft.signInInfo = null
+        removeLocalStorage('accessToken')
+        removeLocalStorage('refreshToken')
+        removeLocalStorage('userInfo')
+        removeLocalStorage('signInInfo')
 
         return
       case GLOBAL_ACTION_TYPES.SET_CURRENT_USER:
@@ -82,6 +88,10 @@ const reducer = (state = initState, action: GlobalActions) =>
         return
       case GLOBAL_ACTION_TYPES.SET_MESSAGE_COUNT:
         draft.messageCount = Object.assign(draft.messageCount, action.payload)
+
+        return
+      case GLOBAL_ACTION_TYPES.SET_SIGN_IN_INFO:
+        draft.signInInfo = action.payload
 
         return
       case GLOBAL_ACTION_TYPES.SET_ERROR:

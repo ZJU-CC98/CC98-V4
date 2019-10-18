@@ -1,8 +1,9 @@
 import axios from 'axios'
-import { ITopic, IUser } from '@cc98/api'
+import { ISignIn, ITopic, IUser } from '@cc98/api'
 import { getLocalStorage, setLocalStorage } from 'src/utils/storage'
 import { stringify } from 'query-string'
 import THEME from 'src/constants/Theme'
+import { getTomorrowDate } from 'src/utils/time'
 
 export async function getMe(ignoreCache = false) {
   const storageUser = getLocalStorage('userInfo')
@@ -140,4 +141,33 @@ export const getMyRecentTopics = (from: number, size: number) => {
     },
     needAuth: true,
   }) as Promise<ITopic[]>
+}
+
+export const getSignInInfo = async () => {
+  let signInInfo = getLocalStorage<ISignIn>('signInInfo')
+
+  if (signInInfo) {
+    return signInInfo
+  }
+
+  signInInfo = (await axios({
+    url: '/me/signin',
+    needAuth: true,
+  })) as ISignIn
+
+  setLocalStorage('signInInfo', signInInfo, getTomorrowDate().getTime() / 1000)
+
+  return signInInfo
+}
+
+export const signIn = (content: string) => {
+  return axios({
+    url: '/me/signin',
+    needAuth: true,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: content,
+  }) as Promise<void>
 }

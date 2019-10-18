@@ -11,6 +11,7 @@ import ProdErrorBoundary from 'src/components/ErrorBoundary'
 
 import Home from 'src/pages/home/Home'
 import LogOn from 'src/pages/log-on/LogOn'
+import SignIn from 'src/pages/sign-in/SignIn'
 import BoardList from 'src/pages/board-list/BoardList'
 import Board from 'src/pages/board/Board'
 import Topic from 'src/pages/topic/Topic'
@@ -31,42 +32,44 @@ const ErrorBoundary = process.env.NODE_ENV === 'production' ? ProdErrorBoundary 
 
 export const App: React.FC = () => (
   <ErrorBoundary>
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <BasicLayout>
-          <Switch>
-            <Route path="/" component={Home} exact />
+    <React.StrictMode>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <BasicLayout>
+            <Switch>
+              <Route path="/" component={Home} exact />
 
-            <Route path="/log-on" component={LogOn} />
-            <Route path="/sign-in" component={LogOn} needLogOn />
+              <Route path="/log-on" component={LogOn} />
+              <Route path="/sign-in" component={SignIn} needLogOn />
 
-            <Route path="/board-list" component={BoardList} />
-            <Route path="/board/:id/:page?" component={Board} />
+              <Route path="/board-list" component={BoardList} />
+              <Route path="/board/:id/:page?" component={Board} />
 
-            <Route path="/focus" component={Focus} needLogOn />
+              <Route path="/focus" component={Focus} needLogOn />
 
-            <Route path="/search" component={Search} needLogOn />
-            <Route path="/new-topics" component={NewTopics} needLogOn />
-            <Route path="/topic/hot-weekly" component={HotWeekly} needLogOn />
-            <Route path="/topic/hot-monthly" component={HotMonthly} needLogOn />
-            <Route path="/topic/hot-history" component={HotHistory} needLogOn />
+              <Route path="/search" component={Search} needLogOn />
+              <Route path="/new-topics" component={NewTopics} needLogOn />
+              <Route path="/topic/hot-weekly" component={HotWeekly} needLogOn />
+              <Route path="/topic/hot-monthly" component={HotMonthly} needLogOn />
+              <Route path="/topic/hot-history" component={HotHistory} needLogOn />
 
-            <Route path="/message" component={Message} needLogOn />
+              <Route path="/message" component={Message} needLogOn />
 
-            <Route path="/user-center" component={UserCenter} needLogOn />
-            <Route path="/user/:id" component={User} />
+              <Route path="/user-center" component={UserCenter} needLogOn />
+              <Route path="/user/:id" component={User} />
 
-            <Route path="/topic/:topicId/track/:postId/:page?" component={Topic} />
-            <Route path="/topic/:topicId/:page?" component={Topic} />
+              <Route path="/topic/:topicId/track/:postId/:page?" component={Topic} />
+              <Route path="/topic/:topicId/:page?" component={Topic} />
 
-            <Route path="/editor/send-topic/:boardId" component={SendTopic} needLogOn />
-            <Route path="/editor/edit-post/:postId" component={EditPost} needLogOn />
+              <Route path="/editor/send-topic/:boardId" component={SendTopic} needLogOn />
+              <Route path="/editor/edit-post/:postId" component={EditPost} needLogOn />
 
-            <Route path="*" component={NotFound} />
-          </Switch>
-        </BasicLayout>
-      </ConnectedRouter>
-    </Provider>
+              <Route path="*" component={NotFound} />
+            </Switch>
+          </BasicLayout>
+        </ConnectedRouter>
+      </Provider>
+    </React.StrictMode>
   </ErrorBoundary>
 )
 
