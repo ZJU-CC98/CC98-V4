@@ -1,0 +1,22 @@
+.input {
+  display: none;
+}
+
+.label {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+
+  button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+  }
+}
+
+.lossless {
+  font-size: 14px;
+  margin-left: 8px;
+  cursor: pointer;
+}

@@ -19,11 +19,7 @@ const handler: ITagHandler<React.ReactNode> = {
       fontSize: `${size * 16}px`,
     } as React.CSSProperties
 
-    return (
-      <span style={style}>
-        <div>{children}</div>
-      </span>
-    )
+    return <span style={style}>{children}</span>
   },
 }
 

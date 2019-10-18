@@ -3,11 +3,13 @@ import PRIVILEGE from 'src/constants/Privilege'
 
 const YI_LU_ZOU_LAI_BOARD_ID = 144
 
+type BaseBoardInfo = Pick<IBoard, 'boardMasters' | 'id'>
+
 export function checkIsPrivilegeDog(user: IUser) {
   return user.privilege === PRIVILEGE.ADMIN || user.privilege === PRIVILEGE.SUPER_BOARD_MASTER
 }
 
-export function checkIsBoardMaster(boardInfo?: IBoard | null, user?: IUser | null) {
+export function checkIsBoardMaster(boardInfo?: BaseBoardInfo | null, user?: IUser | null) {
   if (!user) {
     return false
   }
@@ -23,7 +25,11 @@ export function checkIsBoardMaster(boardInfo?: IBoard | null, user?: IUser | nul
   return boardInfo.boardMasters.includes(user.name)
 }
 
-export function checkCanEditPost(post: IPost, currentUser?: IUser | null, boardInfo?: IBoard) {
+export function checkCanEditPost(
+  post: IPost,
+  currentUser?: IUser | null,
+  boardInfo?: BaseBoardInfo
+) {
   if (checkIsBoardMaster(boardInfo, currentUser)) {
     return true
   }
@@ -32,7 +38,7 @@ export function checkCanEditPost(post: IPost, currentUser?: IUser | null, boardI
 }
 
 export function checkCanManagePost(
-  boardInfo?: IBoard,
+  boardInfo?: BaseBoardInfo,
   topicInfo?: ITopic,
   currentUser?: IUser | null
 ) {
@@ -52,7 +58,7 @@ export function checkCanManageUser(currentUser?: IUser | null) {
 }
 
 // 是否可以选择校园活动
-export function checkCanPostActivity(boardInfo?: IBoard | null, user?: IUser | null) {
+export function checkCanPostActivity(boardInfo?: BaseBoardInfo, user?: IUser | null) {
   if (checkIsBoardMaster(boardInfo, user)) {
     return true
   }

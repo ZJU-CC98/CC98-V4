@@ -1,8 +1,9 @@
 import React from 'react'
-import { IBoard, ITopic, IUser } from '@cc98/api'
+import { ITopic, IUser } from '@cc98/api'
 import { Link } from 'react-router-dom'
 import { Waypoint } from 'react-waypoint'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
+import IBoardMap from 'src/types/IBoardMap'
 import { faClock, faEye } from '@fortawesome/free-regular-svg-icons'
 
 import Spin from 'src/components/Spin'
@@ -12,10 +13,6 @@ import SEARCH_TYPE from 'src/constants/SearchType'
 import { formatCount, formatTime } from './utils'
 import s from './index.m.scss'
 
-type BoardMap = Record<
-  number, // boardId
-  IBoard // board
->
 type TagMap = Record<
   number, // tagId
   string // tagName
@@ -37,7 +34,7 @@ interface IInfinityTopicListProps {
   userMap: IUserMap
   userFallback: BasicUser
 
-  boardMap: BoardMap
+  boardMap: IBoardMap
   tagMap: TagMap
 }
 

@@ -756,17 +756,17 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@cc98/react-ubb-editor@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.npm.taobao.org/@cc98/react-ubb-editor/download/@cc98/react-ubb-editor-2.1.0.tgz?cache=0&sync_timestamp=1570706584828&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40cc98%2Freact-ubb-editor%2Fdownload%2F%40cc98%2Freact-ubb-editor-2.1.0.tgz#bd5d258a9899ca405110c3902cb71deb1e21fff1"
-  integrity sha1-vV0lipiZykBREMOQLLcd6x4h//E=
+"@cc98/react-ubb-editor@^2.2.4":
+  version "2.2.4"
+  resolved "https://registry.npm.taobao.org/@cc98/react-ubb-editor/download/@cc98/react-ubb-editor-2.2.4.tgz#d77902dc9c49a90b72ef77dfdfc52794b8d78611"
+  integrity sha1-13kC3JxJqQty73ff38UnlLjXhhE=
   dependencies:
     "@emotion/cache" "^10.0.19"
     "@emotion/core" "^10.0.21"
     "@emotion/styled" "^10.0.17"
     "@fortawesome/fontawesome-svg-core" "^1.2.25"
     "@fortawesome/free-solid-svg-icons" "^5.11.2"
-    "@fortawesome/react-fontawesome" "^0.1.5"
+    "@fortawesome/react-fontawesome" "^0.1.6"
     rc-notification "^3.3.1"
     react "^16.10.2"
     react-color "^2.17.3"
@@ -906,7 +906,7 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.25"
 
-"@fortawesome/react-fontawesome@^0.1.5", "@fortawesome/react-fontawesome@^0.1.6":
+"@fortawesome/react-fontawesome@^0.1.6":
   version "0.1.6"
   resolved "https://registry.npm.taobao.org/@fortawesome/react-fontawesome/download/@fortawesome/react-fontawesome-0.1.6.tgz#b798b96401e25d07c30bbe1b9ec0e6d8a33760a5"
   integrity sha1-t5i5ZAHiXQfDC74bnsDm2KM3YKU=

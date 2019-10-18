@@ -7,7 +7,7 @@ import { THEME_MODE } from 'src/constants/Theme'
 const handler: IGeneralTagHandler<React.ReactNode> = {
   isRecursive: false,
 
-  match: /ac\d{2}/i,
+  match: /ac\d+/i,
 
   render(node: TagNode, context: IContext) {
     // eslint-disable-next-line no-underscore-dangle

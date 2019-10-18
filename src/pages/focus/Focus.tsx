@@ -13,8 +13,6 @@ const breadcrumb: BreadcrumbItem[] = []
 const Focus: React.FC = () => {
   useBreadcrumb(breadcrumb)
 
-  // TODO: check login
-
   return (
     <>
       <div>

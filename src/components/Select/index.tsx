@@ -55,7 +55,7 @@ function Select<T extends string | number, V extends T | T[]>({
       visible={visible}
       onHide={() => setVisible(false)}
       interactive
-      offset={showOffset ? '0 0' : '0, -10'}
+      offset={showOffset ? '0, 0' : '0, -10'}
       placement={placement}
       animation="perspective"
       hideOnClick={false}
