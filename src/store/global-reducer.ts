@@ -5,6 +5,7 @@ import { defaultTheme, themeMap } from 'src/config/theme'
 import THEME from 'src/constants/Theme'
 import { getLocalStorage } from 'src/utils/storage'
 import { BreadcrumbItem } from 'src/components/Breadcrumb'
+import ERROR from 'src/constants/Error'
 import { GLOBAL_ACTION_TYPES, GlobalActions } from './global-actions'
 
 export interface IGlobalState {
@@ -16,6 +17,8 @@ export interface IGlobalState {
   breadcrumb: BreadcrumbItem[]
 
   messageCount: IMessageCount
+
+  error: ERROR | null
 }
 
 const initIsLogin = !!getLocalStorage('refreshToken')
@@ -34,6 +37,7 @@ const initState: IGlobalState = {
   currentUser: initIsLogin ? initUser : null,
   breadcrumb: [],
   messageCount: initMessageCount,
+  error: null,
 }
 
 cssVars({
@@ -78,6 +82,10 @@ const reducer = (state = initState, action: GlobalActions) =>
         return
       case GLOBAL_ACTION_TYPES.SET_MESSAGE_COUNT:
         draft.messageCount = Object.assign(draft.messageCount, action.payload)
+
+        return
+      case GLOBAL_ACTION_TYPES.SET_ERROR:
+        draft.error = action.payload
 
         return
       default:

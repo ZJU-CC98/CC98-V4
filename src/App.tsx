@@ -15,9 +15,9 @@ import BoardList from 'src/pages/board-list/BoardList'
 import Board from 'src/pages/board/Board'
 import Topic from 'src/pages/topic/Topic'
 import NewTopics from 'src/pages/new-topics/NewTopics'
-import HotWeekly from 'src/pages/topic/hotWeekly/HotWeekly'
-import HotMonthly from 'src/pages/topic/hotMonthly/HotMonthly'
-import HotHistory from 'src/pages/topic/hotHistory/HotHistory'
+import HotWeekly from 'src/pages/topic/hot-weekly/HotWeekly'
+import HotMonthly from 'src/pages/topic/hot-monthly/HotMonthly'
+import HotHistory from 'src/pages/topic/hot-history/HotHistory'
 import Focus from 'src/pages/focus/Focus'
 import Search from 'src/pages/search/Search'
 import Message from 'src/pages/message/Message'
@@ -25,7 +25,7 @@ import UserCenter from 'src/pages/user-center/UserCenter'
 import User from 'src/pages/user-center/User'
 import SendTopic from 'src/pages/editor/send-topic/SendTopic'
 import EditPost from 'src/pages/editor/edit-post/EditPost'
-import NotLogOn from 'src/pages/error/NotLogOn'
+import NotFound from 'src/components/Error/NotFound'
 
 const ErrorBoundary = process.env.NODE_ENV === 'production' ? ProdErrorBoundary : React.Fragment
 
@@ -62,9 +62,7 @@ export const App: React.FC = () => (
             <Route path="/editor/send-topic/:boardId" component={SendTopic} needLogOn />
             <Route path="/editor/edit-post/:postId" component={EditPost} needLogOn />
 
-            <Route path="/error/not-log-on" component={NotLogOn} />
-
-            <Route path="*" component={() => <div>Not Fount</div>} />
+            <Route path="*" component={NotFound} />
           </Switch>
         </BasicLayout>
       </ConnectedRouter>

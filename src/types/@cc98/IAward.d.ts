@@ -21,7 +21,7 @@ declare module '@cc98/api' {
      */
     type: number
     /**
-     * TODO:
+     * id
      */
     id: number
   }

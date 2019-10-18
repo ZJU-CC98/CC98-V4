@@ -13,11 +13,13 @@ import Pagination from 'src/components/Pagination'
 import { getUsersByNames } from 'src/service/user'
 import { getPostLikeState } from 'src/service/post'
 import IUserMap from 'src/types/IUserMap'
+import { getPosts, getTotalPage } from 'src/pages/topic/utils'
+import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
+import ERROR from 'src/constants/Error'
 
 import TopicHeader from 'src/pages/topic/components/TopicHeader'
 import PostItem from 'src/pages/topic/components/PostItem'
 import TopicReplier from 'src/pages/topic/components/TopicReplier'
-import { getPosts, getTotalPage } from 'src/pages/topic/utils'
 
 import s from './Topic.m.scss'
 
@@ -59,6 +61,16 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
   // 获取 topic & board 信息
   React.useEffect(() => {
     getTopicInfo(topicId)
+      .catch(error => {
+        if (error.response && error.response.data === 'cannot_entry_board') {
+          dispatch({
+            type: GLOBAL_ACTION_TYPES.SET_ERROR,
+            payload: ERROR.TOPIC_NO_PERMISSION,
+          } as GlobalActions)
+        }
+
+        throw error
+      })
       .then(topic => {
         setTopicInfo(topic)
         return getBoardInfo(topic.boardId)
@@ -113,7 +125,7 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
 
   useBreadcrumb([
     ...baseBreadcrumb,
-    boardInfo ? { url: `/board/${boardInfo.id}`, name: boardInfo.name } : ' ',
+    boardInfo ? { url: `/board/${boardInfo.id}`, name: boardInfo.name } : { name: ' ', url: '/' },
     topicInfo ? topicInfo.title : '',
   ])
 

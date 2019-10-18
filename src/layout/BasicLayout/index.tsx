@@ -3,6 +3,7 @@ import { RouteComponentProps, withRouter } from 'react-router'
 import { useSelector } from 'react-redux'
 import { RootStore } from 'src/store'
 import { defaultTheme, themeMap } from 'src/config/theme'
+import { errorComponentMap } from 'src/constants/Error'
 
 import Breadcrumb from 'src/components/Breadcrumb'
 import GlobalHeader from './GlobalHeader'
@@ -13,11 +14,13 @@ function selector(store: RootStore) {
   return {
     theme: store.global.theme,
     breadcrumb: store.global.breadcrumb,
+    error: store.global.error,
   }
 }
 
 const BasicLayout: React.FC<RouteComponentProps> = ({ children, location: { pathname } }) => {
-  const { theme, breadcrumb } = useSelector(selector)
+  const { theme, breadcrumb, error } = useSelector(selector)
+  const ErrorComponent = errorComponentMap[error!]
   const isHome = pathname === '/'
 
   return (
@@ -35,7 +38,7 @@ const BasicLayout: React.FC<RouteComponentProps> = ({ children, location: { path
           </div>
         )}
         {!!breadcrumb.length && <Breadcrumb className={s.breadcrumb} data={breadcrumb} />}
-        {children}
+        {error ? <ErrorComponent /> : children}
       </div>
       <div className={s.footer}>
         <GlobalFooter />

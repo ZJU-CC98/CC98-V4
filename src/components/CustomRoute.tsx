@@ -1,7 +1,9 @@
 import React from 'react'
-import { Route, RouteProps, useHistory } from 'react-router-dom'
+import { Route, RouteProps } from 'react-router-dom'
 import { RootStore } from 'src/store'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
+import ERROR from 'src/constants/Error'
 
 interface ICustomRouteProps extends RouteProps {
   needLogOn?: boolean
@@ -14,12 +16,15 @@ function selector(state: RootStore) {
 }
 
 const CustomRoute: React.FC<ICustomRouteProps> = ({ needLogOn, ...rest }) => {
-  const history = useHistory()
+  const dispatch = useDispatch()
   const { isLogOn } = useSelector(selector)
 
   React.useEffect(() => {
     if (!isLogOn && needLogOn) {
-      history.push('/error/not-log-on')
+      dispatch({
+        type: GLOBAL_ACTION_TYPES.SET_ERROR,
+        payload: ERROR.NOT_LOG_ON,
+      } as GlobalActions)
     }
   }, [needLogOn, isLogOn])
 

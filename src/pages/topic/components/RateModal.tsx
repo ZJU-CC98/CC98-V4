@@ -19,7 +19,7 @@ interface IRateModalProps {
   refresh: () => void
 }
 
-const DETAULT_PLUS_TEXT = ['所言极是', '好人一生平安', 'momo']
+const DEFAULT_PLUS_TEXT = ['所言极是', '好人一生平安', 'momo']
 const DEFAULT_MINUS_TEXT = ['不太求是', '呵呵', '被你暴击']
 
 const RateModal: React.FC<IRateModalProps> = ({ visible, setVisible, postId, refresh }) => {
@@ -36,7 +36,7 @@ const RateModal: React.FC<IRateModalProps> = ({ visible, setVisible, postId, ref
       .catch(err => {
         if (err.response) {
           switch (err.response.data) {
-            // TODO
+            // TODO 这个值不太对
             case 'already':
               return notice('你今天已经评分过了')
             case 'you_cannot_rate':
@@ -89,7 +89,7 @@ const RateModal: React.FC<IRateModalProps> = ({ visible, setVisible, postId, ref
         tags
         value={reason}
         onChange={setReason}
-        data={isPlus ? DETAULT_PLUS_TEXT : DEFAULT_MINUS_TEXT}
+        data={isPlus ? DEFAULT_PLUS_TEXT : DEFAULT_MINUS_TEXT}
       />
     </Modal>
   )
