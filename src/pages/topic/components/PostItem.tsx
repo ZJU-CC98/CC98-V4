@@ -27,6 +27,7 @@ interface IPostItemProps {
   refreshPostLikeState: () => void
   isHot?: boolean
   userMap: IUserMap
+  refresh: () => void
   focus?: boolean
 }
 
@@ -135,6 +136,7 @@ const PostItem: React.FC<IPostItemProps> = ({
   boardInfo,
   topicInfo,
   refreshPostLikeState,
+  refresh,
   isHot = false,
   focus = false,
   userMap,
@@ -171,13 +173,21 @@ const PostItem: React.FC<IPostItemProps> = ({
         {renderTopBar(user)}
         {renderContent(post, userMap)}
         <PostOperation
+          refresh={refresh}
           refreshPostLikeState={refreshPostLikeState}
           canEdit={canEdit}
           canManage={canManage}
           post={post}
           isTracking={isTracking}
         />
-        {user && user.signatureCode && <div className={s.qmd}>{user.signatureCode}</div>}
+        {user && user.signatureCode && (
+          <div className={s.qmd}>
+            <UbbContainer
+              text={user.signatureCode}
+              config={{ allowExternalImage: false, allowMarkDown: false, maxImageCount: 1 }}
+            />
+          </div>
+        )}
       </div>
       <div
         className={cn(s.floor, {

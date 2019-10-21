@@ -40,7 +40,6 @@ interface IRouteMatch {
 const User: React.FC<RouteComponentProps<IRouteMatch>> = ({ match }) => {
   useBreadcrumb(breadcrumb)
 
-  // TODO: no id
   const { id } = match.params
   const basePath = `/user/${id}`
 

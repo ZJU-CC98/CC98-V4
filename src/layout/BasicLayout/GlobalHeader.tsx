@@ -40,7 +40,7 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
   }
 
   React.useEffect(() => {
-    if (!pathname.startsWith(MESSAGE_BASE_PATH)) {
+    if (!pathname.startsWith(MESSAGE_BASE_PATH) && isLogin) {
       dispatch(refreshMessageCount())
     }
   }, [])
@@ -163,9 +163,7 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
         ) : (
           <>
             <div className={s.text}>
-              <Link replace={pathname === '/error/not-log-on'} to="/log-on">
-                登录
-              </Link>
+              <Link to="/log-on">登录</Link>
             </div>
             <div className={s.text}>
               <a href="https://account.cc98.org/">注册</a>

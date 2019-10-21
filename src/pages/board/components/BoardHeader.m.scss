@@ -28,7 +28,7 @@ $tag-border-radius: 4px;
   font-size: 14px;
   line-height: 1.5;
   flex-grow: 1;
-  max-width: 480px;
+  max-width: 570px;
 }
 
 .board-master {
@@ -78,4 +78,17 @@ $tag-border-radius: 4px;
   margin: 24px 16px 0;
   border-top: 1px solid $border-color;
   padding-top: 24px;
+}
+
+.edit {
+  font-size: 14px;
+
+  p {
+    margin-bottom: 12px;
+  }
+
+  textarea {
+    width: 800px;
+    min-height: 200px;
+  }
 }

@@ -1,12 +1,15 @@
 import axios from 'axios'
 import { IBoard, IBoardEvent, IBoardGroup, IBoardStopPostUser, ITagGroup, ITopic } from '@cc98/api'
 
-export function getAllBoard() {
-  return axios('/Board/all') as Promise<IBoardGroup[]>
+export function getAllBoard(ignoreCache?: boolean) {
+  return axios({
+    url: '/Board/all',
+    ignoreCache,
+  }) as Promise<IBoardGroup[]>
 }
 
-export function getBoardInfo(boardId: string | number) {
-  return axios({ needAuth: true, url: `/board/${boardId}` }) as Promise<IBoard>
+export function getBoardInfo(boardId: string | number, ignoreCache?: boolean) {
+  return axios({ needAuth: true, url: `/board/${boardId}`, ignoreCache }) as Promise<IBoard>
 }
 
 export function searchBoard(keyword: string) {
@@ -148,5 +151,16 @@ export const cancelBoardStopPostUser = (boardId: string, userId: number) => {
     url: `/board/${boardId}/stop-post-user/${userId}`,
     method: 'DETELE',
     needAuth: true,
+  }) as Promise<void>
+}
+
+export const editBoardBigPaper = (boardId: string | number, bigPaper: string) => {
+  return axios({
+    url: `/board/${boardId}/big-paper`,
+    method: 'PUT',
+    needAuth: true,
+    data: {
+      content: bigPaper,
+    },
   }) as Promise<void>
 }

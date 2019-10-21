@@ -1,5 +1,6 @@
 import React from 'react'
 import Editor from 'src/components/Editor'
+import cn from 'classnames'
 import { ITopicParams } from 'src/service/topic'
 import { RootStore } from 'src/store'
 import { useSelector } from 'react-redux'
@@ -137,6 +138,9 @@ const TopicEditor: React.FC<ITopicEditorProps> = ({ initTopic, boardId, buttonTe
           <input readOnly type="checkbox" checked={notifyPoster} />
           <span>接收消息提醒</span>
         </span>
+      </div>
+      <div className={cn(s.row, s.content)}>
+        <span className={s.label}>主题内容</span>
       </div>
       <Editor
         initValue={initTopic.content}

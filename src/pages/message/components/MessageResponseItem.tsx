@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import dayjs from 'dayjs'
 import cn from 'classnames'
-import { IBoard } from '@cc98/api'
+import IBoardMap from 'src/types/IBoardMap'
 import { IMessageItem } from 'src/pages/message/utils'
 import { getNotificationTypeDesc } from 'src/constants/NotificationType'
 import { EVENT, eventBus } from 'src/utils/event'
@@ -11,7 +11,7 @@ import s from './MessageResponseItem.m.scss'
 
 interface IMessageResponseItemProps {
   item: IMessageItem
-  boardMap: Record<number, IBoard>
+  boardMap: IBoardMap
 }
 
 const MessageResponseItem: React.FC<IMessageResponseItemProps> = ({ item, boardMap }) => {
