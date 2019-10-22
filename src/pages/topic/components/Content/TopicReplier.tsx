@@ -8,8 +8,12 @@ import { IPostParams, replyTopic } from 'src/service/topic'
 import notice from 'src/utils/notice'
 import { atUsersInPost } from 'src/service/post'
 
-import { checkHasQuote, findAtUserNames, getQuoteContent } from './utils'
-import s from './TopicReplier.m.scss'
+import {
+  checkHasQuote,
+  findAtUserNames,
+  getQuoteContent,
+} from 'src/pages/topic/components/Content/utils'
+import s from 'src/pages/topic/components/Content/TopicReplier.m.scss'
 
 interface ITopicReplierProps {
   topicId: string

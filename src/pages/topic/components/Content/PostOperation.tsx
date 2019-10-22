@@ -8,9 +8,9 @@ import LIKE_STATE from 'src/constants/LikeState'
 import { EVENT, eventBus } from 'src/utils/event'
 import { setPostLikeState } from 'src/service/post'
 
-import RateModal from './RateModal'
-import PostManageModal from './PostManageModal'
-import s from './PostOperation.m.scss'
+import RateModal from 'src/pages/topic/components/Modal/RateModal'
+import PostManageModal from 'src/pages/topic/components/Modal/PostManageModal'
+import s from 'src/pages/topic/components/Content/PostOperation.m.scss'
 
 interface IPostOperationProps {
   post: IPost

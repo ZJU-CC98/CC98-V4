@@ -1,5 +1,5 @@
 import axios, { CancelToken } from 'axios'
-import { IBasicTopic, IPost, ITopic, IVoteInfo } from '@cc98/api'
+import { IBasicTopic, IPost, ITopic, ITopicIP, IVoteInfo } from '@cc98/api'
 import EDITOR_MODE from 'src/constants/EditorMode'
 import TOPIC_TYPE from 'src/constants/TopicType'
 import { stringify } from 'query-string'
@@ -217,4 +217,11 @@ export const deleteTopics = (id: number[], reason: string) => {
       reason,
     },
   }) as Promise<void>
+}
+
+export const getTopicIPInfo = (topicId: string | number) => {
+  return axios({
+    url: `/topic/${topicId}/look-ip`,
+    needAuth: true,
+  }) as Promise<ITopicIP[]>
 }

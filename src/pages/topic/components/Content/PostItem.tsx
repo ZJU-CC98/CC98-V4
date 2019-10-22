@@ -8,10 +8,10 @@ import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons'
 import { checkCanEditPost, checkCanManagePost } from 'src/utils/permission'
 import IUserMap from 'src/types/IUserMap'
 
-import PostOperation from 'src/pages/topic/components/PostOperation'
+import PostOperation from 'src/pages/topic/components/Content/PostOperation'
 
 import hotImg from 'src/assets/topic/hot.png'
-import s from 'src/pages/topic/components/PostItem.m.scss'
+import s from 'src/pages/topic/components/Content/PostItem.m.scss'
 import { IMAGE_BASE_PATH } from 'src/constants/path'
 import UbbContainer from 'src/ubb'
 import UserAvatar from 'src/components/UserAvatar'

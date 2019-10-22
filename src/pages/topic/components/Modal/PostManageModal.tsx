@@ -21,7 +21,7 @@ import { ANONYMOUS_BOARD_IDS } from 'src/constants/BoardId'
 import { cancelBoardStopPostUser } from 'src/service/board'
 import notice from 'src/utils/notice'
 
-import s from './PostManageModal.m.scss'
+import s from 'src/pages/topic/components/Modal/PostManageModal.m.scss'
 
 interface IPostManageModalProps {
   post: IPost
