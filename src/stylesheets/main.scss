@@ -10,6 +10,7 @@
   color: var(--text-color);
   font-size: $base-font-size;
   font-family: $font-family;
+  overflow: hidden;
 }
 
 input[type='text'],

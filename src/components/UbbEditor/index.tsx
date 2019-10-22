@@ -9,17 +9,17 @@ import upload from './config/upload'
 
 import s from './index.m.scss'
 
-const UbbEditor = React.memo(
+const Editor = React.memo(
   createEditor({
     UbbContainer: ({ value }) => <UbbContainer text={value} />,
     configs: [emoji, image, upload],
   })
 )
 
-export default function(props: IProps) {
+export default function UbbEditor(props: IProps) {
   return (
     <div className={s.root}>
-      <UbbEditor {...props} />
+      <Editor {...props} />
     </div>
   )
 }

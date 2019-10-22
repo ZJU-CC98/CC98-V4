@@ -10,7 +10,7 @@ import { RootStore } from 'src/store'
 import { GLOBAL_ACTION_TYPES } from 'src/store/global-actions'
 import { getMe } from 'src/service/user'
 import { clearAll } from 'src/utils/indexedDb'
-import { refreshMessageCount } from 'src/store/global-async-actions'
+import { refreshMessageCount, refreshSignInInfo } from 'src/store/global-async-actions'
 import { MESSAGE_BASE_PATH } from 'src/pages/message/constants'
 
 import icon from 'src/assets/98LOGO.ico'
@@ -23,11 +23,12 @@ function selector(store: RootStore) {
     isLogin: store.global.isLogin,
     user: store.global.currentUser || ({} as any),
     messageCount: store.global.messageCount,
+    signInInfo: store.global.signInInfo,
   }
 }
 
 const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
-  const { isLogin, user, messageCount } = useSelector(selector)
+  const { isLogin, user, messageCount, signInInfo } = useSelector(selector)
   const totalMessageCount = sum(Object.values(messageCount))
   const dispatch = useDispatch()
   const { pathname } = useLocation()
@@ -53,6 +54,8 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
           payload,
         })
       })
+
+      dispatch(refreshSignInInfo())
     }
   }, [])
 
@@ -144,7 +147,7 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
                     </Link>
                   )}
                   <Link to="/sign-in" className={s.menuItem}>
-                    签到
+                    {signInInfo && signInInfo.hasSignedInToday ? '已签到' : '签到'}
                   </Link>
                   <p onClick={logout} className={s.menuItem}>
                     注销
