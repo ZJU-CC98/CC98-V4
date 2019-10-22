@@ -1,5 +1,5 @@
 import React from 'react'
-import { IPost } from '@cc98/api'
+import { IBoard, IPost, IUser } from '@cc98/api'
 import { useHistory } from 'react-router'
 import dayjs from 'dayjs'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
@@ -9,15 +9,18 @@ import { EVENT, eventBus } from 'src/utils/event'
 import { setPostLikeState } from 'src/service/post'
 
 import RateModal from './RateModal'
+import PostManageModal from './PostManageModal'
 import s from './PostOperation.m.scss'
 
 interface IPostOperationProps {
   post: IPost
+  boardInfo?: IBoard
   canEdit: boolean
   canManage: boolean
   refreshPostLikeState: () => void
   refresh: () => void
   isTracking: boolean
+  currentUser: IUser | null
 }
 
 const PostOperation: React.FC<IPostOperationProps> = ({
@@ -27,9 +30,12 @@ const PostOperation: React.FC<IPostOperationProps> = ({
   refreshPostLikeState,
   isTracking,
   refresh,
+  boardInfo,
+  currentUser,
 }) => {
   const history = useHistory()
   const [rateVisible, setRateVisible] = React.useState(false)
+  const [manageVisible, setManageVisible] = React.useState(false)
 
   const handleQuote: React.MouseEventHandler = () => {
     eventBus.emit(EVENT.QUOTE_FLOOR, post)
@@ -69,6 +75,10 @@ const PostOperation: React.FC<IPostOperationProps> = ({
 
   const handleRate = () => {
     setRateVisible(true)
+  }
+
+  const handleManage = () => {
+    setManageVisible(true)
   }
 
   return (
@@ -121,13 +131,25 @@ const PostOperation: React.FC<IPostOperationProps> = ({
             编辑
           </span>
         )}
-        {canManage && <span className={s.action}>管理</span>}
+        {canManage && (
+          <span onClick={handleManage} className={s.action}>
+            管理
+          </span>
+        )}
       </p>
       <RateModal
         postId={post.id}
         refresh={refresh}
         visible={rateVisible}
         setVisible={setRateVisible}
+      />
+      <PostManageModal
+        currentUser={currentUser}
+        boardInfo={boardInfo}
+        post={post}
+        visible={manageVisible}
+        onClose={() => setManageVisible(false)}
+        refresh={refresh}
       />
     </div>
   )

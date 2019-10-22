@@ -58,13 +58,13 @@ const renderUser = (
         </div>
         <p className={s.userName}>
           <span>{user.name}</span>
-          {!post.isAnonymous && (
+          {!post.isAnonymous && !post.isDeleted && (
             <span>
               <Icon icon={user.gender ? faMars : faVenus} />
             </span>
           )}
         </p>
-        {!post.isAnonymous && isLogin && (
+        {!post.isAnonymous && !post.isDeleted && isLogin && (
           <p>
             <span className={s.userAction}>{user.isFollowing ? '取关' : '关注'}</span>
             <span className={s.userAction}>私信</span>
@@ -98,20 +98,23 @@ const renderTopBar = (user?: IUser) => (
 const renderContent = (post: IPost, userMap: IUserMap) => (
   <div className={s.content}>
     <div>
-      {post.contentType === EDITOR_MODE.UBB ? (
+      {/* eslint-disable-next-line no-nested-ternary */}
+      {post.isDeleted ? (
+        <p>该贴已被my cc98, my home</p>
+      ) : post.contentType === EDITOR_MODE.UBB ? (
         <UbbContainer text={post.content} config={{ allowLightBox: true }} />
       ) : (
         <MarkdownContainer text={post.content} />
       )}
     </div>
-    {!!post.awards.length && (
+    {!!(post.awards || []).length && (
       <div className={s.award}>
         <p>
           <span className={s.awardUserTitle}>用户</span>
           <span className={s.awardContentTitle}>操作</span>
           <span className={s.awardReasonTitle}>理由</span>
         </p>
-        {post.awards.map(item => (
+        {post.awards!.map(item => (
           <p key={item.id}>
             <span>
               <img
@@ -158,7 +161,17 @@ const PostItem: React.FC<IPostItemProps> = ({
       {renderUser(
         isLogin,
         post,
-        post.isAnonymous
+        // eslint-disable-next-line no-nested-ternary
+        post.isDeleted
+          ? {
+              name: '98Deleter',
+              portraitUrl: `${IMAGE_BASE_PATH}/deleter2.png`,
+              gender: 0,
+              isFollowing: false,
+              id: 0,
+              displayTitleId: null,
+            }
+          : post.isAnonymous
           ? {
               name: `匿名${post.userName}`,
               portraitUrl: `${IMAGE_BASE_PATH}/心灵头像.gif`,
@@ -173,6 +186,8 @@ const PostItem: React.FC<IPostItemProps> = ({
         {renderTopBar(user)}
         {renderContent(post, userMap)}
         <PostOperation
+          currentUser={currentUser}
+          boardInfo={boardInfo}
           refresh={refresh}
           refreshPostLikeState={refreshPostLikeState}
           canEdit={canEdit}

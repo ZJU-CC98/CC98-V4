@@ -103,7 +103,7 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
         const userNames = [
           ...allData.map(item => item.userName),
           ...allData.reduce(
-            (res, curr) => [...res, ...curr.awards.map(item => item.operatorName)],
+            (res, curr) => [...res, ...(curr.awards || []).map(item => item.operatorName)],
             [] as string[]
           ),
         ]
