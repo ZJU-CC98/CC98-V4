@@ -1,0 +1,43 @@
+@import 'var';
+
+.root {
+  background-color: $main-background-color;
+  padding: 32px;
+}
+
+.title {
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
+  line-height: 24px;
+}
+
+.info {
+  line-height: 24px;
+  width: 100%;
+}
+
+.item {
+  line-height: 24px;
+  text-indent: 2em;
+}
+
+.editor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > div {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+}
+
+.sign {
+  p {
+    text-align: center;
+  }
+}

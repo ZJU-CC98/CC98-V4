@@ -143,10 +143,10 @@ export const getMyRecentTopics = (from: number, size: number) => {
   }) as Promise<ITopic[]>
 }
 
-export const getSignInInfo = async () => {
+export const getSignInInfo = async (ignoreCache = false) => {
   let signInInfo = getLocalStorage<ISignIn>('signInInfo')
 
-  if (signInInfo) {
+  if (signInInfo && !ignoreCache) {
     return signInInfo
   }
 
@@ -155,7 +155,7 @@ export const getSignInInfo = async () => {
     needAuth: true,
   })) as ISignIn
 
-  setLocalStorage('signInInfo', signInInfo, getTomorrowDate().getTime() / 1000)
+  setLocalStorage('signInInfo', signInInfo, (getTomorrowDate().getTime() - Date.now()) / 1000)
 
   return signInInfo
 }

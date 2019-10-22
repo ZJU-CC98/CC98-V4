@@ -24,8 +24,10 @@ export const refreshMessageCount: () => GlobalAsyncAction = () => dispatch => {
   })
 }
 
-export const refreshSignInInfo: () => GlobalAsyncAction = () => dispatch => {
-  return getSignInInfo().then(payload => {
+export const refreshSignInInfo: (
+  ignoreCache?: boolean
+) => GlobalAsyncAction = ignoreCache => dispatch => {
+  return getSignInInfo(ignoreCache).then(payload => {
     dispatch({
       type: GLOBAL_ACTION_TYPES.SET_SIGN_IN_INFO,
       payload,
