@@ -1,4 +1,4 @@
-import { IMessageCount, IUser } from '@cc98/api'
+import { IMessageCount, ISignIn, IUser } from '@cc98/api'
 import THEME from 'src/constants/Theme'
 import { BreadcrumbItem } from 'src/components/Breadcrumb'
 import ERROR from 'src/constants/Error'
@@ -11,6 +11,7 @@ export enum GLOBAL_ACTION_TYPES {
   SET_BREADCRUMB = 'SET_BREADCRUMB',
   SET_MESSAGE_COUNT = 'SET_MESSAGE_COUNT',
   SET_ERROR = 'SET_ERROR',
+  SET_SIGN_IN_INFO = 'SET_SIGN_IN_INFO',
 }
 
 export type GlobalActions =
@@ -40,4 +41,8 @@ export type GlobalActions =
   | {
       type: GLOBAL_ACTION_TYPES.SET_ERROR
       payload: ERROR | null
+    }
+  | {
+      type: GLOBAL_ACTION_TYPES.SET_SIGN_IN_INFO
+      payload: ISignIn | null
     }

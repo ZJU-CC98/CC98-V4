@@ -16,7 +16,7 @@ import useBreadcrumb from 'src/hooks/useBreadcrumb'
 import LightBox from 'src/components/Image/LightBox'
 import s from 'src/pages/log-on/LogOn.m.scss'
 import { clearAll } from 'src/utils/indexedDb'
-import { refreshMessageCount } from 'src/store/global-async-actions'
+import { refreshMessageCount, refreshSignInInfo } from 'src/store/global-async-actions'
 
 const REFRESH_TOKEN_EXPIRED_TIME = 2592000
 const CODE_WRONG_PASSWORD = 400
@@ -85,6 +85,7 @@ const LogOn: React.FC<RouteComponentProps> = ({ history }) => {
         })
 
         dispatch(refreshMessageCount())
+        dispatch(refreshSignInInfo())
 
         setTimeout(() => {
           if (history.length === 1) {
