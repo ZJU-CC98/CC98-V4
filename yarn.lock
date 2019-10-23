@@ -1224,10 +1224,10 @@
   resolved "https://registry.npm.taobao.org/@types/minimatch/download/@types/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha1-PcoOPzOyAPx9ETnAzZbBJoyt/Z0=
 
-"@types/node@*", "@types/node@^12.11.2":
-  version "12.11.2"
-  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.11.2.tgz?cache=0&sync_timestamp=1571674960217&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-12.11.2.tgz#75ba3beda30d690b89a5089ca1c6e8e386150b76"
-  integrity sha1-dbo77aMNaQuJpQicocbo44YVC3Y=
+"@types/node@*", "@types/node@^12.11.5":
+  version "12.11.5"
+  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.11.5.tgz#6c3c8dc84988aff11fd2a63d7b5fbf39eaaab7b1"
+  integrity sha1-bDyNyEmIr/Ef0qY9e1+/Oeqqt7E=
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
