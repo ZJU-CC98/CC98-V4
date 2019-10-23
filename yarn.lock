@@ -1411,10 +1411,10 @@
   dependencies:
     "@types/webpack" "*"
 
-"@types/webpack-dev-server@^3.1.7":
-  version "3.1.7"
-  resolved "https://registry.npm.taobao.org/@types/webpack-dev-server/download/@types/webpack-dev-server-3.1.7.tgz?cache=0&sync_timestamp=1567534695489&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fwebpack-dev-server%2Fdownload%2F%40types%2Fwebpack-dev-server-3.1.7.tgz#a3e7a20366e68bc9853c730b56e994634cb78dac"
-  integrity sha1-o+eiA2bmi8mFPHMLVumUY0y3jaw=
+"@types/webpack-dev-server@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.npm.taobao.org/@types/webpack-dev-server/download/@types/webpack-dev-server-3.4.0.tgz#8e29afafb8238185c0d4e94fb544f0e12f0248e1"
+  integrity sha1-jimvr7gjgYXA1OlPtUTw4S8CSOE=
   dependencies:
     "@types/connect-history-api-fallback" "*"
     "@types/express" "*"
