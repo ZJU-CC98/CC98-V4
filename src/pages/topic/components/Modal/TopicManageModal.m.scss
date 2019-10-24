@@ -1,0 +1,10 @@
+@import './PostManageModal.m';
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 45px;
+  margin-right: 8px;
+  cursor: pointer;
+}

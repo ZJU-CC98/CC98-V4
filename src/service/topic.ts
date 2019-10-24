@@ -225,3 +225,166 @@ export const getTopicIPInfo = (topicId: string | number) => {
     needAuth: true,
   }) as Promise<ITopicIP[]>
 }
+
+export const lockTopic = (topicId: string | number, reason: string, days: number) => {
+  return axios({
+    url: `/topic/${topicId}/lock`,
+    method: 'PUT',
+    needAuth: true,
+    data: {
+      reason,
+      value: days,
+    },
+  }) as Promise<void>
+}
+
+export const unlockTopic = (topicId: string | number, reason: string) => {
+  return axios({
+    url: `/topic/${topicId}/lock`,
+    method: 'DELETE',
+    needAuth: true,
+    data: {
+      reason,
+    },
+  }) as Promise<void>
+}
+
+export const setTopicDisableHot = (topicId: string | number, reason: string) => {
+  return axios({
+    url: `/topic/${topicId}/not-hot`,
+    method: 'PUT',
+    needAuth: true,
+    data: {
+      reason,
+    },
+  }) as Promise<void>
+}
+
+export const cancelTopicDisableHot = (topicId: string | number, reason: string) => {
+  return axios({
+    url: `/topic/${topicId}/not-hot`,
+    method: 'DELETE',
+    needAuth: true,
+    data: {
+      reason,
+    },
+  }) as Promise<void>
+}
+
+export const deleteTopic = (topicId: string | number, reason: string) => {
+  return axios({
+    url: `/topic/${topicId}`,
+    method: 'DELETE',
+    needAuth: true,
+    data: {
+      reason,
+    },
+  }) as Promise<void>
+}
+
+export const moveTopic = (
+  topicId: string | number,
+  targetBoardId: string | number,
+  reason: string
+) => {
+  return axios({
+    url: `/topic/${topicId}/moveto/${targetBoardId}`,
+    method: 'PUT',
+    needAuth: true,
+    data: {
+      reason,
+    },
+  }) as Promise<void>
+}
+
+export const setTopicUp = (topicId: string | number, reason: string) => {
+  return axios({
+    url: `/topic/${topicId}/up`,
+    method: 'PUT',
+    needAuth: true,
+    data: {
+      reason,
+    },
+  }) as Promise<void>
+}
+
+export const setTopicToBoardTop = (topicId: string | number, reason: string, days: number) => {
+  return axios({
+    url: `/topic/${topicId}/top`,
+    method: 'PUT',
+    needAuth: true,
+    data: {
+      topState: 2,
+      reason,
+      duration: days,
+    },
+  }) as Promise<void>
+}
+
+export const setTopicToSiteTop = (topicId: string | number, reason: string, days: number) => {
+  return axios({
+    url: `/topic/${topicId}/top`,
+    method: 'PUT',
+    needAuth: true,
+    data: {
+      topState: 4,
+      reason,
+      duration: days,
+    },
+  }) as Promise<void>
+}
+
+export const cancelTopicTop = (topicId: string | number, reason: string) => {
+  return axios({
+    url: `/topic/${topicId}/top`,
+    method: 'DELETE',
+    needAuth: true,
+    data: {
+      reason,
+    },
+  }) as Promise<void>
+}
+
+export const setTopicBest = (topicId: string | number, reason: string) => {
+  return axios({
+    url: `/topic/${topicId}/best`,
+    method: 'PUT',
+    needAuth: true,
+    data: {
+      reason,
+    },
+  }) as Promise<void>
+}
+
+export const cancelTopicBest = (topicId: string | number, reason: string) => {
+  return axios({
+    url: `/topic/${topicId}/best`,
+    method: 'DELETE',
+    needAuth: true,
+    data: {
+      reason,
+    },
+  }) as Promise<void>
+}
+
+export const setTopicHighLight = (
+  topicId: string | number,
+  reason: string,
+  days: number,
+  isBold: boolean,
+  isItalic: boolean,
+  color: string
+) => {
+  return axios({
+    url: `/topic/${topicId}/highlight`,
+    method: 'PUT',
+    needAuth: true,
+    data: {
+      reason,
+      duration: days,
+      isBold,
+      isItalic,
+      color,
+    },
+  }) as Promise<void>
+}

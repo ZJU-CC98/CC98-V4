@@ -232,7 +232,12 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
       ))}
       <Pagination total={totalPage} onChange={handlePage} current={currentPage} />
       <TopicReplier topicId={topicId} onSuccess={goToLastPost} />
-      <TopicManage topicId={topicId} boardInfo={boardInfo} />
+      <TopicManage
+        refresh={refresh}
+        topicId={topicId}
+        boardInfo={boardInfo}
+        topicInfo={topicInfo}
+      />
     </div>
   )
 }

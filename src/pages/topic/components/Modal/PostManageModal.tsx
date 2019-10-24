@@ -14,7 +14,7 @@ import {
   POST_SHOW_REASON_TYPES,
   POST_SHOW_WEALTH_INPUT_TYPES,
   postReasonMap,
-} from 'src/constants/Manage'
+} from 'src/constants/PostManage'
 import { deletePost, operatePost } from 'src/service/post'
 import { defaultAxiosErrorHandler } from 'src/config/axios'
 import { ANONYMOUS_BOARD_IDS } from 'src/constants/BoardId'
