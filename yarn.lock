@@ -1298,10 +1298,10 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.9":
-  version "16.9.9"
-  resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.9.9.tgz#a62c6f40f04bc7681be5e20975503a64fe783c3a"
-  integrity sha1-pixvQPBLx2gb5eIJdVA6ZP54PDo=
+"@types/react@*", "@types/react@^16.9.10":
+  version "16.9.10"
+  resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.9.10.tgz#87c2a7cd715d293c42fe73510eec42cba3ee8210"
+  integrity sha1-h8KnzXFdKTxC/nNRDuxCy6PughA=
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
