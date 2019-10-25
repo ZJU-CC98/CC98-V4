@@ -8,7 +8,7 @@ declare module '@cc98/api' {
     /**
      * 风评
      */
-    awards: IAward[]
+    awards: IAward[] | null
     /**
      * 帖子内容
      */

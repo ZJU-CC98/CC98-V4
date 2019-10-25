@@ -1,0 +1,23 @@
+@import 'var';
+
+$title-background: #fafafa;
+
+.root {
+  width: 100%;
+}
+
+.title {
+  background-color: $title-background;
+  border: 1px solid $border-color;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.content {
+  padding: 16px;
+  border: {
+    left: 1px solid $border-color;
+    right: 1px solid $border-color;
+    bottom: 1px solid $border-color;
+  }
+}

@@ -17,9 +17,10 @@ import { getPosts, getTotalPage } from 'src/pages/topic/utils'
 import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
 import ERROR from 'src/constants/Error'
 
-import TopicHeader from 'src/pages/topic/components/TopicHeader'
-import PostItem from 'src/pages/topic/components/PostItem'
-import TopicReplier from 'src/pages/topic/components/TopicReplier'
+import TopicHeader from 'src/pages/topic/components/Content/TopicHeader'
+import PostItem from 'src/pages/topic/components/Content/PostItem'
+import TopicReplier from 'src/pages/topic/components/Content/TopicReplier'
+import TopicManage from 'src/pages/topic/components/Content/TopicManage'
 
 import s from './Topic.m.scss'
 
@@ -103,7 +104,7 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
         const userNames = [
           ...allData.map(item => item.userName),
           ...allData.reduce(
-            (res, curr) => [...res, ...curr.awards.map(item => item.operatorName)],
+            (res, curr) => [...res, ...(curr.awards || []).map(item => item.operatorName)],
             [] as string[]
           ),
         ]
@@ -231,6 +232,12 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
       ))}
       <Pagination total={totalPage} onChange={handlePage} current={currentPage} />
       <TopicReplier topicId={topicId} onSuccess={goToLastPost} />
+      <TopicManage
+        refresh={refresh}
+        topicId={topicId}
+        boardInfo={boardInfo}
+        topicInfo={topicInfo}
+      />
     </div>
   )
 }
