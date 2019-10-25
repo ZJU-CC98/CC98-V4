@@ -18,7 +18,7 @@ interface IThemeInfo {
 export const defaultTheme = THEME.SUMMER
 
 /**
- * 颜色只能使用 hex
+ * primary 只能使用 hex
  */
 const themeList: IThemeInfo[] = [
   {

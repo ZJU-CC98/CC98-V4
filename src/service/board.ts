@@ -146,7 +146,7 @@ export const getBoardStopPostUsers = (boardId: string, from: number, size: numbe
 }
 
 // 解除 tp
-export const cancelBoardStopPostUser = (boardId: string, userId: number) => {
+export const cancelBoardStopPostUser = (boardId: string | number, userId: number) => {
   return axios({
     url: `/board/${boardId}/stop-post-user/${userId}`,
     method: 'DETELE',

@@ -10,7 +10,7 @@ import { ratePost } from 'src/service/post'
 import notice from 'src/utils/notice'
 import { defaultAxiosErrorHandler } from 'src/config/axios'
 
-import s from './RateModal.m.scss'
+import s from 'src/pages/topic/components/Modal/RateModal.m.scss'
 
 interface IRateModalProps {
   postId: number

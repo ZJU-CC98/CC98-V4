@@ -1,0 +1,11 @@
+.root {
+  width: 790px;
+  font-size: 14px;
+}
+
+.content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 16px 0;
+}

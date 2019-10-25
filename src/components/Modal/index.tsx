@@ -58,7 +58,7 @@ const Modal: React.FC<IModalProps> = ({
       <div onClick={e => e.stopPropagation()} ref={contentRoot} className={s.content}>
         <div className={s.title}>
           <h3>{title}</h3>
-          <span onClick={onClose}>
+          <span className={s.close} onClick={onClose}>
             <Icon icon={faTimes} />
           </span>
         </div>

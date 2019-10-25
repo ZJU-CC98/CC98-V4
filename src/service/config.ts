@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { IConfig, ITag } from '@cc98/api'
+import { IConfig, IGlobalConfig, ITag } from '@cc98/api'
 import { getLocalStorage, setLocalStorage } from 'src/utils/storage'
 
 /**
@@ -21,4 +21,11 @@ export const getAllTag = async () => {
   setLocalStorage('allTags', remoteAllTags, 3600 * 24 * 10)
 
   return remoteAllTags
+}
+
+export const getGlobalConfig = () => {
+  return axios({
+    url: '/config/global',
+    needAuth: true,
+  }) as Promise<IGlobalConfig>
 }
