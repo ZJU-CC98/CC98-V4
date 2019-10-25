@@ -1249,6 +1249,13 @@
   resolved "https://registry.npm.taobao.org/@types/range-parser/download/@types/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
   integrity sha1-fuMwunyq+5gJC+zoal7kQRWQTCw=
 
+"@types/react-color@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.npm.taobao.org/@types/react-color/download/@types/react-color-3.0.1.tgz#5433e2f503ea0e0831cbc6fd0c20f8157d93add0"
+  integrity sha1-VDPi9QPqDggxy8b9DCD4FX2TrdA=
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-dom@^16.9.2":
   version "16.9.2"
   resolved "https://registry.npm.taobao.org/@types/react-dom/download/@types/react-dom-16.9.2.tgz#90f9e6c161850be1feb31d2f448121be2a4f3b47"

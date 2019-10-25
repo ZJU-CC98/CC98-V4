@@ -80,3 +80,34 @@ export const ratePost = (postId: string | number, reason: string, value: number)
     silent: true,
   })
 }
+
+export const operatePost = (
+  postId: number,
+  content: {
+    reason: string
+    wealth?: number
+    operationType: 0 | 1
+    prestige?: number
+    stopPostDays?: number
+  }
+) => {
+  return axios({
+    url: `/post/${postId}/operation`,
+    method: 'POST',
+    data: content,
+    needAuth: true,
+    silent: true,
+  }) as Promise<void>
+}
+
+export const deletePost = (postId: number, reason: string) => {
+  return axios({
+    url: `/post/${postId}`,
+    method: 'DELETE',
+    needAuth: true,
+    data: {
+      reason,
+    },
+    silent: true,
+  }) as Promise<void>
+}
