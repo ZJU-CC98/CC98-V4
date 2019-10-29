@@ -1,6 +1,7 @@
 branches:
   only:
     - dev
+    - bot/dependence
 
 language: node_js
 
