@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import FocusBoard from 'src/pages/focus/board/FocusBoard'
 import FocusUser from 'src/pages/focus/user/FocusUser'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 import { BreadcrumbItem } from 'src/components/Breadcrumb'
 
 import s from './Foucs.m.scss'
@@ -12,6 +13,7 @@ const breadcrumb: BreadcrumbItem[] = []
 
 const Focus: React.FC = () => {
   useBreadcrumb(breadcrumb)
+  useDocumentTitle('我的关注')
 
   return (
     <>

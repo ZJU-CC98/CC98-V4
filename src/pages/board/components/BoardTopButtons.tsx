@@ -53,7 +53,7 @@ const renderButtons = (
   }
 
   if (isLocked) {
-    return <p className={s.info}>您被全站禁言。</p>
+    return <p className={s.info}>你被全站禁言。</p>
   }
 
   return (

@@ -8,6 +8,7 @@ import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
 import { EVENT, eventBus } from 'src/utils/event'
 import { useDispatch } from 'react-redux'
 import { refreshMessageCount } from 'src/store/global-async-actions'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 import MessageAtItem from 'src/pages/message/components/MessageAtItem'
 import { PAGE_SIZE, getMessageAt } from 'src/pages/message/utils'
@@ -23,6 +24,7 @@ const MessageAtMe: React.FC<RouteComponentProps<IMessageAtRouteMatch>> = ({ matc
   const { page = '1' } = match.params
   const boardMap = useBoardMap()
   const dispatch = useDispatch()
+  useDocumentTitle('@我的')
 
   const handleClearClick = () => {
     clearAtNotification().then(() => {
