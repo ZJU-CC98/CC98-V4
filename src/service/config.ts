@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { IConfig, IGlobalConfig, ITag } from '@cc98/api'
+import { IAdvertisement, IConfig, IGlobalConfig, ITag } from '@cc98/api'
 import { getLocalStorage, setLocalStorage } from 'src/utils/storage'
 
 /**
@@ -28,4 +28,18 @@ export const getGlobalConfig = () => {
     url: '/config/global',
     needAuth: true,
   }) as Promise<IGlobalConfig>
+}
+
+export const getADs = async () => {
+  const ads = getLocalStorage<IAdvertisement[]>('ads')
+
+  if (ads) {
+    return ads
+  }
+
+  const remoteAds = (await axios('/config/global/advertisement')) as Promise<IAdvertisement[]>
+
+  setLocalStorage('ads', remoteAds, 3600)
+
+  return remoteAds
 }

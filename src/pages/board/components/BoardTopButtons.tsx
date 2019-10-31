@@ -10,6 +10,7 @@ import LOCK_STATE from 'src/constants/LockState'
 import { useSelector } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom'
 import Button from 'src/components/Button'
+import AD from 'src/components/AD'
 
 import s from 'src/pages/board/components/BoardTopButtons.m.scss'
 
@@ -81,6 +82,7 @@ const BoardTopButtons: React.FC<IBoardTopButtonsProps> = ({ data }) => {
     <div className={s.root}>
       {renderButtons(result, data, useHistory())}
       <div className={s.placeholder} />
+      <AD />
     </div>
   )
 }

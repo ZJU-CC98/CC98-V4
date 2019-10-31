@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 
 import ItemTitle from 'src/pages/home/components/ItemTitle'
 import s from 'src/pages/home/components/HomeRight.m.scss'
+import AD from 'src/components/AD'
 
 const statistics = [
   {
@@ -68,6 +69,9 @@ const HomeRight: React.FC<IHomeRightProps> = ({ data }) => {
             </a>
           </p>
         ))}
+      </div>
+      <div className={s.ad}>
+        <AD />
       </div>
       <ItemTitle title="论坛统计" color="second" />
       <div className={s.statistic}>
