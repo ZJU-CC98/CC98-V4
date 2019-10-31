@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import autoprefixer from 'autoprefixer'
-import { isDev, publicStylesheetPath } from './constants'
+import { publicStylesheetPath } from './constants'
+
+export const isDev = process.env.NODE_ENV !== 'production'
 
 export default function getCssLoaders(isModule: boolean) {
   return [
