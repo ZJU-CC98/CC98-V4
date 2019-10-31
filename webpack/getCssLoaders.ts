@@ -2,7 +2,7 @@
 import autoprefixer from 'autoprefixer'
 import { publicStylesheetPath } from './constants'
 
-export const isDev = process.env.NODE_ENV !== 'production'
+export const isDev = process.env.NODE_ENV !== 'PRODUCTION'
 
 export default function getCssLoaders(isModule: boolean) {
   return [
