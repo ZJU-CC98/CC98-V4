@@ -13,11 +13,13 @@
   overflow: hidden;
 }
 
+input,
 input[type='text'],
 input[type='password'],
 input[type='number'],
 textarea {
   -webkit-appearance: none;
+  background-color: $main-background-color;
   border: solid 1px $border-color;
 }
 

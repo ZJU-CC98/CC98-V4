@@ -94,7 +94,7 @@ function getSearchTypesByPath(path: string, boardId?: string) {
   switch (true) {
     case path.startsWith('/board-list'):
       return [SEARCH_TYPE.BOARD, SEARCH_TYPE.ALL_TOPICS, SEARCH_TYPE.USER]
-    case path.startsWith('/topic'):
+    // case path.startsWith('/topic'):
     case path.startsWith('/board'):
     case path.startsWith('/search') && !!boardId:
       return [SEARCH_TYPE.TOPICS_OF_BOARD, ...base]
