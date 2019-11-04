@@ -7,15 +7,14 @@ type ILightBoxProps = JSX.IntrinsicElements['img'] & {
   disabled?: boolean
 }
 
-const lightBoxRoot = document.createElement('div')
-lightBoxRoot.className = 'light-box-root'
-document.body.append(lightBoxRoot)
-
 const LightBox: React.FC<ILightBoxProps> = ({ disabled, onClick, style = {}, ...props }) => {
+  const lightBoxRoot = React.useRef<HTMLDivElement>()
   const [isShown, setIsShown] = React.useState(false)
 
   const handleImgClick: React.MouseEventHandler<HTMLImageElement> = e => {
     if (!disabled) {
+      lightBoxRoot.current = document.createElement('div')
+      document.body.append(lightBoxRoot.current)
       setIsShown(true)
     }
 
@@ -26,21 +25,23 @@ const LightBox: React.FC<ILightBoxProps> = ({ disabled, onClick, style = {}, ...
 
   const handleLightBoxClick = () => {
     setIsShown(false)
+    lightBoxRoot.current!.remove()
   }
 
   return (
     <>
       <img {...props} style={{ cursor: 'pointer', ...style }} onClick={handleImgClick} />
-      {ReactDOM.createPortal(
-        !disabled && isShown && (
+      {!disabled &&
+        isShown &&
+        !!lightBoxRoot.current &&
+        ReactDOM.createPortal(
           <div className={s.root} onClick={handleLightBoxClick}>
             <div className={s.content}>
               <img {...props} />
             </div>
-          </div>
-        ),
-        lightBoxRoot
-      )}
+          </div>,
+          lightBoxRoot.current
+        )}
     </>
   )
 }

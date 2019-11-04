@@ -14,6 +14,7 @@ import { RootStore } from 'src/store'
 import BoardBatchManage from 'src/pages/board/components/BoardManage/BoardBatchManage'
 import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
 import ERROR from 'src/constants/Error'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 import s from './Board.m.scss'
 
@@ -47,6 +48,8 @@ const Board: React.FC<RouteComponentProps<IBoardUrlMatch>> = ({ match }) => {
   const breadcrumb = [...baseBreadcrumb, boardInfo ? boardInfo.name : '']
 
   useBreadcrumb(breadcrumb)
+  // boardInfo?.name
+  useDocumentTitle(boardInfo ? boardInfo.name : undefined)
 
   React.useEffect(() => {
     getBoardInfo(boardId, true).then(board => {

@@ -5,9 +5,11 @@ import useBreadcrumb from 'src/hooks/useBreadcrumb'
 
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router'
 import Nav, { INavItem } from 'src/components/Nav'
-import s from './User.m.scss'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 import UserHome from './home/UserHome'
+
+import s from './User.m.scss'
 
 const breadcrumb: BreadcrumbItem[] = [
   {
@@ -39,6 +41,7 @@ interface IRouteMatch {
 
 const User: React.FC<RouteComponentProps<IRouteMatch>> = ({ match }) => {
   useBreadcrumb(breadcrumb)
+  useDocumentTitle('用户详情')
 
   const { id } = match.params
   const basePath = `/user/${id}`

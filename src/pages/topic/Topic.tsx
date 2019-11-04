@@ -8,6 +8,7 @@ import produce from 'immer'
 import Spin from 'src/components/Spin'
 import { getTopicInfo } from 'src/service/topic'
 import { getBoardInfo } from 'src/service/board'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 import Pagination from 'src/components/Pagination'
 import { getUsersByNames } from 'src/service/user'
@@ -129,6 +130,8 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
     boardInfo ? { url: `/board/${boardInfo.id}`, name: boardInfo.name } : { name: ' ', url: '/' },
     topicInfo ? topicInfo.title : '',
   ])
+
+  useDocumentTitle(topicInfo ? topicInfo.title : '帖子')
 
   const handlePage = (page: number) => {
     dispatch(

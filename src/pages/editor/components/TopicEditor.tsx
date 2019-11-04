@@ -150,7 +150,7 @@ const TopicEditor: React.FC<ITopicEditorProps> = ({ initTopic, boardId, buttonTe
         mode={contentType}
         onModeChange={setContentType}
       />
-      <Button disabled={loading} onClick={handleButtonClick} primary>
+      <Button className={s.button} disabled={loading} onClick={handleButtonClick} primary>
         {buttonText}
       </Button>
     </div>

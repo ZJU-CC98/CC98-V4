@@ -2,6 +2,7 @@ import React from 'react'
 import { getIndexConfig } from 'src/service/config'
 import { IConfig } from '@cc98/api'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 import HomeRight from './components/HomeRight'
 import HomeTop from './components/HomeTop'
@@ -47,6 +48,7 @@ const Home: React.FC = () => {
   }, [])
 
   useBreadcrumb([])
+  useDocumentTitle()
 
   return (
     <div className={s.root}>

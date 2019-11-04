@@ -12,6 +12,7 @@ import { login } from 'src/service/oauth'
 import { removeLocalStorage, setLocalStorage } from 'src/utils/storage'
 import { GLOBAL_ACTION_TYPES } from 'src/store/global-actions'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 import LightBox from 'src/components/Image/LightBox'
 import s from 'src/pages/log-on/LogOn.m.scss'
@@ -29,6 +30,7 @@ const LogOn: React.FC<RouteComponentProps> = ({ history }) => {
   const dispatch = useDispatch()
 
   useBreadcrumb([])
+  useDocumentTitle('登录')
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault()

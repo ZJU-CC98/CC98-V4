@@ -16,6 +16,7 @@ import {
 import { BreadcrumbItem } from 'src/components/Breadcrumb'
 import { refreshUserInfo } from 'src/store/global-async-actions'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 import Nav, { INavItem } from 'src/components/Nav'
 import { USER_CENTER_BASE_PATH } from './constants'
@@ -107,6 +108,7 @@ const UserCenter: React.FC = () => {
   useBreadcrumb(breadcrumb)
 
   const dispatch = useDispatch()
+  useDocumentTitle('个人中心')
 
   React.useEffect(() => {
     dispatch(refreshUserInfo())

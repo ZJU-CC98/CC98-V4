@@ -4,6 +4,7 @@ import { getAllBoard } from 'src/service/board'
 
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 import BoardGroupList from 'src/pages/board-list/components/BoardGroupItem'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 const simpleBoardIds = [2, 29, 35, 37, 33, 604]
 const defaultHideBoardIds = [2, 37]
@@ -16,6 +17,7 @@ const BoardList: React.FC = () => {
   }, [])
 
   useBreadcrumb([])
+  useDocumentTitle('版面列表')
 
   return (
     <>

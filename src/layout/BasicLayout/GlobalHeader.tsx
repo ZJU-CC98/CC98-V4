@@ -149,9 +149,10 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
                   <Link to="/sign-in" className={s.menuItem}>
                     {signInInfo && signInInfo.hasSignedInToday ? '已签到' : '签到'}
                   </Link>
-                  <p onClick={logout} className={s.menuItem}>
+                  {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                  <Link to="#" onClick={logout} className={s.menuItem}>
                     注销
-                  </p>
+                  </Link>
                 </div>
               }
               placement="top"

@@ -1,5 +1,7 @@
+@import 'var';
+
 $even-item-color: #ebf5f8;
-$odd-item-color: white;
+$odd-item-color: $main-background-color;
 $item-hover-color: #eaeaea;
 
 .root {
