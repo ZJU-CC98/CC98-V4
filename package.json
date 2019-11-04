@@ -67,7 +67,7 @@
     "react-waypoint": "^9.0.2",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "showdown": "^1.9.0",
+    "showdown": "^1.9.1",
     "showdown-xss-filter": "^0.2.0",
     "url-parse": "^1.4.7",
     "url-pattern": "^1.0.3",
