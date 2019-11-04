@@ -6,6 +6,7 @@ import { ConnectedRouter } from 'connected-react-router'
 
 import store, { history } from 'src/store'
 import BasicLayout from 'src/layout/BasicLayout'
+import PWAAlert from 'src/components/PWAAlert'
 import Route from 'src/components/CustomRoute'
 import ProdErrorBoundary from 'src/components/ErrorBoundary'
 
@@ -33,6 +34,7 @@ const ErrorBoundary = process.env.NODE_ENV === 'production' ? ProdErrorBoundary 
 export const App: React.FC = () => (
   <ErrorBoundary>
     <React.StrictMode>
+      <PWAAlert />
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <BasicLayout>

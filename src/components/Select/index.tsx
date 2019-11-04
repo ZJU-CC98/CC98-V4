@@ -41,7 +41,14 @@ function Select<T extends string | number, V extends T | T[]>({
       ? (data as (string | number)[]).map(label => ({ label: `${label}`, value: label }))
       : (data as { value: string; label: string }[])
 
+  const innerDataWithTag = [...innerData]
+
   const [visible, setVisible] = React.useState(false)
+  const [tagValue, setTagValue] = React.useState('')
+
+  if (tags && !!tagValue && innerDataWithTag.every(item => item.value !== tagValue)) {
+    innerDataWithTag.unshift({ label: tagValue, value: tagValue })
+  }
 
   const pop = React.useRef<HTMLDivElement>(null)
   const container = React.useRef<HTMLDivElement>(null)
@@ -63,7 +70,7 @@ function Select<T extends string | number, V extends T | T[]>({
         <SelectPop
           ref={pop}
           popWidth={popWidth}
-          innerData={innerData}
+          innerData={innerDataWithTag.filter(item => `${item.value}`.startsWith(`${tagValue}`))}
           setVisible={setVisible}
           onChange={onChange as (v: ValueType) => void}
           value={value}
@@ -75,11 +82,13 @@ function Select<T extends string | number, V extends T | T[]>({
       <SelectContainer
         ref={container}
         tags={tags}
+        tagValue={tagValue}
+        setTagValue={setTagValue}
         setVisible={setVisible}
         visible={visible}
         width={width}
         showArrow={showArrow}
-        innerData={innerData}
+        innerData={innerDataWithTag}
         value={value}
         onChange={onChange as (v: ValueType) => void}
         className={className}

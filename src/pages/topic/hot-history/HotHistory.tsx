@@ -3,6 +3,7 @@ import { getHotHistory } from 'src/service/topic'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
 import { useInfTopicModel } from 'src/hooks/useInfTopicModel'
 import InfinityTopicList from 'src/components/InfinityTopicList'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 const breadcrumb = [
   {
@@ -14,6 +15,7 @@ const breadcrumb = [
 
 const HotHistory: React.FC = () => {
   useBreadcrumb(breadcrumb)
+  useDocumentTitle('历史上的今天')
 
   const [props] = useInfTopicModel(getHotHistory, () => true)
 

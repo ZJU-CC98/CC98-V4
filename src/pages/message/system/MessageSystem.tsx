@@ -7,6 +7,7 @@ import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
 import { clearSystemNotification } from 'src/service/message'
 import { EVENT, eventBus } from 'src/utils/event'
 import { refreshMessageCount } from 'src/store/global-async-actions'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 import { getMessageSystem, PAGE_SIZE } from 'src/pages/message/utils'
 import MessageSystemItem from 'src/pages/message/components/MessageSystemItem'
@@ -25,6 +26,7 @@ const MessageSystem: React.FC<RouteComponentProps<IMessageSystemRouteMatch>> = (
   const { page = '1' } = match.params
 
   const dispatch = useDispatch()
+  useDocumentTitle('系统通知')
 
   const handleClearClick = () => {
     clearSystemNotification().then(() => {

@@ -2,6 +2,7 @@ import React from 'react'
 import Nav, { INavItem } from 'src/components/Nav'
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router'
 import useBreadcrumb from 'src/hooks/useBreadcrumb'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 import { MESSAGE_BASE_PATH as BASE_PATH } from './constants'
 import MessageResponse from './response/MessageResponse'
@@ -50,6 +51,7 @@ const breadcrumb = [
 
 const Message: React.FC<RouteComponentProps> = () => {
   useBreadcrumb(breadcrumb)
+  useDocumentTitle('我的消息')
 
   return (
     <div className={s.root}>

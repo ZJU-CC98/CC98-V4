@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 import { replace } from 'connected-react-router'
 import SearchUser from 'src/pages/search/components/SearchUser'
 import SearchBoard from 'src/pages/search/components/SearchBoard'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 function checkCanSearch(qs: ISearchQuery) {
   if (!qs.keyword || !qs.type) {
@@ -26,6 +27,8 @@ const Search: React.FC = () => {
   const dispatch = useDispatch()
   const qs = parse(search) as ISearchQuery
   const canSearch = checkCanSearch(qs)
+
+  useDocumentTitle('搜索结果')
 
   React.useEffect(() => {
     if (!canSearch || !Object.values(SEARCH_TYPE).includes(qs.type!)) {

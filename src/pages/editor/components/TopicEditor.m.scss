@@ -4,6 +4,8 @@ $info-color: red;
 
 .root {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .row {
@@ -51,4 +53,8 @@ $info-color: red;
 .content {
   height: 48px;
   margin-bottom: -58px;
+}
+
+.button {
+  margin-top: 16px;
 }

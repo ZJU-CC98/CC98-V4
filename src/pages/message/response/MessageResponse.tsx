@@ -7,6 +7,7 @@ import { GLOBAL_ACTION_TYPES, GlobalActions } from 'src/store/global-actions'
 import { clearResponseNotification } from 'src/service/message'
 import { EVENT, eventBus } from 'src/utils/event'
 import { refreshMessageCount } from 'src/store/global-async-actions'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 import { PAGE_SIZE, getMessageResponse } from 'src/pages/message/utils'
 import MessageResponseItem from 'src/pages/message/components/MessageResponseItem'
@@ -25,6 +26,7 @@ const MessageResponse: React.FC<RouteComponentProps<IMessageResponseRouteMatch>>
 }) => {
   const boardMap = useBoardMap()
   const dispatch = useDispatch()
+  useDocumentTitle('回复我的')
   const { page = '1' } = match.params
 
   const handleClearClick = () => {

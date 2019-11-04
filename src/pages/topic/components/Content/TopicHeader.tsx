@@ -9,6 +9,7 @@ import { RootStore } from 'src/store'
 import { getTopicIsFavorite, removeTopicFavorite, setTopicFavorite } from 'src/service/topic'
 import { EVENT, eventBus } from 'src/utils/event'
 import notice from 'src/utils/notice'
+import AD from 'src/components/AD'
 
 import s from 'src/pages/topic/components/Content/TopicHeader.m.scss'
 
@@ -80,6 +81,7 @@ const TopicHeader: React.FC<ITopicHeaderProps> = ({ topicInfo, boardInfo }) => {
           {boardTodayCount} / {boardTopicCount}
         </p>
       </div>
+      <AD />
     </div>
   )
 }

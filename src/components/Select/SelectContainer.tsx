@@ -14,15 +14,56 @@ interface ISelectContainerProps {
   value: ValueType
   onChange: (v: ValueType) => void
   className?: string
+
   tags: boolean
+  tagValue: string
+  setTagValue: (v: string) => void
 }
 
 const SelectContainer = React.forwardRef<HTMLDivElement, ISelectContainerProps>(
-  ({ visible, setVisible, width, showArrow, innerData, value, className, onChange }, container) => {
-    const currentData = innerData.filter(item =>
-      Array.isArray(value) ? value.includes(item.value) : item.value === value
-    )
+  (
+    {
+      visible,
+      setVisible,
+      width,
+      showArrow,
+      innerData,
+      value,
+      className,
+      onChange,
+      tags,
+      tagValue,
+      setTagValue,
+    },
+    container
+  ) => {
+    const currentData = Array.isArray(value)
+      ? value.map(v => {
+          const data = innerData.find(item => item.value === v)
+
+          if (data) {
+            return data
+          }
+
+          return {
+            label: v,
+            value: v,
+          }
+        })
+      : [innerData.find(item => item.value === value)!]
+
     const widthOffset = showArrow ? 17 : 22
+
+    const handleTagOk = () => {
+      if (!tagValue) return
+
+      onChange(
+        // eslint-disable-next-line no-nested-ternary
+        Array.isArray(value) ? (value.includes(tagValue) ? value : [...value, tagValue]) : tagValue
+      )
+      setTagValue('')
+      setVisible(false)
+    }
 
     const content = Array.isArray(value)
       ? currentData.map(item => (
@@ -56,7 +97,21 @@ const SelectContainer = React.forwardRef<HTMLDivElement, ISelectContainerProps>(
           className
         )}
       >
-        <span className={s.itemContainer}>{content}</span>
+        <span className={s.itemContainer}>
+          {content}
+          {tags && (
+            <input
+              className={s.input}
+              type="text"
+              onFocus={() => setVisible(true)}
+              onBlur={handleTagOk}
+              onKeyPress={e => e.key === 'Enter' && handleTagOk()}
+              value={tagValue}
+              onClick={e => e.stopPropagation()}
+              onChange={e => setTagValue(e.target.value)}
+            />
+          )}
+        </span>
       </div>
     )
   }
