@@ -53,6 +53,11 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
           type: GLOBAL_ACTION_TYPES.SET_CURRENT_USER,
           payload,
         })
+
+        dispatch({
+          type: GLOBAL_ACTION_TYPES.SET_THEME,
+          payload: payload.theme,
+        })
       })
 
       dispatch(refreshSignInInfo())

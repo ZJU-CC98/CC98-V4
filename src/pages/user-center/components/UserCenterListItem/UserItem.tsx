@@ -1,9 +1,8 @@
 import React from 'react'
 import { IUser } from '@cc98/api'
 import { Link } from 'react-router-dom'
-import cn from 'classnames'
 import Button from 'src/components/Button'
-import { followUser, unFollowUser } from 'src/service/user'
+import FollowButton from 'src/pages/user-center/components/FollowButton'
 
 import s from './UserItem.m.scss'
 
@@ -12,33 +11,6 @@ interface IUserItemProps {
 }
 
 const UserItem: React.FC<IUserItemProps> = ({ user }) => {
-  const [isFollowing, setIsFollowing] = React.useState(user.isFollowing)
-  const [buttonText, setButtonText] = React.useState(user.isFollowing ? '已关注' : '关注')
-
-  const handleFollowButtonClick = async () => {
-    if (isFollowing) {
-      await unFollowUser(user.id)
-      setButtonText('重新关注')
-      setIsFollowing(false)
-    } else {
-      await followUser(user.id)
-      setButtonText('已关注')
-      setIsFollowing(true)
-    }
-  }
-
-  const handleFollowButtonMouseEnter = () => {
-    if (isFollowing) {
-      setButtonText('取消关注')
-    }
-  }
-
-  const handleFollowButtonMouseLeave = () => {
-    if (isFollowing) {
-      setButtonText('已关注')
-    }
-  }
-
   return (
     <div className={s.item}>
       <img className={s.avatar} src={user.portraitUrl} />
@@ -51,19 +23,7 @@ const UserItem: React.FC<IUserItemProps> = ({ user }) => {
         <span>粉丝</span>
         <span className={s.fanCount}>{user.fanCount}</span>
       </p>
-      <Button
-        primary
-        className={cn(s.button, {
-          [s.follow]: isFollowing,
-        })}
-        onClick={handleFollowButtonClick}
-        onMouseEnter={handleFollowButtonMouseEnter}
-        onFocus={handleFollowButtonMouseEnter}
-        onMouseLeave={handleFollowButtonMouseLeave}
-        onBlur={handleFollowButtonMouseLeave}
-      >
-        {buttonText}
-      </Button>
+      <FollowButton className={s.button} userId={user.id} initIsFollowing={user.isFollowing} />
       <Button primary className={s.button}>
         私信
       </Button>

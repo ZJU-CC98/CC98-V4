@@ -171,3 +171,14 @@ export const signIn = (content: string) => {
     data: content,
   }) as Promise<void>
 }
+
+export const getUserRecentTopics = (userId: string | number, from: number, size: number) => {
+  return axios({
+    url: `/user/${userId}/recent-topic`,
+    needAuth: true,
+    params: {
+      from,
+      size,
+    },
+  }) as Promise<ITopic[]>
+}

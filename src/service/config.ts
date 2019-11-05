@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { IAdvertisement, IConfig, IGlobalConfig, ITag } from '@cc98/api'
+import { IAdvertisement, IConfig, IDisplayTitle, IGlobalConfig, ITag } from '@cc98/api'
 import { getLocalStorage, setLocalStorage } from 'src/utils/storage'
 
 /**
@@ -42,4 +42,16 @@ export const getADs = async () => {
   setLocalStorage('ads', remoteAds, 3600)
 
   return remoteAds
+}
+
+export const getAllDisplayTitles = async () => {
+  const allDisplayTitles = getLocalStorage<IDisplayTitle[]>('displayTitles')
+
+  if (allDisplayTitles) return allDisplayTitles
+
+  const remoteDisplayTitles = (await axios('/config/global/all-user-title')) as IDisplayTitle[]
+
+  setLocalStorage('displayTitles', remoteDisplayTitles, 3600 * 24 * 10)
+
+  return remoteDisplayTitles
 }

@@ -1,0 +1,54 @@
+.root {
+  flex: 1;
+  padding: 0 32px;
+}
+
+.title {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+
+.user-name {
+  font-size: 18px;
+}
+
+.privilege {
+  margin-left: 32px;
+  font-size: 12px;
+  flex: 1;
+}
+
+.introduction {
+  font-size: 12px;
+  margin: 32px 32px;
+}
+
+.infos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  width: 50%;
+  max-width: 50%;
+  margin: 14px 0;
+}
+
+.info-label {
+  width: 80px;
+  display: inline-block;
+}
+
+.qmd {
+  margin: 32px 0;
+}
+
+.qmd-title {
+  margin-bottom: 16px;
+}
+
+.qmd-content {
+  font-size: 12px;
+  padding: 16px;
+}
