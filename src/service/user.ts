@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ISignIn, ITopic, IUser } from '@cc98/api'
+import { IEditUserInfo, ISignIn, ITopic, IUser } from '@cc98/api'
 import { getLocalStorage, setLocalStorage } from 'src/utils/storage'
 import { stringify } from 'query-string'
 import THEME from 'src/constants/Theme'
@@ -181,4 +181,13 @@ export const getUserRecentTopics = (userId: string | number, from: number, size:
       size,
     },
   }) as Promise<ITopic[]>
+}
+
+export const editMyInfo = (info: IEditUserInfo) => {
+  return axios({
+    url: '/me',
+    method: 'PUT',
+    needAuth: true,
+    data: info,
+  }) as Promise<void>
 }

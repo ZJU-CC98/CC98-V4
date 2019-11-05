@@ -29,6 +29,7 @@ import UserFollowing from './following/UserFollowing'
 import UserFan from './fan/UserFan'
 import TransferWealth from './transfer-wealth/TransferWealth'
 import UserTheme from './theme/UserTheme'
+import UserConfig from './config/UserConfig'
 
 import s from './User.m.scss'
 
@@ -39,10 +40,6 @@ const breadcrumb: BreadcrumbItem[] = [
   },
   '个人中心',
 ]
-
-// temp
-// TODO remove
-const Empty = () => null
 
 const navs: INavItem[] = [
   {
@@ -56,7 +53,7 @@ const navs: INavItem[] = [
     name: '修改资料',
     icon: faCog,
     path: '/config',
-    Component: Empty,
+    Component: UserConfig,
   },
   {
     name: '我的主题',
