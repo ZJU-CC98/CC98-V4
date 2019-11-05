@@ -19,9 +19,7 @@ const UserHome: React.FC<RouteComponentProps<IUserHomeRouteMatch>> = ({ match })
   React.useEffect(() => {
     if (!id) return
 
-    getUserById(id).then(res => {
-      setUser(res)
-    })
+    getUserById(id).then(setUser)
   }, [id])
 
   if (!id || !user) {
