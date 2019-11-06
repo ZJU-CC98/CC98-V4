@@ -18,3 +18,18 @@ enum LOCK_STATE {
 }
 
 export default LOCK_STATE
+
+export function getLockStateDesc(lockState: LOCK_STATE) {
+  switch (lockState) {
+    case LOCK_STATE.NORMAL:
+      return '正常'
+    case LOCK_STATE.LOCK:
+      return '锁定'
+    case LOCK_STATE.HIDDEN:
+      return '屏蔽'
+    case LOCK_STATE.GLOBAL_BAN:
+      return '全站TP'
+    default:
+      return '未知'
+  }
+}

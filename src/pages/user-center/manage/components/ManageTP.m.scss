@@ -1,0 +1,18 @@
+.row {
+  display: inline-flex;
+  align-items: center;
+
+  span {
+    margin: 0 4px;
+  }
+
+  input {
+    height: 36px;
+    border-radius: 4px;
+    padding: 0 8px;
+  }
+
+  button {
+    margin-left: 12px;
+  }
+}

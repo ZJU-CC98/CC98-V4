@@ -8,6 +8,7 @@ import Nav, { INavItem } from 'src/components/Nav'
 import useDocumentTitle from 'src/hooks/useDocumentTitle'
 
 import UserHome from './home/UserHome'
+import UserManage from './manage/UserManage'
 
 import s from './User.m.scss'
 
@@ -31,7 +32,7 @@ const navs: INavItem[] = [
     name: '管理',
     icon: faCog,
     path: '/manage',
-    Component: () => null,
+    Component: UserManage,
   },
 ]
 

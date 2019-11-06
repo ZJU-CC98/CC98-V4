@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { IEditUserInfo, ISignIn, ITopic, IUser } from '@cc98/api'
+import { IEditUserInfo, IPost, ISignIn, ITopic, IUser, IUserOperation } from '@cc98/api'
 import { getLocalStorage, setLocalStorage } from 'src/utils/storage'
 import { stringify } from 'query-string'
 import THEME from 'src/constants/Theme'
@@ -189,5 +189,54 @@ export const editMyInfo = (info: IEditUserInfo) => {
     method: 'PUT',
     needAuth: true,
     data: info,
+    silent: true,
   }) as Promise<void>
+}
+
+export const manageUser = (id: string | number, data: IUserOperation) => {
+  return axios({
+    url: `/user/${id}/operation`,
+    method: 'PUT',
+    needAuth: true,
+    data,
+    silent: true,
+  }) as Promise<void>
+}
+
+export const deleteUserTopicByDay = (id: string | number, day: string) => {
+  return axios({
+    url: `/user/${id}/topic?days=${day}`,
+    needAuth: true,
+    method: 'DELETE',
+    silent: true,
+  }) as Promise<number>
+}
+
+export const deleteUserPostByDay = (id: string | number, day: string) => {
+  return axios({
+    url: `/user/${id}/post?days=${day}`,
+    needAuth: true,
+    method: 'DELETE',
+    silent: true,
+  }) as Promise<number>
+}
+
+export const getUserRecentPostByDay = (
+  id: string | number,
+  days: number | string,
+  from: number,
+  size: number
+) => {
+  return (axios({
+    url: `/User/${id}/post`,
+    params: {
+      days,
+      from,
+      size,
+    },
+    needAuth: true,
+  }) as Promise<{
+    count: number
+    postInfos: IPost[]
+  }>).then(data => data.postInfos)
 }

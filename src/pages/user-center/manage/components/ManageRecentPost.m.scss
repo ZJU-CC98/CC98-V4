@@ -1,0 +1,30 @@
+@import './ManageTP.m';
+
+.post {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 14px 0;
+}
+
+.post-time {
+  width: 144px;
+}
+
+.post-content {
+  max-width: 320px;
+  width: 320px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.post-ip,
+.post-board {
+  width: 112px;
+}
+
+.post-floor {
+  width: 48px;
+}
