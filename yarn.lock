@@ -9,18 +9,18 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/core@>=7.2.2", "@babel/core@^7.6.4":
-  version "7.6.4"
-  resolved "https://registry.npm.taobao.org/@babel/core/download/@babel/core-7.6.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fcore%2Fdownload%2F%40babel%2Fcore-7.6.4.tgz#6ebd9fe00925f6c3e177bb726a188b5f578088ff"
-  integrity sha1-br2f4Akl9sPhd7tyahiLX1eAiP8=
+"@babel/core@>=7.2.2", "@babel/core@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/core/download/@babel/core-7.7.0.tgz#461d2948b1a7113088baf999499bcbd39a7faa3b"
+  integrity sha1-Rh0pSLGnETCIuvmZSZvL05p/qjs=
   dependencies:
     "@babel/code-frame" "^7.5.5"
-    "@babel/generator" "^7.6.4"
-    "@babel/helpers" "^7.6.2"
-    "@babel/parser" "^7.6.4"
-    "@babel/template" "^7.6.0"
-    "@babel/traverse" "^7.6.3"
-    "@babel/types" "^7.6.3"
+    "@babel/generator" "^7.7.0"
+    "@babel/helpers" "^7.7.0"
+    "@babel/parser" "^7.7.0"
+    "@babel/template" "^7.7.0"
+    "@babel/traverse" "^7.7.0"
+    "@babel/types" "^7.7.0"
     convert-source-map "^1.1.0"
     debug "^4.1.0"
     json5 "^2.1.0"
@@ -29,12 +29,12 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/generator@^7.6.3", "@babel/generator@^7.6.4":
-  version "7.6.4"
-  resolved "https://registry.npm.taobao.org/@babel/generator/download/@babel/generator-7.6.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fgenerator%2Fdownload%2F%40babel%2Fgenerator-7.6.4.tgz#a4f8437287bf9671b07f483b76e3bb731bc97671"
-  integrity sha1-pPhDcoe/lnGwf0g7duO7cxvJdnE=
+"@babel/generator@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/generator/download/@babel/generator-7.7.0.tgz#c6d4d1f7a0d6e139cbd01aca73170b0bff5425b4"
+  integrity sha1-xtTR96DW4TnL0BrKcxcLC/9UJbQ=
   dependencies:
-    "@babel/types" "^7.6.3"
+    "@babel/types" "^7.7.0"
     jsesc "^2.5.1"
     lodash "^4.17.13"
     source-map "^0.5.0"
@@ -109,12 +109,28 @@
     "@babel/template" "^7.1.0"
     "@babel/types" "^7.0.0"
 
+"@babel/helper-function-name@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/helper-function-name/download/@babel/helper-function-name-7.7.0.tgz#44a5ad151cfff8ed2599c91682dda2ec2c8430a3"
+  integrity sha1-RKWtFRz/+O0lmckWgt2i7CyEMKM=
+  dependencies:
+    "@babel/helper-get-function-arity" "^7.7.0"
+    "@babel/template" "^7.7.0"
+    "@babel/types" "^7.7.0"
+
 "@babel/helper-get-function-arity@^7.0.0":
   version "7.0.0"
   resolved "https://registry.npm.taobao.org/@babel/helper-get-function-arity/download/@babel/helper-get-function-arity-7.0.0.tgz#83572d4320e2a4657263734113c42868b64e49c3"
   integrity sha1-g1ctQyDipGVyY3NBE8QoaLZOScM=
   dependencies:
     "@babel/types" "^7.0.0"
+
+"@babel/helper-get-function-arity@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/helper-get-function-arity/download/@babel/helper-get-function-arity-7.7.0.tgz#c604886bc97287a1d1398092bc666bc3d7d7aa2d"
+  integrity sha1-xgSIa8lyh6HROYCSvGZrw9fXqi0=
+  dependencies:
+    "@babel/types" "^7.7.0"
 
 "@babel/helper-hoist-variables@^7.4.4":
   version "7.4.4"
@@ -204,6 +220,13 @@
   dependencies:
     "@babel/types" "^7.4.4"
 
+"@babel/helper-split-export-declaration@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/helper-split-export-declaration/download/@babel/helper-split-export-declaration-7.7.0.tgz#1365e74ea6c614deeb56ebffabd71006a0eb2300"
+  integrity sha1-E2XnTqbGFN7rVuv/q9cQBqDrIwA=
+  dependencies:
+    "@babel/types" "^7.7.0"
+
 "@babel/helper-wrap-function@^7.1.0":
   version "7.2.0"
   resolved "https://registry.npm.taobao.org/@babel/helper-wrap-function/download/@babel/helper-wrap-function-7.2.0.tgz#c4e0012445769e2815b55296ead43a958549f6fa"
@@ -214,14 +237,14 @@
     "@babel/traverse" "^7.1.0"
     "@babel/types" "^7.2.0"
 
-"@babel/helpers@^7.6.2":
-  version "7.6.2"
-  resolved "https://registry.npm.taobao.org/@babel/helpers/download/@babel/helpers-7.6.2.tgz#681ffe489ea4dcc55f23ce469e58e59c1c045153"
-  integrity sha1-aB/+SJ6k3MVfI85GnljlnBwEUVM=
+"@babel/helpers@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/helpers/download/@babel/helpers-7.7.0.tgz#359bb5ac3b4726f7c1fde0ec75f64b3f4275d60b"
+  integrity sha1-NZu1rDtHJvfB/eDsdfZLP0J11gs=
   dependencies:
-    "@babel/template" "^7.6.0"
-    "@babel/traverse" "^7.6.2"
-    "@babel/types" "^7.6.0"
+    "@babel/template" "^7.7.0"
+    "@babel/traverse" "^7.7.0"
+    "@babel/types" "^7.7.0"
 
 "@babel/highlight@^7.0.0":
   version "7.5.0"
@@ -232,10 +255,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.6.0", "@babel/parser@^7.6.3", "@babel/parser@^7.6.4":
-  version "7.6.4"
-  resolved "https://registry.npm.taobao.org/@babel/parser/download/@babel/parser-7.6.4.tgz?cache=0&sync_timestamp=1570717401366&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fparser%2Fdownload%2F%40babel%2Fparser-7.6.4.tgz#cb9b36a7482110282d5cb6dd424ec9262b473d81"
-  integrity sha1-y5s2p0ghECgtXLbdQk7JJitHPYE=
+"@babel/parser@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/parser/download/@babel/parser-7.7.0.tgz#232618f6e8947bc54b407fa1f1c91a22758e7159"
+  integrity sha1-IyYY9uiUe8VLQH+h8ckaInWOcVk=
 
 "@babel/plugin-proposal-async-generator-functions@^7.2.0":
   version "7.2.0"
@@ -723,34 +746,34 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/template@^7.1.0", "@babel/template@^7.4.4", "@babel/template@^7.6.0":
-  version "7.6.0"
-  resolved "https://registry.npm.taobao.org/@babel/template/download/@babel/template-7.6.0.tgz#7f0159c7f5012230dad64cca42ec9bdb5c9536e6"
-  integrity sha1-fwFZx/UBIjDa1kzKQuyb21yVNuY=
+"@babel/template@^7.1.0", "@babel/template@^7.4.4", "@babel/template@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/template/download/@babel/template-7.7.0.tgz#4fadc1b8e734d97f56de39c77de76f2562e597d0"
+  integrity sha1-T63BuOc02X9W3jnHfedvJWLll9A=
   dependencies:
     "@babel/code-frame" "^7.0.0"
-    "@babel/parser" "^7.6.0"
-    "@babel/types" "^7.6.0"
+    "@babel/parser" "^7.7.0"
+    "@babel/types" "^7.7.0"
 
-"@babel/traverse@^7.1.0", "@babel/traverse@^7.4.4", "@babel/traverse@^7.5.5", "@babel/traverse@^7.6.2", "@babel/traverse@^7.6.3":
-  version "7.6.3"
-  resolved "https://registry.npm.taobao.org/@babel/traverse/download/@babel/traverse-7.6.3.tgz#66d7dba146b086703c0fb10dd588b7364cec47f9"
-  integrity sha1-ZtfboUawhnA8D7EN1Yi3NkzsR/k=
+"@babel/traverse@^7.1.0", "@babel/traverse@^7.4.4", "@babel/traverse@^7.5.5", "@babel/traverse@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/traverse/download/@babel/traverse-7.7.0.tgz#9f5744346b8d10097fd2ec2eeffcaf19813cbfaf"
+  integrity sha1-n1dENGuNEAl/0uwu7/yvGYE8v68=
   dependencies:
     "@babel/code-frame" "^7.5.5"
-    "@babel/generator" "^7.6.3"
-    "@babel/helper-function-name" "^7.1.0"
-    "@babel/helper-split-export-declaration" "^7.4.4"
-    "@babel/parser" "^7.6.3"
-    "@babel/types" "^7.6.3"
+    "@babel/generator" "^7.7.0"
+    "@babel/helper-function-name" "^7.7.0"
+    "@babel/helper-split-export-declaration" "^7.7.0"
+    "@babel/parser" "^7.7.0"
+    "@babel/types" "^7.7.0"
     debug "^4.1.0"
     globals "^11.1.0"
     lodash "^4.17.13"
 
-"@babel/types@^7.0.0", "@babel/types@^7.2.0", "@babel/types@^7.3.0", "@babel/types@^7.4", "@babel/types@^7.4.4", "@babel/types@^7.5.5", "@babel/types@^7.6.0", "@babel/types@^7.6.3":
-  version "7.6.3"
-  resolved "https://registry.npm.taobao.org/@babel/types/download/@babel/types-7.6.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Ftypes%2Fdownload%2F%40babel%2Ftypes-7.6.3.tgz#3f07d96f854f98e2fbd45c64b0cb942d11e8ba09"
-  integrity sha1-PwfZb4VPmOL71FxksMuULRHougk=
+"@babel/types@^7.0.0", "@babel/types@^7.2.0", "@babel/types@^7.3.0", "@babel/types@^7.4", "@babel/types@^7.4.4", "@babel/types@^7.5.5", "@babel/types@^7.6.3", "@babel/types@^7.7.0":
+  version "7.7.1"
+  resolved "https://registry.npm.taobao.org/@babel/types/download/@babel/types-7.7.1.tgz#8b08ea368f2baff236613512cf67109e76285827"
+  integrity sha1-iwjqNo8rr/I2YTUSz2cQnnYoWCc=
   dependencies:
     esutils "^2.0.2"
     lodash "^4.17.13"
