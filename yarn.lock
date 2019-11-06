@@ -78,17 +78,17 @@
     "@babel/traverse" "^7.4.4"
     "@babel/types" "^7.4.4"
 
-"@babel/helper-create-class-features-plugin@^7.5.5", "@babel/helper-create-class-features-plugin@^7.6.0":
-  version "7.6.0"
-  resolved "https://registry.npm.taobao.org/@babel/helper-create-class-features-plugin/download/@babel/helper-create-class-features-plugin-7.6.0.tgz#769711acca889be371e9bc2eb68641d55218021f"
-  integrity sha1-dpcRrMqIm+Nx6bwutoZB1VIYAh8=
+"@babel/helper-create-class-features-plugin@^7.6.0", "@babel/helper-create-class-features-plugin@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/helper-create-class-features-plugin/download/@babel/helper-create-class-features-plugin-7.7.0.tgz#bcdc223abbfdd386f94196ae2544987f8df775e8"
+  integrity sha1-vNwiOrv904b5QZauJUSYf433deg=
   dependencies:
-    "@babel/helper-function-name" "^7.1.0"
-    "@babel/helper-member-expression-to-functions" "^7.5.5"
-    "@babel/helper-optimise-call-expression" "^7.0.0"
+    "@babel/helper-function-name" "^7.7.0"
+    "@babel/helper-member-expression-to-functions" "^7.7.0"
+    "@babel/helper-optimise-call-expression" "^7.7.0"
     "@babel/helper-plugin-utils" "^7.0.0"
-    "@babel/helper-replace-supers" "^7.5.5"
-    "@babel/helper-split-export-declaration" "^7.4.4"
+    "@babel/helper-replace-supers" "^7.7.0"
+    "@babel/helper-split-export-declaration" "^7.7.0"
 
 "@babel/helper-create-regexp-features-plugin@^7.7.0":
   version "7.7.0"
@@ -113,15 +113,6 @@
   integrity sha1-U3+hP28WdN90WwwA7I/k6ZaByPY=
   dependencies:
     "@babel/traverse" "^7.1.0"
-    "@babel/types" "^7.0.0"
-
-"@babel/helper-function-name@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.npm.taobao.org/@babel/helper-function-name/download/@babel/helper-function-name-7.1.0.tgz#a0ceb01685f73355d4360c1247f582bfafc8ff53"
-  integrity sha1-oM6wFoX3M1XUNgwSR/WCv6/I/1M=
-  dependencies:
-    "@babel/helper-get-function-arity" "^7.0.0"
-    "@babel/template" "^7.1.0"
     "@babel/types" "^7.0.0"
 
 "@babel/helper-function-name@^7.7.0":
@@ -335,12 +326,12 @@
     "@babel/helper-remap-async-to-generator" "^7.7.0"
     "@babel/plugin-syntax-async-generators" "^7.2.0"
 
-"@babel/plugin-proposal-class-properties@^7.5.5":
-  version "7.5.5"
-  resolved "https://registry.npm.taobao.org/@babel/plugin-proposal-class-properties/download/@babel/plugin-proposal-class-properties-7.5.5.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fplugin-proposal-class-properties%2Fdownload%2F%40babel%2Fplugin-proposal-class-properties-7.5.5.tgz#a974cfae1e37c3110e71f3c6a2e48b8e71958cd4"
-  integrity sha1-qXTPrh43wxEOcfPGouSLjnGVjNQ=
+"@babel/plugin-proposal-class-properties@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/plugin-proposal-class-properties/download/@babel/plugin-proposal-class-properties-7.7.0.tgz#ac54e728ecf81d90e8f4d2a9c05a890457107917"
+  integrity sha1-rFTnKOz4HZDo9NKpwFqJBFcQeRc=
   dependencies:
-    "@babel/helper-create-class-features-plugin" "^7.5.5"
+    "@babel/helper-create-class-features-plugin" "^7.7.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
 "@babel/plugin-proposal-dynamic-import@^7.7.0":
