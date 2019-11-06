@@ -1,0 +1,30 @@
+@import 'var';
+
+.block {
+  padding-bottom: 30px;
+
+  & + & {
+    padding-top: 30px;
+    border-top: 1px dashed $border-color;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 12px;
+  margin-bottom: 32px;
+}
+
+.buttons {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+
+  button {
+    width: 80px;
+  }
+
+  button + button {
+    margin-left: 96px;
+  }
+}

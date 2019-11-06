@@ -1,0 +1,23 @@
+@import 'var';
+
+.root {
+  margin-top: 32px;
+  width: 100%;
+  padding-left: 16px;
+}
+
+.p {
+  display: inline-flex;
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.a {
+  color: rgb(53, 167, 255);
+  width: 60%;
+}
+
+.span {
+  width: 40%;
+}

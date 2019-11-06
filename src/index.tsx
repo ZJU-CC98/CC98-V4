@@ -4,6 +4,7 @@ import ReactDom from 'react-dom'
 
 // 库的css导入放在scss与app之前，方便覆盖
 import 'rc-notification/assets/index.css'
+import 'react-image-crop/dist/ReactCrop.css'
 import './stylesheets/main.scss'
 
 import App from 'src/App'

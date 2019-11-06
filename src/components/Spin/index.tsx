@@ -1,7 +1,7 @@
 import React from 'react'
 import { RootStore } from 'src/store'
 import { getPrimaryColor } from 'src/config/theme'
-import { HashLoader } from 'react-spinners'
+import HashLoader from 'react-spinners/HashLoader'
 import { useSelector } from 'react-redux'
 
 import s from './index.m.scss'

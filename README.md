@@ -3,15 +3,16 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
 </p>
 
-## Install
+## Dev Preview
 
-```sh
-yarn
-```
+https://cc98-v4.netlify.com/
 
 ## Usage
 
 ```sh
+git clone https://github.com/ZJU-CC98/CC98-V4.git
+git checkout dev
+yarn
 yarn dev
 ```
 
