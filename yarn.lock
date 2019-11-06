@@ -61,12 +61,12 @@
     "@babel/helper-explode-assignable-expression" "^7.1.0"
     "@babel/types" "^7.0.0"
 
-"@babel/helper-builder-react-jsx@^7.3.0":
-  version "7.3.0"
-  resolved "https://registry.npm.taobao.org/@babel/helper-builder-react-jsx/download/@babel/helper-builder-react-jsx-7.3.0.tgz#a1ac95a5d2b3e88ae5e54846bf462eeb81b318a4"
-  integrity sha1-oayVpdKz6Irl5UhGv0Yu64GzGKQ=
+"@babel/helper-builder-react-jsx@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/helper-builder-react-jsx/download/@babel/helper-builder-react-jsx-7.7.0.tgz#c6b8254d305bacd62beb648e4dea7d3ed79f352d"
+  integrity sha1-xrglTTBbrNYr62SOTep9PtefNS0=
   dependencies:
-    "@babel/types" "^7.3.0"
+    "@babel/types" "^7.7.0"
     esutils "^2.0.0"
 
 "@babel/helper-call-delegate@^7.4.4":
@@ -638,12 +638,12 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.2.0"
 
-"@babel/plugin-transform-react-jsx@^7.0.0":
-  version "7.3.0"
-  resolved "https://registry.npm.taobao.org/@babel/plugin-transform-react-jsx/download/@babel/plugin-transform-react-jsx-7.3.0.tgz#f2cab99026631c767e2745a5368b331cfe8f5290"
-  integrity sha1-8sq5kCZjHHZ+J0WlNoszHP6PUpA=
+"@babel/plugin-transform-react-jsx@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/plugin-transform-react-jsx/download/@babel/plugin-transform-react-jsx-7.7.0.tgz#834b0723ba78cd4d24d7d629300c2270f516d0b7"
+  integrity sha1-g0sHI7p4zU0k19YpMAwicPUW0Lc=
   dependencies:
-    "@babel/helper-builder-react-jsx" "^7.3.0"
+    "@babel/helper-builder-react-jsx" "^7.7.0"
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.2.0"
 
@@ -782,14 +782,14 @@
     js-levenshtein "^1.1.3"
     semver "^5.5.0"
 
-"@babel/preset-react@^7.6.3":
-  version "7.6.3"
-  resolved "https://registry.npm.taobao.org/@babel/preset-react/download/@babel/preset-react-7.6.3.tgz#d5242c828322520205ae4eda5d4f4f618964e2f6"
-  integrity sha1-1SQsgoMiUgIFrk7aXU9PYYlk4vY=
+"@babel/preset-react@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/preset-react/download/@babel/preset-react-7.7.0.tgz#8ab0c4787d98cf1f5f22dabf115552bf9e4e406c"
+  integrity sha1-irDEeH2Yzx9fItq/EVVSv55OQGw=
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-react-display-name" "^7.0.0"
-    "@babel/plugin-transform-react-jsx" "^7.0.0"
+    "@babel/plugin-transform-react-jsx" "^7.7.0"
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
@@ -832,7 +832,7 @@
     globals "^11.1.0"
     lodash "^4.17.13"
 
-"@babel/types@^7.0.0", "@babel/types@^7.3.0", "@babel/types@^7.4", "@babel/types@^7.4.4", "@babel/types@^7.5.5", "@babel/types@^7.7.0", "@babel/types@^7.7.1":
+"@babel/types@^7.0.0", "@babel/types@^7.4", "@babel/types@^7.4.4", "@babel/types@^7.5.5", "@babel/types@^7.7.0", "@babel/types@^7.7.1":
   version "7.7.1"
   resolved "https://registry.npm.taobao.org/@babel/types/download/@babel/types-7.7.1.tgz#8b08ea368f2baff236613512cf67109e76285827"
   integrity sha1-iwjqNo8rr/I2YTUSz2cQnnYoWCc=
