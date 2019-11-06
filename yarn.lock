@@ -1356,6 +1356,13 @@
     "@types/node" "*"
     "@types/react" "*"
 
+"@types/react-image-crop@^8.1.2":
+  version "8.1.2"
+  resolved "https://registry.npm.taobao.org/@types/react-image-crop/download/@types/react-image-crop-8.1.2.tgz#9c16d6b0b577a63a854a1a895180cc76800e2988"
+  integrity sha1-nBbWsLV3pjqFShqJUYDMdoAOKYg=
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-lazyload@^2.6.0":
   version "2.6.0"
   resolved "https://registry.npm.taobao.org/@types/react-lazyload/download/@types/react-lazyload-2.6.0.tgz#41cd9cbb2c03dd810377518d4837794469a521d1"
@@ -2942,6 +2949,11 @@ cloneable-readable@^1.0.0:
     process-nextick-args "^2.0.0"
     readable-stream "^2.3.5"
 
+clsx@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npm.taobao.org/clsx/download/clsx-1.0.4.tgz#0c0171f6d5cb2fe83848463c15fcc26b4df8c2ec"
+  integrity sha1-DAFx9tXLL+g4SEY8FfzCa034wuw=
+
 code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/code-point-at/download/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
@@ -3196,7 +3208,7 @@ core-js@^2.4.0, core-js@^2.4.1:
   resolved "https://registry.npm.taobao.org/core-js/download/core-js-2.6.10.tgz?cache=0&sync_timestamp=1571060583912&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-2.6.10.tgz#8a5b8391f8cc7013da703411ce5b585706300d7f"
   integrity sha1-iluDkfjMcBPacDQRzltYVwYwDX8=
 
-core-js@^3.3.6:
+core-js@^3.3.3, core-js@^3.3.6:
   version "3.3.6"
   resolved "https://registry.npm.taobao.org/core-js/download/core-js-3.3.6.tgz?cache=0&sync_timestamp=1572541838306&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-3.3.6.tgz#6ad1650323c441f45379e176ed175c0d021eac92"
   integrity sha1-atFlAyPEQfRTeeF27RdcDQIerJI=
@@ -8420,6 +8432,15 @@ react-hot-loader@^4.12.15:
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.1.0"
     source-map "^0.7.3"
+
+react-image-crop@^8.4.0:
+  version "8.4.0"
+  resolved "https://registry.npm.taobao.org/react-image-crop/download/react-image-crop-8.4.0.tgz#48cba2a30f2a27a6a13afa5867843bdc8c6b8a1b"
+  integrity sha1-SMuiow8qJ6ahOvpYZ4Q73Ixrihs=
+  dependencies:
+    clsx "^1.0.4"
+    core-js "^3.3.3"
+    prop-types "^15.7.2"
 
 react-is@^16.6.0, react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.9.0:
   version "16.10.2"

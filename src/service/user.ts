@@ -240,3 +240,15 @@ export const getUserRecentPostByDay = (
     postInfos: IPost[]
   }>).then(data => data.postInfos)
 }
+
+export const changeAvatar = (url: string) => {
+  return axios({
+    url: '/me/portrait',
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: url,
+    needAuth: true,
+  }) as Promise<void>
+}

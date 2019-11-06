@@ -8,6 +8,7 @@ import { editMyInfo } from 'src/service/user'
 import { refreshUserInfo } from 'src/store/global-async-actions'
 import notice from 'src/utils/notice'
 
+import ConfigAvatar from './components/ConfigAvatar'
 import ConfigSignature from './components/ConfigSignature'
 import ConfigGeneral from './components/ConfigGeneral'
 
@@ -25,6 +26,10 @@ interface IUserConfigItem {
 }
 
 const CONFIG_ITEMS: IUserConfigItem[] = [
+  {
+    label: '修改头像',
+    Component: ConfigAvatar,
+  },
   {
     label: '修改签名档',
     Component: ConfigSignature,
