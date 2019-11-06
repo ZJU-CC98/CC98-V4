@@ -1,0 +1,40 @@
+.row {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+
+  & + & {
+    margin-top: 32px;
+  }
+
+  input {
+    height: 32px;
+    width: 160px;
+    padding: 0 12px;
+    border-radius: 4px;
+  }
+
+  textarea {
+    width: 480px;
+    height: 64px;
+    padding: 8px;
+    border-radius: 4px;
+  }
+}
+
+.label {
+  width: 160px;
+
+  &::after {
+    content: '：';
+  }
+}
+
+.birthday {
+  display: inline-flex;
+  align-items: center;
+}
+
+.birthday-label {
+  margin: 0 12px;
+}

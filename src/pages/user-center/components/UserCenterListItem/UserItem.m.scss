@@ -2,8 +2,6 @@
 
 $post-count-color: rgb(53, 167, 255);
 $fan-count-color: rgb(255, 54, 54);
-$following-background: #e6e6e6;
-$following-color: #a0a0a0;
 
 .item {
   display: flex;
@@ -54,9 +52,4 @@ $following-color: #a0a0a0;
   & + & {
     margin-left: 32px;
   }
-}
-
-.follow {
-  color: $following-color;
-  background-color: $following-background;
 }

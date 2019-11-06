@@ -1,0 +1,1 @@
+export const RECENT_TOPIC_PAGE_SIZE = 10

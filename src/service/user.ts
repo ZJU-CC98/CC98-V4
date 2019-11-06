@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ISignIn, ITopic, IUser } from '@cc98/api'
+import { IEditUserInfo, IPost, ISignIn, ITopic, IUser, IUserOperation } from '@cc98/api'
 import { getLocalStorage, setLocalStorage } from 'src/utils/storage'
 import { stringify } from 'query-string'
 import THEME from 'src/constants/Theme'
@@ -169,5 +169,86 @@ export const signIn = (content: string) => {
       'Content-Type': 'application/json',
     },
     data: content,
+  }) as Promise<void>
+}
+
+export const getUserRecentTopics = (userId: string | number, from: number, size: number) => {
+  return axios({
+    url: `/user/${userId}/recent-topic`,
+    needAuth: true,
+    params: {
+      from,
+      size,
+    },
+  }) as Promise<ITopic[]>
+}
+
+export const editMyInfo = (info: IEditUserInfo) => {
+  return axios({
+    url: '/me',
+    method: 'PUT',
+    needAuth: true,
+    data: info,
+    silent: true,
+  }) as Promise<void>
+}
+
+export const manageUser = (id: string | number, data: IUserOperation) => {
+  return axios({
+    url: `/user/${id}/operation`,
+    method: 'PUT',
+    needAuth: true,
+    data,
+    silent: true,
+  }) as Promise<void>
+}
+
+export const deleteUserTopicByDay = (id: string | number, day: string) => {
+  return axios({
+    url: `/user/${id}/topic?days=${day}`,
+    needAuth: true,
+    method: 'DELETE',
+    silent: true,
+  }) as Promise<number>
+}
+
+export const deleteUserPostByDay = (id: string | number, day: string) => {
+  return axios({
+    url: `/user/${id}/post?days=${day}`,
+    needAuth: true,
+    method: 'DELETE',
+    silent: true,
+  }) as Promise<number>
+}
+
+export const getUserRecentPostByDay = (
+  id: string | number,
+  days: number | string,
+  from: number,
+  size: number
+) => {
+  return (axios({
+    url: `/User/${id}/post`,
+    params: {
+      days,
+      from,
+      size,
+    },
+    needAuth: true,
+  }) as Promise<{
+    count: number
+    postInfos: IPost[]
+  }>).then(data => data.postInfos)
+}
+
+export const changeAvatar = (url: string) => {
+  return axios({
+    url: '/me/portrait',
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: url,
+    needAuth: true,
   }) as Promise<void>
 }

@@ -18,6 +18,9 @@ export type GetPropTypeOfComponent<T> = T extends React.ComponentType<infer U> ?
 
 export type UnpackPromise<T> = T extends Promise<infer U> ? U : never
 
+// https://stackoverflow.com/questions/54520676
+export type KeysMatching<T, V> = { [K in keyof T]: T[K] extends V ? K : never }[keyof T]
+
 export type AsyncAction<
   /**
    * Action 的类型定义

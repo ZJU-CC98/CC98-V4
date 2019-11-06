@@ -41,6 +41,28 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
   }
 
   React.useEffect(() => {
+    window.addEventListener('storage', e => {
+      if (e.key === 'userInfo') {
+        if (e.oldValue === e.newValue) return
+        if (e.newValue) {
+          // 如果用户在其他页面重新登陆
+          dispatch({
+            type: GLOBAL_ACTION_TYPES.LOGIN_AND_SET_CURRENT_USER,
+            payload: JSON.parse(e.newValue.slice(4)),
+          })
+          dispatch({
+            type: GLOBAL_ACTION_TYPES.SET_ERROR,
+            payload: null,
+          })
+        } else {
+          // 如果用户在其他页面注销
+          logout()
+        }
+      }
+    })
+  }, [])
+
+  React.useEffect(() => {
     if (!pathname.startsWith(MESSAGE_BASE_PATH) && isLogin) {
       dispatch(refreshMessageCount())
     }
@@ -52,6 +74,11 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
         dispatch({
           type: GLOBAL_ACTION_TYPES.SET_CURRENT_USER,
           payload,
+        })
+
+        dispatch({
+          type: GLOBAL_ACTION_TYPES.SET_THEME,
+          payload: payload.theme,
         })
       })
 
