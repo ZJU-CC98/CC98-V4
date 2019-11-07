@@ -28,7 +28,7 @@
     "IE 11"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.7.1",
+    "@babel/runtime": "^7.7.2",
     "@cc98/react-ubb-editor": "^2.2.4",
     "@cc98/ubb-core": "^1.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
