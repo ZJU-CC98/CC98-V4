@@ -57,7 +57,7 @@
     "react": "^16.11.0",
     "react-color": "^2.17.3",
     "react-dom": "^16.11.0",
-    "react-hot-loader": "^4.12.15",
+    "react-hot-loader": "^4.12.16",
     "react-image-crop": "^8.4.0",
     "react-lazyload": "^2.6.2",
     "react-mde": "^7.6.2",
