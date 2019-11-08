@@ -1348,13 +1348,12 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-hot-loader@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.npm.taobao.org/@types/react-hot-loader/download/@types/react-hot-loader-4.1.0.tgz#8e072b44331ad0182918228c5d2bf514646760de"
-  integrity sha1-jgcrRDMa0BgpGCKMXSv1FGRnYN4=
+"@types/react-hot-loader@^4.1.1":
+  version "4.1.1"
+  resolved "https://registry.npm.taobao.org/@types/react-hot-loader/download/@types/react-hot-loader-4.1.1.tgz#8bc0a4add6b97ae833e5124a5591d5320026aa24"
+  integrity sha1-i8Ckrda5eugz5RJKVZHVMgAmqiQ=
   dependencies:
-    "@types/node" "*"
-    "@types/react" "*"
+    react-hot-loader "*"
 
 "@types/react-image-crop@^8.1.2":
   version "8.1.2"
@@ -8399,7 +8398,7 @@ react-dom@^16.10.2, react-dom@^16.11.0:
     prop-types "^15.6.2"
     scheduler "^0.17.0"
 
-react-hot-loader@^4.12.16:
+react-hot-loader@*, react-hot-loader@^4.12.16:
   version "4.12.16"
   resolved "https://registry.npm.taobao.org/react-hot-loader/download/react-hot-loader-4.12.16.tgz#353bd07fbb08f791b5720535f86b0a8f9b651317"
   integrity sha1-NTvQf7sI95G1cgU1+GsKj5tlExc=
