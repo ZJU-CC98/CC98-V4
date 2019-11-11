@@ -1294,10 +1294,10 @@
   resolved "https://registry.npm.taobao.org/@types/json-schema/download/@types/json-schema-7.0.3.tgz?cache=0&sync_timestamp=1567561051189&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fjson-schema%2Fdownload%2F%40types%2Fjson-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
   integrity sha1-vf1p1h5GTcyBslFZwnDXWnPBpjY=
 
-"@types/lodash@^4.14.145":
-  version "4.14.145"
-  resolved "https://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.145.tgz#abcafe85788f1392c5d5a144142aaf8529ad6bb9"
-  integrity sha1-q8r+hXiPE5LF1aFEFCqvhSmta7k=
+"@types/lodash@^4.14.146":
+  version "4.14.146"
+  resolved "https://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.146.tgz#de0d2c8610012f12a6a796455054cbc654f8fecf"
+  integrity sha1-3g0shhABLxKmp5ZFUFTLxlT4/s8=
 
 "@types/mime@*":
   version "2.0.1"
