@@ -1396,7 +1396,7 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^15.0.0 || ^16.0.0", "@types/react@^16.9.11":
+"@types/react@*", "@types/react@^16.9.11":
   version "16.9.11"
   resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.9.11.tgz?cache=0&sync_timestamp=1571994159851&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact%2Fdownload%2F%40types%2Freact-16.9.11.tgz#70e0b7ad79058a7842f25ccf2999807076ada120"
   integrity sha1-cOC3rXkFinhC8lzPKZmAcHatoSA=
@@ -8398,12 +8398,11 @@ react-dom@^16.10.2, react-dom@^16.11.0:
     prop-types "^15.6.2"
     scheduler "^0.17.0"
 
-react-hot-loader@*, react-hot-loader@^4.12.16:
-  version "4.12.16"
-  resolved "https://registry.npm.taobao.org/react-hot-loader/download/react-hot-loader-4.12.16.tgz#353bd07fbb08f791b5720535f86b0a8f9b651317"
-  integrity sha1-NTvQf7sI95G1cgU1+GsKj5tlExc=
+react-hot-loader@*, react-hot-loader@^4.12.17:
+  version "4.12.17"
+  resolved "https://registry.npm.taobao.org/react-hot-loader/download/react-hot-loader-4.12.17.tgz#e48815848865342edd829861634637b8c0d22bed"
+  integrity sha1-5IgVhIhlNC7dgphhY0Y3uMDSK+0=
   dependencies:
-    "@types/react" "^15.0.0 || ^16.0.0"
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
     hoist-non-react-statics "^3.3.0"
