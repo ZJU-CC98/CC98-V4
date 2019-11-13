@@ -101,7 +101,7 @@ export default function makeCustomAxiosAdapter(cacheConfigs: ICacheConfigItem[])
             return result
           }
 
-          if (newKeys && newKeys.length) {
+          if (newKeys?.length) {
             const newIds = Array.isArray(newKeys) ? newKeys : [newKeys]
             ;(getDataFromResult(result) as any[])
               .filter(item => newIds.includes(get(item, idKey)))
