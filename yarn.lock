@@ -3081,10 +3081,10 @@ connect-history-api-fallback@^1.6.0:
   resolved "https://registry.npm.taobao.org/connect-history-api-fallback/download/connect-history-api-fallback-1.6.0.tgz#8b32089359308d111115d81cad3fceab888f97bc"
   integrity sha1-izIIk1kwjRERFdgcrT/Oq4iPl7w=
 
-connected-react-router@^6.5.2:
-  version "6.5.2"
-  resolved "https://registry.npm.taobao.org/connected-react-router/download/connected-react-router-6.5.2.tgz#422af70f86cb276681e20ab4295cf27dd9b6c7e3"
-  integrity sha1-Qir3D4bLJ2aB4gq0KVzyfdm2x+M=
+connected-react-router@^6.6.0:
+  version "6.6.0"
+  resolved "https://registry.npm.taobao.org/connected-react-router/download/connected-react-router-6.6.0.tgz#1886abdc493fb2b4b9c1779323de27ad2223811d"
+  integrity sha1-GIar3Ek/srS5wXeTI94nrSIjgR0=
   dependencies:
     immutable "^3.8.1"
     prop-types "^15.7.2"
