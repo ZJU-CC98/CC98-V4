@@ -41,7 +41,7 @@
     "aplayer": "^1.10.1",
     "axios": "^0.18.1",
     "classnames": "^2.2.6",
-    "connected-react-router": "^6.5.2",
+    "connected-react-router": "^6.6.0",
     "core-js": "^3.4.1",
     "css-vars-ponyfill": "^2.1.2",
     "dayjs": "^1.8.17",
