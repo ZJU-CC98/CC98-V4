@@ -1069,10 +1069,10 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@sentry/browser@^5.9.0":
-  version "5.9.0"
-  resolved "https://registry.npm.taobao.org/@sentry/browser/download/@sentry/browser-5.9.0.tgz#09f6f544fce51d52f2e086ef776509b15ef04761"
-  integrity sha1-Cfb1RPzlHVLy4Ibvd2UJsV7wR2E=
+"@sentry/browser@^5.9.1":
+  version "5.9.1"
+  resolved "https://registry.npm.taobao.org/@sentry/browser/download/@sentry/browser-5.9.1.tgz#b2ec27ead501a49f26807a9c0774f44f4292f236"
+  integrity sha1-suwn6tUBpJ8mgHqcB3T0T0KS8jY=
   dependencies:
     "@sentry/core" "5.8.0"
     "@sentry/types" "5.7.1"
