@@ -54,7 +54,7 @@ export function checkCanManagePost(
 }
 
 export function checkCanManageUser(currentUser?: IUser | null) {
-  return currentUser && currentUser.privilege === PRIVILEGE.ADMIN
+  return currentUser?.privilege === PRIVILEGE.ADMIN
 }
 
 // 是否可以选择校园活动
@@ -64,5 +64,5 @@ export function checkCanPostActivity(boardInfo?: BaseBoardInfo, user?: IUser | n
   }
 
   // TODO: 91?
-  return !!user && !!user.userTitleIds && user.userTitleIds.includes(91)
+  return !!user?.userTitleIds?.includes(91)
 }

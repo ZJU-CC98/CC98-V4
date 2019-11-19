@@ -64,7 +64,7 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
   React.useEffect(() => {
     getTopicInfo(topicId)
       .catch(error => {
-        if (error.response && error.response.data === 'cannot_entry_board') {
+        if (error?.response?.data === 'cannot_entry_board') {
           dispatch({
             type: GLOBAL_ACTION_TYPES.SET_ERROR,
             payload: ERROR.TOPIC_NO_PERMISSION,
@@ -93,10 +93,7 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
 
       .then(([postData, hotPostData = []]) => {
         setIsTopicLoading(false)
-        if (
-          (!postData.length || postData[0].isAnonymous) &&
-          (!hotPostData.length || hotPostData[0].isAnonymous)
-        ) {
+        if (postData[0]?.isAnonymous && hotPostData[0]?.isAnonymous) {
           return []
         }
 
@@ -114,13 +111,10 @@ const Topic: React.FC<RouteComponentProps<ITopicRouteMatch>> = ({ match, locatio
       })
       .then(users =>
         setUserMap(
-          users.reduce(
-            (res, user) => {
-              res[user.name] = user
-              return res
-            },
-            {} as IUserMap
-          )
+          users.reduce((res, user) => {
+            res[user.name] = user
+            return res
+          }, {} as IUserMap)
         )
       )
   }, [topicId, isTracking, postId, currentPage, refreshKey])

@@ -7,7 +7,7 @@ import BoardItem from 'src/pages/user-center/components/UserCenterListItem/Board
 
 function selector(store: RootStore) {
   return {
-    customBoardIds: store.global.currentUser ? store.global.currentUser.customBoards : [],
+    customBoardIds: store.global.currentUser?.customBoards || [],
   }
 }
 
