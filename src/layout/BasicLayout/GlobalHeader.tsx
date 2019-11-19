@@ -15,6 +15,7 @@ import { MESSAGE_BASE_PATH } from 'src/pages/message/constants'
 
 import icon from 'src/assets/98LOGO.ico'
 
+import PRIVILEGE from 'src/constants/Privilege'
 import HeaderSearch from './HeaderSearch'
 import s from './GlobalHeader.m.scss'
 
@@ -168,13 +169,13 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
                   <Link to="/user-center" className={s.menuItem}>
                     个人中心
                   </Link>
-                  {user!.privilege === '管理员' && (
+                  {user!.privilege === PRIVILEGE.ADMIN && (
                     <Link to="/site-manage" className={s.menuItem}>
                       全站管理
                     </Link>
                   )}
                   <Link to="/sign-in" className={s.menuItem}>
-                    {signInInfo && signInInfo.hasSignedInToday ? '已签到' : '签到'}
+                    {signInInfo?.hasSignedInToday ? '已签到' : '签到'}
                   </Link>
                   {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                   <Link to="#" onClick={logout} className={s.menuItem}>
