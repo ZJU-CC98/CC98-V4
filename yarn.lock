@@ -3203,7 +3203,7 @@ core-js@^2.4.0, core-js@^2.4.1:
   resolved "https://registry.npm.taobao.org/core-js/download/core-js-2.6.10.tgz?cache=0&sync_timestamp=1571060583912&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-2.6.10.tgz#8a5b8391f8cc7013da703411ce5b585706300d7f"
   integrity sha1-iluDkfjMcBPacDQRzltYVwYwDX8=
 
-core-js@^3.3.3, core-js@^3.4.2:
+core-js@^3.4.2:
   version "3.4.2"
   resolved "https://registry.npm.taobao.org/core-js/download/core-js-3.4.2.tgz#ee2b1a60b50388d8ddcda8cdb44a92c7a9ea76df"
   integrity sha1-7isaYLUDiNjdzajNtEqSx6nqdt8=
@@ -8440,13 +8440,13 @@ react-hot-loader@*, react-hot-loader@^4.12.18:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
-react-image-crop@^8.4.0:
-  version "8.4.0"
-  resolved "https://registry.npm.taobao.org/react-image-crop/download/react-image-crop-8.4.0.tgz#48cba2a30f2a27a6a13afa5867843bdc8c6b8a1b"
-  integrity sha1-SMuiow8qJ6ahOvpYZ4Q73Ixrihs=
+react-image-crop@^8.4.1:
+  version "8.4.1"
+  resolved "https://registry.npm.taobao.org/react-image-crop/download/react-image-crop-8.4.1.tgz#5bf22fee839a189cd5276fd0ad0e6528b5817a6b"
+  integrity sha1-W/Iv7oOaGJzVJ2/QrQ5lKLWBems=
   dependencies:
     clsx "^1.0.4"
-    core-js "^3.3.3"
+    core-js "^3.4.2"
     prop-types "^15.7.2"
 
 react-is@^16.6.0, react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.9.0:
