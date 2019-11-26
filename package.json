@@ -81,7 +81,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.7.4",
     "@babel/plugin-transform-runtime": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
-    "@babel/preset-react": "^7.7.0",
+    "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.7.4",
     "@sentry/cli": "^1.49.0",
     "@types/autoprefixer": "^9.6.1",
