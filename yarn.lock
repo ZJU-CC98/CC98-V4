@@ -4024,10 +4024,10 @@ eslint-visitor-keys@^1.1.0:
   resolved "https://registry.npm.taobao.org/eslint-visitor-keys/download/eslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
   integrity sha1-4qgs6oT/JGrW+1f5veW0ZiFFnsI=
 
-eslint@^6.7.0:
-  version "6.7.0"
-  resolved "https://registry.npm.taobao.org/eslint/download/eslint-6.7.0.tgz#766162e383b236e61d873697f82c3a3e41392020"
-  integrity sha1-dmFi44OyNuYdhzaX+Cw6PkE5ICA=
+eslint@^6.7.1:
+  version "6.7.1"
+  resolved "https://registry.npm.taobao.org/eslint/download/eslint-6.7.1.tgz#269ccccec3ef60ab32358a44d147ac209154b919"
+  integrity sha1-JpzMzsPvYKsyNYpE0UesIJFUuRk=
   dependencies:
     "@babel/code-frame" "^7.0.0"
     ajv "^6.10.0"
