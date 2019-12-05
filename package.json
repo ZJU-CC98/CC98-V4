@@ -36,7 +36,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
     "@hot-loader/react-dom": "^16.11.0",
-    "@sentry/browser": "^5.9.1",
+    "@sentry/browser": "^5.10.0",
     "@tippy.js/react": "^2.2.3",
     "aplayer": "^1.10.1",
     "axios": "^0.18.1",
