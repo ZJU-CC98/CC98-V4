@@ -2,6 +2,7 @@ import React from 'react'
 import { IBoard, IPost, ITopic, IUser } from '@cc98/api'
 import { RootStore } from 'src/store'
 import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router'
 import cn from 'classnames'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons'
@@ -17,6 +18,7 @@ import UbbContainer from 'src/ubb'
 import UserAvatar from 'src/components/UserAvatar'
 import EDITOR_MODE from 'src/constants/EditorMode'
 import MarkdownContainer from 'src/components/Markdown/MarkdownContainer'
+import FollowButton from 'src/pages/user-center/components/FollowButton'
 
 interface IPostItemProps {
   user?: IUser
@@ -41,6 +43,7 @@ function selector(store: RootStore) {
 const renderUser = (
   isLogin: boolean,
   post: IPost,
+  push: (path: string) => void,
   user?: {
     name: string
     portraitUrl: string
@@ -66,8 +69,21 @@ const renderUser = (
         </p>
         {!post.isAnonymous && !post.isDeleted && isLogin && (
           <p>
-            <span className={s.userAction}>{user.isFollowing ? '取关' : '关注'}</span>
-            <span className={s.userAction}>私信</span>
+            <FollowButton
+              buttonProps={{ border: true }}
+              userId={user.id}
+              initIsFollowing={user.isFollowing}
+              followingText="取关"
+              followingHoverText="取关"
+              notFollowingText="关注"
+              reFollowingText="关注"
+            />
+            <span
+              onClick={() => push(`/message/message?name=${user.name}`)}
+              className={s.userAction}
+            >
+              私信
+            </span>
           </p>
         )}
       </>
@@ -155,12 +171,14 @@ const PostItem: React.FC<IPostItemProps> = ({
 
   const canEdit = checkCanEditPost(post, currentUser, boardInfo)
   const canManage = checkCanManagePost(boardInfo, topicInfo, currentUser)
+  const { push } = useHistory()
 
   return (
     <div ref={root} className={s.root}>
       {renderUser(
         isLogin,
         post,
+        push,
         // eslint-disable-next-line no-nested-ternary
         post.isDeleted
           ? {

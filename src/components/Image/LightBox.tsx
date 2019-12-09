@@ -26,6 +26,7 @@ const LightBox: React.FC<ILightBoxProps> = ({ disabled, onClick, style = {}, ...
   const handleLightBoxClick = () => {
     setIsShown(false)
     lightBoxRoot.current!.remove()
+    lightBoxRoot.current = undefined
   }
 
   return (

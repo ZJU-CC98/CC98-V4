@@ -63,6 +63,7 @@ const MessageAtMe: React.FC<RouteComponentProps<IMessageAtRouteMatch>> = ({ matc
         }}
         service={getMessageAt}
         renderItem={item => <MessageAtItem item={item} boardMap={boardMap} />}
+        showContentBackground
       />
     </>
   )

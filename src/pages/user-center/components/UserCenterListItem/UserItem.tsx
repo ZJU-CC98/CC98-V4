@@ -1,6 +1,6 @@
 import React from 'react'
 import { IUser } from '@cc98/api'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Button from 'src/components/Button'
 import FollowButton from 'src/pages/user-center/components/FollowButton'
 
@@ -11,6 +11,8 @@ interface IUserItemProps {
 }
 
 const UserItem: React.FC<IUserItemProps> = ({ user }) => {
+  const { push } = useHistory()
+
   return (
     <div className={s.item}>
       <img className={s.avatar} src={user.portraitUrl} />
@@ -24,7 +26,11 @@ const UserItem: React.FC<IUserItemProps> = ({ user }) => {
         <span className={s.fanCount}>{user.fanCount}</span>
       </p>
       <FollowButton className={s.button} userId={user.id} initIsFollowing={user.isFollowing} />
-      <Button primary className={s.button}>
+      <Button
+        primary
+        className={s.button}
+        onClick={() => push(`/message/message?name=${user.name}`)}
+      >
         私信
       </Button>
     </div>

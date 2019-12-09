@@ -48,7 +48,6 @@ const Board: React.FC<RouteComponentProps<IBoardUrlMatch>> = ({ match }) => {
   const breadcrumb = [...baseBreadcrumb, boardInfo ? boardInfo.name : '']
 
   useBreadcrumb(breadcrumb)
-  // boardInfo?.name
   useDocumentTitle(boardInfo?.name)
 
   React.useEffect(() => {

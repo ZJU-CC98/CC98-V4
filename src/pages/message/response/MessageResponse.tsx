@@ -66,6 +66,7 @@ const MessageResponse: React.FC<RouteComponentProps<IMessageResponseRouteMatch>>
         }}
         service={getMessageResponse}
         renderItem={item => <MessageResponseItem item={item} boardMap={boardMap} />}
+        showContentBackground
       />
     </>
   )
