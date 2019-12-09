@@ -1,5 +1,6 @@
 import axios from 'axios'
 import {
+  IMessageContent,
   IMessageCount,
   INotificationAt,
   INotificationReply,
@@ -80,4 +81,15 @@ export const getRecentContact = (from: number, size: number) => {
     },
     needAuth: true,
   }) as Promise<IRecentMessage[]>
+}
+
+export const getRecentMessageByUserId = (userId: string | number, from: number, size: number) => {
+  return axios({
+    url: `/message/user/${userId}`,
+    params: {
+      from,
+      size,
+    },
+    needAuth: true,
+  }) as Promise<IMessageContent[]>
 }

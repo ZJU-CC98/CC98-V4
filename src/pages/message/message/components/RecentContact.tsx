@@ -13,6 +13,7 @@ const PAGE_SIZE = 7
 
 interface IRecentContactProps {
   initUser?: IUser
+  initUserName?: string
   targetUser?: IUser
   onUserChange: (user: IUser) => void
 }
@@ -37,17 +38,16 @@ const renderItem = (
   </div>
 )
 
-const RecentContact: React.FC<IRecentContactProps> = ({ initUser, onUserChange, targetUser }) => {
+const RecentContact: React.FC<IRecentContactProps> = ({
+  initUserName,
+  initUser,
+  onUserChange,
+  targetUser,
+}) => {
   const [loading, setLoading] = React.useState(false)
   const [isLoaded, setIsLoaded] = React.useState(false)
 
   const [data, setData] = React.useState<IRecentItem[]>([])
-
-  React.useEffect(() => {
-    if (initUser?.id) {
-      onUserChange(initUser)
-    }
-  }, [initUser])
 
   const handleLoadMore = async () => {
     if (loading) return
@@ -60,7 +60,7 @@ const RecentContact: React.FC<IRecentContactProps> = ({ initUser, onUserChange, 
       return prev
     }, {} as { [key: number]: IUser })
 
-    if (data.length === 0 && !initUser && res.length) {
+    if (data.length === 0 && !initUserName && res.length) {
       onUserChange(userMap[res[0].userId])
     }
 

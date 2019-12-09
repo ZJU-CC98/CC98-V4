@@ -20,20 +20,27 @@ function selector(store: RootStore) {
 const MyMessage: React.FC<RouteComponentProps> = ({ location }) => {
   const [targetUser, setTargetUser] = React.useState<IUser>()
   const [initUser, setInitUser] = React.useState<IUser>()
+  const { name } = parse(location.search)
 
   const { currentUser } = useSelector(selector)
 
   React.useEffect(() => {
-    const { name } = parse(location.search)
-
     if (!name) return
 
-    getUserByName(name as string).then(setInitUser)
-  }, [location.search])
+    getUserByName(name as string).then(user => {
+      setInitUser(user)
+      setTargetUser(user)
+    })
+  }, [name])
 
   return (
     <div className={s.root}>
-      <RecentContact initUser={initUser} targetUser={targetUser} onUserChange={setTargetUser} />
+      <RecentContact
+        initUserName={name as string}
+        initUser={initUser}
+        targetUser={targetUser}
+        onUserChange={setTargetUser}
+      />
       {currentUser && targetUser && (
         <RecentMessage currentUser={currentUser} targetUser={targetUser} />
       )}
