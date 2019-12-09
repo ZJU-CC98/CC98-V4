@@ -9,15 +9,15 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/core@>=7.2.2", "@babel/core@^7.7.4":
-  version "7.7.4"
-  resolved "https://registry.npm.taobao.org/@babel/core/download/@babel/core-7.7.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fcore%2Fdownload%2F%40babel%2Fcore-7.7.4.tgz#37e864532200cb6b50ee9a4045f5f817840166ab"
-  integrity sha1-N+hkUyIAy2tQ7ppARfX4F4QBZqs=
+"@babel/core@>=7.2.2", "@babel/core@^7.7.5":
+  version "7.7.5"
+  resolved "https://registry.npm.taobao.org/@babel/core/download/@babel/core-7.7.5.tgz#ae1323cd035b5160293307f50647e83f8ba62f7e"
+  integrity sha1-rhMjzQNbUWApMwf1BkfoP4umL34=
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/generator" "^7.7.4"
     "@babel/helpers" "^7.7.4"
-    "@babel/parser" "^7.7.4"
+    "@babel/parser" "^7.7.5"
     "@babel/template" "^7.7.4"
     "@babel/traverse" "^7.7.4"
     "@babel/types" "^7.7.4"
@@ -240,10 +240,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.7.4":
-  version "7.7.4"
-  resolved "https://registry.npm.taobao.org/@babel/parser/download/@babel/parser-7.7.4.tgz#75ab2d7110c2cf2fa949959afb05fa346d2231bb"
-  integrity sha1-dastcRDCzy+pSZWa+wX6NG0iMbs=
+"@babel/parser@^7.7.4", "@babel/parser@^7.7.5":
+  version "7.7.5"
+  resolved "https://registry.npm.taobao.org/@babel/parser/download/@babel/parser-7.7.5.tgz?cache=0&sync_timestamp=1575639579113&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fparser%2Fdownload%2F%40babel%2Fparser-7.7.5.tgz#cbf45321619ac12d83363fcf9c94bb67fa646d71"
+  integrity sha1-y/RTIWGawS2DNj/PnJS7Z/pkbXE=
 
 "@babel/plugin-proposal-async-generator-functions@^7.7.4":
   version "7.7.4"
