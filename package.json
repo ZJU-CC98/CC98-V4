@@ -42,7 +42,7 @@
     "axios": "^0.18.1",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.6.1",
-    "core-js": "^3.4.7",
+    "core-js": "^3.4.8",
     "css-vars-ponyfill": "^2.1.2",
     "dayjs": "^1.8.17",
     "dplayer": "^1.25.0",
