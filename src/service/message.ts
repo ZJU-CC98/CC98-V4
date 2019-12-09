@@ -1,5 +1,11 @@
 import axios from 'axios'
-import { IMessageCount, INotificationAt, INotificationReply, INotificationSystem } from '@cc98/api'
+import {
+  IMessageCount,
+  INotificationAt,
+  INotificationReply,
+  INotificationSystem,
+  IRecentMessage,
+} from '@cc98/api'
 
 export function getAllMessageCount() {
   return axios({
@@ -63,4 +69,15 @@ export const clearSystemNotification = () => {
     method: 'PUT',
     needAuth: true,
   }) as Promise<void>
+}
+
+export const getRecentContact = (from: number, size: number) => {
+  return axios({
+    url: '/message/recent-contact-users',
+    params: {
+      from,
+      size,
+    },
+    needAuth: true,
+  }) as Promise<IRecentMessage[]>
 }

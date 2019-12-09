@@ -8,6 +8,7 @@ import { MESSAGE_BASE_PATH as BASE_PATH } from './constants'
 import MessageResponse from './response/MessageResponse'
 import MessageAtMe from './at-me/MessageAtMe'
 import MessageSystem from './system/MessageSystem'
+import MyMessage from './message/MyMessage'
 import s from './Message.m.scss'
 
 const navs: INavItem[] = [
@@ -32,7 +33,7 @@ const navs: INavItem[] = [
   {
     name: '我的私信',
     path: '/message',
-    Component: () => null,
+    Component: MyMessage,
   },
   {
     name: '消息设置',

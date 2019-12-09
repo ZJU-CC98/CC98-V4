@@ -42,6 +42,7 @@ const Modal: React.FC<IModalProps> = ({
     return () => {
       if (root.current) {
         root.current.remove()
+        root.current = undefined
       }
       currentOpenModalCount -= 1
 

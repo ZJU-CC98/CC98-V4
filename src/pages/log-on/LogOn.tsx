@@ -18,10 +18,11 @@ import LightBox from 'src/components/Image/LightBox'
 import s from 'src/pages/log-on/LogOn.m.scss'
 import { clearAll } from 'src/utils/indexedDb'
 import { refreshMessageCount, refreshSignInInfo } from 'src/store/global-async-actions'
+import LOCK_STATE from 'src/constants/LockState'
 
 const REFRESH_TOKEN_EXPIRED_TIME = 2592000
 const CODE_WRONG_PASSWORD = 400
-const USER_LOCKED_STATES = [1, 2]
+const USER_LOCKED_STATES = [LOCK_STATE.GLOBAL_BAN, 2]
 
 const LogOn: React.FC<RouteComponentProps> = ({ history }) => {
   const [username, setUsername] = React.useState('')

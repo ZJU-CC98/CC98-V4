@@ -17,6 +17,7 @@ import UbbContainer from 'src/ubb'
 import UserAvatar from 'src/components/UserAvatar'
 import EDITOR_MODE from 'src/constants/EditorMode'
 import MarkdownContainer from 'src/components/Markdown/MarkdownContainer'
+import FollowButton from 'src/pages/user-center/components/FollowButton'
 
 interface IPostItemProps {
   user?: IUser
@@ -66,7 +67,15 @@ const renderUser = (
         </p>
         {!post.isAnonymous && !post.isDeleted && isLogin && (
           <p>
-            <span className={s.userAction}>{user.isFollowing ? '取关' : '关注'}</span>
+            <FollowButton
+              buttonProps={{ border: true }}
+              userId={user.id}
+              initIsFollowing={user.isFollowing}
+              followingText="取关"
+              followingHoverText="取关"
+              notFollowingText="关注"
+              reFollowingText="关注"
+            />
             <span className={s.userAction}>私信</span>
           </p>
         )}

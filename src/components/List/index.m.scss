@@ -1,3 +1,5 @@
+@import 'var';
+
 .root {
   display: flex;
   flex-direction: column;
@@ -7,6 +9,10 @@
 .content {
   width: 100%;
   margin-bottom: 12px;
+}
+
+.white {
+  background-color: $main-background-color;
 }
 
 .empty {
