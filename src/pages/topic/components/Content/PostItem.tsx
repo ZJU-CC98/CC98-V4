@@ -2,6 +2,7 @@ import React from 'react'
 import { IBoard, IPost, ITopic, IUser } from '@cc98/api'
 import { RootStore } from 'src/store'
 import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router'
 import cn from 'classnames'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons'
@@ -42,6 +43,7 @@ function selector(store: RootStore) {
 const renderUser = (
   isLogin: boolean,
   post: IPost,
+  push: (path: string) => void,
   user?: {
     name: string
     portraitUrl: string
@@ -76,7 +78,12 @@ const renderUser = (
               notFollowingText="关注"
               reFollowingText="关注"
             />
-            <span className={s.userAction}>私信</span>
+            <span
+              onClick={() => push(`/message/message?name=${user.name}`)}
+              className={s.userAction}
+            >
+              私信
+            </span>
           </p>
         )}
       </>
@@ -164,12 +171,14 @@ const PostItem: React.FC<IPostItemProps> = ({
 
   const canEdit = checkCanEditPost(post, currentUser, boardInfo)
   const canManage = checkCanManagePost(boardInfo, topicInfo, currentUser)
+  const { push } = useHistory()
 
   return (
     <div ref={root} className={s.root}>
       {renderUser(
         isLogin,
         post,
+        push,
         // eslint-disable-next-line no-nested-ternary
         post.isDeleted
           ? {

@@ -1,5 +1,6 @@
 import React from 'react'
-import { RouteComponentProps } from 'react-router'
+import { RouteComponentProps, useHistory } from 'react-router'
+
 import { IUser } from '@cc98/api'
 import { getUserById, getUserRecentTopics } from 'src/service/user'
 import UserHomeContent from 'src/pages/user-center/home/components/UserHomeContent'
@@ -15,6 +16,7 @@ interface IUserHomeRouteMatch {
 const UserHome: React.FC<RouteComponentProps<IUserHomeRouteMatch>> = ({ match }) => {
   const { id } = match.params
   const [user, setUser] = React.useState<IUser>()
+  const { push } = useHistory()
 
   React.useEffect(() => {
     if (!id) return
@@ -38,7 +40,12 @@ const UserHome: React.FC<RouteComponentProps<IUserHomeRouteMatch>> = ({ match })
             <span className={s.label}>收到的赞</span>
             <span className={s.info}>{user.receivedLikeCount}</span>
           </span>
-          <Button className={s.button} primary>
+          <Button
+            className={s.button}
+            style={{ marginRight: 32 }}
+            primary
+            onClick={() => push(`/message/message?name=${user.name}`)}
+          >
             私信
           </Button>
           <FollowButton

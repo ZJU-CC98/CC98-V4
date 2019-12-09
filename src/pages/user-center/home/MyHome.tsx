@@ -1,6 +1,7 @@
 import React from 'react'
 import { RootStore } from 'src/store'
 import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router'
 import UserHomeContent from 'src/pages/user-center/home/components/UserHomeContent'
 import Button from 'src/components/Button'
 import { getMyRecentTopics } from 'src/service/user'
@@ -19,6 +20,7 @@ const topicService = (offset: number) => getMyRecentTopics(offset, RECENT_TOPIC_
 
 const MyHome: React.FC = () => {
   const { user } = useSelector(selector)
+  const { push } = useHistory()
 
   if (!user) {
     return null
@@ -34,7 +36,7 @@ const MyHome: React.FC = () => {
             <span className={s.label}>收到的赞</span>
             <span className={s.info}>{user.receivedLikeCount}</span>
           </span>
-          <Button className={s.button} primary>
+          <Button className={s.button} primary onClick={() => push('/message/message')}>
             私信
           </Button>
         </>

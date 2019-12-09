@@ -2,8 +2,10 @@ import React from 'react'
 import { IMessageContent, IUser } from '@cc98/api'
 import dayjs from 'dayjs'
 import cn from 'classnames'
+import { useHistory } from 'react-router-dom'
 import notice from 'src/utils/notice'
 import Button from 'src/components/Button'
+import useDocumentTitle from 'src/hooks/useDocumentTitle'
 import { getRecentMessageByUserId, sendMessage } from 'src/service/message'
 import { IMessageContentGroup, transformMessageToGroup } from 'src/pages/message/message/utils'
 import UbbContainer from 'src/ubb'
@@ -20,7 +22,8 @@ interface IRecentMessageProps {
 const renderMessageItem = (
   { senderId, id, content }: IMessageContent,
   currentUser: IUser,
-  targetUser: IUser
+  targetUser: IUser,
+  push: (path: string) => void
 ) => {
   // 这条消息是当前登录用户发送的
   const isCurrentUser = senderId === currentUser.id
@@ -38,6 +41,11 @@ const renderMessageItem = (
       <img
         className={s.avatar}
         src={isCurrentUser ? currentUser.portraitUrl : targetUser.portraitUrl}
+        onClick={() => {
+          if (!isCurrentUser) {
+            push(`/user/${targetUser.id}`)
+          }
+        }}
       />
       {!isCurrentUser && (
         <div className={s.message}>
@@ -52,13 +60,14 @@ const RecentMessage: React.FC<IRecentMessageProps> = ({ targetUser, currentUser 
   const contentRef = React.useRef<HTMLDivElement>(null)
 
   const [data, setData] = React.useState<IMessageContentGroup[]>([])
-  const [needScrollToBottom, setNeedScrollBottom] = React.useState(true)
   const [loading, setLoading] = React.useState(false)
   const [isLoaded, setIsLoaded] = React.useState(false)
 
   const [isSending, setIsSending] = React.useState(false)
 
   const [value, setValue] = React.useState('')
+
+  const { push } = useHistory()
 
   const handleLoad = (init?: boolean) => {
     setLoading(true)
@@ -78,8 +87,7 @@ const RecentMessage: React.FC<IRecentMessageProps> = ({ targetUser, currentUser 
       }
 
       if (contentRef.current) {
-        if (needScrollToBottom) {
-          setNeedScrollBottom(false)
+        if (init) {
           contentRef.current.scrollTop = contentRef.current.scrollHeight
         } else {
           contentRef.current.scrollTop = contentRef.current.scrollHeight - scrollBottom
@@ -96,7 +104,6 @@ const RecentMessage: React.FC<IRecentMessageProps> = ({ targetUser, currentUser 
     sendMessage(targetUser.id, value)
       .then(() => {
         notice('发送成功')
-        setNeedScrollBottom(true)
         setData([])
         setLoading(false)
         setIsLoaded(false)
@@ -110,12 +117,13 @@ const RecentMessage: React.FC<IRecentMessageProps> = ({ targetUser, currentUser 
   }
 
   React.useEffect(() => {
-    setNeedScrollBottom(true)
     setData([])
     setLoading(false)
     setIsLoaded(false)
     handleLoad(true)
   }, [targetUser.id])
+
+  useDocumentTitle(`与 ${targetUser.name} 的私信`)
 
   return (
     <div className={s.root}>
@@ -131,7 +139,7 @@ const RecentMessage: React.FC<IRecentMessageProps> = ({ targetUser, currentUser 
           {data.map(({ time, message }) => (
             <React.Fragment key={time}>
               <p className={s.time}>{dayjs(time).format('YYYY-MM-DD HH:mm:ss')}</p>
-              {message.map(item => renderMessageItem(item, currentUser, targetUser))}
+              {message.map(item => renderMessageItem(item, currentUser, targetUser, push))}
             </React.Fragment>
           ))}
         </div>

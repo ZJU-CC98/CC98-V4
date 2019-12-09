@@ -8,7 +8,7 @@ export interface IMessageContentGroup {
 }
 
 export function transformMessageToGroup(data: IMessageContent[]): IMessageContentGroup[] {
-  return reverse(data).reduce((res, message) => {
+  return reverse([...data]).reduce((res, message) => {
     const { time } = message
     const lastGroup = res[res.length - 1] as IMessageContentGroup | undefined
     const prevMessage = lastGroup?.message[lastGroup.message.length - 1] as
@@ -18,11 +18,11 @@ export function transformMessageToGroup(data: IMessageContent[]): IMessageConten
     if (
       lastGroup &&
       prevMessage &&
-      new Date(prevMessage.time).getTime() - new Date(time).getTime() < 60000
+      new Date(time).getTime() - new Date(prevMessage.time).getTime() < 60000
     ) {
-      lastGroup.message.unshift(message)
+      lastGroup.message.push(message)
     } else {
-      res.unshift({
+      res.push({
         time,
         message: [message],
       })
