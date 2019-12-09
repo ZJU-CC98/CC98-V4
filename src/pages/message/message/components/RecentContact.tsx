@@ -74,7 +74,7 @@ const RecentContact: React.FC<IRecentContactProps> = ({
           })),
         ],
         'id'
-      ).filter(item => item.id !== initUser?.id)
+      )
     )
     setLoading(false)
     if (res.length < PAGE_SIZE) setIsLoaded(true)
@@ -85,7 +85,9 @@ const RecentContact: React.FC<IRecentContactProps> = ({
       <h3 className={s.title}>近期私信</h3>
       {initUser &&
         renderItem(initUser, initUser.id === targetUser?.id, () => onUserChange(initUser))}
-      {data.map(item => renderItem(item, item.id === targetUser?.id, () => onUserChange(item)))}
+      {data
+        .filter(item => item.id !== initUser?.id)
+        .map(item => renderItem(item, item.id === targetUser?.id, () => onUserChange(item)))}
       {!isLoaded && !loading && <Waypoint onEnter={handleLoadMore} />}
       {loading && <Spin />}
     </div>

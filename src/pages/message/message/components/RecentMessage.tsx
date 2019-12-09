@@ -2,8 +2,9 @@ import React from 'react'
 import { IMessageContent, IUser } from '@cc98/api'
 import dayjs from 'dayjs'
 import cn from 'classnames'
+import notice from 'src/utils/notice'
 import Button from 'src/components/Button'
-import { getRecentMessageByUserId } from 'src/service/message'
+import { getRecentMessageByUserId, sendMessage } from 'src/service/message'
 import { IMessageContentGroup, transformMessageToGroup } from 'src/pages/message/message/utils'
 import UbbContainer from 'src/ubb'
 
@@ -55,6 +56,8 @@ const RecentMessage: React.FC<IRecentMessageProps> = ({ targetUser, currentUser 
   const [loading, setLoading] = React.useState(false)
   const [isLoaded, setIsLoaded] = React.useState(false)
 
+  const [isSending, setIsSending] = React.useState(false)
+
   const [value, setValue] = React.useState('')
 
   const handleLoad = (init?: boolean) => {
@@ -83,6 +86,27 @@ const RecentMessage: React.FC<IRecentMessageProps> = ({ targetUser, currentUser 
         }
       }
     })
+  }
+
+  const handleSend = () => {
+    if (isSending) return
+    if (!value) return notice('请输入内容')
+
+    setIsSending(true)
+    sendMessage(targetUser.id, value)
+      .then(() => {
+        notice('发送成功')
+        setNeedScrollBottom(true)
+        setData([])
+        setLoading(false)
+        setIsLoaded(false)
+        setIsSending(false)
+        setValue('')
+        handleLoad(true)
+      })
+      .catch(() => {
+        setIsSending(false)
+      })
   }
 
   React.useEffect(() => {
@@ -118,7 +142,9 @@ const RecentMessage: React.FC<IRecentMessageProps> = ({ targetUser, currentUser 
           onChange={e => setValue(e.target.value)}
           placeholder="请输入要发送的私信内容"
         />
-        <Button primary>发送</Button>
+        <Button primary disabled={isSending} onClick={handleSend}>
+          发送
+        </Button>
       </div>
     </div>
   )

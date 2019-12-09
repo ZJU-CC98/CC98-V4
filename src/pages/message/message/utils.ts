@@ -18,11 +18,11 @@ export function transformMessageToGroup(data: IMessageContent[]): IMessageConten
     if (
       lastGroup &&
       prevMessage &&
-      new Date(time).getTime() - new Date(prevMessage.time).getTime() > 60000
+      new Date(prevMessage.time).getTime() - new Date(time).getTime() < 60000
     ) {
-      lastGroup.message.push(message)
+      lastGroup.message.unshift(message)
     } else {
-      res.push({
+      res.unshift({
         time,
         message: [message],
       })

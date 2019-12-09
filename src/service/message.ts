@@ -93,3 +93,15 @@ export const getRecentMessageByUserId = (userId: string | number, from: number, 
     needAuth: true,
   }) as Promise<IMessageContent[]>
 }
+
+export const sendMessage = (receiverId: number, content: string) => {
+  return axios({
+    url: '/message',
+    method: 'POST',
+    needAuth: true,
+    data: {
+      receiverId,
+      content,
+    },
+  }) as Promise<void>
+}
