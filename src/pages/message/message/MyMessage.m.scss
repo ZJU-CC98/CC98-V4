@@ -1,0 +1,10 @@
+@import 'var';
+
+.root {
+  background-color: $main-background-color;
+  display: flex;
+  margin-top: 42px;
+  border: 1px solid $border-color;
+  max-height: 670px;
+  height: 670px;
+}

@@ -65,6 +65,7 @@ const MessageSystem: React.FC<RouteComponentProps<IMessageSystemRouteMatch>> = (
         }}
         service={getMessageSystem}
         renderItem={item => <MessageSystemItem item={item} />}
+        showContentBackground
       />
     </>
   )

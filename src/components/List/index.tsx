@@ -1,5 +1,6 @@
 import React from 'react'
 import { noop } from 'lodash'
+import cn from 'classnames'
 import Pagination from 'src/components/Pagination'
 import Spin from 'src/components/Spin'
 
@@ -16,6 +17,7 @@ interface IListProps<T extends BaseProps> {
   pageSize?: number
   onPageChange?: (page: number) => void
   minHeight?: number
+  showContentBackground?: boolean
 }
 
 export default function List<T extends BaseProps>({
@@ -27,6 +29,7 @@ export default function List<T extends BaseProps>({
   pageSize = 10,
   onPageChange = noop,
   minHeight = 600,
+  showContentBackground = false,
 }: IListProps<T>) {
   const [data, setData] = React.useState<T[]>([])
   const [isLoaded, setIsLoaded] = React.useState(false)
@@ -50,7 +53,7 @@ export default function List<T extends BaseProps>({
 
   return (
     <div className={s.root}>
-      <div className={s.content} style={{ minHeight }}>
+      <div className={cn(s.content, { [s.white]: showContentBackground })} style={{ minHeight }}>
         {/* eslint-disable-next-line no-nested-ternary */}
         {loading ? (
           <Spin />

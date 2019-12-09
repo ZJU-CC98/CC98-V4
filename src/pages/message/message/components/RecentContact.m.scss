@@ -1,0 +1,70 @@
+@import 'var';
+
+.root {
+  width: 200px;
+  border-right: 1px solid $border-color;
+  font-size: 14px;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.title {
+  width: 100%;
+  color: #787878;
+  background-color: #f5faff;
+  border-bottom: 1px solid $border-color;
+  text-align: center;
+  line-height: 2.5;
+  margin: 0;
+  font-weight: normal;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px 10px;
+  cursor: pointer;
+  position: relative;
+
+  &:hover,
+  &.active {
+    background-color: whitesmoke;
+  }
+
+  &.unread::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: red;
+    right: 15px;
+  }
+
+  & + & {
+    border-top: 1px dashed $border-color;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .name,
+  .content {
+    max-width: 128px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .content {
+    font-size: 10px;
+    color: #999;
+    margin-top: 8px;
+  }
+}
