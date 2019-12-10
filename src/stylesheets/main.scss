@@ -23,6 +23,10 @@ textarea {
   border: solid 1px $border-color;
 }
 
+input[type='checkbox'] {
+  -webkit-appearance: checkbox;
+}
+
 p {
   margin: 0;
 }

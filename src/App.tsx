@@ -27,6 +27,7 @@ import UserCenter from 'src/pages/user-center/UserCenter'
 import User from 'src/pages/user-center/User'
 import SendTopic from 'src/pages/editor/send-topic/SendTopic'
 import EditPost from 'src/pages/editor/edit-post/EditPost'
+import SiteManage from 'src/pages/site-manage/SiteManage'
 import NotFound from 'src/components/Error/NotFound'
 
 const ErrorBoundary = process.env.NODE_ENV === 'production' ? ProdErrorBoundary : React.Fragment
@@ -65,6 +66,8 @@ export const App: React.FC = () => (
 
               <Route path="/editor/send-topic/:boardId" component={SendTopic} needLogOn />
               <Route path="/editor/edit-post/:postId" component={EditPost} needLogOn />
+
+              <Route path="/site-manage" component={SiteManage} />
 
               <Route path="*" component={NotFound} />
             </Switch>

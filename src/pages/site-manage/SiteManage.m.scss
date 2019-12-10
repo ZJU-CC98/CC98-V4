@@ -1,0 +1,16 @@
+@import 'var';
+
+.root {
+  background-color: $main-background-color;
+  padding: 16px;
+
+  hr {
+    margin: 16px -16px;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 36px;
+}

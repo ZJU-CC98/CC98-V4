@@ -10,6 +10,11 @@ import './stylesheets/main.scss'
 import App from 'src/App'
 import { initIndexedDb } from 'src/utils/indexedDb'
 
+// 处理遗留的 storage
+if (localStorage.getItem('version')) {
+  localStorage.clear()
+}
+
 // need top-level await
 initIndexedDb().finally(() => {
   const root = document.getElementById('app')
