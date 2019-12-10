@@ -13,6 +13,8 @@ import { getBoardTagData } from 'src/service/board'
 import { ITagGroup } from '@cc98/api'
 import Select from 'src/components/Select'
 
+import VoteEditor, { checkVoteInfo, DEFAULT_VOTE_INFO } from './VoteEditor'
+
 import s from './TopicEditor.m.scss'
 
 interface ITopicEditorProps {
@@ -52,6 +54,8 @@ const TopicEditor: React.FC<ITopicEditorProps> = ({ initTopic, boardId, buttonTe
   const [contentType, setContentType] = React.useState(initTopic.contentType)
   const [currentType, setType] = React.useState(initTopic.type)
   const [notifyPoster, setNotifyPoster] = React.useState(initTopic.notifyPoster)
+
+  const [voteInfo, setVoteInfo] = React.useState(DEFAULT_VOTE_INFO)
 
   const [boardTags, setBoardTags] = React.useState<ITagGroup[]>([])
   const [tag1, setTag1] = React.useState(initTopic.tag1)
@@ -108,6 +112,17 @@ const TopicEditor: React.FC<ITopicEditorProps> = ({ initTopic, boardId, buttonTe
       topic.tag2 = tag2
     }
 
+    if (initTopic.isVote) {
+      const info = checkVoteInfo(voteInfo)
+
+      if (info) {
+        notice(info)
+        return
+      }
+
+      topic.voteInfo = voteInfo
+    }
+
     setLoading(true)
     onEdit(topic).finally(() => {
       setLoading(false)
@@ -120,7 +135,12 @@ const TopicEditor: React.FC<ITopicEditorProps> = ({ initTopic, boardId, buttonTe
         <span className={s.label}>主题标题</span>
         {renderTagSelect(boardTags[0], tag1, setTag1)}
         {renderTagSelect(boardTags[1], tag2, setTag2)}
-        <input className={s.title} value={title} onChange={e => setTitle(e.target.value)} />
+        <input
+          className={s.input}
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          placeholder="请输入标题"
+        />
       </div>
       <div className={s.row}>
         <span className={s.label}>发帖类型</span>
@@ -139,6 +159,7 @@ const TopicEditor: React.FC<ITopicEditorProps> = ({ initTopic, boardId, buttonTe
           <span>接收消息提醒</span>
         </span>
       </div>
+      {!!initTopic.isVote && <VoteEditor voteInfo={voteInfo} onVoteInfoChange={setVoteInfo} />}
       <div className={cn(s.row, s.content)}>
         <span className={s.label}>主题内容</span>
       </div>
