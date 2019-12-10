@@ -1,5 +1,12 @@
 import axios from 'axios'
-import { IAdvertisement, IConfig, IDisplayTitle, IGlobalConfig, ITag } from '@cc98/api'
+import {
+  IAdvertisement,
+  IConfig,
+  IDisplayTitle,
+  IGlobalConfig,
+  IRecommendationReading,
+  ITag,
+} from '@cc98/api'
 import { getLocalStorage, setLocalStorage } from 'src/utils/storage'
 
 /**
@@ -54,4 +61,69 @@ export const getAllDisplayTitles = async () => {
   setLocalStorage('displayTitles', remoteDisplayTitles, 3600 * 24 * 10)
 
   return remoteDisplayTitles
+}
+
+export const changeSiteAnnouncement = (announcement: string) => {
+  return axios({
+    url: '/config/global/announcement',
+    method: 'PUT',
+    needAuth: true,
+    data: {
+      announcement,
+    },
+  }) as Promise<void>
+}
+
+export const clearHomePageCache = () => {
+  return axios({
+    url: '/config/index/update',
+    method: 'PUT',
+    needAuth: true,
+  }) as Promise<void>
+}
+
+export const getAllRecommendationReading = () => {
+  return axios({
+    url: '/index/column/recommandationreading/all',
+    needAuth: true,
+  }) as Promise<IRecommendationReading[]>
+}
+
+export const getAllRecommendationFunction = () => {
+  return axios({
+    url: '/index/column/recommandationfunction/all',
+    needAuth: true,
+  }) as Promise<IRecommendationReading[]>
+}
+
+export const getAllSchoolNews = () => {
+  return axios({
+    url: '/index/column/schoolnews/all',
+    needAuth: true,
+  }) as Promise<IRecommendationReading[]>
+}
+
+export const getAllADs = () => {
+  return axios({
+    url: '/config/global/advertisement/all',
+    needAuth: true,
+  }) as Promise<IRecommendationReading[]>
+}
+
+export const addManageItem = (data: Omit<IRecommendationReading, 'id'>) => {
+  return axios({
+    url: '/index/column/',
+    method: 'POST',
+    needAuth: true,
+    data,
+  }) as Promise<void>
+}
+
+export const updateManageItem = (id: number, data: IRecommendationReading) => {
+  return axios({
+    url: `/index/column/${id}`,
+    method: 'PUT',
+    needAuth: true,
+    data,
+  }) as Promise<void>
 }
