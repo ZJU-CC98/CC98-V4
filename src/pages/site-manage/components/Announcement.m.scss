@@ -1,0 +1,22 @@
+.title {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+
+  button {
+    margin-left: 12px;
+  }
+}
+
+.title-content {
+  font-size: 20px;
+}
+
+.textarea {
+  height: 168px;
+  resize: vertical;
+  width: 100%;
+  padding: 4px 12px;
+}

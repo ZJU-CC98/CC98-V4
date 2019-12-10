@@ -1,0 +1,61 @@
+@import 'var';
+
+.title {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 4px 32px;
+  margin-bottom: 16px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 14px;
+
+  &,
+  th,
+  td {
+    border: 1px solid $border-color;
+  }
+
+  td,
+  th {
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  input[type='text'],
+  input[type='number'] {
+    width: 100%;
+    line-height: 2;
+    border-radius: 4px;
+    padding: 0 4px;
+  }
+
+  .id {
+    width: 48px;
+  }
+
+  .type {
+    width: 96px;
+  }
+
+  .checkbox {
+    width: 64px;
+  }
+
+  .save {
+    width: 96px;
+  }
+}
+
+.pager {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}

@@ -26,5 +26,9 @@ declare module '@cc98/api' {
     time: string
 
     expiredTime: string
+
+    orderWeight: number
+
+    days?: string
   }
 }
