@@ -1373,10 +1373,10 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.15":
-  version "16.9.15"
-  resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.9.15.tgz#aeabb7a50f96c9e31a16079ada20ede9ed602977"
-  integrity sha1-rqu3pQ+WyeMaFgea2iDt6e1gKXc=
+"@types/react@*", "@types/react@^16.9.16":
+  version "16.9.16"
+  resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.9.16.tgz#4f12515707148b1f53a8eaa4341dae5dfefb066d"
+  integrity sha1-TxJRVwcUix9TqOqkNB2uXf77Bm0=
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
