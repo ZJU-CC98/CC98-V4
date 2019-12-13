@@ -3453,10 +3453,10 @@ css-animation@^1.3.2:
     babel-runtime "6.x"
     component-classes "^1.2.5"
 
-css-loader@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.npm.taobao.org/css-loader/download/css-loader-3.3.0.tgz#65f889807baec3197313965d6cda9899f936734d"
-  integrity sha1-ZfiJgHuuwxlzE5ZdbNqYmfk2c00=
+css-loader@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.npm.taobao.org/css-loader/download/css-loader-3.3.2.tgz#41b2086528aa4fbf8c0692e874bc14f081129b21"
+  integrity sha1-QbIIZSiqT7+MBpLodLwU8IESmyE=
   dependencies:
     camelcase "^5.3.1"
     cssesc "^3.0.0"
