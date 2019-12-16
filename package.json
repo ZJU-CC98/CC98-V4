@@ -49,7 +49,7 @@
     "draft-js": "^0.11.3",
     "event-emitter": "^0.3.5",
     "history": "^4.10.1",
-    "hls.js": "^0.12.4",
+    "hls.js": "^0.13.0",
     "immer": "^5.0.1",
     "lodash": "^4.17.15",
     "query-string": "^5.1.1",
