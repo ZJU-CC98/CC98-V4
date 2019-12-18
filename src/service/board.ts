@@ -9,7 +9,7 @@ export function getAllBoard(ignoreCache?: boolean) {
 }
 
 export function getBoardInfo(boardId: string | number, ignoreCache?: boolean) {
-  return axios({ needAuth: true, url: `/board/${boardId}`, ignoreCache }) as Promise<IBoard>
+  return axios({ withToken: true, url: `/board/${boardId}`, ignoreCache }) as Promise<IBoard>
 }
 
 export function searchBoard(keyword: string) {
@@ -22,7 +22,7 @@ export function searchBoard(keyword: string) {
 }
 
 export function getBoardTopTopicList(boardid: string | number) {
-  return axios({ url: '/topic/toptopics', params: { boardid }, needAuth: true }) as Promise<
+  return axios({ url: '/topic/toptopics', params: { boardid }, withToken: true }) as Promise<
     ITopic[]
   >
 }
@@ -34,7 +34,7 @@ export function getBoardTopicList(boardId: string | number, size: number, from: 
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<ITopic[]>
 }
 
@@ -45,7 +45,7 @@ export function getBoardBestTopicList(boardId: string | number, size: number, fr
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<{
     count: number
     topics: ITopic[]
@@ -59,7 +59,7 @@ export function getBoardSaveTopicList(boardId: string | number, size: number, fr
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<{
     count: number
     topics: ITopic[]
@@ -81,7 +81,7 @@ export function getBoardTopicByTag(
       tag1,
       tag2,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<{
     count: number
     topics: ITopic[]
@@ -89,14 +89,14 @@ export function getBoardTopicByTag(
 }
 
 export function getBoardTagData(boardId: string | number) {
-  return axios({ url: `/board/${boardId}/tag`, needAuth: true }) as Promise<ITagGroup[]>
+  return axios({ url: `/board/${boardId}/tag`, withToken: true }) as Promise<ITagGroup[]>
 }
 
 export function followBoard(boardId: number) {
   return axios({
     url: `/me/custom-board/${boardId}`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
   })
 }
 
@@ -104,7 +104,7 @@ export function unFollowBoard(boardId: number) {
   return axios({
     url: `/me/custom-board/${boardId}`,
     method: 'DELETE',
-    needAuth: true,
+    withToken: true,
   })
 }
 
@@ -116,7 +116,7 @@ export const searchBoardTopics = (boardId: string, keyword: string, from: number
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   })
 }
 
@@ -127,7 +127,7 @@ export const getBoardEvents = (boardId: string, from: number, size: number) => {
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<{
     boardEvents: IBoardEvent[]
     count: number
@@ -141,7 +141,7 @@ export const getBoardStopPostUsers = (boardId: string, from: number, size: numbe
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<IBoardStopPostUser[]>
 }
 
@@ -150,7 +150,7 @@ export const cancelBoardStopPostUser = (boardId: string | number, userId: number
   return axios({
     url: `/board/${boardId}/stop-post-user/${userId}`,
     method: 'DETELE',
-    needAuth: true,
+    withToken: true,
   }) as Promise<void>
 }
 
@@ -158,7 +158,7 @@ export const editBoardBigPaper = (boardId: string | number, bigPaper: string) =>
   return axios({
     url: `/board/${boardId}/big-paper`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: {
       content: bigPaper,
     },

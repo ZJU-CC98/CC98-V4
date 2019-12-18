@@ -4,7 +4,7 @@ declare module 'axios' {
   interface AxiosRequestConfig {
     ignoreCache?: boolean
 
-    needAuth?: boolean
+    withToken?: boolean
 
     silent?: boolean
   }

@@ -7,7 +7,7 @@ import LIKE_STATE from 'src/constants/LikeState'
 export const getPostLikeState = (postId: number) => {
   return axios({
     url: `/post/${postId}/like`,
-    needAuth: true,
+    withToken: true,
   }) as Promise<ILike>
 }
 
@@ -19,7 +19,7 @@ export const setPostLikeState = (postId: number, likeState: LIKE_STATE) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<void>
 }
 
@@ -34,7 +34,7 @@ export const atUsersInPost = (
       topicid: topicId,
       postid: postId,
     },
-    needAuth: true,
+    withToken: true,
     silent: true,
     method: 'POST',
     data: userNames,
@@ -44,7 +44,7 @@ export const atUsersInPost = (
 export const getPost = (postId: string) => {
   return axios({
     url: `/post/${postId}/original`,
-    needAuth: true,
+    withToken: true,
   }) as Promise<IPost>
 }
 
@@ -52,7 +52,7 @@ export const editPost = (postId: string, post: IPostParams | ITopicParams) => {
   return axios({
     url: `/post/${postId}`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: post,
   }) as Promise<void>
 }
@@ -64,7 +64,7 @@ export const getBasicPosts = (postIds: number[]) => {
 
   return axios({
     url: `/post/basic?${stringify({ id: postIds })}`,
-    needAuth: true,
+    withToken: true,
   }) as Promise<IBasicPost[]>
 }
 
@@ -76,7 +76,7 @@ export const ratePost = (postId: string | number, reason: string, value: number)
       reason,
       value,
     },
-    needAuth: true,
+    withToken: true,
     silent: true,
   })
 }
@@ -95,7 +95,7 @@ export const operatePost = (
     url: `/post/${postId}/operation`,
     method: 'POST',
     data: content,
-    needAuth: true,
+    withToken: true,
     silent: true,
   }) as Promise<void>
 }
@@ -104,7 +104,7 @@ export const deletePost = (postId: number, reason: string) => {
   return axios({
     url: `/post/${postId}`,
     method: 'DELETE',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
     },

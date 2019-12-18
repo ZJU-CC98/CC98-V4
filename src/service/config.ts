@@ -33,7 +33,7 @@ export const getAllTag = async () => {
 export const getGlobalConfig = () => {
   return axios({
     url: '/config/global',
-    needAuth: true,
+    withToken: true,
   }) as Promise<IGlobalConfig>
 }
 
@@ -67,7 +67,7 @@ export const changeSiteAnnouncement = (announcement: string) => {
   return axios({
     url: '/config/global/announcement',
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: {
       announcement,
     },
@@ -78,35 +78,35 @@ export const clearHomePageCache = () => {
   return axios({
     url: '/config/index/update',
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
   }) as Promise<void>
 }
 
 export const getAllRecommendationReading = () => {
   return axios({
     url: '/index/column/recommandationreading/all',
-    needAuth: true,
+    withToken: true,
   }) as Promise<IRecommendationReading[]>
 }
 
 export const getAllRecommendationFunction = () => {
   return axios({
     url: '/index/column/recommandationfunction/all',
-    needAuth: true,
+    withToken: true,
   }) as Promise<IRecommendationReading[]>
 }
 
 export const getAllSchoolNews = () => {
   return axios({
     url: '/index/column/schoolnews/all',
-    needAuth: true,
+    withToken: true,
   }) as Promise<IRecommendationReading[]>
 }
 
 export const getAllADs = () => {
   return axios({
     url: '/config/global/advertisement/all',
-    needAuth: true,
+    withToken: true,
   }) as Promise<IRecommendationReading[]>
 }
 
@@ -114,7 +114,7 @@ export const addManageItem = (data: Omit<IRecommendationReading, 'id'>) => {
   return axios({
     url: '/index/column/',
     method: 'POST',
-    needAuth: true,
+    withToken: true,
     data,
   }) as Promise<void>
 }
@@ -123,7 +123,7 @@ export const updateManageItem = (id: number, data: IRecommendationReading) => {
   return axios({
     url: `/index/column/${id}`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data,
   }) as Promise<void>
 }

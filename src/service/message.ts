@@ -11,7 +11,7 @@ import {
 export function getAllMessageCount() {
   return axios({
     url: '/me/unread-count',
-    needAuth: true,
+    withToken: true,
   }) as Promise<IMessageCount>
 }
 
@@ -22,7 +22,7 @@ export const getNotificationReply = (from: number, size: number) => {
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<INotificationReply[]>
 }
 
@@ -33,7 +33,7 @@ export const getNotificationAt = (from: number, size: number) => {
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<INotificationAt[]>
 }
 
@@ -44,7 +44,7 @@ export const getNotificationSystem = (from: number, size: number) => {
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<INotificationSystem[]>
 }
 
@@ -52,7 +52,7 @@ export const clearResponseNotification = () => {
   return axios({
     url: '/notification/read-all-reply',
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
   }) as Promise<void>
 }
 
@@ -60,7 +60,7 @@ export const clearAtNotification = () => {
   return axios({
     url: '/notification/read-all-at',
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
   }) as Promise<void>
 }
 
@@ -68,7 +68,7 @@ export const clearSystemNotification = () => {
   return axios({
     url: '/notification/read-all-system',
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
   }) as Promise<void>
 }
 
@@ -79,7 +79,7 @@ export const getRecentContact = (from: number, size: number) => {
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<IRecentMessage[]>
 }
 
@@ -90,7 +90,7 @@ export const getRecentMessageByUserId = (userId: string | number, from: number, 
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<IMessageContent[]>
 }
 
@@ -98,7 +98,7 @@ export const sendMessage = (receiverId: number, content: string) => {
   return axios({
     url: '/message',
     method: 'POST',
-    needAuth: true,
+    withToken: true,
     data: {
       receiverId,
       content,
