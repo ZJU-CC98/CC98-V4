@@ -4744,10 +4744,10 @@ find-cache-dir@^2.0.0, find-cache-dir@^2.1.0:
     make-dir "^2.0.0"
     pkg-dir "^3.0.0"
 
-find-cache-dir@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.npm.taobao.org/find-cache-dir/download/find-cache-dir-3.1.0.tgz#9935894999debef4cf9f677fdf646d002c4cdecb"
-  integrity sha1-mTWJSZnevvTPn2d/32RtACxM3ss=
+find-cache-dir@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.npm.taobao.org/find-cache-dir/download/find-cache-dir-3.2.0.tgz#e7fe44c1abc1299f516146e563108fd1006c1874"
+  integrity sha1-5/5EwavBKZ9RYUblYxCP0QBsGHQ=
   dependencies:
     commondir "^1.0.1"
     make-dir "^3.0.0"
@@ -10853,24 +10853,24 @@ terser-webpack-plugin@^1.4.3:
     webpack-sources "^1.4.0"
     worker-farm "^1.7.0"
 
-terser-webpack-plugin@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.npm.taobao.org/terser-webpack-plugin/download/terser-webpack-plugin-2.3.0.tgz#00fd8f792a330dc572e2e2b468fd7cb5ffd7ea51"
-  integrity sha1-AP2PeSozDcVy4uK0aP18tf/X6lE=
+terser-webpack-plugin@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.npm.taobao.org/terser-webpack-plugin/download/terser-webpack-plugin-2.3.1.tgz#6a63c27debc15b25ffd2588562ee2eeabdcab923"
+  integrity sha1-amPCfevBWyX/0liFYu4u6r3KuSM=
   dependencies:
     cacache "^13.0.1"
-    find-cache-dir "^3.1.0"
+    find-cache-dir "^3.2.0"
     jest-worker "^24.9.0"
     schema-utils "^2.6.1"
     serialize-javascript "^2.1.2"
     source-map "^0.6.1"
-    terser "^4.4.2"
+    terser "^4.4.3"
     webpack-sources "^1.4.3"
 
-terser@^4.1.2, terser@^4.3.9, terser@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.npm.taobao.org/terser/download/terser-4.4.2.tgz#448fffad0245f4c8a277ce89788b458bfd7706e8"
-  integrity sha1-RI//rQJF9Miid86JeItFi/13Bug=
+terser@^4.1.2, terser@^4.3.9, terser@^4.4.3:
+  version "4.4.3"
+  resolved "https://registry.npm.taobao.org/terser/download/terser-4.4.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fterser%2Fdownload%2Fterser-4.4.3.tgz#401abc52b88869cf904412503b1eb7da093ae2f0"
+  integrity sha1-QBq8UriIac+QRBJQOx632gk64vA=
   dependencies:
     commander "^2.20.0"
     source-map "~0.6.1"
