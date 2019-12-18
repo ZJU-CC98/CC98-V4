@@ -8,7 +8,7 @@ export function uploadFile(file: File) {
   return axios({
     url: '/file',
     method: 'POST',
-    needAuth: true,
+    withToken: true,
     data,
   }) as Promise<string[]>
 }
@@ -23,7 +23,7 @@ export function uploadFiles(files: FileList, compressImage = true) {
     params: {
       compressImage,
     },
-    needAuth: true,
+    withToken: true,
     method: 'POST',
     data,
   }) as Promise<string[]>

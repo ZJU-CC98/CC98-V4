@@ -14,7 +14,7 @@ export async function getMe(ignoreCache = false) {
 
   const me: IUser = await axios({
     url: '/me',
-    needAuth: true,
+    withToken: true,
   })
 
   setLocalStorage('userInfo', me, 3600)
@@ -25,7 +25,7 @@ export async function getMe(ignoreCache = false) {
 export const getUserById = (id: string | number, ignoreCache?: boolean) => {
   return axios({
     url: `/user/${id}`,
-    needAuth: true,
+    withToken: true,
     ignoreCache,
   }) as Promise<IUser>
 }
@@ -37,7 +37,7 @@ export const getUsersByIds = (id: number[], ignoreCache?: boolean) => {
 
   return axios({
     url: `/user?${stringify({ id })}`,
-    needAuth: true,
+    withToken: true,
     ignoreCache,
   }) as Promise<IUser[]>
 }
@@ -49,7 +49,7 @@ export const getUsersByNames = (name: string[]) => {
 
   return axios({
     url: `/user/name?${stringify({ name })}`,
-    needAuth: true,
+    withToken: true,
   }) as Promise<IUser[]>
 }
 
@@ -64,7 +64,7 @@ export async function setMyTheme(theme: THEME) {
     params: {
       id: theme,
     },
-    needAuth: true,
+    withToken: true,
   })
 }
 
@@ -77,7 +77,7 @@ export const transferWealth = (userNames: string[], wealth: number, reason: stri
       wealth,
       reason,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<string[]>
 }
 
@@ -89,7 +89,7 @@ export const getMyFollower = (from: number, size: number) => {
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<number[]>
 }
 
@@ -97,7 +97,7 @@ export const followUser = (userId: number | string) => {
   return axios({
     url: `/me/followee/${userId}`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
   }) as Promise<void>
 }
 
@@ -105,7 +105,7 @@ export const unFollowUser = (userId: number | string) => {
   return axios({
     url: `/me/followee/${userId}`,
     method: 'DELETE',
-    needAuth: true,
+    withToken: true,
   }) as Promise<void>
 }
 
@@ -117,7 +117,7 @@ export const getMyFollowee = (from: number, size: number) => {
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<number[]>
 }
 
@@ -128,7 +128,7 @@ export const getMyFavoriteTopics = (from: number, size: number) => {
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<ITopic[]>
 }
 
@@ -139,7 +139,7 @@ export const getMyRecentTopics = (from: number, size: number) => {
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<ITopic[]>
 }
 
@@ -152,7 +152,7 @@ export const getSignInInfo = async (ignoreCache = false) => {
 
   signInInfo = (await axios({
     url: '/me/signin',
-    needAuth: true,
+    withToken: true,
   })) as ISignIn
 
   setLocalStorage('signInInfo', signInInfo, (getTomorrowDate().getTime() - Date.now()) / 1000)
@@ -163,7 +163,7 @@ export const getSignInInfo = async (ignoreCache = false) => {
 export const signIn = (content: string) => {
   return axios({
     url: '/me/signin',
-    needAuth: true,
+    withToken: true,
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -175,7 +175,7 @@ export const signIn = (content: string) => {
 export const getUserRecentTopics = (userId: string | number, from: number, size: number) => {
   return axios({
     url: `/user/${userId}/recent-topic`,
-    needAuth: true,
+    withToken: true,
     params: {
       from,
       size,
@@ -187,7 +187,7 @@ export const editMyInfo = (info: IEditUserInfo) => {
   return axios({
     url: '/me',
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: info,
     silent: true,
   }) as Promise<void>
@@ -197,7 +197,7 @@ export const manageUser = (id: string | number, data: IUserOperation) => {
   return axios({
     url: `/user/${id}/operation`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data,
     silent: true,
   }) as Promise<void>
@@ -206,7 +206,7 @@ export const manageUser = (id: string | number, data: IUserOperation) => {
 export const deleteUserTopicByDay = (id: string | number, day: string) => {
   return axios({
     url: `/user/${id}/topic?days=${day}`,
-    needAuth: true,
+    withToken: true,
     method: 'DELETE',
     silent: true,
   }) as Promise<number>
@@ -215,7 +215,7 @@ export const deleteUserTopicByDay = (id: string | number, day: string) => {
 export const deleteUserPostByDay = (id: string | number, day: string) => {
   return axios({
     url: `/user/${id}/post?days=${day}`,
-    needAuth: true,
+    withToken: true,
     method: 'DELETE',
     silent: true,
   }) as Promise<number>
@@ -234,7 +234,7 @@ export const getUserRecentPostByDay = (
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<{
     count: number
     postInfos: IPost[]
@@ -249,6 +249,6 @@ export const changeAvatar = (url: string) => {
       'Content-Type': 'application/json',
     },
     data: url,
-    needAuth: true,
+    withToken: true,
   }) as Promise<void>
 }

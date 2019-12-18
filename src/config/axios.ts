@@ -38,7 +38,7 @@ axios.interceptors.response.use(res => {
 }, defaultAxiosErrorHandler)
 
 axios.interceptors.request.use(baseConfig => {
-  if (baseConfig.needAuth) {
+  if (baseConfig.withToken) {
     const accessToken = getLocalStorage('accessToken')
     const token = getLocalStorage('refreshToken')
 

@@ -120,6 +120,7 @@ const TopicEditor: React.FC<ITopicEditorProps> = ({ initTopic, boardId, buttonTe
         return
       }
 
+      topic.isVote = true
       topic.voteInfo = voteInfo
     }
 
