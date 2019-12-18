@@ -7,6 +7,6 @@ export const getBoardTodayRewardRecord = (boardId: string | number) => {
     params: {
       boardId,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<IBoardRewardInfo>
 }

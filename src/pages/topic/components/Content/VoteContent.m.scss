@@ -1,0 +1,80 @@
+.vote-content {
+  padding: 24px;
+  position: relative;
+  counter-reset: vote-item;
+}
+
+.vote-message {
+  position: absolute;
+  left: 50%;
+  padding: 16px;
+  background-color: #5198d8;
+  color: white;
+  border-radius: 8px;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  opacity: 0;
+}
+
+.vote-description {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  margin: 6px 0;
+  cursor: pointer;
+
+  input {
+    margin-right: 16px;
+  }
+}
+
+.vote-bar {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.vote-total {
+  display: inline-flex;
+  position: relative;
+  width: 320px;
+  background-color: gray;
+  border-radius: 16px;
+  height: 12px;
+  margin-left: 5px;
+  margin-right: 32px;
+}
+
+.vote-current {
+  position: absolute;
+  width: 10rem;
+  height: 12px;
+  border-radius: 16px;
+}
+
+.vote-info {
+  margin: 24px 0;
+  font-size: 12px;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+}
+
+.vote-items {
+  label::before {
+    counter-increment: vote-item;
+    content: counter(vote-item) '. ';
+  }
+}
+
+.vote-buttons button {
+  width: 80px;
+  height: 40px;
+  padding: 0;
+  line-height: 1;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-right: 16px;
+}

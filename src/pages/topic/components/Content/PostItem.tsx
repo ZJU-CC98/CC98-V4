@@ -8,17 +8,18 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons'
 import { checkCanEditPost, checkCanManagePost } from 'src/utils/permission'
 import IUserMap from 'src/types/IUserMap'
-
-import PostOperation from 'src/pages/topic/components/Content/PostOperation'
-
-import hotImg from 'src/assets/topic/hot.png'
-import s from 'src/pages/topic/components/Content/PostItem.m.scss'
 import { IMAGE_BASE_PATH } from 'src/constants/path'
 import UbbContainer from 'src/ubb'
 import UserAvatar from 'src/components/UserAvatar'
 import EDITOR_MODE from 'src/constants/EditorMode'
 import MarkdownContainer from 'src/components/Markdown/MarkdownContainer'
 import FollowButton from 'src/pages/user-center/components/FollowButton'
+
+import PostOperation from 'src/pages/topic/components/Content/PostOperation'
+import VoteContent from 'src/pages/topic/components/Content/VoteContent'
+
+import hotImg from 'src/assets/topic/hot.png'
+import s from 'src/pages/topic/components/Content/PostItem.m.scss'
 
 interface IPostItemProps {
   user?: IUser
@@ -111,8 +112,11 @@ const renderTopBar = (user?: IUser) => (
   </>
 )
 
-const renderContent = (post: IPost, userMap: IUserMap) => (
+const renderContent = (post: IPost, userMap: IUserMap, isLogin: boolean, topicInfo?: ITopic) => (
   <div className={s.content}>
+    {post.floor === 1 && !!topicInfo && topicInfo.isVote && (
+      <VoteContent isLogin={isLogin} topicInfo={topicInfo} />
+    )}
     <div>
       {/* eslint-disable-next-line no-nested-ternary */}
       {post.isDeleted ? (
@@ -202,7 +206,7 @@ const PostItem: React.FC<IPostItemProps> = ({
       )}
       <div className={s.contentRoot}>
         {renderTopBar(user)}
-        {renderContent(post, userMap)}
+        {renderContent(post, userMap, isLogin, topicInfo)}
         <PostOperation
           currentUser={currentUser}
           boardInfo={boardInfo}

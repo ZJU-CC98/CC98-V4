@@ -66,7 +66,7 @@ declare module '@cc98/api' {
     /**
      * 是否是投票
      */
-    isVote: false
+    isVote: boolean
 
     isPosterOnly: false
 

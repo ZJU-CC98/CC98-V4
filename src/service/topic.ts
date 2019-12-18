@@ -1,5 +1,5 @@
 import axios, { CancelToken } from 'axios'
-import { IBasicTopic, IPost, ITopic, ITopicIP, IVoteInfo } from '@cc98/api'
+import { IBasicTopic, IPost, ITopic, ITopicIP, IVoteInfo, IVoteResult } from '@cc98/api'
 import EDITOR_MODE from 'src/constants/EditorMode'
 import TOPIC_TYPE from 'src/constants/TopicType'
 import { stringify } from 'query-string'
@@ -7,21 +7,21 @@ import { stringify } from 'query-string'
 export const getTopicInfo = (topicId: string | number) => {
   return axios({
     url: `/topic/${topicId}`,
-    needAuth: true,
+    withToken: true,
   }) as Promise<ITopic>
 }
 
 export const getTopicIsFavorite = (topicId: string | number) => {
   return axios({
     url: `/topic/${topicId}/isfavorite`,
-    needAuth: true,
+    withToken: true,
   }) as Promise<boolean>
 }
 
 export const setTopicFavorite = (topicId: string | number) => {
   return axios({
     url: `/me/favorite/${topicId}`,
-    needAuth: true,
+    withToken: true,
     method: 'PUT',
   }) as Promise<void>
 }
@@ -29,7 +29,7 @@ export const setTopicFavorite = (topicId: string | number) => {
 export const removeTopicFavorite = (topicId: string | number) => {
   return axios({
     url: `/me/favorite/${topicId}`,
-    needAuth: true,
+    withToken: true,
     method: 'DELETE',
   }) as Promise<void>
 }
@@ -46,7 +46,7 @@ export const getTopicPostList = (
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
     cancelToken,
   }) as Promise<IPost[]>
 }
@@ -54,7 +54,7 @@ export const getTopicPostList = (
 export const getTopicTopPostList = (topicId: string | number, cancelToken?: CancelToken) => {
   return axios({
     url: `/Topic/${topicId}/hot-post`,
-    needAuth: true,
+    withToken: true,
     cancelToken,
   }) as Promise<IPost[]>
 }
@@ -117,7 +117,7 @@ export const getCustomBoardTopics = (from: number, size: number) => {
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   })
 }
 
@@ -129,7 +129,7 @@ export const searchTopics = (from: number, size: number, keyword: string) => {
       from,
       size,
     },
-    needAuth: true,
+    withToken: true,
   })
 }
 
@@ -171,7 +171,7 @@ export const postTopic = (boardId: string, topic: ITopicParams) => {
     url: `/board/${boardId}/topic`,
     method: 'POST',
     data: topic,
-    needAuth: true,
+    withToken: true,
   }) as Promise<string>
 }
 
@@ -179,7 +179,7 @@ export const replyTopic = (topicId: string, post: IPostParams) => {
   return axios({
     url: `/topic/${topicId}/post`,
     method: 'POST',
-    needAuth: true,
+    withToken: true,
     data: post,
     silent: true,
   }) as Promise<string>
@@ -192,7 +192,7 @@ export const getBasicTopics = (topicIds: number[]) => {
 
   return axios({
     url: `/topic/basic?${stringify({ id: topicIds })}`,
-    needAuth: true,
+    withToken: true,
   }) as Promise<IBasicTopic[]>
 }
 
@@ -204,7 +204,7 @@ export const lockTopics = (id: number[], reason: string, value: number) => {
       reason,
       value,
     },
-    needAuth: true,
+    withToken: true,
   }) as Promise<void>
 }
 
@@ -212,7 +212,7 @@ export const deleteTopics = (id: number[], reason: string) => {
   return axios({
     url: `/topic/multi-lock?${stringify({ id })}`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
     },
@@ -222,7 +222,7 @@ export const deleteTopics = (id: number[], reason: string) => {
 export const getTopicIPInfo = (topicId: string | number) => {
   return axios({
     url: `/topic/${topicId}/look-ip`,
-    needAuth: true,
+    withToken: true,
   }) as Promise<ITopicIP[]>
 }
 
@@ -230,7 +230,7 @@ export const lockTopic = (topicId: string | number, reason: string, days: number
   return axios({
     url: `/topic/${topicId}/lock`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
       value: days,
@@ -242,7 +242,7 @@ export const unlockTopic = (topicId: string | number, reason: string) => {
   return axios({
     url: `/topic/${topicId}/lock`,
     method: 'DELETE',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
     },
@@ -253,7 +253,7 @@ export const setTopicDisableHot = (topicId: string | number, reason: string) => 
   return axios({
     url: `/topic/${topicId}/not-hot`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
     },
@@ -264,7 +264,7 @@ export const cancelTopicDisableHot = (topicId: string | number, reason: string) 
   return axios({
     url: `/topic/${topicId}/not-hot`,
     method: 'DELETE',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
     },
@@ -275,7 +275,7 @@ export const deleteTopic = (topicId: string | number, reason: string) => {
   return axios({
     url: `/topic/${topicId}`,
     method: 'DELETE',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
     },
@@ -290,7 +290,7 @@ export const moveTopic = (
   return axios({
     url: `/topic/${topicId}/moveto/${targetBoardId}`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
     },
@@ -301,7 +301,7 @@ export const setTopicUp = (topicId: string | number, reason: string) => {
   return axios({
     url: `/topic/${topicId}/up`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
     },
@@ -312,7 +312,7 @@ export const setTopicToBoardTop = (topicId: string | number, reason: string, day
   return axios({
     url: `/topic/${topicId}/top`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: {
       topState: 2,
       reason,
@@ -325,7 +325,7 @@ export const setTopicToSiteTop = (topicId: string | number, reason: string, days
   return axios({
     url: `/topic/${topicId}/top`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: {
       topState: 4,
       reason,
@@ -338,7 +338,7 @@ export const cancelTopicTop = (topicId: string | number, reason: string) => {
   return axios({
     url: `/topic/${topicId}/top`,
     method: 'DELETE',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
     },
@@ -349,7 +349,7 @@ export const setTopicBest = (topicId: string | number, reason: string) => {
   return axios({
     url: `/topic/${topicId}/best`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
     },
@@ -360,7 +360,7 @@ export const cancelTopicBest = (topicId: string | number, reason: string) => {
   return axios({
     url: `/topic/${topicId}/best`,
     method: 'DELETE',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
     },
@@ -378,13 +378,31 @@ export const setTopicHighLight = (
   return axios({
     url: `/topic/${topicId}/highlight`,
     method: 'PUT',
-    needAuth: true,
+    withToken: true,
     data: {
       reason,
       duration: days,
       isBold,
       isItalic,
       color,
+    },
+  }) as Promise<void>
+}
+
+export const getVoteResult = (topicId: string | number) => {
+  return axios({
+    url: `/topic/${topicId}/vote`,
+    withToken: true,
+  }) as Promise<IVoteResult>
+}
+
+export const voteTopic = (topicId: string | number, items: number[]) => {
+  return axios({
+    url: `/topic/${topicId}/vote`,
+    method: 'POST',
+    withToken: true,
+    data: {
+      items,
     },
   }) as Promise<void>
 }
