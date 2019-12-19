@@ -5847,10 +5847,10 @@ ignore@^5.0.0, ignore@^5.1.1, ignore@^5.1.4:
   resolved "https://registry.npm.taobao.org/ignore/download/ignore-5.1.4.tgz#84b7b3dbe64552b6ef0eca99f6743dbec6d97adf"
   integrity sha1-hLez2+ZFUrbvDsqZ9nQ9vsbZet8=
 
-immer@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.npm.taobao.org/immer/download/immer-5.0.1.tgz#1a1184fa758f68f1b5573db840825fb5164cceca"
-  integrity sha1-GhGE+nWPaPG1Vz24QIJftRZMzso=
+immer@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.npm.taobao.org/immer/download/immer-5.0.2.tgz#34eb50c69abb8c04acd0f942244c5eefe62a4e4e"
+  integrity sha1-NOtQxpq7jASs0PlCJExe7+YqTk4=
 
 immutable@^3.8.1:
   version "3.8.2"
