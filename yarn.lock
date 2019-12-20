@@ -796,10 +796,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@cc98/react-ubb-editor@^2.2.4":
-  version "2.2.4"
-  resolved "https://registry.npm.taobao.org/@cc98/react-ubb-editor/download/@cc98/react-ubb-editor-2.2.4.tgz#d77902dc9c49a90b72ef77dfdfc52794b8d78611"
-  integrity sha1-13kC3JxJqQty73ff38UnlLjXhhE=
+"@cc98/react-ubb-editor@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.npm.taobao.org/@cc98/react-ubb-editor/download/@cc98/react-ubb-editor-2.3.0.tgz#e38cd33306b7cf44060c127147b935347fe059bd"
+  integrity sha1-44zTMwa3z0QGDBJxR7k1NH/gWb0=
   dependencies:
     "@emotion/cache" "^10.0.19"
     "@emotion/core" "^10.0.21"
