@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.7.6",
-    "@cc98/react-ubb-editor": "^2.3.0",
+    "@cc98/react-ubb-editor": "^2.3.1",
     "@cc98/ubb-core": "^1.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-regular-svg-icons": "^5.12.0",
