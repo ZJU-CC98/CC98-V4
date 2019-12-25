@@ -36,7 +36,7 @@ const FocusBoard: React.FC = () => {
   React.useEffect(() => {
     setData([])
   }, [currentBoardId])
-
+  /**/
   return (
     <>
       <div className={s.title}>
@@ -59,7 +59,7 @@ const FocusBoard: React.FC = () => {
               dispatch(push(`/board/${item}`))
             }}
           >
-            {boardMap[item]}
+            {boardMap[item]?.name}
           </Button>
         ))}
         <p className={s.info}>提示：单击版面标签可切换下方展示内容，双击可直接进入版面</p>
