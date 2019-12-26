@@ -10686,10 +10686,10 @@ stylelint-config-standard@^19.0.0:
   dependencies:
     stylelint-config-recommended "^3.0.0"
 
-stylelint@^12.0.0:
-  version "12.0.0"
-  resolved "https://registry.npm.taobao.org/stylelint/download/stylelint-12.0.0.tgz#2e8613675f7be11769ce474f45137fdf7751380a"
-  integrity sha1-LoYTZ1974RdpzkdPRRN/33dROAo=
+stylelint@^12.0.1:
+  version "12.0.1"
+  resolved "https://registry.npm.taobao.org/stylelint/download/stylelint-12.0.1.tgz#5b1f3bf7333320acce322b49852c8b85e94ce7e4"
+  integrity sha1-Wx879zMzIKzOMitJhSyLhelM5+Q=
   dependencies:
     autoprefixer "^9.7.1"
     balanced-match "^1.0.0"
