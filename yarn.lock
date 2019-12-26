@@ -9158,10 +9158,10 @@ react-router@5.1.2, react-router@^5.1.1:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-spinners@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.npm.taobao.org/react-spinners/download/react-spinners-0.7.1.tgz#5d659391bf3ba722750171bb02a3130034cad15d"
-  integrity sha1-XWWTkb87pyJ1AXG7AqMTADTK0V0=
+react-spinners@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.npm.taobao.org/react-spinners/download/react-spinners-0.7.2.tgz#0c3481c6d1c333b74a0a5b9a0d5dc4f80dc11094"
+  integrity sha1-DDSBxtHDM7dKCluaDV3E+A3BEJQ=
   dependencies:
     "@emotion/core" "^10.0.15"
 
