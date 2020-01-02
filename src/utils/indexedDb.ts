@@ -87,9 +87,9 @@ export function addItem(namespace: string, content: any, expirationTime: number)
   }) as Promise<any>
 }
 
-export function clearAll() {
+export async function clearAll() {
   if (!db) {
-    return Promise.reject(new Error('db not fount'))
+    await initIndexedDb()
   }
 
   cacheConfigs.forEach(({ namespace }) => {
@@ -97,4 +97,6 @@ export function clearAll() {
     const store = t.objectStore(namespace)
     store.clear()
   })
+
+  return Promise.resolve()
 }

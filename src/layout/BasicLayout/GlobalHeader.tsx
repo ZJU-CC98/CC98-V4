@@ -35,7 +35,7 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
   const { pathname } = useLocation()
 
   function logout() {
-    clearAll()
+    clearAll().catch(console.error)
     dispatch({
       type: GLOBAL_ACTION_TYPES.LOGOUT,
     })
