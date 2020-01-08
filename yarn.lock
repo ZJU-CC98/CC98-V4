@@ -5239,10 +5239,10 @@ history@^4.10.1, history@^4.9.0:
     tiny-warning "^1.0.0"
     value-equal "^1.0.1"
 
-hls.js@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.npm.taobao.org/hls.js/download/hls.js-0.13.0.tgz#c881825be293eedc922027aa5203eef2026aeb3a"
-  integrity sha1-yIGCW+KT7tySICeqUgPu8gJq6zo=
+hls.js@^0.13.1:
+  version "0.13.1"
+  resolved "https://registry.npm.taobao.org/hls.js/download/hls.js-0.13.1.tgz#371ae0754fea2ca9bc2c0b3279e4ca631c7a595a"
+  integrity sha1-NxrgdU/qLKm8LAsyeeTKYxx6WVo=
   dependencies:
     eventemitter3 "3.1.0"
     url-toolkit "^2.1.6"
