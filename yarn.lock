@@ -10214,16 +10214,16 @@ tryer@^1.0.1:
   resolved "https://registry.npm.taobao.org/tryer/download/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
   integrity sha1-8shUBoALmw90yfdGW4HqrSQSUvg=
 
-ts-node@^8.5.4:
-  version "8.5.4"
-  resolved "https://registry.npm.taobao.org/ts-node/download/ts-node-8.5.4.tgz?cache=0&sync_timestamp=1574976911050&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fts-node%2Fdownload%2Fts-node-8.5.4.tgz#a152add11fa19c221d0b48962c210cf467262ab2"
-  integrity sha1-oVKt0R+hnCIdC0iWLCEM9GcmKrI=
+ts-node@^8.6.0:
+  version "8.6.0"
+  resolved "https://registry.npm.taobao.org/ts-node/download/ts-node-8.6.0.tgz#347a5d2225b7bc2f617d40853e38f6507c39ce0a"
+  integrity sha1-NHpdIiW3vC9hfUCFPjj2UHw5zgo=
   dependencies:
     arg "^4.1.0"
     diff "^4.0.1"
     make-error "^1.1.1"
     source-map-support "^0.5.6"
-    yn "^3.0.0"
+    yn "^4.0.0"
 
 tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.10.0"
@@ -11137,7 +11137,7 @@ yargs@^7.0.0, yargs@^7.1.0:
     y18n "^3.2.1"
     yargs-parser "^5.0.0"
 
-yn@^3.0.0:
-  version "3.1.1"
-  resolved "https://registry.npm.taobao.org/yn/download/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
-  integrity sha1-HodAGgnXZ8HV6rJqbkwYUYLS61A=
+yn@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npm.taobao.org/yn/download/yn-4.0.0.tgz#611480051ea43b510da1dfdbe177ed159f00a979"
+  integrity sha1-YRSABR6kO1ENod/b4XftFZ8AqXk=
