@@ -1292,10 +1292,10 @@
   resolved "https://registry.npm.taobao.org/@types/minimist/download/@types/minimist-1.2.0.tgz#69a23a3ad29caf0097f06eda59b361ee2f0639f6"
   integrity sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
 
-"@types/node@*", "@types/node@^13.1.6":
-  version "13.1.6"
-  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-13.1.6.tgz?cache=0&sync_timestamp=1578586787558&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-13.1.6.tgz#076028d0b0400be8105b89a0a55550c86684ffec"
-  integrity sha1-B2Ao0LBAC+gQW4mgpVVQyGaE/+w=
+"@types/node@*", "@types/node@^13.1.7":
+  version "13.1.7"
+  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-13.1.7.tgz#db51d28b8dfacfe4fb2d0da88f5eb0a2eca00675"
+  integrity sha1-21HSi436z+T7LQ2oj16wouygBnU=
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
