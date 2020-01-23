@@ -8502,10 +8502,10 @@ react-dom@^16.10.2, react-dom@^16.12.0:
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
-react-hot-loader@*, react-hot-loader@^4.12.18:
-  version "4.12.18"
-  resolved "https://registry.npm.taobao.org/react-hot-loader/download/react-hot-loader-4.12.18.tgz#a9029e34af2690d76208f9a35189d73c2dfea6a7"
-  integrity sha1-qQKeNK8mkNdiCPmjUYnXPC3+pqc=
+react-hot-loader@*, react-hot-loader@^4.12.19:
+  version "4.12.19"
+  resolved "https://registry.npm.taobao.org/react-hot-loader/download/react-hot-loader-4.12.19.tgz#99a1c763352828f404fa51cd887c5e16bb5b74d1"
+  integrity sha1-maHHYzUoKPQE+lHNiHxeFrtbdNE=
   dependencies:
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
