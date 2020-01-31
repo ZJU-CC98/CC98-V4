@@ -1497,10 +1497,10 @@
   dependencies:
     "@types/webpack" "*"
 
-"@types/webpack-dev-server@^3.9.0":
-  version "3.9.0"
-  resolved "https://registry.npm.taobao.org/@types/webpack-dev-server/download/@types/webpack-dev-server-3.9.0.tgz#e31096477a88b0e54968cbc0d688dac9ba2c5442"
-  integrity sha1-4xCWR3qIsOVJaMvA1ojaybosVEI=
+"@types/webpack-dev-server@^3.10.0":
+  version "3.10.0"
+  resolved "https://registry.npm.taobao.org/@types/webpack-dev-server/download/@types/webpack-dev-server-3.10.0.tgz#5121ed285357b3b7463cac0d35e9b93819cf2167"
+  integrity sha1-USHtKFNXs7dGPKwNNem5OBnPIWc=
   dependencies:
     "@types/connect-history-api-fallback" "*"
     "@types/express" "*"
