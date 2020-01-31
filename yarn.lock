@@ -1242,10 +1242,10 @@
     "@types/relateurl" "*"
     "@types/uglify-js" "*"
 
-"@types/html-webpack-plugin@^3.2.1":
-  version "3.2.1"
-  resolved "https://registry.npm.taobao.org/@types/html-webpack-plugin/download/@types/html-webpack-plugin-3.2.1.tgz#d3401407261ec82cb0fc380df28e57c94e851e4d"
-  integrity sha1-00AUByYeyCyw/DgN8o5XyU6FHk0=
+"@types/html-webpack-plugin@^3.2.2":
+  version "3.2.2"
+  resolved "https://registry.npm.taobao.org/@types/html-webpack-plugin/download/@types/html-webpack-plugin-3.2.2.tgz#f552121f3c0a3972dda9a425de1e0029069b2907"
+  integrity sha1-9VISHzwKOXLdqaQl3h4AKQabKQc=
   dependencies:
     "@types/html-minifier" "*"
     "@types/tapable" "*"
