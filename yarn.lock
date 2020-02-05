@@ -1027,10 +1027,10 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@sentry/browser@^5.12.0":
-  version "5.12.0"
-  resolved "https://registry.npm.taobao.org/@sentry/browser/download/@sentry/browser-5.12.0.tgz#d2c5b683eca6d5489a2c5b237712a8c9de9d4427"
-  integrity sha1-0sW2g+ym1UiaLFsjdxKoyd6dRCc=
+"@sentry/browser@^5.12.1":
+  version "5.12.1"
+  resolved "https://registry.npm.taobao.org/@sentry/browser/download/@sentry/browser-5.12.1.tgz#dc1f268595269fb7277f55eb625c7e92d76dc01b"
+  integrity sha1-3B8mhZUmn7cnf1XrYlx+ktdtwBs=
   dependencies:
     "@sentry/core" "5.12.0"
     "@sentry/types" "5.12.0"
