@@ -1037,10 +1037,10 @@
     "@sentry/utils" "5.12.0"
     tslib "^1.9.3"
 
-"@sentry/cli@^1.50.0":
-  version "1.50.0"
-  resolved "https://registry.npm.taobao.org/@sentry/cli/download/@sentry/cli-1.50.0.tgz#724e47be46abd4ba14359d2b7f49372adf4f407c"
-  integrity sha1-ck5Hvkar1LoUNZ0rf0k3Kt9PQHw=
+"@sentry/cli@^1.51.0":
+  version "1.51.0"
+  resolved "https://registry.npm.taobao.org/@sentry/cli/download/@sentry/cli-1.51.0.tgz#2ce7d03b7aebf3f9e9a7186bac1a777fc3dc0e82"
+  integrity sha1-LOfQO3rr8/nppxhrrBp3f8PcDoI=
   dependencies:
     fs-copy-file-sync "^1.1.1"
     https-proxy-agent "^4.0.0"
