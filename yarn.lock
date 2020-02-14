@@ -1104,10 +1104,10 @@
   resolved "https://registry.npm.taobao.org/@types/anymatch/download/@types/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
   integrity sha1-M2utwb7sudrMOL6izzKt9ieoQho=
 
-"@types/autoprefixer@^9.6.1":
-  version "9.6.1"
-  resolved "https://registry.npm.taobao.org/@types/autoprefixer/download/@types/autoprefixer-9.6.1.tgz?cache=0&sync_timestamp=1567531778259&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fautoprefixer%2Fdownload%2F%40types%2Fautoprefixer-9.6.1.tgz#8bfaf43d18f5cd59a269b7a2364e690cadcdf210"
-  integrity sha1-i/r0PRj1zVmiabeiNk5pDK3N8hA=
+"@types/autoprefixer@^9.7.0":
+  version "9.7.0"
+  resolved "https://registry.npm.taobao.org/@types/autoprefixer/download/@types/autoprefixer-9.7.0.tgz#977a6249f03d7d09608cec18dc8d7917653a9163"
+  integrity sha1-l3piSfA9fQlgjOwY3I15F2U6kWM=
   dependencies:
     "@types/browserslist" "*"
     postcss "7.x.x"
