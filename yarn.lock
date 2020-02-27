@@ -8450,6 +8450,15 @@ rc-notification@^3.3.1:
     rc-animate "2.x"
     rc-util "^4.0.4"
 
+rc-notification@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npm.taobao.org/rc-notification/download/rc-notification-4.0.0.tgz#ffe59783d6738003972dde8b9658f1acd469cd2c"
+  integrity sha1-/+WXg9ZzgAOXLd6LlljxrNRpzSw=
+  dependencies:
+    classnames "2.x"
+    rc-animate "2.x"
+    rc-util "^4.0.4"
+
 rc-util@^4.0.4, rc-util@^4.8.0:
   version "4.13.0"
   resolved "https://registry.npm.taobao.org/rc-util/download/rc-util-4.13.0.tgz?cache=0&sync_timestamp=1570687257240&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frc-util%2Fdownload%2Frc-util-4.13.0.tgz#75682e50a934e7d32ada7ee48fc9f5b20fc0143f"
