@@ -984,15 +984,15 @@
   dependencies:
     prop-types "^15.5.10"
 
-"@hot-loader/react-dom@^16.11.0":
-  version "16.11.0"
-  resolved "https://registry.npm.taobao.org/@hot-loader/react-dom/download/@hot-loader/react-dom-16.11.0.tgz#c0b483923b289db5431516f56ee2a69448ebf9bd"
-  integrity sha1-wLSDkjsonbVDFRb1buKmlEjr+b0=
+"@hot-loader/react-dom@^16.12.0":
+  version "16.12.0"
+  resolved "https://registry.npm.taobao.org/@hot-loader/react-dom/download/@hot-loader/react-dom-16.12.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40hot-loader%2Freact-dom%2Fdownload%2F%40hot-loader%2Freact-dom-16.12.0.tgz#cd19598150ca9c482dc99f9389e1a60b341017f9"
+  integrity sha1-zRlZgVDKnEgtyZ+TieGmCzQQF/k=
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.17.0"
+    scheduler "^0.18.0"
 
 "@icons/material@^0.2.4":
   version "0.2.4"
@@ -9176,10 +9176,10 @@ sax@^1.2.4:
   resolved "https://registry.npm.taobao.org/sax/download/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha1-KBYjTiN4vdxOU1T6tcqold9xANk=
 
-scheduler@^0.17.0:
-  version "0.17.0"
-  resolved "https://registry.npm.taobao.org/scheduler/download/scheduler-0.17.0.tgz#7c9c673e4ec781fac853927916d1c426b6f3ddfe"
-  integrity sha1-fJxnPk7HgfrIU5J5FtHEJrbz3f4=
+scheduler@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.npm.taobao.org/scheduler/download/scheduler-0.18.0.tgz#5901ad6659bc1d8f3fdaf36eb7a67b0d6746b1c4"
+  integrity sha1-WQGtZlm8HY8/2vNut6Z7DWdGscQ=
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
