@@ -3290,10 +3290,10 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-cross-env@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.npm.taobao.org/cross-env/download/cross-env-7.0.0.tgz#5a3b2ddce51ec713ea58f2fb79ce22e65b4f5479"
-  integrity sha1-Wjst3OUexxPqWPL7ec4i5ltPVHk=
+cross-env@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.npm.taobao.org/cross-env/download/cross-env-7.0.1.tgz#c8e03412ea0e1370fe3f0066929a70b8e1e90c39"
+  integrity sha1-yOA0EuoOE3D+PwBmkppwuOHpDDk=
   dependencies:
     cross-spawn "^7.0.1"
 
