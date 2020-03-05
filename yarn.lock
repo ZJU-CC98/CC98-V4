@@ -18,18 +18,18 @@
     invariant "^2.2.4"
     semver "^5.5.0"
 
-"@babel/core@>=7.2.2", "@babel/core@^7.8.6":
-  version "7.8.6"
-  resolved "https://registry.npm.taobao.org/@babel/core/download/@babel/core-7.8.6.tgz?cache=0&sync_timestamp=1582812951297&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fcore%2Fdownload%2F%40babel%2Fcore-7.8.6.tgz#27d7df9258a45c2e686b6f18b6c659e563aa4636"
-  integrity sha1-J9ffklikXC5oa28YtsZZ5WOqRjY=
+"@babel/core@>=7.2.2", "@babel/core@^7.8.7":
+  version "7.8.7"
+  resolved "https://registry.npm.taobao.org/@babel/core/download/@babel/core-7.8.7.tgz#b69017d221ccdeb203145ae9da269d72cf102f3b"
+  integrity sha1-tpAX0iHM3rIDFFrp2iadcs8QLzs=
   dependencies:
     "@babel/code-frame" "^7.8.3"
-    "@babel/generator" "^7.8.6"
+    "@babel/generator" "^7.8.7"
     "@babel/helpers" "^7.8.4"
-    "@babel/parser" "^7.8.6"
+    "@babel/parser" "^7.8.7"
     "@babel/template" "^7.8.6"
     "@babel/traverse" "^7.8.6"
-    "@babel/types" "^7.8.6"
+    "@babel/types" "^7.8.7"
     convert-source-map "^1.7.0"
     debug "^4.1.0"
     gensync "^1.0.0-beta.1"
@@ -39,12 +39,12 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/generator@^7.8.6":
-  version "7.8.6"
-  resolved "https://registry.npm.taobao.org/@babel/generator/download/@babel/generator-7.8.6.tgz#57adf96d370c9a63c241cd719f9111468578537a"
-  integrity sha1-V635bTcMmmPCQc1xn5ERRoV4U3o=
+"@babel/generator@^7.8.6", "@babel/generator@^7.8.7":
+  version "7.8.7"
+  resolved "https://registry.npm.taobao.org/@babel/generator/download/@babel/generator-7.8.7.tgz?cache=0&sync_timestamp=1583373754640&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fgenerator%2Fdownload%2F%40babel%2Fgenerator-7.8.7.tgz#870b3cf7984f5297998152af625c4f3e341400f7"
+  integrity sha1-hws895hPUpeZgVKvYlxPPjQUAPc=
   dependencies:
-    "@babel/types" "^7.8.6"
+    "@babel/types" "^7.8.7"
     jsesc "^2.5.1"
     lodash "^4.17.13"
     source-map "^0.5.0"
@@ -271,10 +271,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.8.6":
-  version "7.8.6"
-  resolved "https://registry.npm.taobao.org/@babel/parser/download/@babel/parser-7.8.6.tgz#ba5c9910cddb77685a008e3c587af8d27b67962c"
-  integrity sha1-ulyZEM3bd2haAI48WHr40ntnliw=
+"@babel/parser@^7.8.6", "@babel/parser@^7.8.7":
+  version "7.8.7"
+  resolved "https://registry.npm.taobao.org/@babel/parser/download/@babel/parser-7.8.7.tgz#7b8facf95d25fef9534aad51c4ffecde1a61e26a"
+  integrity sha1-e4+s+V0l/vlTSq1RxP/s3hph4mo=
 
 "@babel/plugin-proposal-async-generator-functions@^7.8.3":
   version "7.8.3"
@@ -828,10 +828,10 @@
     globals "^11.1.0"
     lodash "^4.17.13"
 
-"@babel/types@^7.4", "@babel/types@^7.8.3", "@babel/types@^7.8.6":
-  version "7.8.6"
-  resolved "https://registry.npm.taobao.org/@babel/types/download/@babel/types-7.8.6.tgz#629ecc33c2557fcde7126e58053127afdb3e6d01"
-  integrity sha1-Yp7MM8JVf83nEm5YBTEnr9s+bQE=
+"@babel/types@^7.4", "@babel/types@^7.8.3", "@babel/types@^7.8.6", "@babel/types@^7.8.7":
+  version "7.8.7"
+  resolved "https://registry.npm.taobao.org/@babel/types/download/@babel/types-7.8.7.tgz#1fc9729e1acbb2337d5b6977a63979b4819f5d1d"
+  integrity sha1-H8lynhrLsjN9W2l3pjl5tIGfXR0=
   dependencies:
     esutils "^2.0.2"
     lodash "^4.17.13"
