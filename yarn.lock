@@ -797,7 +797,7 @@
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/plugin-transform-typescript" "^7.8.3"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.4.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.4.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
   version "7.8.7"
   resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.8.7.tgz#8fefce9802db54881ba59f90bb28719b4996324d"
   integrity sha1-j+/OmALbVIgbpZ+Quyhxm0mWMk0=
@@ -1037,14 +1037,14 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@sentry/browser@^5.13.0":
-  version "5.13.0"
-  resolved "https://registry.npm.taobao.org/@sentry/browser/download/@sentry/browser-5.13.0.tgz#399b0a09d6603726d787b746bcc70659010bc50c"
-  integrity sha1-OZsKCdZgNybXh7dGvMcGWQELxQw=
+"@sentry/browser@^5.13.2":
+  version "5.13.2"
+  resolved "https://registry.npm.taobao.org/@sentry/browser/download/@sentry/browser-5.13.2.tgz#fcca630c8c80447ba8392803d4e4450fd2231b92"
+  integrity sha1-/MpjDIyARHuoOSgD1ORFD9IjG5I=
   dependencies:
-    "@sentry/core" "5.13.0"
-    "@sentry/types" "5.12.4"
-    "@sentry/utils" "5.13.0"
+    "@sentry/core" "5.13.2"
+    "@sentry/types" "5.13.2"
+    "@sentry/utils" "5.13.2"
     tslib "^1.9.3"
 
 "@sentry/cli@^1.51.1":
@@ -1059,46 +1059,46 @@
     progress "2.0.0"
     proxy-from-env "^1.0.0"
 
-"@sentry/core@5.13.0":
-  version "5.13.0"
-  resolved "https://registry.npm.taobao.org/@sentry/core/download/@sentry/core-5.13.0.tgz#144beb2d48b53244774a7fd809f9b5b672920971"
-  integrity sha1-FEvrLUi1MkR3Sn/YCfm1tnKSCXE=
+"@sentry/core@5.13.2":
+  version "5.13.2"
+  resolved "https://registry.npm.taobao.org/@sentry/core/download/@sentry/core-5.13.2.tgz#d89e199beef612d0a01e5c4df4e0bb7efcb72c74"
+  integrity sha1-2J4Zm+72EtCgHlxN9OC7fvy3LHQ=
   dependencies:
-    "@sentry/hub" "5.13.0"
-    "@sentry/minimal" "5.13.0"
-    "@sentry/types" "5.12.4"
-    "@sentry/utils" "5.13.0"
+    "@sentry/hub" "5.13.2"
+    "@sentry/minimal" "5.13.2"
+    "@sentry/types" "5.13.2"
+    "@sentry/utils" "5.13.2"
     tslib "^1.9.3"
 
-"@sentry/hub@5.13.0":
-  version "5.13.0"
-  resolved "https://registry.npm.taobao.org/@sentry/hub/download/@sentry/hub-5.13.0.tgz#f48e3e4e273f40316391cd6190e22ea69cb20c7e"
-  integrity sha1-9I4+Tic/QDFjkc1hkOIuppyyDH4=
+"@sentry/hub@5.13.2":
+  version "5.13.2"
+  resolved "https://registry.npm.taobao.org/@sentry/hub/download/@sentry/hub-5.13.2.tgz#875a5ba983d6ada5caae5b6b4decd0257ef5cdb7"
+  integrity sha1-h1pbqYPWraXKrltrTezQJX71zbc=
   dependencies:
-    "@sentry/types" "5.12.4"
-    "@sentry/utils" "5.13.0"
+    "@sentry/types" "5.13.2"
+    "@sentry/utils" "5.13.2"
     tslib "^1.9.3"
 
-"@sentry/minimal@5.13.0":
-  version "5.13.0"
-  resolved "https://registry.npm.taobao.org/@sentry/minimal/download/@sentry/minimal-5.13.0.tgz#ee906191e3c2a1f7d0925fbfa0a4e96261013764"
-  integrity sha1-7pBhkePCoffQkl+/oKTpYmEBN2Q=
+"@sentry/minimal@5.13.2":
+  version "5.13.2"
+  resolved "https://registry.npm.taobao.org/@sentry/minimal/download/@sentry/minimal-5.13.2.tgz#e42e33dc74fc935f8857d1a43a528afd741640fd"
+  integrity sha1-5C4z3HT8k1+IV9GkOlKK/XQWQP0=
   dependencies:
-    "@sentry/hub" "5.13.0"
-    "@sentry/types" "5.12.4"
+    "@sentry/hub" "5.13.2"
+    "@sentry/types" "5.13.2"
     tslib "^1.9.3"
 
-"@sentry/types@5.12.4":
-  version "5.12.4"
-  resolved "https://registry.npm.taobao.org/@sentry/types/download/@sentry/types-5.12.4.tgz#6e52639bc3b4e136e9a0da5385890f8f78bb7697"
-  integrity sha1-blJjm8O04TbpoNpThYkPj3i7dpc=
+"@sentry/types@5.13.2":
+  version "5.13.2"
+  resolved "https://registry.npm.taobao.org/@sentry/types/download/@sentry/types-5.13.2.tgz#8e68c31f8fb99b4074374bff13ed01035b373d8c"
+  integrity sha1-jmjDH4+5m0B0N0v/E+0BA1s3PYw=
 
-"@sentry/utils@5.13.0":
-  version "5.13.0"
-  resolved "https://registry.npm.taobao.org/@sentry/utils/download/@sentry/utils-5.13.0.tgz#6463e53b6178dbbd3b90e671517cbca82744b055"
-  integrity sha1-ZGPlO2F42707kOZxUXy8qCdEsFU=
+"@sentry/utils@5.13.2":
+  version "5.13.2"
+  resolved "https://registry.npm.taobao.org/@sentry/utils/download/@sentry/utils-5.13.2.tgz#441594f4f9412bfd1690739ce986bf3a49687806"
+  integrity sha1-RBWU9PlBK/0WkHOc6Ya/OkloeAY=
   dependencies:
-    "@sentry/types" "5.12.4"
+    "@sentry/types" "5.13.2"
     tslib "^1.9.3"
 
 "@tippy.js/react@^2.2.3":
