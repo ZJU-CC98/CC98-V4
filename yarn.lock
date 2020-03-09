@@ -1135,10 +1135,10 @@
   resolved "https://registry.npm.taobao.org/@types/browserslist/download/@types/browserslist-4.4.0.tgz#e2a5f7f8c7e97afb39f50812a77e5230d3ca2353"
   integrity sha1-4qX3+Mfpevs59QgSp35SMNPKI1M=
 
-"@types/classnames@^2.2.9":
-  version "2.2.9"
-  resolved "https://registry.npm.taobao.org/@types/classnames/download/@types/classnames-2.2.9.tgz#d868b6febb02666330410fe7f58f3c4b8258be7b"
-  integrity sha1-2Gi2/rsCZmMwQQ/n9Y88S4JYvns=
+"@types/classnames@^2.2.10":
+  version "2.2.10"
+  resolved "https://registry.npm.taobao.org/@types/classnames/download/@types/classnames-2.2.10.tgz#cc658ca319b6355399efc1f5b9e818f1a24bf999"
+  integrity sha1-zGWMoxm2NVOZ78H1uegY8aJL+Zk=
 
 "@types/clean-css@*":
   version "4.2.1"
