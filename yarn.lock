@@ -1554,12 +1554,12 @@
     "@types/webpack-sources" "*"
     source-map "^0.6.0"
 
-"@typescript-eslint/eslint-plugin@^2.22.0":
-  version "2.22.0"
-  resolved "https://registry.npm.taobao.org/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-2.22.0.tgz#218ce6d4aa0244c6a40baba39ca1e021b26bb017"
-  integrity sha1-IYzm1KoCRMakC6ujnKHgIbJrsBc=
+"@typescript-eslint/eslint-plugin@^2.23.0":
+  version "2.23.0"
+  resolved "https://registry.npm.taobao.org/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-2.23.0.tgz#aa7133bfb7b685379d9eafe4ae9e08b9037e129d"
+  integrity sha1-qnEzv7e2hTednq/krp4IuQN+Ep0=
   dependencies:
-    "@typescript-eslint/experimental-utils" "2.22.0"
+    "@typescript-eslint/experimental-utils" "2.23.0"
     eslint-utils "^1.4.3"
     functional-red-black-tree "^1.0.1"
     regexpp "^3.0.0"
@@ -1572,6 +1572,15 @@
   dependencies:
     "@types/json-schema" "^7.0.3"
     "@typescript-eslint/typescript-estree" "2.22.0"
+    eslint-scope "^5.0.0"
+
+"@typescript-eslint/experimental-utils@2.23.0":
+  version "2.23.0"
+  resolved "https://registry.npm.taobao.org/@typescript-eslint/experimental-utils/download/@typescript-eslint/experimental-utils-2.23.0.tgz#5d2261c8038ec1698ca4435a8da479c661dc9242"
+  integrity sha1-XSJhyAOOwWmMpENajaR5xmHckkI=
+  dependencies:
+    "@types/json-schema" "^7.0.3"
+    "@typescript-eslint/typescript-estree" "2.23.0"
     eslint-scope "^5.0.0"
 
 "@typescript-eslint/parser@^2.22.0":
@@ -1588,6 +1597,19 @@
   version "2.22.0"
   resolved "https://registry.npm.taobao.org/@typescript-eslint/typescript-estree/download/@typescript-eslint/typescript-estree-2.22.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40typescript-eslint%2Ftypescript-estree%2Fdownload%2F%40typescript-eslint%2Ftypescript-estree-2.22.0.tgz#a16ed45876abf743e1f5857e2f4a1c3199fd219e"
   integrity sha1-oW7UWHar90Ph9YV+L0ocMZn9IZ4=
+  dependencies:
+    debug "^4.1.1"
+    eslint-visitor-keys "^1.1.0"
+    glob "^7.1.6"
+    is-glob "^4.0.1"
+    lodash "^4.17.15"
+    semver "^6.3.0"
+    tsutils "^3.17.1"
+
+"@typescript-eslint/typescript-estree@2.23.0":
+  version "2.23.0"
+  resolved "https://registry.npm.taobao.org/@typescript-eslint/typescript-estree/download/@typescript-eslint/typescript-estree-2.23.0.tgz#d355960fab96bd550855488dcc34b9a4acac8d36"
+  integrity sha1-01WWD6uWvVUIVUiNzDS5pKysjTY=
   dependencies:
     debug "^4.1.1"
     eslint-visitor-keys "^1.1.0"
