@@ -4119,10 +4119,10 @@ eslint-plugin-jsx-a11y@^6.2.3:
     has "^1.0.3"
     jsx-ast-utils "^2.2.1"
 
-eslint-plugin-react-hooks@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.npm.taobao.org/eslint-plugin-react-hooks/download/eslint-plugin-react-hooks-2.5.0.tgz?cache=0&sync_timestamp=1582749906685&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-react-hooks%2Fdownload%2Feslint-plugin-react-hooks-2.5.0.tgz#c50ab7ca5945ce6d1cf8248d9e185c80b54171b6"
-  integrity sha1-xQq3yllFzm0c+CSNnhhcgLVBcbY=
+eslint-plugin-react-hooks@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.npm.taobao.org/eslint-plugin-react-hooks/download/eslint-plugin-react-hooks-2.5.1.tgz?cache=0&sync_timestamp=1584647700057&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-react-hooks%2Fdownload%2Feslint-plugin-react-hooks-2.5.1.tgz#4ef5930592588ce171abeb26f400c7fbcbc23cd0"
+  integrity sha1-TvWTBZJYjOFxq+sm9ADH+8vCPNA=
 
 eslint-plugin-react@^7.19.0:
   version "7.19.0"
