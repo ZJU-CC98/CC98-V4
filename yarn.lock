@@ -1576,10 +1576,10 @@
     "@types/source-list-map" "*"
     source-map "^0.6.1"
 
-"@types/webpack@*", "@types/webpack@^4.41.7":
-  version "4.41.7"
-  resolved "https://registry.npm.taobao.org/@types/webpack/download/@types/webpack-4.41.7.tgz#22be27dbd4362b01c3954ca9b021dbc9328d9511"
-  integrity sha1-Ir4n29Q2KwHDlUypsCHbyTKNlRE=
+"@types/webpack@*", "@types/webpack@^4.41.8":
+  version "4.41.8"
+  resolved "https://registry.npm.taobao.org/@types/webpack/download/@types/webpack-4.41.8.tgz#d2244f5f612ee30230a5c8c4ae678bce90d27277"
+  integrity sha1-0iRPX2Eu4wIwpcjErmeLzpDScnc=
   dependencies:
     "@types/anymatch" "*"
     "@types/node" "*"
