@@ -10382,10 +10382,10 @@ tryer@^1.0.1:
   resolved "https://registry.npm.taobao.org/tryer/download/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
   integrity sha1-8shUBoALmw90yfdGW4HqrSQSUvg=
 
-ts-node@^8.7.0:
-  version "8.7.0"
-  resolved "https://registry.npm.taobao.org/ts-node/download/ts-node-8.7.0.tgz?cache=0&sync_timestamp=1584566198956&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fts-node%2Fdownload%2Fts-node-8.7.0.tgz#266186947596bef9f3a034687595b30e31b20976"
-  integrity sha1-JmGGlHWWvvnzoDRodZWzDjGyCXY=
+ts-node@^8.8.1:
+  version "8.8.1"
+  resolved "https://registry.npm.taobao.org/ts-node/download/ts-node-8.8.1.tgz#7c4d3e9ed33aa703b64b28d7f9d194768be5064d"
+  integrity sha1-fE0+ntM6pwO2SyjX+dGUdovlBk0=
   dependencies:
     arg "^4.1.0"
     diff "^4.0.1"
