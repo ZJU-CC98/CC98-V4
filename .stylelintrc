@@ -6,6 +6,7 @@
       "ignore": ["after-comment", "first-nested"]
     }],
     "at-rule-no-unknown": null,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "value-keyword-case": null
   }
 }
