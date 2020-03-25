@@ -67,7 +67,8 @@ const FollowButton: React.FC<IFollowButtonProps> = ({
         {
           [s.follow]: isFollowing,
         },
-        className
+        className,
+        buttonProps.className
       )}
       onClick={handleFollowButtonClick}
       onMouseEnter={handleFollowButtonMouseEnter}

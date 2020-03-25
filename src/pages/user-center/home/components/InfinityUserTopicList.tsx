@@ -13,7 +13,7 @@ interface IInfinityUserTopicListProps {
   service: (offset: number) => Promise<ITopic[]>
 }
 
-const renderTopicItem = ({ boardId, time, title }: ITopic, boardMap: IBoardMap) => (
+const renderTopicItem = ({ boardId, time, title, id }: ITopic, boardMap: IBoardMap) => (
   <div className={s.topic}>
     <p className={s.topicInfo}>
       <Link className={s.boardName} to={`/board/${boardId}`}>
@@ -21,7 +21,7 @@ const renderTopicItem = ({ boardId, time, title }: ITopic, boardMap: IBoardMap) 
       </Link>
       <span>{dayjs(time).format('YYYY-MM-DD HH:mm:ss')}</span>
     </p>
-    <p>{title}</p>
+    <Link to={`/topic/${id}`}>{title}</Link>
   </div>
 )
 
