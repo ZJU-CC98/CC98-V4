@@ -3856,10 +3856,10 @@ dplayer@^1.25.0:
     promise-polyfill "8.0.0"
     webpack-cli "3.0.4"
 
-draft-js@^0.11.4:
-  version "0.11.4"
-  resolved "https://registry.npm.taobao.org/draft-js/download/draft-js-0.11.4.tgz#e48782b96b90a5c14f2cb34c164c2a1a359d8a48"
-  integrity sha1-5IeCuWuQpcFPLLNMFkwqGjWdikg=
+draft-js@^0.11.5:
+  version "0.11.5"
+  resolved "https://registry.npm.taobao.org/draft-js/download/draft-js-0.11.5.tgz#b5dd30c30c9316801ab9766d45a8f88b1cd43b2c"
+  integrity sha1-td0wwwyTFoAauXZtRaj4ixzUOyw=
   dependencies:
     fbjs "^1.0.0"
     immutable "~3.7.4"
