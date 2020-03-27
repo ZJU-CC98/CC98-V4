@@ -46,7 +46,7 @@
     "css-vars-ponyfill": "^2.2.1",
     "dayjs": "^1.8.23",
     "dplayer": "^1.25.0",
-    "draft-js": "^0.11.4",
+    "draft-js": "^0.11.5",
     "event-emitter": "^0.3.5",
     "history": "^4.10.1",
     "hls.js": "^0.13.2",
