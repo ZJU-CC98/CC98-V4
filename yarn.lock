@@ -1472,10 +1472,10 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.26":
-  version "16.9.26"
-  resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.9.26.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact%2Fdownload%2F%40types%2Freact-16.9.26.tgz#1e55803e468f5393413e29033538cc9aaed6cec9"
-  integrity sha1-HlWAPkaPU5NBPikDNTjMmq7Wzsk=
+"@types/react@*", "@types/react@^16.9.27":
+  version "16.9.27"
+  resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.9.27.tgz#7fc5db99e3ec3f21735b44d3560cff684856814a"
+  integrity sha1-f8XbmePsPyFzW0TTVgz/aEhWgUo=
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -1612,7 +1612,7 @@
     "@types/source-list-map" "*"
     source-map "^0.6.1"
 
-"@types/webpack@*", "@types/webpack@^4.41.9":
+"@types/webpack@*", "@types/webpack@^4.41.8", "@types/webpack@^4.41.9":
   version "4.41.9"
   resolved "https://registry.npm.taobao.org/@types/webpack/download/@types/webpack-4.41.9.tgz?cache=0&sync_timestamp=1585491709571&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fwebpack%2Fdownload%2F%40types%2Fwebpack-4.41.9.tgz#f0ed8d46d69efe11573441f8eb112d934fc4efe9"
   integrity sha1-8O2NRtae/hFXNEH46xEtk0/E7+k=
