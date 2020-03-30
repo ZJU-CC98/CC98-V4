@@ -8632,10 +8632,10 @@ react-is@^16.6.0, react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1, react-is
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.10.2.tgz#984120fd4d16800e9a738208ab1fba422d23b5ab"
   integrity sha1-mEEg/U0WgA6ac4IIqx+6Qi0jtas=
 
-react-lazyload@^2.6.5:
-  version "2.6.5"
-  resolved "https://registry.npm.taobao.org/react-lazyload/download/react-lazyload-2.6.5.tgz#7a5ac001f0f8aeddc10c30e4ce318c10f13aa723"
-  integrity sha1-elrAAfD4rt3BDDDkzjGMEPE6pyM=
+react-lazyload@^2.6.6:
+  version "2.6.6"
+  resolved "https://registry.npm.taobao.org/react-lazyload/download/react-lazyload-2.6.6.tgz#3e1b0122b7b505cef88984b4ef5428b28dea1be9"
+  integrity sha1-PhsBIre1Bc74iYS071Qoso3qG+k=
 
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
