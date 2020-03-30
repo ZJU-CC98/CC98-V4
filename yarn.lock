@@ -1316,6 +1316,11 @@
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
+"@types/html-minifier-terser@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.npm.taobao.org/@types/html-minifier-terser/download/@types/html-minifier-terser-5.0.0.tgz#7532440c138605ced1b555935c3115ddd20e8bef"
+  integrity sha1-dTJEDBOGBc7RtVWTXDEV3dIOi+8=
+
 "@types/html-minifier@*":
   version "3.5.3"
   resolved "https://registry.npm.taobao.org/@types/html-minifier/download/@types/html-minifier-3.5.3.tgz#5276845138db2cebc54c789e0aaf87621a21e84f"
@@ -1498,10 +1503,10 @@
   resolved "https://registry.npm.taobao.org/@types/source-list-map/download/@types/source-list-map-0.1.2.tgz#0078836063ffaf17412349bba364087e0ac02ec9"
   integrity sha1-AHiDYGP/rxdBI0m7o2QIfgrALsk=
 
-"@types/tapable@*":
-  version "1.0.4"
-  resolved "https://registry.npm.taobao.org/@types/tapable/download/@types/tapable-1.0.4.tgz#b4ffc7dc97b498c969b360a41eee247f82616370"
-  integrity sha1-tP/H3Je0mMlps2CkHu4kf4JhY3A=
+"@types/tapable@*", "@types/tapable@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/@types/tapable/download/@types/tapable-1.0.5.tgz#9adbc12950582aa65ead76bffdf39fe0c27a3c02"
+  integrity sha1-mtvBKVBYKqZerXa//fOf4MJ6PAI=
 
 "@types/terser-webpack-plugin@^2.2.0":
   version "2.2.0"
@@ -5445,11 +5450,14 @@ html-tags@^3.1.0:
   resolved "https://registry.npm.taobao.org/html-tags/download/html-tags-3.1.0.tgz#7b5e6f7e665e9fb41f30007ed9e0d41e97fb2140"
   integrity sha1-e15vfmZen7QfMAB+2eDUHpf7IUA=
 
-html-webpack-plugin@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.npm.taobao.org/html-webpack-plugin/download/html-webpack-plugin-4.0.2.tgz#c96a48d0ee53d33dcc909d6b65ad28f3d627efd4"
-  integrity sha1-yWpI0O5T0z3MkJ1rZa0o89Yn79Q=
+html-webpack-plugin@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.npm.taobao.org/html-webpack-plugin/download/html-webpack-plugin-4.0.3.tgz#70659c8836210249cb6fa9dd6706a957547666d5"
+  integrity sha1-cGWciDYhAknLb6ndZwapV1R2ZtU=
   dependencies:
+    "@types/html-minifier-terser" "^5.0.0"
+    "@types/tapable" "^1.0.5"
+    "@types/webpack" "^4.41.8"
     html-minifier-terser "^5.0.1"
     loader-utils "^1.2.3"
     lodash "^4.17.15"
