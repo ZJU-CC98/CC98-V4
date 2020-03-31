@@ -1187,10 +1187,10 @@
   resolved "https://registry.npm.taobao.org/@types/anymatch/download/@types/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
   integrity sha1-M2utwb7sudrMOL6izzKt9ieoQho=
 
-"@types/autoprefixer@^9.7.1":
-  version "9.7.1"
-  resolved "https://registry.npm.taobao.org/@types/autoprefixer/download/@types/autoprefixer-9.7.1.tgz#1f0d5d943bcf7ac4ef79f9974c55e3c743027306"
-  integrity sha1-Hw1dlDvPesTvefmXTFXjx0MCcwY=
+"@types/autoprefixer@^9.7.2":
+  version "9.7.2"
+  resolved "https://registry.npm.taobao.org/@types/autoprefixer/download/@types/autoprefixer-9.7.2.tgz#64b3251c9675feef5a631b7dd34cfea50a8fdbcc"
+  integrity sha1-ZLMlHJZ1/u9aYxt900z+pQqP28w=
   dependencies:
     "@types/browserslist" "*"
     postcss "7.x.x"
