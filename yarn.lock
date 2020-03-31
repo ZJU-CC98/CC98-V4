@@ -1120,14 +1120,14 @@
     "@sentry/utils" "5.15.4"
     tslib "^1.9.3"
 
-"@sentry/cli@^1.52.0":
-  version "1.52.0"
-  resolved "https://registry.npm.taobao.org/@sentry/cli/download/@sentry/cli-1.52.0.tgz#bb59a00aa8f543154fb86314aba44ad1e34f92b6"
-  integrity sha1-u1mgCqj1QxVPuGMUq6RK0eNPkrY=
+"@sentry/cli@^1.52.1":
+  version "1.52.1"
+  resolved "https://registry.npm.taobao.org/@sentry/cli/download/@sentry/cli-1.52.1.tgz#1c216f2e4aa6a368081e88b20cb7518936724910"
+  integrity sha1-HCFvLkqmo2gIHoiyDLdRiTZySRA=
   dependencies:
     fs-copy-file-sync "^1.1.1"
     https-proxy-agent "^4.0.0"
-    mkdirp "^1.0.0"
+    mkdirp "^0.5.4"
     node-fetch "^2.1.2"
     progress "2.0.0"
     proxy-from-env "^1.0.0"
@@ -7131,17 +7131,12 @@ mixin-deep@^1.2.0:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
 
-"mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@^0.5.3:
+"mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@^0.5.3, mkdirp@^0.5.4:
   version "0.5.4"
   resolved "https://registry.npm.taobao.org/mkdirp/download/mkdirp-0.5.4.tgz#fd01504a6797ec5c9be81ff43d204961ed64a512"
   integrity sha1-/QFQSmeX7Fyb6B/0PSBJYe1kpRI=
   dependencies:
     minimist "^1.2.5"
-
-mkdirp@^1.0.0:
-  version "1.0.3"
-  resolved "https://registry.npm.taobao.org/mkdirp/download/mkdirp-1.0.3.tgz#4cf2e30ad45959dddea53ad97d518b6c8205e1ea"
-  integrity sha1-TPLjCtRZWd3epTrZfVGLbIIF4eo=
 
 move-concurrently@^1.0.1:
   version "1.0.1"
