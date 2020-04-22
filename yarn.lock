@@ -10027,10 +10027,10 @@ stylelint-config-standard@^20.0.0:
   dependencies:
     stylelint-config-recommended "^3.0.0"
 
-stylelint@^13.3.2:
-  version "13.3.2"
-  resolved "https://registry.npm.taobao.org/stylelint/download/stylelint-13.3.2.tgz#fbcb69a2452bc35de3eedd95b443449f92ab4107"
-  integrity sha1-+8tpokUrw13j7t2VtENEn5KrQQc=
+stylelint@^13.3.3:
+  version "13.3.3"
+  resolved "https://registry.npm.taobao.org/stylelint/download/stylelint-13.3.3.tgz#e267a628ebfc1adad6f5a1fe818724c34171402b"
+  integrity sha1-4memKOv8GtrW9aH+gYckw0FxQCs=
   dependencies:
     "@stylelint/postcss-css-in-js" "^0.37.1"
     "@stylelint/postcss-markdown" "^0.36.1"
