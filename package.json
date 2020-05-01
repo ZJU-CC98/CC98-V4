@@ -44,7 +44,7 @@
     "connected-react-router": "^6.6.1",
     "core-js": "^3.6.5",
     "css-vars-ponyfill": "^2.3.0",
-    "dayjs": "^1.8.25",
+    "dayjs": "^1.8.26",
     "dplayer": "^1.25.1",
     "draft-js": "^0.11.5",
     "event-emitter": "^0.3.5",
