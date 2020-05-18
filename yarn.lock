@@ -8422,10 +8422,10 @@ rc-notification@^3.3.1:
     rc-animate "2.x"
     rc-util "^4.0.4"
 
-rc-notification@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.npm.taobao.org/rc-notification/download/rc-notification-4.3.0.tgz#57b00e117417d28e7ee6b837ad9eb8b402e39fff"
-  integrity sha1-V7AOEXQX0o5+5rg3rZ64tALjn/8=
+rc-notification@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.npm.taobao.org/rc-notification/download/rc-notification-4.3.2.tgz#94d2a46d6797b5f0a4a852e2f991187f3885b9e5"
+  integrity sha1-lNKkbWeXtfCkqFLi+ZEYfziFueU=
   dependencies:
     classnames "2.x"
     rc-animate "3.x"
