@@ -1464,10 +1464,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-redux@^7.1.8":
-  version "7.1.8"
-  resolved "https://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-7.1.8.tgz#3631feb559f7858d6ad9eea1d6ef41fa64fe7205"
-  integrity sha1-NjH+tVn3hY1q2e6h1u9B+mT+cgU=
+"@types/react-redux@^7.1.9":
+  version "7.1.9"
+  resolved "https://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-7.1.9.tgz#280c13565c9f13ceb727ec21e767abe0e9b4aec3"
+  integrity sha1-KAwTVlyfE863J+wh52er4Om0rsM=
   dependencies:
     "@types/hoist-non-react-statics" "^3.3.0"
     "@types/react" "*"
