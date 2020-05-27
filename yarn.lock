@@ -1405,10 +1405,10 @@
   resolved "https://registry.npm.taobao.org/@types/json-schema/download/@types/json-schema-7.0.3.tgz?cache=0&sync_timestamp=1567561051189&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fjson-schema%2Fdownload%2F%40types%2Fjson-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
   integrity sha1-vf1p1h5GTcyBslFZwnDXWnPBpjY=
 
-"@types/lodash@^4.14.152":
-  version "4.14.152"
-  resolved "https://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.152.tgz#7e7679250adce14e749304cdb570969f77ec997c"
-  integrity sha1-fnZ5JQrc4U50kwTNtXCWn3fsmXw=
+"@types/lodash@^4.14.153":
+  version "4.14.153"
+  resolved "https://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.153.tgz#5cb7dded0649f1df97938ac5ffc4f134e9e9df98"
+  integrity sha1-XLfd7QZJ8d+Xk4rF/8TxNOnp35g=
 
 "@types/mime@*":
   version "2.0.1"
