@@ -10221,10 +10221,10 @@ terser-webpack-plugin@^1.4.3:
     webpack-sources "^1.4.0"
     worker-farm "^1.7.0"
 
-terser-webpack-plugin@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npm.taobao.org/terser-webpack-plugin/download/terser-webpack-plugin-3.0.1.tgz#31928c9330a582fb5ec6f90805337289b85cb8fe"
-  integrity sha1-MZKMkzClgvtexvkIBTNyibhcuP4=
+terser-webpack-plugin@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.npm.taobao.org/terser-webpack-plugin/download/terser-webpack-plugin-3.0.2.tgz?cache=0&sync_timestamp=1590501804742&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fterser-webpack-plugin%2Fdownload%2Fterser-webpack-plugin-3.0.2.tgz#fdc501c73847d8904f6a80c5009b11ee2d11b8eb"
+  integrity sha1-/cUBxzhH2JBPaoDFAJsR7i0RuOs=
   dependencies:
     cacache "^15.0.3"
     find-cache-dir "^3.3.1"
