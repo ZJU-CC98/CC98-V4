@@ -82,7 +82,7 @@
     "@babel/plugin-transform-runtime": "^7.10.0",
     "@babel/preset-env": "^7.10.0",
     "@babel/preset-react": "^7.10.0",
-    "@babel/preset-typescript": "^7.9.0",
+    "@babel/preset-typescript": "^7.10.1",
     "@sentry/cli": "^1.53.0",
     "@types/autoprefixer": "^9.7.2",
     "@types/classnames": "^2.2.10",
