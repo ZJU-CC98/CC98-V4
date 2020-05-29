@@ -3584,10 +3584,10 @@ date-now@^0.1.4:
   resolved "https://registry.npm.taobao.org/date-now/download/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
   integrity sha1-6vQ5/U1ISK105cx9vvIAZyueNFs=
 
-dayjs@^1.8.27:
-  version "1.8.27"
-  resolved "https://registry.npm.taobao.org/dayjs/download/dayjs-1.8.27.tgz#a8ae63ee990af28c05c430f0e160ae835a0fbbf8"
-  integrity sha1-qK5j7pkK8owFxDDw4WCug1oPu/g=
+dayjs@^1.8.28:
+  version "1.8.28"
+  resolved "https://registry.npm.taobao.org/dayjs/download/dayjs-1.8.28.tgz#37aa6201df483d089645cb6c8f6cef6f0c4dbc07"
+  integrity sha1-N6piAd9IPQiWRctsj2zvbwxNvAc=
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
   version "2.6.9"
