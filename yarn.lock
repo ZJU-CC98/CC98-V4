@@ -8524,10 +8524,10 @@ react-hot-loader@*, react-hot-loader@^4.12.21:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
-react-image-crop@^8.6.2:
-  version "8.6.2"
-  resolved "https://registry.npm.taobao.org/react-image-crop/download/react-image-crop-8.6.2.tgz#bac0963ab517cdfba42b3a091774de4c3f4f3ece"
-  integrity sha1-usCWOrUXzfukKzoJF3TeTD9PPs4=
+react-image-crop@^8.6.4:
+  version "8.6.4"
+  resolved "https://registry.npm.taobao.org/react-image-crop/download/react-image-crop-8.6.4.tgz#51289c22baf7d116575102e885f879af71376388"
+  integrity sha1-USicIrr30RZXUQLohfh5r3E3Y4g=
   dependencies:
     clsx "^1.0.4"
     core-js "^3.4.2"
