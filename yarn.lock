@@ -4201,10 +4201,10 @@ eslint-module-utils@^2.6.0:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
-eslint-plugin-import@^2.21.0:
-  version "2.21.0"
-  resolved "https://registry.npm.taobao.org/eslint-plugin-import/download/eslint-plugin-import-2.21.0.tgz?cache=0&sync_timestamp=1591573463763&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-import%2Fdownload%2Feslint-plugin-import-2.21.0.tgz#15cb42ba1db390068d67ed8d4810d817c952a6c8"
-  integrity sha1-FctCuh2zkAaNZ+2NSBDYF8lSpsg=
+eslint-plugin-import@^2.21.1:
+  version "2.21.1"
+  resolved "https://registry.npm.taobao.org/eslint-plugin-import/download/eslint-plugin-import-2.21.1.tgz#3398318e5e4abbd23395c4964ce61538705154c8"
+  integrity sha1-M5gxjl5Ku9IzlcSWTOYVOHBRVMg=
   dependencies:
     array-includes "^3.1.1"
     array.prototype.flat "^1.2.3"
