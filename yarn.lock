@@ -3912,10 +3912,10 @@ dot-case@^3.0.3:
     no-case "^3.0.3"
     tslib "^1.10.0"
 
-dplayer@^1.25.1:
-  version "1.25.1"
-  resolved "https://registry.npm.taobao.org/dplayer/download/dplayer-1.25.1.tgz#7b9929e55c7070eb8796414659afc323f0a73ed0"
-  integrity sha1-e5kp5VxwcOuHlkFGWa/DI/CnPtA=
+dplayer@^1.26.0:
+  version "1.26.0"
+  resolved "https://registry.npm.taobao.org/dplayer/download/dplayer-1.26.0.tgz#d366200b1962bd09e91226066f2aadea6f35c71b"
+  integrity sha1-02YgCxlivQnpEiYGbyqt6m81xxs=
   dependencies:
     axios "0.19.2"
     balloon-css "^1.0.3"
