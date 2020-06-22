@@ -8591,15 +8591,10 @@ react-image-crop@^8.6.4:
     core-js "^3.4.2"
     prop-types "^15.7.2"
 
-react-is@^16.12.0:
+react-is@^16.12.0, react-is@^16.6.0, react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.9.0:
   version "16.13.1"
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
-
-react-is@^16.6.0, react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.9.0:
-  version "16.10.2"
-  resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.10.2.tgz#984120fd4d16800e9a738208ab1fba422d23b5ab"
-  integrity sha1-mEEg/U0WgA6ac4IIqx+6Qi0jtas=
 
 react-lazyload@^2.6.8:
   version "2.6.8"
@@ -8663,10 +8658,10 @@ react-spinners@^0.8.3:
   dependencies:
     "@emotion/core" "^10.0.15"
 
-react-waypoint@^9.0.2:
-  version "9.0.2"
-  resolved "https://registry.npm.taobao.org/react-waypoint/download/react-waypoint-9.0.2.tgz#d65fb0fe6ff5c1b832a1d01b1462a661fb921e45"
-  integrity sha1-1l+w/m/1wbgyodAbFGKmYfuSHkU=
+react-waypoint@^9.0.3:
+  version "9.0.3"
+  resolved "https://registry.npm.taobao.org/react-waypoint/download/react-waypoint-9.0.3.tgz#176aa4686b33eb40d0d48d361c468f0367167958"
+  integrity sha1-F2qkaGsz60DQ1I02HEaPA2cWeVg=
   dependencies:
     consolidated-events "^1.1.0 || ^2.0.0"
     prop-types "^15.0.0"
