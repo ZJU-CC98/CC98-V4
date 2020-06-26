@@ -1504,12 +1504,13 @@
   resolved "https://registry.npm.taobao.org/@types/range-parser/download/@types/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
   integrity sha1-fuMwunyq+5gJC+zoal7kQRWQTCw=
 
-"@types/react-color@^3.0.2":
-  version "3.0.2"
-  resolved "https://registry.npm.taobao.org/@types/react-color/download/@types/react-color-3.0.2.tgz#41bc40f564eb058fb0822c1742438bcd0b823249"
-  integrity sha1-QbxA9WTrBY+wgiwXQkOLzQuCMkk=
+"@types/react-color@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.npm.taobao.org/@types/react-color/download/@types/react-color-3.0.3.tgz#cdd9d0ca1060f4cc7ca922978438573ed462c610"
+  integrity sha1-zdnQyhBg9Mx8qSKXhDhXPtRixhA=
   dependencies:
     "@types/react" "*"
+    "@types/reactcss" "*"
 
 "@types/react-dom@^16.9.8":
   version "16.9.8"
@@ -1573,6 +1574,13 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
+
+"@types/reactcss@*":
+  version "1.2.3"
+  resolved "https://registry.npm.taobao.org/@types/reactcss/download/@types/reactcss-1.2.3.tgz#af28ae11bbb277978b99d04d1eedfd068ca71834"
+  integrity sha1-ryiuEbuyd5eLmdBNHu39BoynGDQ=
+  dependencies:
+    "@types/react" "*"
 
 "@types/relateurl@*":
   version "0.2.28"
