@@ -9251,10 +9251,10 @@ sass-graph@2.2.5:
     scss-tokenizer "^0.2.3"
     yargs "^13.3.2"
 
-sass-loader@^9.0.1:
-  version "9.0.1"
-  resolved "https://registry.npm.taobao.org/sass-loader/download/sass-loader-9.0.1.tgz?cache=0&sync_timestamp=1593784573413&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsass-loader%2Fdownload%2Fsass-loader-9.0.1.tgz#8ae96ebb0e9debc3748064d32e43596719814c40"
-  integrity sha1-iuluuw6d68N0gGTTLkNZZxmBTEA=
+sass-loader@^9.0.2:
+  version "9.0.2"
+  resolved "https://registry.npm.taobao.org/sass-loader/download/sass-loader-9.0.2.tgz?cache=0&sync_timestamp=1594134394268&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsass-loader%2Fdownload%2Fsass-loader-9.0.2.tgz#847c9b4c95328ddc8c7d35cf28c9d6e54e59a90b"
+  integrity sha1-hHybTJUyjdyMfTXPKMnW5U5ZqQs=
   dependencies:
     klona "^1.1.1"
     loader-utils "^2.0.0"
