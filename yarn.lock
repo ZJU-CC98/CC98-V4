@@ -1332,10 +1332,10 @@
     "@types/vinyl-fs" "*"
     chokidar "^2.1.2"
 
-"@types/history@*", "@types/history@^4.7.5":
-  version "4.7.5"
-  resolved "https://registry.npm.taobao.org/@types/history/download/@types/history-4.7.5.tgz#527d20ef68571a4af02ed74350164e7a67544860"
-  integrity sha1-Un0g72hXGkrwLtdDUBZOemdUSGA=
+"@types/history@*", "@types/history@^4.7.7":
+  version "4.7.7"
+  resolved "https://registry.npm.taobao.org/@types/history/download/@types/history-4.7.7.tgz#613957d900fab9ff84c8dfb24fa3eef0c2a40896"
+  integrity sha1-YTlX2QD6uf+EyN+yT6Pu8MKkCJY=
 
 "@types/hls.js@^0.13.0":
   version "0.13.0"
