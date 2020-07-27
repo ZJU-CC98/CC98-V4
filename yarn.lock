@@ -8634,10 +8634,10 @@ react-mde@^8.3.0:
   resolved "https://registry.npm.taobao.org/react-mde/download/react-mde-8.3.0.tgz#46720863f15610a96d458220a0e9a8ae187f6ef5"
   integrity sha1-RnIIY/FWEKltRYIgoOmorhh/bvU=
 
-react-redux@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.npm.taobao.org/react-redux/download/react-redux-7.2.0.tgz#f970f62192b3981642fec46fd0db18a074fe879d"
-  integrity sha1-+XD2IZKzmBZC/sRv0NsYoHT+h50=
+react-redux@^7.2.1:
+  version "7.2.1"
+  resolved "https://registry.npm.taobao.org/react-redux/download/react-redux-7.2.1.tgz#8dedf784901014db2feca1ab633864dee68ad985"
+  integrity sha1-je33hJAQFNsv7KGrYzhk3uaK2YU=
   dependencies:
     "@babel/runtime" "^7.5.5"
     hoist-non-react-statics "^3.3.0"
