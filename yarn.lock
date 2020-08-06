@@ -6585,10 +6585,10 @@ kind-of@^6.0.3:
   resolved "https://registry.npm.taobao.org/kind-of/download/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha1-B8BQNKbDSfoG4k+jWqdttFgM5N0=
 
-klona@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.npm.taobao.org/klona/download/klona-1.1.1.tgz?cache=0&sync_timestamp=1593784548964&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fklona%2Fdownload%2Fklona-1.1.1.tgz#8b1e93808ef602a0cc4fb438ba72eb00594e9802"
-  integrity sha1-ix6TgI72AqDMT7Q4unLrAFlOmAI=
+klona@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npm.taobao.org/klona/download/klona-1.1.2.tgz#a79e292518a5a5412ec8d097964bff1571a64db0"
+  integrity sha1-p54pJRilpUEuyNCXlkv/FXGmTbA=
 
 known-css-properties@^0.19.0:
   version "0.19.0"
@@ -7341,10 +7341,10 @@ negotiator@0.6.2:
   resolved "https://registry.npm.taobao.org/negotiator/download/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha1-/qz3zPUlp3rpY0Q2pkiD/+yjRvs=
 
-neo-async@^2.5.0, neo-async@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.npm.taobao.org/neo-async/download/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
-  integrity sha1-rCetpmFn+ohJpq3dg39rGJrSCBw=
+neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.npm.taobao.org/neo-async/download/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
+  integrity sha1-tKr7k+OustgXTKU88WOrfXMIMF8=
 
 next-tick@^1.0.0:
   version "1.0.0"
@@ -9371,14 +9371,14 @@ sass-graph@2.2.5:
     scss-tokenizer "^0.2.3"
     yargs "^13.3.2"
 
-sass-loader@^9.0.2:
-  version "9.0.2"
-  resolved "https://registry.npm.taobao.org/sass-loader/download/sass-loader-9.0.2.tgz?cache=0&sync_timestamp=1594134394268&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsass-loader%2Fdownload%2Fsass-loader-9.0.2.tgz#847c9b4c95328ddc8c7d35cf28c9d6e54e59a90b"
-  integrity sha1-hHybTJUyjdyMfTXPKMnW5U5ZqQs=
+sass-loader@^9.0.3:
+  version "9.0.3"
+  resolved "https://registry.npm.taobao.org/sass-loader/download/sass-loader-9.0.3.tgz#086adcf0bfdcc9d920413e2cdc3ba3321373d547"
+  integrity sha1-CGrc8L/cydkgQT4s3DujMhNz1Uc=
   dependencies:
-    klona "^1.1.1"
+    klona "^1.1.2"
     loader-utils "^2.0.0"
-    neo-async "^2.6.1"
+    neo-async "^2.6.2"
     schema-utils "^2.7.0"
     semver "^7.3.2"
 
