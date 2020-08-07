@@ -8736,10 +8736,10 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.npm.taobao.org/react-lifecycles-compat/download/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha1-TxonOv38jzSIqMUWv9p4+HI1I2I=
 
-react-mde@^8.3.0:
-  version "8.3.0"
-  resolved "https://registry.npm.taobao.org/react-mde/download/react-mde-8.3.0.tgz#46720863f15610a96d458220a0e9a8ae187f6ef5"
-  integrity sha1-RnIIY/FWEKltRYIgoOmorhh/bvU=
+react-mde@^10.1.0:
+  version "10.1.0"
+  resolved "https://registry.npm.taobao.org/react-mde/download/react-mde-10.1.0.tgz#7771d1471027a02a40ff8d96de1df025f7c145de"
+  integrity sha1-d3HRRxAnoCpA/42W3h3wJffBRd4=
 
 react-redux@^7.2.1:
   version "7.2.1"
