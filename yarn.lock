@@ -1610,10 +1610,10 @@
   resolved "https://registry.npm.taobao.org/@types/tapable/download/@types/tapable-1.0.5.tgz#9adbc12950582aa65ead76bffdf39fe0c27a3c02"
   integrity sha1-mtvBKVBYKqZerXa//fOf4MJ6PAI=
 
-"@types/terser-webpack-plugin@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.npm.taobao.org/@types/terser-webpack-plugin/download/@types/terser-webpack-plugin-4.0.0.tgz#422b1c16d5836ddc31f432ab7cbe7dec33c558f1"
-  integrity sha1-QiscFtWDbdwx9DKrfL597DPFWPE=
+"@types/terser-webpack-plugin@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.npm.taobao.org/@types/terser-webpack-plugin/download/@types/terser-webpack-plugin-4.1.0.tgz#c1c195a19d1850153d5eda3e01b29df0701d0979"
+  integrity sha1-wcGVoZ0YUBU9Xto+AbKd8HAdCXk=
   dependencies:
     "@types/webpack" "*"
     terser "^4.6.13"
