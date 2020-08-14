@@ -51,7 +51,7 @@
     "history": "^4.10.1",
     "hls.js": "^0.14.8",
     "immer": "^7.0.7",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "query-string": "^5.1.1",
     "rc-notification": "^4.4.0",
     "react": "^16.13.1",
