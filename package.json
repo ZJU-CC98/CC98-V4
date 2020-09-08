@@ -129,7 +129,7 @@
     "file-loader": "^6.1.0",
     "gulp": "^4.0.2",
     "html-webpack-plugin": "^4.4.1",
-    "husky": "^4.2.5",
+    "husky": "^4.3.0",
     "lint-staged": "^10.3.0",
     "node-sass": "^4.14.1",
     "plugin-error": "^1.0.1",
