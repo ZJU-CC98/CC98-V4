@@ -103,7 +103,7 @@
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.5",
     "@types/showdown": "^1.9.3",
-    "@types/terser-webpack-plugin": "^4.1.0",
+    "@types/terser-webpack-plugin": "^4.2.0",
     "@types/url-parse": "^1.4.3",
     "@types/webpack": "^4.41.22",
     "@types/webpack-bundle-analyzer": "^3.8.0",
