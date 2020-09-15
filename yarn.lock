@@ -1190,10 +1190,10 @@
     "@sentry/utils" "5.19.1"
     tslib "^1.9.3"
 
-"@sentry/cli@^1.56.1":
-  version "1.56.1"
-  resolved "https://registry.npm.taobao.org/@sentry/cli/download/@sentry/cli-1.56.1.tgz#8fc5b78859f33ffb02a4f19a7a559573b90971bf"
-  integrity sha1-j8W3iFnzP/sCpPGaelWVc7kJcb8=
+"@sentry/cli@^1.57.0":
+  version "1.57.0"
+  resolved "https://registry.npm.taobao.org/@sentry/cli/download/@sentry/cli-1.57.0.tgz#87237ec6b77cb7582f018b580e9bb9481a809baa"
+  integrity sha1-hyN+xrd8t1gvAYtYDpu5SBqAm6o=
   dependencies:
     https-proxy-agent "^5.0.0"
     mkdirp "^0.5.5"
