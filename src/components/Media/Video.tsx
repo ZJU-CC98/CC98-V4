@@ -8,7 +8,7 @@ async function loadPlayer(isHLS: boolean) {
   }
 
   // @ts-ignore
-  await import('dplayer/dist/DPlayer.min.css')
+  // await import('dplayer/dist/DPlayer.min.css')
 
   // @ts-ignore
   const DPlayer = await import('dplayer')

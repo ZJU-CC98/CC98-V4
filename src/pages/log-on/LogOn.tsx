@@ -80,6 +80,7 @@ const LogOn: React.FC<RouteComponentProps> = ({ history }) => {
 
         setFormInfo('登录成功 正在返回')
 
+        // eslint-disable-next-line no-console
         clearAll().catch(console.error)
 
         dispatch({

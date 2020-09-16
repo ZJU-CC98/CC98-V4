@@ -10,12 +10,12 @@ export default function getCssLoaders(isModule: boolean) {
     {
       loader: 'css-loader',
       options: {
-        modules: isModule
-          ? {
-              localIdentName: isDev ? '[name]_[local]_[hash:base64:5]' : '[hash:base64:5]',
-            }
-          : false,
-        localsConvention: isModule ? 'camelCase' : undefined,
+        modules: {
+          auto: () => isModule,
+          localIdentName: isDev ? '[name]_[local]_[hash:base64:5]' : '[hash:base64:5]',
+          // namedExport: true,
+          // exportLocalsConvention: 'camelCaseOnly',
+        },
       },
     },
     {

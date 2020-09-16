@@ -101,7 +101,7 @@ const VoteEditor: React.FC<IVoteEditorProps> = ({ voteInfo, onVoteInfoChange }) 
             placeholder="请输入选项内容，不能为空，最多50个字符"
           />
           {voteInfo.voteItems.length > 2 && (
-            <span onClick={makeHandleDelete(index)} className={s.delete}>
+            <span onClick={makeHandleDelete(index)} className={s.deleteIcon}>
               <Icon icon={faTimes} />
             </span>
           )}

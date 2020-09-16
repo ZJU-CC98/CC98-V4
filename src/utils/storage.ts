@@ -42,6 +42,7 @@ export function getLocalStorage<T = any>(key: string): T | undefined {
       localStorage.removeItem(key)
 
       if (key === 'refreshToken') {
+        // eslint-disable-next-line no-console
         clearAll().catch(console.error)
       }
 
