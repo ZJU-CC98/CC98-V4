@@ -18,7 +18,7 @@ export default class ErrorBoundary extends React.Component<{}, IErrorBoundarySta
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     Sentry.withScope(scope => {
-      scope.setExtras(errorInfo)
+      scope.setExtras(errorInfo as any)
       const eventId = Sentry.captureException(error)
       this.setState({ eventId })
     })
