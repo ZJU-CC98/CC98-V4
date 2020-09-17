@@ -26,12 +26,14 @@ const config = merge({}, commonConfig, {
   },
 
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: 'public',
-        to: '.',
-      },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'public',
+          to: '.',
+        },
+      ],
+    }),
 
     new webpack.SourceMapDevToolPlugin({
       test: [/\.[tj]sx?$/],
