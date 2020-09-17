@@ -30,7 +30,8 @@
     "no-use-before-define": [0],
     "@typescript-eslint/no-use-before-define": ["error", { "functions": false }],
     "no-shadow": "off",
-    "no-undef": "off"
+    "no-undef": "off",
+    "react/require-default-props": "off"
   },
   "settings": {
     "import/resolver": {
