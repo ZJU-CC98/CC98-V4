@@ -1,6 +1,7 @@
 /*
  * 类型工具函数
  */
+import React from 'react'
 import { Action } from 'redux'
 import { ThunkAction } from 'redux-thunk'
 import { RootStore } from '../store'

@@ -16,7 +16,6 @@
     "import/prefer-default-export": "off",
     "react/jsx-filename-extension": "off",
     "import/no-unresolved": "off",
-    "no-use-before-define": ["error", { "functions": false }],
     "react/prop-types": "off",
     "import/export": "off",
     "consistent-return": "off",
@@ -27,7 +26,12 @@
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "react/state-in-constructor": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "no-use-before-define": [0],
+    "@typescript-eslint/no-use-before-define": ["error", { "functions": false }],
+    "no-shadow": "off",
+    "no-undef": "off",
+    "react/require-default-props": "off"
   },
   "settings": {
     "import/resolver": {

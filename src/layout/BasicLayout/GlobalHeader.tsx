@@ -35,6 +35,7 @@ const GlobalHeader: React.FC<{ isHome: boolean }> = ({ isHome }) => {
   const { pathname } = useLocation()
 
   function logout() {
+    // eslint-disable-next-line no-console
     clearAll().catch(console.error)
     dispatch({
       type: GLOBAL_ACTION_TYPES.LOGOUT,
