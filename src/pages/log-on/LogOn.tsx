@@ -80,7 +80,7 @@ const LogOn: React.FC<RouteComponentProps> = ({ history }) => {
 
         setFormInfo('登录成功 正在返回')
 
-        clearAll()
+        clearAll().catch(console.error)
 
         dispatch({
           type: GLOBAL_ACTION_TYPES.LOGIN_AND_SET_CURRENT_USER,

@@ -42,7 +42,7 @@ export function getLocalStorage<T = any>(key: string): T | undefined {
       localStorage.removeItem(key)
 
       if (key === 'refreshToken') {
-        clearAll()
+        clearAll().catch(console.error)
       }
 
       return

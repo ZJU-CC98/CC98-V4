@@ -57,11 +57,15 @@ $award-border-color: #eaeaea;
 
 .user-action {
   display: inline-flex;
+  align-items: center;
   padding: 2px 6px;
   margin: 0 8px;
+  height: 24px;
   font-size: 14px;
   border-radius: 1em;
   border: 1px solid $text-color-primary;
+  background-color: $primary;
+  color: $text-color-primary;
 }
 
 .content-root {

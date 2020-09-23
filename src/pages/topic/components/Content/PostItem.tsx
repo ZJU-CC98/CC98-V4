@@ -71,7 +71,7 @@ const renderUser = (
         {!post.isAnonymous && !post.isDeleted && isLogin && (
           <p>
             <FollowButton
-              buttonProps={{ border: true }}
+              buttonProps={{ className: s.userAction }}
               userId={user.id}
               initIsFollowing={user.isFollowing}
               followingText="取关"

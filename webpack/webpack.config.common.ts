@@ -33,6 +33,24 @@ const config: webpack.Configuration = {
         options: babelConfig,
       },
       {
+        test: /url-regex/,
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: {
+                  esmodules: false,
+                },
+                useBuiltIns: 'entry',
+                corejs: 3,
+              },
+            ],
+          ],
+        },
+      },
+      {
         test: /\.m\.scss$/,
         use: getCssLoaders(true),
       },
