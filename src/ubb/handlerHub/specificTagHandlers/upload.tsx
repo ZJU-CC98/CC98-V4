@@ -1,6 +1,5 @@
 import { ITagHandler } from '@cc98/ubb-core'
 import React from 'react'
-import { getTagDataByIndex } from 'src/ubb/utils'
 import Button from 'src/components/Button'
 import img from './img'
 
@@ -8,7 +7,7 @@ const handler: ITagHandler<React.ReactNode> = {
   isRecursive: false,
 
   render(node, context) {
-    const uploadType = getTagDataByIndex(node, 0)
+    const uploadType = node.tagData.upload
 
     switch (uploadType) {
       case 'jpg':

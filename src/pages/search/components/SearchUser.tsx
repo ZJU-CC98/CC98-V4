@@ -25,7 +25,7 @@ const SearchUser: React.FC<ISearchUserProps> = ({ keyword }) => {
   React.useEffect(() => {
     getUserByName(keyword)
       .then(user => {
-        dispatch(push(`/user/id/${user.id}`))
+        dispatch(push(`/user/${user.id}`))
       })
       .catch(() => {
         setIsNotFound(true)
