@@ -1371,14 +1371,14 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/gulp@^4.0.6":
-  version "4.0.6"
-  resolved "https://registry.npm.taobao.org/@types/gulp/download/@types/gulp-4.0.6.tgz#68fe0e1f0ff3657cfca46fb564806b744a1bf899"
-  integrity sha1-aP4OHw/zZXz8pG+1ZIBrdEob+Jk=
+"@types/gulp@^4.0.7":
+  version "4.0.7"
+  resolved "https://registry.npm.taobao.org/@types/gulp/download/@types/gulp-4.0.7.tgz#cf3928fc4d351284453e876b560ed271bababad5"
+  integrity sha1-zzko/E01EoRFPodrVg7Scbq6utU=
   dependencies:
     "@types/undertaker" "*"
     "@types/vinyl-fs" "*"
-    chokidar "^2.1.2"
+    chokidar "^3.3.1"
 
 "@types/history@*", "@types/history@^4.7.8":
   version "4.7.8"
@@ -3015,7 +3015,7 @@ check-types@^8.0.3:
   resolved "https://registry.npm.taobao.org/check-types/download/check-types-8.0.3.tgz#3356cca19c889544f2d7a95ed49ce508a0ecf552"
   integrity sha1-M1bMoZyIlUTy16le1JzlCKDs9VI=
 
-chokidar@^2.0.0, chokidar@^2.1.2, chokidar@^2.1.8:
+chokidar@^2.0.0, chokidar@^2.1.8:
   version "2.1.8"
   resolved "https://registry.npm.taobao.org/chokidar/download/chokidar-2.1.8.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fchokidar%2Fdownload%2Fchokidar-2.1.8.tgz#804b3a7b6a99358c3c5c61e71d8728f041cff917"
   integrity sha1-gEs6e2qZNYw8XGHnHYco8EHP+Rc=
@@ -3034,10 +3034,10 @@ chokidar@^2.0.0, chokidar@^2.1.2, chokidar@^2.1.8:
   optionalDependencies:
     fsevents "^1.2.7"
 
-chokidar@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.npm.taobao.org/chokidar/download/chokidar-3.4.1.tgz?cache=0&sync_timestamp=1594865209685&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fchokidar%2Fdownload%2Fchokidar-3.4.1.tgz#e905bdecf10eaa0a0b1db0c664481cc4cbc22ba1"
-  integrity sha1-6QW97PEOqgoLHbDGZEgcxMvCK6E=
+chokidar@^3.3.1, chokidar@^3.4.1:
+  version "3.4.2"
+  resolved "https://registry.npm.taobao.org/chokidar/download/chokidar-3.4.2.tgz#38dc8e658dec3809741eb3ef7bb0a47fe424232d"
+  integrity sha1-ONyOZY3sOAl0HrPve7Ckf+QkIy0=
   dependencies:
     anymatch "~3.1.1"
     braces "~3.0.2"
