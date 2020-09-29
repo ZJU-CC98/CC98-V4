@@ -1107,7 +1107,7 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fortawesome/fontawesome-common-types@^0.2.30", "@fortawesome/fontawesome-common-types@^0.2.31":
+"@fortawesome/fontawesome-common-types@^0.2.31":
   version "0.2.31"
   resolved "https://registry.npm.taobao.org/@fortawesome/fontawesome-common-types/download/@fortawesome/fontawesome-common-types-0.2.31.tgz#f15a39e5ab4e5dfda0717733bcacb9580e666ad9"
   integrity sha1-8Vo55atOXf2gcXczvKy5WA5matk=
@@ -1126,12 +1126,12 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.31"
 
-"@fortawesome/free-solid-svg-icons@^5.11.2", "@fortawesome/free-solid-svg-icons@^5.14.0":
-  version "5.14.0"
-  resolved "https://registry.npm.taobao.org/@fortawesome/free-solid-svg-icons/download/@fortawesome/free-solid-svg-icons-5.14.0.tgz#970453f5e8c4915ad57856c3a0252ac63f6fec18"
-  integrity sha1-lwRT9ejEkVrVeFbDoCUqxj9v7Bg=
+"@fortawesome/free-solid-svg-icons@^5.11.2", "@fortawesome/free-solid-svg-icons@^5.15.0":
+  version "5.15.0"
+  resolved "https://registry.npm.taobao.org/@fortawesome/free-solid-svg-icons/download/@fortawesome/free-solid-svg-icons-5.15.0.tgz#6f553f25cdebd7d5ae778598c2ddd3321dd63450"
+  integrity sha1-b1U/Jc3r19Wud4WYwt3TMh3WNFA=
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.30"
+    "@fortawesome/fontawesome-common-types" "^0.2.31"
 
 "@fortawesome/react-fontawesome@^0.1.11", "@fortawesome/react-fontawesome@^0.1.6":
   version "0.1.11"
