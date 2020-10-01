@@ -1531,10 +1531,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-lazyload@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.npm.taobao.org/@types/react-lazyload/download/@types/react-lazyload-2.6.0.tgz#41cd9cbb2c03dd810377518d4837794469a521d1"
-  integrity sha1-Qc2cuywD3YEDd1GNSDd5RGmlIdE=
+"@types/react-lazyload@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/@types/react-lazyload/download/@types/react-lazyload-3.0.0.tgz#7b43b45b5db7ead73ca9ccaf93d1c24397706d01"
+  integrity sha1-e0O0W1236tc8qcyvk9HCQ5dwbQE=
   dependencies:
     "@types/react" "*"
 
