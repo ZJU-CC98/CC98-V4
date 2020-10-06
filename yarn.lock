@@ -3179,10 +3179,10 @@ cloneable-readable@^1.0.0:
     process-nextick-args "^2.0.0"
     readable-stream "^2.3.5"
 
-clsx@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npm.taobao.org/clsx/download/clsx-1.0.4.tgz#0c0171f6d5cb2fe83848463c15fcc26b4df8c2ec"
-  integrity sha1-DAFx9tXLL+g4SEY8FfzCa034wuw=
+clsx@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npm.taobao.org/clsx/download/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  integrity sha1-mLMTT5q73yOyZjSRrOE8XAOnMYg=
 
 code-point-at@^1.0.0:
   version "1.1.0"
@@ -3464,7 +3464,7 @@ core-js@^2.4.0:
   resolved "https://registry.npm.taobao.org/core-js/download/core-js-2.6.10.tgz?cache=0&sync_timestamp=1571060583912&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-2.6.10.tgz#8a5b8391f8cc7013da703411ce5b585706300d7f"
   integrity sha1-iluDkfjMcBPacDQRzltYVwYwDX8=
 
-core-js@^3.4.2, core-js@^3.6.4, core-js@^3.6.5:
+core-js@^3.6.4, core-js@^3.6.5:
   version "3.6.5"
   resolved "https://registry.npm.taobao.org/core-js/download/core-js-3.6.5.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
   integrity sha1-c5XcJzrzf7LlDpvT2f6EEoUjHRo=
@@ -8571,13 +8571,13 @@ react-hot-loader@*, react-hot-loader@^4.13.0:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
-react-image-crop@^8.6.5:
-  version "8.6.5"
-  resolved "https://registry.npm.taobao.org/react-image-crop/download/react-image-crop-8.6.5.tgz#8b67f3571ab3cf85096d9452b1dc1a05c9659a9e"
-  integrity sha1-i2fzVxqzz4UJbZRSsdwaBcllmp4=
+react-image-crop@^8.6.6:
+  version "8.6.6"
+  resolved "https://registry.npm.taobao.org/react-image-crop/download/react-image-crop-8.6.6.tgz#326f85b4da63c2f39a610f8832abea5d551a338f"
+  integrity sha1-Mm+FtNpjwvOaYQ+IMqvqXVUaM48=
   dependencies:
-    clsx "^1.0.4"
-    core-js "^3.4.2"
+    clsx "^1.1.1"
+    core-js "^3.6.5"
     prop-types "^15.7.2"
 
 react-is@^16.12.0, react-is@^16.6.0, react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.9.0:
