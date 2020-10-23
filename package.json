@@ -59,7 +59,7 @@
     "react-dom": "^16.14.0",
     "react-hot-loader": "^4.13.0",
     "react-image-crop": "^8.6.6",
-    "react-lazyload": "^3.0.0",
+    "react-lazyload": "^3.1.0",
     "react-mde": "^8.3.0",
     "react-redux": "^7.2.1",
     "react-router": "^5.1.1",
