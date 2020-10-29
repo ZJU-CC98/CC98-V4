@@ -55,7 +55,7 @@
     "query-string": "^5.1.1",
     "rc-notification": "^4.5.2",
     "react": "^16.14.0",
-    "react-color": "^2.19.1",
+    "react-color": "^2.19.3",
     "react-dom": "^16.14.0",
     "react-hot-loader": "^4.13.0",
     "react-image-crop": "^8.6.6",
