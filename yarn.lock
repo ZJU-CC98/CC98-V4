@@ -8596,10 +8596,10 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-color@^2.17.3, react-color@^2.19.1:
-  version "2.19.1"
-  resolved "https://registry.npm.taobao.org/react-color/download/react-color-2.19.1.tgz#e2ce792ac29880b30394380901823cfa4bec7f19"
-  integrity sha1-4s55KsKYgLMDlDgJAYI8+kvsfxk=
+react-color@^2.17.3, react-color@^2.19.3:
+  version "2.19.3"
+  resolved "https://registry.npm.taobao.org/react-color/download/react-color-2.19.3.tgz?cache=0&sync_timestamp=1603940767973&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-color%2Fdownload%2Freact-color-2.19.3.tgz#ec6c6b4568312a3c6a18420ab0472e146aa5683d"
+  integrity sha1-7GxrRWgxKjxqGEIKsEcuFGqlaD0=
   dependencies:
     "@icons/material" "^0.2.4"
     lodash "^4.17.15"
