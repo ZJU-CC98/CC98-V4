@@ -8557,10 +8557,10 @@ rc-notification@^3.3.1:
     rc-animate "2.x"
     rc-util "^4.0.4"
 
-rc-notification@^4.5.2:
-  version "4.5.2"
-  resolved "https://registry.npm.taobao.org/rc-notification/download/rc-notification-4.5.2.tgz#7836fc04068e00a764fca944074101faa144d503"
-  integrity sha1-eDb8BAaOAKdk/KlEB0EB+qFE1QM=
+rc-notification@^4.5.4:
+  version "4.5.4"
+  resolved "https://registry.npm.taobao.org/rc-notification/download/rc-notification-4.5.4.tgz#1292e163003db4b9162c856a4630e5d0f1359356"
+  integrity sha1-EpLhYwA9tLkWLIVqRjDl0PE1k1Y=
   dependencies:
     "@babel/runtime" "^7.10.1"
     classnames "2.x"
