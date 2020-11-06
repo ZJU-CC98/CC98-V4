@@ -3608,10 +3608,10 @@ css-select@^1.1.0:
     domutils "1.5.1"
     nth-check "~1.0.1"
 
-css-vars-ponyfill@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.npm.taobao.org/css-vars-ponyfill/download/css-vars-ponyfill-2.4.0.tgz#1121df592b3fd2c1be063fea24f65658da6b308b"
-  integrity sha1-ESHfWSs/0sG+Bj/qJPZWWNprMIs=
+css-vars-ponyfill@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.npm.taobao.org/css-vars-ponyfill/download/css-vars-ponyfill-2.4.1.tgz#c711d71253443b77457ad50a6a21c8cc8a7972fc"
+  integrity sha1-xxHXElNEO3dFetUKaiHIzIp5cvw=
 
 css-what@2.1:
   version "2.1.3"
