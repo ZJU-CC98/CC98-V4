@@ -1377,10 +1377,10 @@
   resolved "https://registry.npm.taobao.org/@types/history/download/@types/history-4.7.8.tgz#49348387983075705fe8f4e02fb67f7daaec4934"
   integrity sha1-STSDh5gwdXBf6PTgL7Z/farsSTQ=
 
-"@types/hls.js@^0.13.2":
-  version "0.13.2"
-  resolved "https://registry.npm.taobao.org/@types/hls.js/download/@types/hls.js-0.13.2.tgz#ee39117c621c19686620e9c71a7cacabbe634582"
-  integrity sha1-7jkRfGIcGWhmIOnHGnysq75jRYI=
+"@types/hls.js@^0.13.3":
+  version "0.13.3"
+  resolved "https://registry.npm.taobao.org/@types/hls.js/download/@types/hls.js-0.13.3.tgz#eb982a866125745eadee468c989fc9e189f24019"
+  integrity sha1-65gqhmEldF6t7kaMmJ/J4YnyQBk=
 
 "@types/hoist-non-react-statics@^3.3.0":
   version "3.3.1"
