@@ -1509,10 +1509,10 @@
     "@types/react" "*"
     "@types/reactcss" "*"
 
-"@types/react-dom@^16.9.9":
-  version "16.9.9"
-  resolved "https://registry.npm.taobao.org/@types/react-dom/download/@types/react-dom-16.9.9.tgz#d2d0a6f720a0206369ccbefff752ba37b9583136"
-  integrity sha1-0tCm9yCgIGNpzL7/91K6N7lYMTY=
+"@types/react-dom@^17.0.0":
+  version "17.0.0"
+  resolved "https://registry.npm.taobao.org/@types/react-dom/download/@types/react-dom-17.0.0.tgz?cache=0&sync_timestamp=1605908060171&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact-dom%2Fdownload%2F%40types%2Freact-dom-17.0.0.tgz#b3b691eb956c4b3401777ee67b900cb28415d95a"
+  integrity sha1-s7aR65VsSzQBd37me5AMsoQV2Vo=
   dependencies:
     "@types/react" "*"
 
