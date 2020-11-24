@@ -34,7 +34,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.12",
+    "@fortawesome/react-fontawesome": "^0.1.13",
     "@hot-loader/react-dom": "^16.14.0",
     "@sentry/browser": "^5.27.4",
     "@tippy.js/react": "^2.2.3",
