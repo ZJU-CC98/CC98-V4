@@ -112,7 +112,7 @@
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
     "autoprefixer": "^9.8.6",
-    "babel-loader": "^8.2.1",
+    "babel-loader": "^8.2.2",
     "babel-plugin-transform-imports": "^2.0.0",
     "copy-webpack-plugin": "^6.3.2",
     "cross-env": "^7.0.2",
