@@ -115,7 +115,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-transform-imports": "^2.0.0",
     "copy-webpack-plugin": "^6.3.2",
-    "cross-env": "^7.0.2",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.0.1",
     "del": "^6.0.0",
     "eslint": "^7.14.0",
