@@ -1731,14 +1731,14 @@
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
-"@typescript-eslint/parser@^4.9.0":
-  version "4.9.0"
-  resolved "https://registry.npm.taobao.org/@typescript-eslint/parser/download/@typescript-eslint/parser-4.9.0.tgz?cache=0&sync_timestamp=1606760527122&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40typescript-eslint%2Fparser%2Fdownload%2F%40typescript-eslint%2Fparser-4.9.0.tgz#bb65f1214b5e221604996db53ef77c9d62b09249"
-  integrity sha1-u2XxIUteIhYEmW21Pvd8nWKwkkk=
+"@typescript-eslint/parser@^4.9.1":
+  version "4.9.1"
+  resolved "https://registry.npm.taobao.org/@typescript-eslint/parser/download/@typescript-eslint/parser-4.9.1.tgz?cache=0&sync_timestamp=1607363474579&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40typescript-eslint%2Fparser%2Fdownload%2F%40typescript-eslint%2Fparser-4.9.1.tgz#2d74c4db5dd5117379a9659081a4d1ec02629055"
+  integrity sha1-LXTE213VEXN5qWWQgaTR7AJikFU=
   dependencies:
-    "@typescript-eslint/scope-manager" "4.9.0"
-    "@typescript-eslint/types" "4.9.0"
-    "@typescript-eslint/typescript-estree" "4.9.0"
+    "@typescript-eslint/scope-manager" "4.9.1"
+    "@typescript-eslint/types" "4.9.1"
+    "@typescript-eslint/typescript-estree" "4.9.1"
     debug "^4.1.1"
 
 "@typescript-eslint/scope-manager@4.9.0":
@@ -1749,10 +1749,23 @@
     "@typescript-eslint/types" "4.9.0"
     "@typescript-eslint/visitor-keys" "4.9.0"
 
+"@typescript-eslint/scope-manager@4.9.1":
+  version "4.9.1"
+  resolved "https://registry.npm.taobao.org/@typescript-eslint/scope-manager/download/@typescript-eslint/scope-manager-4.9.1.tgz#cc2fde310b3f3deafe8436a924e784eaab265103"
+  integrity sha1-zC/eMQs/Per+hDapJOeE6qsmUQM=
+  dependencies:
+    "@typescript-eslint/types" "4.9.1"
+    "@typescript-eslint/visitor-keys" "4.9.1"
+
 "@typescript-eslint/types@4.9.0":
   version "4.9.0"
   resolved "https://registry.npm.taobao.org/@typescript-eslint/types/download/@typescript-eslint/types-4.9.0.tgz?cache=0&sync_timestamp=1606760497320&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40typescript-eslint%2Ftypes%2Fdownload%2F%40typescript-eslint%2Ftypes-4.9.0.tgz#3fe8c3632abd07095c7458f7451bd14c85d0033c"
   integrity sha1-P+jDYyq9BwlcdFj3RRvRTIXQAzw=
+
+"@typescript-eslint/types@4.9.1":
+  version "4.9.1"
+  resolved "https://registry.npm.taobao.org/@typescript-eslint/types/download/@typescript-eslint/types-4.9.1.tgz#a1a7dd80e4e5ac2c593bc458d75dd1edaf77faa2"
+  integrity sha1-oafdgOTlrCxZO8RY113R7a93+qI=
 
 "@typescript-eslint/typescript-estree@4.9.0":
   version "4.9.0"
@@ -1768,12 +1781,34 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
+"@typescript-eslint/typescript-estree@4.9.1":
+  version "4.9.1"
+  resolved "https://registry.npm.taobao.org/@typescript-eslint/typescript-estree/download/@typescript-eslint/typescript-estree-4.9.1.tgz#6e5b86ff5a5f66809e1f347469fadeec69ac50bf"
+  integrity sha1-bluG/1pfZoCeHzR0afre7GmsUL8=
+  dependencies:
+    "@typescript-eslint/types" "4.9.1"
+    "@typescript-eslint/visitor-keys" "4.9.1"
+    debug "^4.1.1"
+    globby "^11.0.1"
+    is-glob "^4.0.1"
+    lodash "^4.17.15"
+    semver "^7.3.2"
+    tsutils "^3.17.1"
+
 "@typescript-eslint/visitor-keys@4.9.0":
   version "4.9.0"
   resolved "https://registry.npm.taobao.org/@typescript-eslint/visitor-keys/download/@typescript-eslint/visitor-keys-4.9.0.tgz?cache=0&sync_timestamp=1606760519827&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40typescript-eslint%2Fvisitor-keys%2Fdownload%2F%40typescript-eslint%2Fvisitor-keys-4.9.0.tgz#f284e9fac43f2d6d35094ce137473ee321f266c8"
   integrity sha1-8oTp+sQ/LW01CUzhN0c+4yHyZsg=
   dependencies:
     "@typescript-eslint/types" "4.9.0"
+    eslint-visitor-keys "^2.0.0"
+
+"@typescript-eslint/visitor-keys@4.9.1":
+  version "4.9.1"
+  resolved "https://registry.npm.taobao.org/@typescript-eslint/visitor-keys/download/@typescript-eslint/visitor-keys-4.9.1.tgz#d76374a58c4ead9e92b454d186fea63487b25ae1"
+  integrity sha1-12N0pYxOrZ6StFTRhv6mNIeyWuE=
+  dependencies:
+    "@typescript-eslint/types" "4.9.1"
     eslint-visitor-keys "^2.0.0"
 
 "@webassemblyjs/ast@1.9.0":
