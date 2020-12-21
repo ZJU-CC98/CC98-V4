@@ -118,7 +118,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^5.0.1",
     "del": "^6.0.0",
-    "eslint": "^7.15.0",
+    "eslint": "^7.16.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
