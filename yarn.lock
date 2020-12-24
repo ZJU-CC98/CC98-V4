@@ -1545,10 +1545,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-redux@^7.1.12":
-  version "7.1.12"
-  resolved "https://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-7.1.12.tgz#148f2c768687346b556e29a322ca44cfa28cc3ac"
-  integrity sha1-FI8sdoaHNGtVbimjIspEz6KMw6w=
+"@types/react-redux@^7.1.13":
+  version "7.1.13"
+  resolved "https://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-7.1.13.tgz?cache=0&sync_timestamp=1608704108692&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact-redux%2Fdownload%2F%40types%2Freact-redux-7.1.13.tgz#8766a0078433621957cd78a6096d316bccbcb3ca"
+  integrity sha1-h2agB4QzYhlXzXimCW0xa8y8s8o=
   dependencies:
     "@types/hoist-non-react-statics" "^3.3.0"
     "@types/react" "*"
