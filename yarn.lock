@@ -1555,10 +1555,10 @@
     hoist-non-react-statics "^3.3.0"
     redux "^4.0.0"
 
-"@types/react-router-dom@^5.1.6":
-  version "5.1.6"
-  resolved "https://registry.npm.taobao.org/@types/react-router-dom/download/@types/react-router-dom-5.1.6.tgz#07b14e7ab1893a837c8565634960dc398564b1fb"
-  integrity sha1-B7FOerGJOoN8hWVjSWDcOYVksfs=
+"@types/react-router-dom@^5.1.7":
+  version "5.1.7"
+  resolved "https://registry.npm.taobao.org/@types/react-router-dom/download/@types/react-router-dom-5.1.7.tgz#a126d9ea76079ffbbdb0d9225073eb5797ab7271"
+  integrity sha1-oSbZ6nYHn/u9sNkiUHPrV5ercnE=
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
