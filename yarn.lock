@@ -1427,10 +1427,10 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/gulp@^4.0.7":
-  version "4.0.7"
-  resolved "https://registry.npm.taobao.org/@types/gulp/download/@types/gulp-4.0.7.tgz#cf3928fc4d351284453e876b560ed271bababad5"
-  integrity sha1-zzko/E01EoRFPodrVg7Scbq6utU=
+"@types/gulp@^4.0.8":
+  version "4.0.8"
+  resolved "https://registry.npm.taobao.org/@types/gulp/download/@types/gulp-4.0.8.tgz#a5e43764d400b9818dc79b5ffa86e22a94521037"
+  integrity sha1-peQ3ZNQAuYGNx5tf+obiKpRSEDc=
   dependencies:
     "@types/undertaker" "*"
     "@types/vinyl-fs" "*"
