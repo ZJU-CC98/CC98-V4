@@ -1758,10 +1758,10 @@
     "@types/source-list-map" "*"
     source-map "^0.6.1"
 
-"@types/webpack@*", "@types/webpack@^4.41.25", "@types/webpack@^4.41.8":
-  version "4.41.25"
-  resolved "https://registry.npm.taobao.org/@types/webpack/download/@types/webpack-4.41.25.tgz?cache=0&sync_timestamp=1605132255545&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fwebpack%2Fdownload%2F%40types%2Fwebpack-4.41.25.tgz#4d3b5aecc4e44117b376280fbfd2dc36697968c4"
-  integrity sha1-TTta7MTkQRezdigPv9LcNml5aMQ=
+"@types/webpack@*", "@types/webpack@^4.41.26", "@types/webpack@^4.41.8":
+  version "4.41.26"
+  resolved "https://registry.npm.taobao.org/@types/webpack/download/@types/webpack-4.41.26.tgz?cache=0&sync_timestamp=1610401822830&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fwebpack%2Fdownload%2F%40types%2Fwebpack-4.41.26.tgz#27a30d7d531e16489f9c7607c747be6bc1a459ef"
+  integrity sha1-J6MNfVMeFkifnHYHx0e+a8GkWe8=
   dependencies:
     "@types/anymatch" "*"
     "@types/node" "*"
