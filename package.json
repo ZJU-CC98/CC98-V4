@@ -148,7 +148,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^4.44.2",
     "webpack-bundle-analyzer": "^4.3.0",
-    "webpack-dev-server": "^3.11.1",
+    "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3"
   },
   "husky": {
