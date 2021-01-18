@@ -5777,10 +5777,10 @@ human-signals@^1.1.1:
   resolved "https://registry.npm.taobao.org/human-signals/download/human-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
   integrity sha1-xbHNFPUK6uCatsWf5jujOV/k36M=
 
-husky@^4.3.7:
-  version "4.3.7"
-  resolved "https://registry.npm.taobao.org/husky/download/husky-4.3.7.tgz?cache=0&sync_timestamp=1609981004203&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fhusky%2Fdownload%2Fhusky-4.3.7.tgz#ca47bbe6213c1aa8b16bbd504530d9600de91e88"
-  integrity sha1-yke75iE8Gqixa71QRTDZYA3pHog=
+husky@^4.3.8:
+  version "4.3.8"
+  resolved "https://registry.npm.taobao.org/husky/download/husky-4.3.8.tgz#31144060be963fd6850e5cc8f019a1dfe194296d"
+  integrity sha1-MRRAYL6WP9aFDlzI8Bmh3+GUKW0=
   dependencies:
     chalk "^4.0.0"
     ci-info "^2.0.0"
