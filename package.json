@@ -70,7 +70,7 @@
     "redux-thunk": "^2.3.0",
     "showdown": "^1.9.1",
     "showdown-xss-filter": "^0.2.0",
-    "url-parse": "^1.4.7",
+    "url-parse": "^1.5.0",
     "url-pattern": "^1.0.3",
     "url-regex": "^5.0.0"
   },
